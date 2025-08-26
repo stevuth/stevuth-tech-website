@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles } from 'lucide-react';
+import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane } from 'lucide-react';
 
 const services = [
   {
@@ -61,6 +61,14 @@ const services = [
     href: '/services#farm-home-cleaning',
     aiHint: 'professional cleaning',
     image: 'https://picsum.photos/1200/800?random=11',
+  },
+  {
+    icon: <Plane className="h-10 w-10 text-accent" />,
+    title: 'Travels & Tours',
+    description: 'Seamless flight bookings, curated tours, and visa assistance.',
+    href: '/services#travels-tours',
+    aiHint: 'travel tourism',
+    image: 'https://picsum.photos/1200/800?random=12',
   },
 ];
 

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles } from "lucide-react";
+import { HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const services = [
@@ -56,6 +56,15 @@ const services = [
     imageUrl: "https://picsum.photos/1200/800?random=11",
     features: ["Fumigation", "Pest Control", "Home Cleaning", "Dry Cleaning & Laundry", "Office Cleaning", "Bush Clearing"],
     aiHint: "professional cleaning",
+  },
+  {
+    id: "travels-tours",
+    icon: <Plane className="h-10 w-10 text-accent" />,
+    title: "Travels & Tours",
+    description: "Seamless flight bookings, curated tours, and visa assistance for all your travel needs.",
+    imageUrl: "https://picsum.photos/1200/800?random=12",
+    features: ["Tourist Visa", "Flight Ticket Bookings", "All Visa Applications", "International Passport Procurement", "Religious Pilgrims", "Hotel Reservation", "Work Visa", "Study Visa"],
+    aiHint: "travel tourism",
   },
 ];
 
