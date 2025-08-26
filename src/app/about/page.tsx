@@ -6,24 +6,32 @@ import { cn } from "@/lib/utils";
 
 const values = [
   {
-    icon: <Target className="h-8 w-8 text-accent" />,
+    icon: <Target className="h-10 w-10 text-accent" />,
     title: "Innovation & Excellence",
     description: "We constantly push boundaries and embrace new technologies to deliver exceptional results and set new industry standards.",
+    aiHint: "innovation technology",
+    image: "https://picsum.photos/1200/800?random=1",
   },
   {
-    icon: <CheckCircle className="h-8 w-8 text-accent" />,
+    icon: <CheckCircle className="h-10 w-10 text-accent" />,
     title: "Integrity & Transparency",
     description: "Our operations are guided by strong ethical principles, ensuring trust and honesty in all our partnerships and dealings.",
+    aiHint: "trust handshake",
+    image: "https://picsum.photos/1200/800?random=2",
   },
   {
-    icon: <Globe className="h-8 w-8 text-accent" />,
+    icon: <Globe className="h-10 w-10 text-accent" />,
     title: "Global Perspective",
     description: "With a deep understanding of global markets, we create opportunities and build connections that transcend borders.",
+    aiHint: "global connections",
+    image: "https://picsum.photos/1200/800?random=3",
   },
   {
-    icon: <Users className="h-8 w-8 text-accent" />,
+    icon: <Users className="h-10 w-10 text-accent" />,
     title: "Customer-Centricity",
     description: "Our clients are at the heart of everything we do. We are dedicated to understanding their needs and exceeding their expectations.",
+    aiHint: "customer support",
+    image: "https://picsum.photos/1200/800?random=4",
   },
 ];
 
@@ -99,27 +107,32 @@ export default function AboutPage() {
             </p>
           </AnimatedWrapper>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
           {values.map((value, index) => (
-            <AnimatedWrapper key={value.title} delay={index * 100}>
-              <Card className={cn(
-                "text-left h-full border-y-2 border-r-2 first:border-l-2 border-border hover:border-accent hover:shadow-lg transition-all duration-300 rounded-none",
-                index > 0 && "sm:border-l-0",
-                index === 1 && "sm:border-l-0",
-                index === values.length-1 && "lg:border-r-2",
-                "sm:[&:nth-child(2)]:border-l-0 lg:[&:nth-child(3)]:border-l-0"
-              )}>
-                <CardHeader>
-                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-accent/10 mb-4">
-                    {value.icon}
-                  </div>
-                  <CardTitle className="font-headline text-xl">{value.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">{value.description}</p>
-                </CardContent>
-              </Card>
-            </AnimatedWrapper>
+             <div key={value.title} className={index % 2 === 0 ? 'bg-background' : 'bg-primary/5'}>
+                <div className="container px-4 md:px-6 py-12 md:py-16">
+                    <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                        <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
+                            <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
+                                <Image
+                                src={value.image}
+                                alt={value.title}
+                                fill
+                                className="object-cover"
+                                data-ai-hint={value.aiHint}
+                                />
+                            </div>
+                        </AnimatedWrapper>
+                        <AnimatedWrapper animation="slide-in-right" className={index % 2 === 1 ? 'md:order-1' : ''}>
+                            <div className="flex items-center gap-4 mb-4">
+                                {value.icon}
+                            </div>
+                            <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4">{value.title}</h3>
+                            <p className="text-muted-foreground mb-6 max-w-md">{value.description}</p>
+                        </AnimatedWrapper>
+                    </div>
+                </div>
+            </div>
           ))}
         </div>
       </section>
