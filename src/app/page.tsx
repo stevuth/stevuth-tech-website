@@ -7,40 +7,52 @@ import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Smartphone, Ch
 
 const services = [
   {
-    icon: <Sprout className="h-8 w-8 text-accent" />,
+    icon: <Sprout className="h-10 w-10 text-accent" />,
     title: 'Agro-allied',
     description: 'Pioneering sustainable farming, processing, and food distribution.',
     href: '/services#agro-allied',
+    aiHint: 'modern agriculture',
+    image: 'https://picsum.photos/1200/800?random=1',
   },
   {
-    icon: <HeartPulse className="h-8 w-8 text-accent" />,
+    icon: <HeartPulse className="h-10 w-10 text-accent" />,
     title: 'Healthcare',
     description: 'Providing essential medical supplies and fostering community health.',
     href: '/services#healthcare',
+    aiHint: 'medical supplies',
+    image: 'https://picsum.photos/1200/800?random=2',
   },
   {
-    icon: <PlaneTakeoff className="h-8 w-8 text-accent" />,
+    icon: <PlaneTakeoff className="h-10 w-10 text-accent" />,
     title: 'Travels & Tourism',
     description: 'Seamless flight bookings, curated tours, and visa assistance.',
     href: '/services#travels',
+    aiHint: 'travel tourism',
+    image: 'https://picsum.photos/1200/800?random=3',
   },
   {
-    icon: <HardHat className="h-8 w-8 text-accent" />,
+    icon: <HardHat className="h-10 w-10 text-accent" />,
     title: 'Contracting',
     description: 'Excellence in construction, procurement, and supply chain solutions.',
     href: '/services#contracting',
+    aiHint: 'construction site',
+    image: 'https://picsum.photos/1200/800?random=4',
   },
   {
-    icon: <ShoppingCart className="h-8 w-8 text-accent" />,
+    icon: <ShoppingCart className="h-10 w-10 text-accent" />,
     title: 'General Merchandising',
     description: 'Your trusted partner for diverse and quality product sourcing.',
     href: '/services#merchandising',
+    aiHint: 'product sourcing',
+    image: 'https://picsum.photos/1200/800?random=5',
   },
   {
-    icon: <Smartphone className="h-8 w-8 text-accent" />,
+    icon: <Smartphone className="h-10 w-10 text-accent" />,
     title: 'Recharge & Data',
     description: 'Bulk printing and distribution of recharge cards and data subscriptions.',
     href: '/services#recharge-data',
+    aiHint: 'telecommunication network',
+    image: 'https://picsum.photos/1200/800?random=6',
   },
 ];
 
@@ -117,37 +129,47 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto">
+      <section className="bg-background">
+        <div className="container px-4 md:px-6 py-16 md:py-24 text-center">
             <AnimatedWrapper>
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Services</h2>
-              <p className="text-muted-foreground mb-12">
+              <p className="max-w-3xl mx-auto text-muted-foreground mb-12">
                 We offer a diverse portfolio of services, each managed with expert focus and a commitment to quality. From agriculture to technology, we deliver excellence across the board.
               </p>
             </AnimatedWrapper>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        </div>
+        <div>
             {services.map((service, index) => (
-              <AnimatedWrapper key={service.title} delay={index * 100}>
-                  <Link href={service.href} className="block group h-full">
-                      <div className="bg-background rounded-lg p-6 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-200 hover:border-accent flex flex-col">
-                         <div className="flex-shrink-0 mb-4">
-                              {service.icon}
-                         </div>
-                         <div className="flex-grow">
-                             <h3 className="font-headline text-xl font-semibold mb-2">{service.title}</h3>
-                             <p className="text-muted-foreground text-sm">{service.description}</p>
-                         </div>
-                         <div className="mt-4 flex items-center text-sm font-medium text-accent">
-                            <span>Learn More</span>
-                            <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                         </div>
-                      </div>
-                  </Link>
-              </AnimatedWrapper>
+                <div key={service.title} className={index % 2 === 0 ? 'bg-background' : 'bg-primary/5'}>
+                    <div className="container px-4 md:px-6 py-16 md:py-24">
+                        <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
+                           <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
+                                <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
+                                    <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    fill
+                                    className="object-cover"
+                                    data-ai-hint={service.aiHint}
+                                    />
+                                </div>
+                            </AnimatedWrapper>
+                            <AnimatedWrapper animation="slide-in-right" className={index % 2 === 1 ? 'md:order-1' : ''}>
+                                <div className="flex items-center gap-4 mb-4">
+                                    {service.icon}
+                                </div>
+                                <h3 className="text-3xl md:text-4xl font-headline font-bold mb-4">{service.title}</h3>
+                                <p className="text-muted-foreground mb-6 max-w-md">{service.description}</p>
+                                <Button asChild variant="link" className="p-0 h-auto text-accent hover:text-accent/90">
+                                    <Link href={service.href}>
+                                        Learn More <ArrowRight className="h-4 w-4 ml-2" />
+                                    </Link>
+                                </Button>
+                            </AnimatedWrapper>
+                        </div>
+                    </div>
+                </div>
             ))}
-          </div>
         </div>
       </section>
 
