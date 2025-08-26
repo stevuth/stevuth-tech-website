@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane } from 'lucide-react';
+import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby } from 'lucide-react';
 
 const services = [
   {
@@ -53,6 +53,14 @@ const services = [
     href: '/services#travels-tours',
     aiHint: 'travel tourism',
     image: 'https://picsum.photos/1200/800?random=12',
+  },
+  {
+    icon: <Baby className="h-10 w-10 text-accent" />,
+    title: 'Orphanage Home',
+    description: 'Providing a safe and nurturing environment for children in need, offering care, education, and support.',
+    href: '/services#orphanage-home',
+    aiHint: 'happy children',
+    image: 'https://picsum.photos/1200/800?random=13',
   },
 ];
 

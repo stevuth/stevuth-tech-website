@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane } from "lucide-react";
+import { HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const services = [
@@ -56,6 +56,15 @@ const services = [
     imageUrl: "https://picsum.photos/1200/800?random=12",
     features: ["Tourist Visa", "Flight Ticket Bookings", "All Visa Applications", "International Passport Procurement", "Religious Pilgrims", "Hotel Reservation", "Work Visa", "Study Visa"],
     aiHint: "travel tourism",
+  },
+  {
+    id: "orphanage-home",
+    icon: <Baby className="h-10 w-10 text-accent" />,
+    title: "Orphanage Home",
+    description: "Providing a safe and nurturing environment for children in need, offering care, education, and support.",
+    imageUrl: "https://picsum.photos/1200/800?random=13",
+    features: ["Safe & Loving Home", "Quality Education", "Healthcare & Nutrition", "Recreational Activities", "Adoption Services"],
+    aiHint: "happy children",
   },
 ];
 
