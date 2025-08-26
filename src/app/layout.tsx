@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster"
+import { BackButton } from '@/components/layout/BackButton';
 
 const fontRoboto = Roboto({
   subsets: ['latin'],
@@ -39,6 +40,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <Toaster />
+        <BackButton />
       </body>
     </html>
   );
