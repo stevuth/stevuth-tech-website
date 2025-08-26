@@ -93,7 +93,7 @@ const values = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative h-[60vh] md:h-[80vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
+      <section className="relative h-[70vh] md:h-[80vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/50 z-10" />
         <video
           src="/hero-video.mp4"
@@ -105,10 +105,10 @@ export default function Home() {
         />
         <div className="relative z-20 container px-4 md:px-6">
           <AnimatedWrapper>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-headline font-bold tracking-tighter mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold tracking-tighter mb-4">
               Driving Growth Across Industries with Focus & Integrity
             </h1>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-200 mb-8">
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-200 mb-6">
               Right Focus International is a dynamic, multi-sector company committed to excellence and innovation.
             </p>
             <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
@@ -150,7 +150,7 @@ export default function Home() {
             <AnimatedWrapper>
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Services</h2>
               <p className="max-w-3xl mx-auto text-muted-foreground mb-8">
-                We offer a diverse portfolio of services, each managed with expert focus and a commitment to quality. From agriculture to technology, we deliver excellence across the board.
+                We offer a diverse portfolio of services, each managed with expert focus and a commitment to quality.
               </p>
             </AnimatedWrapper>
         </div>
@@ -158,7 +158,7 @@ export default function Home() {
             {services.map((service, index) => (
                 <div key={service.title} className={index % 2 === 0 ? 'bg-background' : 'bg-primary/5'}>
                     <div className="container px-4 md:px-6 py-12 md:py-16">
-                        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+                        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
                            <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
                                 <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
                                     <Image
@@ -174,7 +174,7 @@ export default function Home() {
                                 <div className="flex items-center gap-4 mb-4">
                                     {service.icon}
                                 </div>
-                                <h3 className="text-3xl md:text-4xl font-headline font-bold mb-4">{service.title}</h3>
+                                <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4">{service.title}</h3>
                                 <p className="text-muted-foreground mb-6 max-w-md">{service.description}</p>
                                 <Button asChild variant="link" className="p-0 h-auto text-accent hover:text-accent/90">
                                     <Link href={service.href}>
@@ -197,7 +197,7 @@ export default function Home() {
               Our core values are the pillars of our success and your guarantee of satisfaction.
             </p>
           </AnimatedWrapper>
-          <div className="grid md:grid-cols-3 gap-6 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             {values.map((value, index) => (
               <AnimatedWrapper key={value.title} animation="fade-in-up" delay={index * 150}>
                 <div className="p-6">

@@ -6,8 +6,8 @@ export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container px-4 md:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="md:col-span-1 flex flex-col items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="flex flex-col items-start">
             <Logo isDark={true} />
             <p className="mt-4 text-sm text-primary-foreground/70">
               Driving Growth Across Industries with Focus & Integrity.
@@ -41,8 +41,8 @@ export function Footer() {
           <div>
             <h4 className="font-headline font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li>info@rightfocus.com</li>
-              <li>+1 234 567 890</li>
+              <li className="break-all">info@rightfocus.com</li>
+              <li className="break-all">+1 234 567 890</li>
               <li>123 Focus Lane, Growth City</li>
             </ul>
           </div>

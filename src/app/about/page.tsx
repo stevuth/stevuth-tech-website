@@ -29,9 +29,9 @@ const values = [
 export default function AboutPage() {
   return (
     <div>
-      <section className="bg-primary text-primary-foreground py-16 md:py-20 text-center">
+      <section className="bg-primary text-primary-foreground py-12 md:py-16 text-center">
         <AnimatedWrapper>
-          <h1 className="text-4xl md:text-6xl font-headline font-bold">About Right Focus International</h1>
+          <h1 className="text-4xl md:text-5xl font-headline font-bold">About Right Focus International</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
             Learn about our journey, our purpose, and the values that drive us forward.
           </p>

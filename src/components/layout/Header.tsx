@@ -49,7 +49,7 @@ export function Header() {
     return (
         <SheetClose asChild>
             <Link href={href} className={cn(
-                "block rounded-md px-4 py-2 text-lg font-medium",
+                "block rounded-md px-3 py-2 text-base font-medium",
                 isActive ? "bg-accent text-accent-foreground" : "hover:bg-secondary"
             )}>
                 {children}
@@ -84,12 +84,18 @@ export function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[80vw]">
-              <div className="flex flex-col p-6">
-                <div className="mb-8">
+            <SheetContent side="right" className="w-[80vw] p-4">
+              <div className="flex flex-col">
+                <div className="mb-8 flex justify-between items-center">
                   <Logo />
+                  <SheetClose asChild>
+                     <Button variant="ghost" size="icon">
+                        <X className="h-6 w-6" />
+                        <span className="sr-only">Close menu</span>
+                      </Button>
+                  </SheetClose>
                 </div>
-                <nav className="flex flex-col space-y-4">
+                <nav className="flex flex-col space-y-2">
                   {navLinks.map((link) => (
                     <MobileNavLink key={link.href} href={link.href}>
                       {link.label}

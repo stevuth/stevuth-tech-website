@@ -95,7 +95,7 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
         <AnimatedWrapper animation="slide-in-right" className={index % 2 === 1 ? 'md:order-1' : ''}>
           <div className="flex items-center gap-4 mb-4">
             {service.icon}
-            <h2 className="text-3xl md:text-4xl font-headline font-bold">{service.title}</h2>
+            <h2 className="text-2xl md:text-3xl font-headline font-bold">{service.title}</h2>
           </div>
           <p className="text-muted-foreground mb-6">{service.description}</p>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
@@ -116,9 +116,9 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
 export default function ServicesPage() {
   return (
     <div>
-      <section className="bg-primary text-primary-foreground py-16 md:py-20 text-center">
+      <section className="bg-primary text-primary-foreground py-12 md:py-16 text-center">
         <AnimatedWrapper>
-          <h1 className="text-4xl md:text-6xl font-headline font-bold">Our Services</h1>
+          <h1 className="text-4xl md:text-5xl font-headline font-bold">Our Services</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
             A diverse portfolio of expert services, delivered with focus and integrity.
           </p>
