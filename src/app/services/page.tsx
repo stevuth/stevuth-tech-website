@@ -1,26 +1,8 @@
 import Image from "next/image";
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles } from "lucide-react";
+import { HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const services = [
-  {
-    id: "agro-allied",
-    icon: <Sprout className="h-10 w-10 text-accent" />,
-    title: "Agro-allied",
-    description: "We are at the forefront of the agricultural sector, involved in sustainable farming, advanced processing, and efficient food distribution networks. Our goal is to ensure food security and promote agricultural innovation.",
-    imageUrl: "https://picsum.photos/1200/800?random=1",
-    features: ["Sustainable Farming Practices", "Food Processing & Packaging", "Supply Chain & Distribution", "Commodity Trading"],
-    aiHint: "modern agriculture",
-  },
-  {
-    id: "travels",
-    icon: <PlaneTakeoff className="h-10 w-10 text-accent" />,
-    title: "Travels & Tourism",
-    description: "We make global travel accessible and seamless. Our services include hassle-free flight bookings, personalized tours, and expert visa assistance, ensuring memorable and well-organized travel experiences for our clients.",
-    imageUrl: "https://picsum.photos/1200/800?random=3",
-    features: ["International & Domestic Flights", "Customized Tour Packages", "Corporate Travel Management", "Visa Processing Services"],
-    aiHint: "travel tourism",
-  },
   {
     id: "contracting",
     icon: <HardHat className="h-10 w-10 text-accent" />,

@@ -3,25 +3,9 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles } from 'lucide-react';
+import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles } from 'lucide-react';
 
 const services = [
-  {
-    icon: <Sprout className="h-10 w-10 text-accent" />,
-    title: 'Agro-allied',
-    description: 'Pioneering sustainable farming, processing, and food distribution.',
-    href: '/services#agro-allied',
-    aiHint: 'modern agriculture',
-    image: 'https://picsum.photos/1200/800?random=1',
-  },
-  {
-    icon: <PlaneTakeoff className="h-10 w-10 text-accent" />,
-    title: 'Travels & Tourism',
-    description: 'Seamless flight bookings, curated tours, and visa assistance.',
-    href: '/services#travels',
-    aiHint: 'travel tourism',
-    image: 'https://picsum.photos/1200/800?random=3',
-  },
   {
     icon: <HardHat className="h-10 w-10 text-accent" />,
     title: 'Contracting',
