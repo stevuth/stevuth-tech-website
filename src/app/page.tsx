@@ -119,36 +119,34 @@ export default function Home() {
 
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center max-w-3xl mx-auto">
             <AnimatedWrapper>
-              <div className="lg:pr-12">
-                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Services</h2>
-                <p className="text-muted-foreground mb-8">
-                  We offer a diverse portfolio of services, each managed with expert focus and a commitment to quality. From agriculture to technology, we deliver excellence across the board.
-                </p>
-                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                    <Link href="/services">View All Services</Link>
-                </Button>
-              </div>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Services</h2>
+              <p className="text-muted-foreground mb-12">
+                We offer a diverse portfolio of services, each managed with expert focus and a commitment to quality. From agriculture to technology, we deliver excellence across the board.
+              </p>
             </AnimatedWrapper>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {services.map((service, index) => (
-                <AnimatedWrapper key={service.title} delay={index * 100}>
-                    <Link href={service.href} className="block group">
-                        <div className="bg-background rounded-lg p-6 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-accent">
-                           <div className="flex items-start justify-between">
-                                {service.icon}
-                                <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent" />
-                           </div>
-                           <div className="mt-4">
-                                <h3 className="font-headline text-xl font-semibold">{service.title}</h3>
-                                <p className="text-muted-foreground text-sm mt-1">{service.description}</p>
-                           </div>
-                        </div>
-                    </Link>
-                </AnimatedWrapper>
-              ))}
-            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <AnimatedWrapper key={service.title} delay={index * 100}>
+                  <Link href={service.href} className="block group h-full">
+                      <div className="bg-background rounded-lg p-6 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-200 hover:border-accent flex flex-col">
+                         <div className="flex-shrink-0 mb-4">
+                              {service.icon}
+                         </div>
+                         <div className="flex-grow">
+                             <h3 className="font-headline text-xl font-semibold mb-2">{service.title}</h3>
+                             <p className="text-muted-foreground text-sm">{service.description}</p>
+                         </div>
+                         <div className="mt-4 flex items-center text-sm font-medium text-accent">
+                            <span>Learn More</span>
+                            <ArrowRight className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                         </div>
+                      </div>
+                  </Link>
+              </AnimatedWrapper>
+            ))}
           </div>
         </div>
       </section>
