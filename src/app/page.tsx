@@ -77,15 +77,15 @@ const values = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative h-[60vh] md:h-[80vh] w-full flex items-center justify-center text-center text-white">
+      <section className="relative h-[60vh] md:h-[80vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/50 z-10" />
-        <Image
-          src="https://picsum.photos/1920/1080"
-          alt="Global business operations"
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint="global business"
+        <video
+          src="/hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
         />
         <div className="relative z-20 container px-4 md:px-6">
           <AnimatedWrapper>
