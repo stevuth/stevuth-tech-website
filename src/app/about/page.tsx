@@ -98,30 +98,29 @@ export default function AboutPage() {
               These principles are the bedrock of our corporate culture and guide our decisions every day.
             </p>
           </AnimatedWrapper>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            {values.map((value, index) => (
-              <AnimatedWrapper key={value.title} delay={index * 100}>
-                <Card className={cn(
-                  "text-left h-full border-2 hover:border-accent hover:shadow-lg transition-all duration-300 rounded-none",
-                  index === 0 && "sm:rounded-l-lg",
-                  index === values.length - 1 && "sm:rounded-r-lg",
-                  index === 1 && "sm:border-l-0",
-                  index > 1 && "lg:border-l-0"
-
-                )}>
-                  <CardHeader>
-                    <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-accent/10 mb-4">
-                      {value.icon}
-                    </div>
-                    <CardTitle className="font-headline text-xl">{value.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground text-sm">{value.description}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedWrapper>
-            ))}
-          </div>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {values.map((value, index) => (
+            <AnimatedWrapper key={value.title} delay={index * 100}>
+              <Card className={cn(
+                "text-left h-full border-y-2 border-r-2 first:border-l-2 border-border hover:border-accent hover:shadow-lg transition-all duration-300 rounded-none",
+                index > 0 && "sm:border-l-0",
+                index === 1 && "sm:border-l-0",
+                index === values.length-1 && "lg:border-r-2",
+                "sm:[&:nth-child(2)]:border-l-0 lg:[&:nth-child(3)]:border-l-0"
+              )}>
+                <CardHeader>
+                  <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-accent/10 mb-4">
+                    {value.icon}
+                  </div>
+                  <CardTitle className="font-headline text-xl">{value.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-sm">{value.description}</p>
+                </CardContent>
+              </Card>
+            </AnimatedWrapper>
+          ))}
         </div>
       </section>
     </div>
