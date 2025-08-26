@@ -78,9 +78,9 @@ const services = [
 ];
 
 const ServiceSection = ({ service, index }: { service: (typeof services)[0], index: number }) => (
-  <section id={service.id} className={`py-16 md:py-24 ${index % 2 === 1 ? 'bg-secondary' : 'bg-background'}`}>
+  <section id={service.id} className={`py-12 md:py-16 ${index % 2 === 1 ? 'bg-secondary' : 'bg-background'}`}>
     <div className="container px-4 md:px-6">
-      <div className={`grid md:grid-cols-2 gap-12 lg:gap-16 items-center`}>
+      <div className={`grid md:grid-cols-2 gap-8 lg:gap-12 items-center`}>
         <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
           <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
             <Image
@@ -116,7 +116,7 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
 export default function ServicesPage() {
   return (
     <div>
-      <section className="bg-primary text-primary-foreground py-20 md:py-28 text-center">
+      <section className="bg-primary text-primary-foreground py-16 md:py-20 text-center">
         <AnimatedWrapper>
           <h1 className="text-4xl md:text-6xl font-headline font-bold">Our Services</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">

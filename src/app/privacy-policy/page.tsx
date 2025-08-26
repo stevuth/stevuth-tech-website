@@ -3,7 +3,7 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 export default function PrivacyPolicyPage() {
   return (
     <div>
-      <section className="bg-primary text-primary-foreground py-20 md:py-28 text-center">
+      <section className="bg-primary text-primary-foreground py-16 md:py-20 text-center">
         <AnimatedWrapper>
           <h1 className="text-4xl md:text-6xl font-headline font-bold">Privacy Policy</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
         </AnimatedWrapper>
       </section>
 
-      <section className="py-16 md:py-24">
+      <section className="py-12 md:py-16">
         <div className="container max-w-4xl px-4 md:px-6">
           <AnimatedWrapper className="prose dark:prose-invert max-w-none">
             <h2>1. Introduction</h2>

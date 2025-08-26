@@ -118,9 +118,9 @@ export default function Home() {
         </div>
       </section>
       
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <AnimatedWrapper animation="slide-in-left">
               <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
                  <Image
@@ -146,10 +146,10 @@ export default function Home() {
       </section>
 
       <section className="bg-background">
-        <div className="container px-4 md:px-6 py-16 md:py-24 text-center">
+        <div className="container px-4 md:px-6 py-12 md:py-16 text-center">
             <AnimatedWrapper>
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Services</h2>
-              <p className="max-w-3xl mx-auto text-muted-foreground mb-12">
+              <p className="max-w-3xl mx-auto text-muted-foreground mb-8">
                 We offer a diverse portfolio of services, each managed with expert focus and a commitment to quality. From agriculture to technology, we deliver excellence across the board.
               </p>
             </AnimatedWrapper>
@@ -157,8 +157,8 @@ export default function Home() {
         <div>
             {services.map((service, index) => (
                 <div key={service.title} className={index % 2 === 0 ? 'bg-background' : 'bg-primary/5'}>
-                    <div className="container px-4 md:px-6 py-16 md:py-24">
-                        <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
+                    <div className="container px-4 md:px-6 py-12 md:py-16">
+                        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
                            <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
                                 <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
                                     <Image
@@ -189,15 +189,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container px-4 md:px-6">
            <AnimatedWrapper className="text-center">
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Choose Us?</h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground mb-12">
+            <p className="max-w-2xl mx-auto text-muted-foreground mb-8">
               Our core values are the pillars of our success and your guarantee of satisfaction.
             </p>
           </AnimatedWrapper>
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid md:grid-cols-3 gap-6 text-center">
             {values.map((value, index) => (
               <AnimatedWrapper key={value.title} animation="fade-in-up" delay={index * 150}>
                 <div className="p-6">
@@ -214,10 +214,10 @@ export default function Home() {
       </section>
       
       <section className="bg-primary text-primary-foreground">
-        <div className="container px-4 md:px-6 py-16 text-center">
+        <div className="container px-4 md:px-6 py-12 text-center">
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Partner with Us Today</h2>
-            <p className="max-w-2xl mx-auto mb-8">
+            <p className="max-w-2xl mx-auto mb-6">
               Let's build a prosperous future together. Reach out to discuss how we can achieve your goals.
             </p>
             <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
