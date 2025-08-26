@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Smartphone, Check, BriefcaseMedical, Network } from "lucide-react";
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Check, BriefcaseMedical, Network } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const services = [
@@ -38,15 +38,6 @@ const services = [
     imageUrl: "https://picsum.photos/1200/800?random=4",
     features: ["Building & Civil Construction", "Government & Private Procurement", "Logistics & Supply Chain", "Import & Export"],
     aiHint: "construction site",
-  },
-  {
-    id: "recharge-data",
-    icon: <Smartphone className="h-10 w-10 text-accent" />,
-    title: "Recharge Cards & Data Subscription",
-    description: "In the digital age, we keep people connected. We specialize in the bulk printing and nationwide distribution of telecom recharge cards and manage seamless mobile data subscription services for various providers.",
-    imageUrl: "https://picsum.photos/1200/800?random=5",
-    features: ["Bulk Card Printing", "Nationwide Distribution Network", "Digital Top-up Solutions", "Data Bundle Services"],
-    aiHint: "telecommunication network",
   },
   {
     id: "veterinary",

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Smartphone, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network } from 'lucide-react';
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network } from 'lucide-react';
 
 const services = [
   {
@@ -45,14 +45,6 @@ const services = [
     href: '/services#merchandising',
     aiHint: 'product sourcing',
     image: 'https://picsum.photos/1200/800?random=5',
-  },
-  {
-    icon: <Smartphone className="h-10 w-10 text-accent" />,
-    title: 'Recharge & Data',
-    description: 'Bulk printing and distribution of recharge cards and data subscriptions.',
-    href: '/services#recharge-data',
-    aiHint: 'telecommunication network',
-    image: 'https://picsum.photos/1200/800?random=6',
   },
   {
     icon: <BriefcaseMedical className="h-10 w-10 text-accent" />,
