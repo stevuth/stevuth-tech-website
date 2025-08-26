@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CheckCircle, Target, Globe, Users } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const values = [
   {
@@ -97,10 +98,17 @@ export default function AboutPage() {
               These principles are the bedrock of our corporate culture and guide our decisions every day.
             </p>
           </AnimatedWrapper>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value, index) => (
               <AnimatedWrapper key={value.title} delay={index * 100}>
-                <Card className="text-left h-full border-2 hover:border-accent hover:shadow-lg transition-all duration-300">
+                <Card className={cn(
+                  "text-left h-full border-2 hover:border-accent hover:shadow-lg transition-all duration-300 rounded-none",
+                  index === 0 && "sm:rounded-l-lg",
+                  index === values.length - 1 && "sm:rounded-r-lg",
+                  index === 1 && "sm:border-l-0",
+                  index > 1 && "lg:border-l-0"
+
+                )}>
                   <CardHeader>
                     <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-accent/10 mb-4">
                       {value.icon}
