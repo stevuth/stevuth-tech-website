@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Smartphone, Check } from "lucide-react";
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Smartphone, Check, BriefcaseMedical } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const services = [
@@ -47,6 +47,15 @@ const services = [
     imageUrl: "https://picsum.photos/1200/800?random=5",
     features: ["Bulk Card Printing", "Nationwide Distribution Network", "Digital Top-up Solutions", "Data Bundle Services"],
     aiHint: "telecommunication network",
+  },
+  {
+    id: "veterinary",
+    icon: <BriefcaseMedical className="h-10 w-10 text-accent" />,
+    title: "Veterinary Medical Center",
+    description: "Comprehensive veterinary services including medical treatments, boarding, farm consultations, pet travel clearance, and professional training.",
+    imageUrl: "https://picsum.photos/1200/800?random=7",
+    features: ["Boarding Facilities", "Vaccinations & Treatments", "Farm Visitation & Consultation", "Pet Travel Clearance", "Training Institute"],
+    aiHint: "veterinary clinic",
   },
 ];
 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Smartphone, CheckCircle, Target, Globe, ArrowRight } from 'lucide-react';
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Smartphone, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical } from 'lucide-react';
 
 const services = [
   {
@@ -53,6 +53,14 @@ const services = [
     href: '/services#recharge-data',
     aiHint: 'telecommunication network',
     image: 'https://picsum.photos/1200/800?random=6',
+  },
+  {
+    icon: <BriefcaseMedical className="h-10 w-10 text-accent" />,
+    title: 'Veterinary Medical Center',
+    description: 'Comprehensive veterinary services including medical treatments, boarding, and professional training.',
+    href: '/services#veterinary',
+    aiHint: 'veterinary clinic',
+    image: 'https://picsum.photos/1200/800?random=7',
   },
 ];
 
