@@ -4,28 +4,40 @@ import { useRouter, usePathname } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
+import { cn } from '@/lib/utils';
 
 export function BackButton() {
   const router = useRouter();
   const pathname = usePathname();
-  const [showButton, setShowButton] = useState(false);
+  const [isAtTop, setIsAtTop] = useState(true);
+  const [isOnHomepage, setIsOnHomepage] = useState(false);
 
   useEffect(() => {
-    // This ensures the component only renders on the client and not on the homepage
-    setShowButton(pathname !== '/');
+    setIsOnHomepage(pathname === '/');
   }, [pathname]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsAtTop(window.scrollY < 50);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Check on initial render
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const handleBack = () => {
-    // Check if there is a history to go back to
     if (window.history.length > 1) {
       router.back();
     } else {
-      // If no history, navigate to home as a fallback
       router.push('/');
     }
   };
 
-  if (!showButton) {
+  if (isOnHomepage) {
     return null;
   }
 
@@ -33,9 +45,13 @@ export function BackButton() {
     <Button
       variant="outline"
       size="icon"
-      className="fixed top-20 left-5 z-50 h-12 w-12 rounded-full bg-background/80 shadow-lg backdrop-blur-sm transition-all hover:scale-110"
+      className={cn(
+        "fixed top-20 left-5 z-50 h-12 w-12 rounded-full bg-background/80 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110",
+        isAtTop ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-20 pointer-events-none"
+      )}
       onClick={handleBack}
       aria-label="Go back"
+      tabIndex={isAtTop ? 0 : -1}
     >
       <ArrowLeft className="h-6 w-6" />
     </Button>
