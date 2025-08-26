@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby } from 'lucide-react';
+import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap } from 'lucide-react';
 
 const services = [
   {
@@ -61,6 +61,14 @@ const services = [
     href: '/services#orphanage-home',
     aiHint: 'happy children',
     image: 'https://picsum.photos/1200/800?random=13',
+  },
+  {
+    icon: <GraduationCap className="h-10 w-10 text-accent" />,
+    title: 'Tutorial Center',
+    description: 'Specialized tutorial services for various examinations and educational programs.',
+    href: '/services#tutorial-center',
+    aiHint: 'education classroom',
+    image: 'https://picsum.photos/1200/800?random=14',
   },
 ];
 

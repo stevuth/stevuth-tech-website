@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby } from "lucide-react";
+import { HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const services = [
@@ -65,6 +65,15 @@ const services = [
     imageUrl: "https://picsum.photos/1200/800?random=13",
     features: ["Safe & Loving Home", "Quality Education", "Healthcare & Nutrition", "Recreational Activities", "Adoption Services"],
     aiHint: "happy children",
+  },
+  {
+    id: "tutorial-center",
+    icon: <GraduationCap className="h-10 w-10 text-accent" />,
+    title: "Tutorial Center",
+    description: "Specialized tutorial services for various examinations and educational programs, including adult education and international test preparation.",
+    imageUrl: "https://picsum.photos/1200/800?random=14",
+    features: ["Adult Night School", "WAEC", "JAMB", "SAT", "TOEFL", "IELTS"],
+    aiHint: "education classroom",
   },
 ];
 
