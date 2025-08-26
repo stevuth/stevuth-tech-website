@@ -109,7 +109,7 @@ export default function Home() {
               Driving Growth Across Industries with Focus & Integrity
             </h1>
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-200 mb-6">
-              Right Focus International is a dynamic, multi-sector company committed to excellence and innovation.
+              Right Focus Intl is a dynamic, multi-sector company committed to excellence and innovation.
             </p>
             <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link href="/services">Explore Our Services</Link>
@@ -133,9 +133,9 @@ export default function Home() {
               </div>
             </AnimatedWrapper>
             <AnimatedWrapper animation="slide-in-right">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">About Right Focus International</h2>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">About Right Focus Intl</h2>
               <p className="text-muted-foreground mb-6">
-                Founded on the principles of precision and dedication, Right Focus International has grown into a diversified conglomerate. We are committed to delivering superior value and driving sustainable growth across all our ventures, from local communities to the global marketplace.
+                Founded on the principles of precision and dedication, Right Focus Intl has grown into a diversified conglomerate. We are committed to delivering superior value and driving sustainable growth across all our ventures, from local communities to the global marketplace.
               </p>
               <Button asChild variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 <Link href="/about">Read More</Link>

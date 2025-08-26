@@ -22,17 +22,17 @@ export default function TermsOfServicePage() {
 
             <h2>2. Intellectual Property</h2>
             <p>
-              The Service and its original content, features and functionality are and will remain the exclusive property of Right Focus International and its licensors. The Service is protected by copyright, trademark, and other laws of both the country and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Right Focus International.
+              The Service and its original content, features and functionality are and will remain the exclusive property of Right Focus Intl and its licensors. The Service is protected by copyright, trademark, and other laws of both the country and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Right Focus Intl.
             </p>
 
             <h2>3. Links To Other Web Sites</h2>
             <p>
-              Our Service may contain links to third-party web sites or services that are not owned or controlled by Right Focus International. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third party web sites or services.
+              Our Service may contain links to third-party web sites or services that are not owned or controlled by Right Focus Intl. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third party web sites or services.
             </p>
 
             <h2>4. Limitation of Liability</h2>
             <p>
-              In no event shall Right Focus International, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
+              In no event shall Right Focus Intl, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
             </p>
             
             <h2>5. Changes</h2>

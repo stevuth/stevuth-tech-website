@@ -8,7 +8,7 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const faqs = [
   {
-    question: "What industries does Right Focus International operate in?",
+    question: "What industries does Right Focus Intl operate in?",
     answer: "We are a multi-sector company with primary operations in Agro-allied, Healthcare, Travels & Tourism, Contracting & General Merchandising, and Recharge Card Printing & Data Subscription services.",
   },
   {
@@ -28,7 +28,7 @@ const faqs = [
     answer: "Absolutely. Please fill out the form on our contact page with your specific requirements, including quantity and denomination, and a representative from our Recharge & Data division will provide you with a competitive quote.",
   },
   {
-    question: "How does Right Focus ensure quality in its healthcare supplies?",
+    question: "How does Right Focus Intl ensure quality in its healthcare supplies?",
     answer: "We partner with certified and reputable manufacturers globally. All our medical supplies and equipment undergo rigorous quality checks to ensure they meet international standards before being distributed.",
   },
 ];

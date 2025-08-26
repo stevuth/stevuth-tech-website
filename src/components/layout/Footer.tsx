@@ -49,7 +49,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-primary-foreground/20 pt-6 text-center text-sm text-primary-foreground/50">
-          <p>&copy; {new Date().getFullYear()} Right Focus International. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Right Focus Intl. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

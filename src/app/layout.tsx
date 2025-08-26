@@ -14,7 +14,7 @@ const fontRoboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: 'Right Focus International - Driving Growth Across Industries',
+  title: 'Right Focus Intl - Driving Growth Across Industries',
   description: 'A multi-sector company engaged in Agro-allied, Healthcare, Travels & Tourism, Contracting & General Merchandising, and more.',
   icons: {
     icon: "/favicon.ico",
