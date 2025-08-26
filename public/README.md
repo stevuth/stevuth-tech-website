@@ -1,0 +1,1 @@
+This folder is for static assets. You can place your images, videos, and other files here. They will be served from the root of your application. For example, a file named `hero-video.mp4` in this folder can be accessed at `/hero-video.mp4`.
