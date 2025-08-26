@@ -65,7 +65,7 @@ export function Header() {
         isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent'
       )}
     >
-      <div className="container flex h-20 items-center justify-between px-4 md:px-6">
+      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" aria-label="Back to homepage">
           <Logo />
         </Link>
