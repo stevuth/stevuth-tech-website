@@ -4,15 +4,6 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const services = [
   {
-    id: "contracting",
-    icon: <HardHat className="h-10 w-10 text-accent" />,
-    title: "Contracting & General Merchandising",
-    description: "As a trusted contractor, we deliver excellence in construction, procurement, and comprehensive supply chain solutions. Our merchandising arm sources and supplies a diverse range of high-quality products.",
-    imageUrl: "https://picsum.photos/1200/800?random=4",
-    features: ["Building & Civil Construction", "Government & Private Procurement", "Logistics & Supply Chain", "Import & Export"],
-    aiHint: "construction site",
-  },
-  {
     id: "veterinary",
     icon: <BriefcaseMedical className="h-10 w-10 text-accent" />,
     title: "Veterinary Medical Center",

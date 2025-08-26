@@ -7,22 +7,6 @@ import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, Briefcas
 
 const services = [
   {
-    icon: <HardHat className="h-10 w-10 text-accent" />,
-    title: 'Contracting',
-    description: 'Excellence in construction, procurement, and supply chain solutions.',
-    href: '/services#contracting',
-    aiHint: 'construction site',
-    image: 'https://picsum.photos/1200/800?random=4',
-  },
-  {
-    icon: <ShoppingCart className="h-10 w-10 text-accent" />,
-    title: 'General Merchandising',
-    description: 'Your trusted partner for diverse and quality product sourcing.',
-    href: '/services#merchandising',
-    aiHint: 'product sourcing',
-    image: 'https://picsum.photos/1200/800?random=5',
-  },
-  {
     icon: <BriefcaseMedical className="h-10 w-10 text-accent" />,
     title: 'Veterinary Medical Center',
     description: 'Comprehensive veterinary services including medical treatments, boarding, and professional training.',
