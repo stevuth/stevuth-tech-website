@@ -33,7 +33,7 @@ export function BackButton() {
     <Button
       variant="outline"
       size="icon"
-      className="fixed bottom-5 right-5 z-50 h-12 w-12 rounded-full bg-background/80 shadow-lg backdrop-blur-sm transition-all hover:scale-110"
+      className="fixed top-20 left-5 z-50 h-12 w-12 rounded-full bg-background/80 shadow-lg backdrop-blur-sm transition-all hover:scale-110"
       onClick={handleBack}
       aria-label="Go back"
     >
