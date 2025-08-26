@@ -3,41 +3,41 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Smartphone, CheckCircle, Target, Globe } from 'lucide-react';
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Smartphone, CheckCircle, Target, Globe, ArrowRight } from 'lucide-react';
 
 const services = [
   {
-    icon: <Sprout className="h-10 w-10 text-accent" />,
+    icon: <Sprout className="h-8 w-8 text-accent" />,
     title: 'Agro-allied',
     description: 'Pioneering sustainable farming, processing, and food distribution.',
     href: '/services#agro-allied',
   },
   {
-    icon: <HeartPulse className="h-10 w-10 text-accent" />,
+    icon: <HeartPulse className="h-8 w-8 text-accent" />,
     title: 'Healthcare',
     description: 'Providing essential medical supplies and fostering community health.',
     href: '/services#healthcare',
   },
   {
-    icon: <PlaneTakeoff className="h-10 w-10 text-accent" />,
+    icon: <PlaneTakeoff className="h-8 w-8 text-accent" />,
     title: 'Travels & Tourism',
     description: 'Seamless flight bookings, curated tours, and visa assistance.',
     href: '/services#travels',
   },
   {
-    icon: <HardHat className="h-10 w-10 text-accent" />,
+    icon: <HardHat className="h-8 w-8 text-accent" />,
     title: 'Contracting',
     description: 'Excellence in construction, procurement, and supply chain solutions.',
     href: '/services#contracting',
   },
   {
-    icon: <ShoppingCart className="h-10 w-10 text-accent" />,
+    icon: <ShoppingCart className="h-8 w-8 text-accent" />,
     title: 'General Merchandising',
     description: 'Your trusted partner for diverse and quality product sourcing.',
     href: '/services#merchandising',
   },
   {
-    icon: <Smartphone className="h-10 w-10 text-accent" />,
+    icon: <Smartphone className="h-8 w-8 text-accent" />,
     title: 'Recharge & Data',
     description: 'Bulk printing and distribution of recharge cards and data subscriptions.',
     href: '/services#recharge-data',
@@ -118,31 +118,37 @@ export default function Home() {
       </section>
 
       <section className="py-16 md:py-24 bg-secondary">
-        <div className="container px-4 md:px-6 text-center">
-          <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Services</h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground mb-12">
-              We offer a diverse portfolio of services, each managed with expert focus and a commitment to quality.
-            </p>
-          </AnimatedWrapper>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <AnimatedWrapper key={service.title} delay={index * 100}>
-                <Link href={service.href}>
-                  <Card className="text-left h-full hover:shadow-xl hover:-translate-y-2 transition-transform duration-300 group">
-                    <CardHeader className="flex-row items-center gap-4">
-                      {service.icon}
-                      <CardTitle className="font-headline text-2xl group-hover:text-accent transition-colors">
-                        {service.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">{service.description}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              </AnimatedWrapper>
-            ))}
+        <div className="container px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <AnimatedWrapper>
+              <div className="lg:pr-12">
+                <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Services</h2>
+                <p className="text-muted-foreground mb-8">
+                  We offer a diverse portfolio of services, each managed with expert focus and a commitment to quality. From agriculture to technology, we deliver excellence across the board.
+                </p>
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                    <Link href="/services">View All Services</Link>
+                </Button>
+              </div>
+            </AnimatedWrapper>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {services.map((service, index) => (
+                <AnimatedWrapper key={service.title} delay={index * 100}>
+                    <Link href={service.href} className="block group">
+                        <div className="bg-background rounded-lg p-6 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-accent">
+                           <div className="flex items-start justify-between">
+                                {service.icon}
+                                <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:text-accent" />
+                           </div>
+                           <div className="mt-4">
+                                <h3 className="font-headline text-xl font-semibold">{service.title}</h3>
+                                <p className="text-muted-foreground text-sm mt-1">{service.description}</p>
+                           </div>
+                        </div>
+                    </Link>
+                </AnimatedWrapper>
+              ))}
+            </div>
           </div>
         </div>
       </section>
