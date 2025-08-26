@@ -8,28 +8,28 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const faqs = [
   {
-    question: "What industries does Right Focus Intl operate in?",
-    answer: "We are a multi-sector company with primary operations in Agro-allied, Healthcare, Travels & Tourism, Contracting & General Merchandising, and Recharge Card Printing & Data Subscription services.",
+    question: "What kind of veterinary services do you offer?",
+    answer: "We provide a full range of veterinary services, including medical treatments, vaccinations, boarding facilities, farm visitation and consultations, and assistance with pet travel clearance. We also have a training institute for veterinary professionals.",
   },
   {
-    question: "How can I partner with your Agro-allied division?",
-    answer: "We welcome partnerships in farming, processing, and distribution. Please contact our business development team through our contact page with your proposal, and we will get back to you to discuss potential collaborations.",
+    question: "What is included in your Human Diagnostic Services?",
+    answer: "Our diagnostic services include body weight assessment, blood pressure and blood sugar monitoring, pregnancy tests, and screening for various conditions like malaria, typhoid, infections, and fertility issues.",
   },
   {
-    question: "Do you offer international travel and tour packages?",
-    answer: "Yes, our Travels & Tourism division provides comprehensive services including international and domestic flight bookings, customized tour packages for individuals and groups, and complete visa assistance.",
+    question: "Can you help me with international travel arrangements?",
+    answer: "Yes, our Travels & Tours division offers comprehensive services, including flight bookings, visa applications for tourism, work, or study, international passport procurement, and hotel reservations.",
   },
   {
-    question: "What kind of contracting services do you provide?",
-    answer: "Our contracting services cover a wide range, including civil and building construction, government and private procurement, and end-to-end supply chain management solutions.",
+    question: "What types of jobs can I find through your HR & Outsourcing services?",
+    answer: "We connect qualified professionals with opportunities in various sectors. This includes farm jobs, security positions, teaching roles, cleaning services, laboratory technicians, and agri-business careers.",
   },
   {
-    question: "Can I get a quote for bulk recharge card printing?",
-    answer: "Absolutely. Please fill out the form on our contact page with your specific requirements, including quantity and denomination, and a representative from our Recharge & Data division will provide you with a competitive quote.",
+    question: "What cleaning services do you provide?",
+    answer: "Our Farm & Home Cleaning division offers professional cleaning for residential, commercial, and agricultural properties. This includes fumigation, pest control, home and office cleaning, laundry services, and bush clearing.",
   },
   {
-    question: "How does Right Focus Intl ensure quality in its healthcare supplies?",
-    answer: "We partner with certified and reputable manufacturers globally. All our medical supplies and equipment undergo rigorous quality checks to ensure they meet international standards before being distributed.",
+    question: "Do you offer educational or tutorial services?",
+    answer: "Yes, our Tutorial Center provides specialized preparation for a variety of examinations, including WAEC, JAMB, SAT, TOEFL, and IELTS. We also offer an adult night school program.",
   },
 ];
 
