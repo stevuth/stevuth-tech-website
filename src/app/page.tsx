@@ -111,7 +111,7 @@ export default function Home() {
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-200 mb-8">
               Right Focus International is a dynamic, multi-sector company committed to excellence and innovation.
             </p>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link href="/services">Explore Our Services</Link>
             </Button>
           </AnimatedWrapper>
@@ -137,7 +137,7 @@ export default function Home() {
               <p className="text-muted-foreground mb-6">
                 Founded on the principles of precision and dedication, Right Focus International has grown into a diversified conglomerate. We are committed to delivering superior value and driving sustainable growth across all our ventures, from local communities to the global marketplace.
               </p>
-              <Button asChild variant="outline">
+              <Button asChild variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 <Link href="/about">Read More</Link>
               </Button>
             </AnimatedWrapper>
@@ -220,7 +220,7 @@ export default function Home() {
             <p className="max-w-2xl mx-auto mb-8">
               Let's build a prosperous future together. Reach out to discuss how we can achieve your goals.
             </p>
-            <Button asChild size="lg" variant="secondary" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link href="/contact">Contact Us</Link>
             </Button>
           </AnimatedWrapper>

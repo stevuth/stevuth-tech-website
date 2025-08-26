@@ -1,20 +1,15 @@
 import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster"
 
-const fontInter = Inter({
+const fontRoboto = Roboto({
   subsets: ['latin'],
-  variable: '--font-inter',
-});
-
-const fontPoppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-poppins',
+  weight: ['300', '400', '500', '700'],
+  variable: '--font-roboto',
 });
 
 export const metadata: Metadata = {
@@ -35,8 +30,7 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-body antialiased",
-          fontInter.variable,
-          fontPoppins.variable
+          fontRoboto.variable
         )}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
