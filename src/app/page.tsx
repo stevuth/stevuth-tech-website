@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope } from 'lucide-react';
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users } from 'lucide-react';
 
 const services = [
   {
@@ -61,6 +61,14 @@ const services = [
     href: '/services#human-diagnostics',
     aiHint: 'health diagnostics',
     image: 'https://picsum.photos/1200/800?random=9',
+  },
+  {
+    icon: <Users className="h-10 w-10 text-accent" />,
+    title: 'Human Resources & Outsourcing',
+    description: 'Connecting talent with opportunities through specialized recruitment and outsourcing services across various sectors.',
+    href: '/services#human-resources',
+    aiHint: 'human resources recruitment',
+    image: 'https://picsum.photos/1200/800?random=10',
   },
 ];
 

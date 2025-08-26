@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope } from "lucide-react";
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const services = [
@@ -56,6 +56,15 @@ const services = [
     imageUrl: "https://picsum.photos/1200/800?random=9",
     features: ["Body Weight", "Pregnancy", "Blood Pressure", "Blood Sugar", "Malaria", "Typhoid", "Infections", "HIV/AIDS", "Fertility"],
     aiHint: "health diagnostics",
+  },
+  {
+    id: "human-resources",
+    icon: <Users className="h-10 w-10 text-accent" />,
+    title: "Human Resources & Outsourcing Services",
+    description: "We provide specialized recruitment and outsourcing services, connecting qualified professionals with opportunities in various sectors. Our services cover farm jobs, security, teaching, cleaning, laboratory technicians, and agri-business.",
+    imageUrl: "https://picsum.photos/1200/800?random=10",
+    features: ["Farm Jobs", "Security Jobs", "Teaching Jobs", "Cleaning Jobs", "Laboratory Technicians", "Agri-business"],
+    aiHint: "human resources recruitment",
   },
 ];
 
