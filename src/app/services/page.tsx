@@ -1,0 +1,106 @@
+import Image from "next/image";
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Smartphone, Check } from "lucide-react";
+import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
+
+const services = [
+  {
+    id: "agro-allied",
+    icon: <Sprout className="h-10 w-10 text-accent" />,
+    title: "Agro-allied",
+    description: "We are at the forefront of the agricultural sector, involved in sustainable farming, advanced processing, and efficient food distribution networks. Our goal is to ensure food security and promote agricultural innovation.",
+    imageUrl: "https://picsum.photos/1200/800?random=1",
+    features: ["Sustainable Farming Practices", "Food Processing & Packaging", "Supply Chain & Distribution", "Commodity Trading"],
+    aiHint: "modern agriculture",
+  },
+  {
+    id: "healthcare",
+    icon: <HeartPulse className="h-10 w-10 text-accent" />,
+    title: "Healthcare",
+    description: "Our healthcare division is committed to enhancing community well-being by providing reliable access to essential medical supplies, forging strategic partnerships with health institutions, and supporting community health projects.",
+    imageUrl: "https://picsum.photos/1200/800?random=2",
+    features: ["Medical Equipment Supply", "Pharmaceutical Distribution", "Public Health Partnerships", "Healthcare Logistics"],
+    aiHint: "medical supplies",
+  },
+  {
+    id: "travels",
+    icon: <PlaneTakeoff className="h-10 w-10 text-accent" />,
+    title: "Travels & Tourism",
+    description: "We make global travel accessible and seamless. Our services include hassle-free flight bookings, personalized tours, and expert visa assistance, ensuring memorable and well-organized travel experiences for our clients.",
+    imageUrl: "https://picsum.photos/1200/800?random=3",
+    features: ["International & Domestic Flights", "Customized Tour Packages", "Corporate Travel Management", "Visa Processing Services"],
+    aiHint: "travel tourism",
+  },
+  {
+    id: "contracting",
+    icon: <HardHat className="h-10 w-10 text-accent" />,
+    title: "Contracting & General Merchandising",
+    description: "As a trusted contractor, we deliver excellence in construction, procurement, and comprehensive supply chain solutions. Our merchandising arm sources and supplies a diverse range of high-quality products.",
+    imageUrl: "https://picsum.photos/1200/800?random=4",
+    features: ["Building & Civil Construction", "Government & Private Procurement", "Logistics & Supply Chain", "Import & Export"],
+    aiHint: "construction site",
+  },
+  {
+    id: "recharge-data",
+    icon: <Smartphone className="h-10 w-10 text-accent" />,
+    title: "Recharge Cards & Data Subscription",
+    description: "In the digital age, we keep people connected. We specialize in the bulk printing and nationwide distribution of telecom recharge cards and manage seamless mobile data subscription services for various providers.",
+    imageUrl: "https://picsum.photos/1200/800?random=5",
+    features: ["Bulk Card Printing", "Nationwide Distribution Network", "Digital Top-up Solutions", "Data Bundle Services"],
+    aiHint: "telecommunication network",
+  },
+];
+
+const ServiceSection = ({ service, index }: { service: (typeof services)[0], index: number }) => (
+  <section id={service.id} className={`py-16 md:py-24 ${index % 2 === 1 ? 'bg-secondary' : 'bg-background'}`}>
+    <div className="container px-4 md:px-6">
+      <div className={`grid md:grid-cols-2 gap-12 lg:gap-16 items-center`}>
+        <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
+          <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
+            <Image
+              src={service.imageUrl}
+              alt={service.title}
+              fill
+              className="object-cover"
+              data-ai-hint={service.aiHint}
+            />
+          </div>
+        </AnimatedWrapper>
+        <AnimatedWrapper animation="slide-in-right" className={index % 2 === 1 ? 'md:order-1' : ''}>
+          <div className="flex items-center gap-4 mb-4">
+            {service.icon}
+            <h2 className="text-3xl md:text-4xl font-headline font-bold">{service.title}</h2>
+          </div>
+          <p className="text-muted-foreground mb-6">{service.description}</p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+            {service.features.map(feature => (
+              <li key={feature} className="flex items-center gap-2">
+                <Check className="h-5 w-5 text-accent flex-shrink-0" />
+                <span className="text-sm font-medium">{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </AnimatedWrapper>
+      </div>
+    </div>
+  </section>
+);
+
+
+export default function ServicesPage() {
+  return (
+    <div>
+      <section className="bg-primary text-primary-foreground py-20 md:py-28 text-center">
+        <AnimatedWrapper>
+          <h1 className="text-4xl md:text-6xl font-headline font-bold">Our Services</h1>
+          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
+            A diverse portfolio of expert services, delivered with focus and integrity.
+          </p>
+        </AnimatedWrapper>
+      </section>
+
+      {services.map((service, index) => (
+        <ServiceSection key={service.id} service={service} index={index} />
+      ))}
+    </div>
+  );
+}
