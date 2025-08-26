@@ -38,7 +38,7 @@ const values = [
 export default function AboutPage() {
   return (
     <div>
-      <section className="bg-primary text-primary-foreground py-12 md:py-16 text-center">
+      <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
         <AnimatedWrapper>
           <h1 className="text-4xl md:text-5xl font-headline font-bold">About Right Focus International</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
@@ -47,9 +47,9 @@ export default function AboutPage() {
         </AnimatedWrapper>
       </section>
 
-      <section className="py-12 md:py-16">
+      <section className="py-10 md:py-12">
         <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-10 items-center">
             <AnimatedWrapper animation="slide-in-left">
               <div className="relative aspect-square rounded-lg overflow-hidden shadow-2xl">
                 <Image
@@ -74,9 +74,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16 bg-secondary">
+      <section className="py-10 md:py-12 bg-secondary">
         <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-10 items-center">
             <AnimatedWrapper animation="slide-in-left" className="md:order-2">
               <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
                 <Image
@@ -98,11 +98,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-16">
+      <section className="py-10 md:py-12">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Values</h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground mb-8">
+            <p className="max-w-2xl mx-auto text-muted-foreground mb-6">
               These principles are the bedrock of our corporate culture and guide our decisions every day.
             </p>
           </AnimatedWrapper>
@@ -110,8 +110,8 @@ export default function AboutPage() {
         <div>
           {values.map((value, index) => (
              <div key={value.title} className={index % 2 === 0 ? 'bg-background' : 'bg-primary/5'}>
-                <div className="container px-4 md:px-6 py-12 md:py-16">
-                    <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div className="container px-4 md:px-6 py-10 md:py-12">
+                    <div className="grid md:grid-cols-2 gap-6 lg:gap-10 items-center">
                         <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
                             <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
                                 <Image

@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function ContactPage() {
   return (
     <div>
-      <section className="bg-primary text-primary-foreground py-12 md:py-16 text-center">
+      <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
         <AnimatedWrapper>
           <h1 className="text-4xl md:text-5xl font-headline font-bold">Contact Us</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
@@ -15,9 +15,9 @@ export default function ContactPage() {
         </AnimatedWrapper>
       </section>
 
-      <section className="py-12 md:py-16">
+      <section className="py-10 md:py-12">
         <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-12 gap-8">
+          <div className="grid md:grid-cols-12 gap-6">
             <div className="md:col-span-12 lg:col-span-7">
               <AnimatedWrapper>
                 <h2 className="text-2xl md:text-3xl font-headline font-bold mb-2">Send us a message</h2>
@@ -29,7 +29,7 @@ export default function ContactPage() {
               <AnimatedWrapper animation="slide-in-right">
                 <div className="bg-secondary p-6 md:p-8 rounded-lg">
                   <h3 className="text-2xl font-headline font-bold mb-6">Contact Information</h3>
-                  <div className="space-y-6">
+                  <div className="space-y-4">
                     <div className="flex items-start gap-4">
                       <Phone className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                       <div>

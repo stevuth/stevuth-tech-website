@@ -36,7 +36,7 @@ const faqs = [
 export default function FaqPage() {
   return (
     <div>
-      <section className="bg-primary text-primary-foreground py-12 md:py-16 text-center">
+      <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
         <AnimatedWrapper>
           <h1 className="text-4xl md:text-5xl font-headline font-bold">Frequently Asked Questions</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
@@ -45,7 +45,7 @@ export default function FaqPage() {
         </AnimatedWrapper>
       </section>
       
-      <section className="py-12 md:py-16">
+      <section className="py-10 md:py-12">
         <div className="container max-w-4xl px-4 md:px-6">
           <AnimatedWrapper>
             <Accordion type="single" collapsible className="w-full">
