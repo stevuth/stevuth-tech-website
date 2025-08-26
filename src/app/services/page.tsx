@@ -6,7 +6,7 @@ const services = [
   {
     id: "veterinary",
     icon: <BriefcaseMedical className="h-10 w-10 text-accent" />,
-    title: "Veterinary Medical Center",
+    title: "Veterinary Medical Services",
     description: "Comprehensive veterinary services including medical treatments, boarding, farm consultations, pet travel clearance, and professional training.",
     imageUrl: "https://picsum.photos/1200/800?random=7",
     features: ["Boarding Facilities", "Vaccinations & Treatments", "Farm Visitation & Consultation", "Pet Travel Clearance", "Training Institute"],

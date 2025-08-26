@@ -8,8 +8,8 @@ import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, Briefcas
 const services = [
   {
     icon: <BriefcaseMedical className="h-10 w-10 text-accent" />,
-    title: 'Veterinary Medical Center',
-    description: 'Comprehensive veterinary services including medical treatments, boarding, and professional training.',
+    title: 'Veterinary Medical Services',
+    description: 'Comprehensive veterinary services including medical treatments, boarding, farm consultations, pet travel clearance, and professional training.',
     href: '/services#veterinary',
     aiHint: 'veterinary clinic',
     image: 'https://picsum.photos/1200/800?random=7',
