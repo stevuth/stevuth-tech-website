@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Check, BriefcaseMedical, Network } from "lucide-react";
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const services = [
@@ -56,6 +56,15 @@ const services = [
     imageUrl: "https://picsum.photos/1200/800?random=8",
     features: ["E-commerce", "Buy Recharge Cards & Data", "E-trading", "Receive & Pay Money Worldwide", "Register with Govt/CAC", "Import & Export", "Cryptocurrency"],
     aiHint: "digital network",
+  },
+  {
+    id: "human-diagnostics",
+    icon: <Stethoscope className="h-10 w-10 text-accent" />,
+    title: "Human Diagnostic Services",
+    description: "Offering a range of vital health diagnostic services including body weight assessment, pregnancy tests, blood pressure and blood sugar monitoring, and testing for various conditions like malaria, typhoid, infections, HIV/AIDS, and fertility issues.",
+    imageUrl: "https://picsum.photos/1200/800?random=9",
+    features: ["Body Weight", "Pregnancy", "Blood Pressure", "Blood Sugar", "Malaria", "Typhoid", "Infections", "HIV/AIDS", "Fertility"],
+    aiHint: "health diagnostics",
   },
 ];
 

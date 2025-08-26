@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network } from 'lucide-react';
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope } from 'lucide-react';
 
 const services = [
   {
@@ -61,6 +61,14 @@ const services = [
     href: '/services#network-services',
     aiHint: 'digital network',
     image: 'https://picsum.photos/1200/800?random=8',
+  },
+  {
+    icon: <Stethoscope className="h-10 w-10 text-accent" />,
+    title: 'Human Diagnostic Services',
+    description: 'Offering a range of vital health diagnostic services to monitor and manage your well-being.',
+    href: '/services#human-diagnostics',
+    aiHint: 'health diagnostics',
+    image: 'https://picsum.photos/1200/800?random=9',
   },
 ];
 
