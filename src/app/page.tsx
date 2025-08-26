@@ -127,7 +127,7 @@ export default function Home() {
               </p>
             </AnimatedWrapper>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {services.map((service, index) => (
               <AnimatedWrapper key={service.title} delay={index * 100}>
                   <Link href={service.href} className="block group h-full">
