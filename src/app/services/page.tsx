@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users } from "lucide-react";
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 
 const services = [
@@ -65,6 +65,15 @@ const services = [
     imageUrl: "https://picsum.photos/1200/800?random=10",
     features: ["Farm Jobs", "Security Jobs", "Teaching Jobs", "Cleaning Jobs", "Laboratory Technicians", "Agri-business"],
     aiHint: "human resources recruitment",
+  },
+  {
+    id: "farm-home-cleaning",
+    icon: <Sparkles className="h-10 w-10 text-accent" />,
+    title: "Farm & Home Cleaning",
+    description: "Professional cleaning services for residential, commercial, and agricultural properties, including fumigation, pest control, laundry, and bush clearing.",
+    imageUrl: "https://picsum.photos/1200/800?random=11",
+    features: ["Fumigation", "Pest Control", "Home Cleaning", "Dry Cleaning & Laundry", "Office Cleaning", "Bush Clearing"],
+    aiHint: "professional cleaning",
   },
 ];
 

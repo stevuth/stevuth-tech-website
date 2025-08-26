@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users } from 'lucide-react';
+import { Sprout, HeartPulse, PlaneTakeoff, HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles } from 'lucide-react';
 
 const services = [
   {
@@ -69,6 +69,14 @@ const services = [
     href: '/services#human-resources',
     aiHint: 'human resources recruitment',
     image: 'https://picsum.photos/1200/800?random=10',
+  },
+   {
+    icon: <Sparkles className="h-10 w-10 text-accent" />,
+    title: 'Farm & Home Cleaning',
+    description: 'Professional cleaning services for residential, commercial, and agricultural properties, from fumigation to laundry.',
+    href: '/services#farm-home-cleaning',
+    aiHint: 'professional cleaning',
+    image: 'https://picsum.photos/1200/800?random=11',
   },
 ];
 
