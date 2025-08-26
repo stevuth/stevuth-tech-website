@@ -15,14 +15,6 @@ const services = [
     image: 'https://picsum.photos/1200/800?random=1',
   },
   {
-    icon: <HeartPulse className="h-10 w-10 text-accent" />,
-    title: 'Healthcare',
-    description: 'Providing essential medical supplies and fostering community health.',
-    href: '/services#healthcare',
-    aiHint: 'medical supplies',
-    image: 'https://picsum.photos/1200/800?random=2',
-  },
-  {
     icon: <PlaneTakeoff className="h-10 w-10 text-accent" />,
     title: 'Travels & Tourism',
     description: 'Seamless flight bookings, curated tours, and visa assistance.',

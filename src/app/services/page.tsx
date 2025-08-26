@@ -13,15 +13,6 @@ const services = [
     aiHint: "modern agriculture",
   },
   {
-    id: "healthcare",
-    icon: <HeartPulse className="h-10 w-10 text-accent" />,
-    title: "Healthcare",
-    description: "Our healthcare division is committed to enhancing community well-being by providing reliable access to essential medical supplies, forging strategic partnerships with health institutions, and supporting community health projects.",
-    imageUrl: "https://picsum.photos/1200/800?random=2",
-    features: ["Medical Equipment Supply", "Pharmaceutical Distribution", "Public Health Partnerships", "Healthcare Logistics"],
-    aiHint: "medical supplies",
-  },
-  {
     id: "travels",
     icon: <PlaneTakeoff className="h-10 w-10 text-accent" />,
     title: "Travels & Tourism",
