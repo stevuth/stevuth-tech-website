@@ -96,9 +96,11 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left" className="w-full max-w-sm bg-primary p-0 text-primary-foreground flex flex-col">
                <div className="flex h-16 items-center justify-between px-4 border-b border-primary-foreground/20">
-                    <Link href="/">
-                      <Logo isDark={true} />
-                    </Link>
+                    <SheetClose asChild>
+                      <Link href="/">
+                        <Logo isDark={true} />
+                      </Link>
+                    </SheetClose>
                   <SheetClose asChild>
                      <Button variant="ghost" size="icon" aria-label="Close menu" className="text-primary-foreground hover:bg-white/10">
                         <X className="h-8 w-8" />
