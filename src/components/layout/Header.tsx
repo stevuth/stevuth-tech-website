@@ -90,7 +90,7 @@ export function Header() {
         isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent'
       )}
     >
-      <div className="container flex h-20 items-center justify-between px-4 md:px-6">
+      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" aria-label="Back to homepage">
           <Logo />
         </Link>
@@ -110,7 +110,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="top" className="h-auto p-0">
               <div className="flex flex-col">
-                 <div className="flex h-20 items-center justify-between px-4 border-b">
+                 <div className="flex h-16 items-center justify-between px-4 border-b">
                   <Logo />
                   <SheetClose asChild>
                      <Button variant="ghost" size="icon" aria-label="Close menu">
