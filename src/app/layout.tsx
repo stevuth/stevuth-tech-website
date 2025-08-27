@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster"
 import { BackButton } from '@/components/layout/BackButton';
+import { DonationStrip } from '@/components/layout/DonationStrip';
 
 const fontRoboto = Roboto({
   subsets: ['latin'],
@@ -37,6 +38,7 @@ export default function RootLayout({
         <div className="relative flex min-h-dvh flex-col bg-background">
           <Header />
           <main className="flex-1">{children}</main>
+          <DonationStrip />
           <Footer />
         </div>
         <Toaster />
