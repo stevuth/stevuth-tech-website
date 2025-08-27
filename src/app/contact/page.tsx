@@ -16,8 +16,6 @@ export const metadata: Metadata = {
 const phoneNumbers = [
   { number: "+2348139940522" },
   { number: "+2349121715042" },
-  { number: "+2348035289834" },
-  { number: "+971586946934" },
 ];
 
 export default function ContactPage() {

@@ -62,8 +62,6 @@ export function Footer() {
               <li className="break-all">info@rightfocuscrewinternational.com</li>
               <li className="break-all">+2348139940522</li>
               <li className="break-all">+2349121715042</li>
-              <li className="break-all">+2348035289834</li>
-              <li className="break-all">+971586946934</li>
               <li className="break-all">4, Ogooluwa Street off Cele - Ifihan, Baba Mushin, Olaotan B/S, ljoko Road, Sango Ota, Ogun State.</li>
             </ul>
              <div className="flex space-x-4 mt-6">
