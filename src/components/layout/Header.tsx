@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X } from 'lucide-react';
+import { X, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Logo } from '@/components/Logo';
@@ -17,26 +17,11 @@ const navLinks = [
   { href: '/faq', label: 'FAQ' },
 ];
 
-const AnimatedHamburgerIcon = ({ open }: { open: boolean }) => (
+const HamburgerIcon = () => (
   <div className="flex flex-col justify-around w-6 h-6">
-    <div
-      className={cn(
-        'h-0.5 bg-foreground rounded-full transition-all duration-300 ease-in-out',
-        open ? 'rotate-45 translate-y-[11px]' : 'rotate-0'
-      )}
-    />
-    <div
-      className={cn(
-        'h-0.5 bg-foreground rounded-full transition-all duration-300 ease-in-out',
-        open ? 'opacity-0' : 'opacity-100'
-      )}
-    />
-    <div
-      className={cn(
-        'h-0.5 bg-foreground rounded-full transition-all duration-300 ease-in-out',
-        open ? '-rotate-45 -translate-y-[11px]' : 'rotate-0'
-      )}
-    />
+    <div className="h-0.5 w-full bg-foreground rounded-full" />
+    <div className="h-0.5 w-full bg-foreground rounded-full" />
+    <div className="h-0.5 w-full bg-foreground rounded-full" />
   </div>
 );
 
@@ -74,8 +59,9 @@ export function Header() {
     return (
         <SheetClose asChild>
             <Link href={href} className={cn(
-                "block rounded-md px-4 py-3 text-lg font-medium transition-colors",
-                isActive ? "bg-accent text-accent-foreground" : "hover:bg-secondary"
+                "relative text-2xl font-bold text-white transition-colors hover:text-blue-400 py-3",
+                 "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:bg-blue-500 after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-50",
+                isActive ? "text-blue-400 after:scale-x-50" : ""
             )}>
                 {children}
             </Link>
@@ -105,27 +91,40 @@ export function Header() {
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open menu">
-                <AnimatedHamburgerIcon open={isOpen} />
+                <HamburgerIcon />
               </Button>
             </SheetTrigger>
-            <SheetContent side="top" className="h-auto p-0">
-              <div className="flex flex-col">
-                 <div className="flex h-16 items-center justify-between px-4 border-b">
-                  <Logo />
+            <SheetContent side="left" className="w-full max-w-sm bg-primary p-0 text-primary-foreground flex flex-col">
+               <div className="flex h-16 items-center justify-between px-4 border-b border-primary-foreground/20">
+                 <SheetClose asChild>
+                    <Link href="/">
+                      <Logo isDark={true} />
+                    </Link>
+                  </SheetClose>
                   <SheetClose asChild>
-                     <Button variant="ghost" size="icon" aria-label="Close menu">
+                     <Button variant="ghost" size="icon" aria-label="Close menu" className="text-primary-foreground hover:bg-white/10">
                         <X className="h-7 w-7" />
                       </Button>
                   </SheetClose>
                 </div>
-                <nav className="flex flex-col space-y-2 p-4">
+
+                <nav className="flex flex-col p-6 space-y-5 mt-4">
                   {navLinks.map((link) => (
                     <MobileNavLink key={link.href} href={link.href}>
                       {link.label}
                     </MobileNavLink>
                   ))}
                 </nav>
-              </div>
+
+                <div className="mt-auto p-6 border-t border-primary-foreground/20">
+                    <div className="flex justify-center space-x-6">
+                      <Link href="#" className="text-primary-foreground/70 hover:text-white transition-colors"><Facebook size={24} /></Link>
+                      <Link href="#" className="text-primary-foreground/70 hover:text-white transition-colors"><Twitter size={24} /></Link>
+                      <Link href="#" className="text-primary-foreground/70 hover:text-white transition-colors"><Linkedin size={24} /></Link>
+                      <Link href="#" className="text-primary-foreground/70 hover:text-white transition-colors"><Instagram size={24} /></Link>
+                    </div>
+                </div>
+
             </SheetContent>
           </Sheet>
         </div>
