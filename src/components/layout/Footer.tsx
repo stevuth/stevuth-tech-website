@@ -19,7 +19,9 @@ const footerLinks = {
 const socialLinks = [
     { href: 'https://facebook.com/RightFocusCrewInternational', icon: <Facebook size={20} />, label: 'Facebook' },
     { href: 'https://x.com/rightfocuscrewi', icon: <Twitter size={20} />, label: 'Twitter' },
+    { href: 'https://x.com/rfci4life', icon: <Twitter size={20} />, label: 'Twitter 2' },
     { href: 'https://instagram.com/rfcivetclinic', icon: <Instagram size={20} />, label: 'Instagram' },
+    { href: 'https://instagram.com/rfcintltravelstourism', icon: <Instagram size={20} />, label: 'Instagram 2' },
 ]
 
 export function Footer() {
@@ -66,7 +68,7 @@ export function Footer() {
             </ul>
              <div className="flex space-x-4 mt-6">
                 {socialLinks.map(social => (
-                     <Link key={social.label} href={social.href} aria-label={social.label} className="text-primary-foreground/70 hover:text-accent transition-all duration-300 hover:-translate-y-0.5">
+                     <Link key={social.href} href={social.href} aria-label={social.label} className="text-primary-foreground/70 hover:text-accent transition-all duration-300 hover:-translate-y-0.5">
                         {social.icon}
                      </Link>
                 ))}

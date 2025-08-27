@@ -17,6 +17,14 @@ const navLinks = [
   { href: '/faq', label: 'FAQ' },
 ];
 
+const socialLinks = [
+    { href: 'https://facebook.com/RightFocusCrewInternational', icon: <Facebook size={24} />, label: 'Facebook' },
+    { href: 'https://x.com/rightfocuscrewi', icon: <Twitter size={24} />, label: 'Twitter' },
+    { href: 'https://x.com/rfci4life', icon: <Twitter size={24} />, label: 'Twitter 2' },
+    { href: 'https://instagram.com/rfcivetclinic', icon: <Instagram size={24} />, label: 'Instagram' },
+    { href: 'https://instagram.com/rfcintltravelstourism', icon: <Instagram size={24} />, label: 'Instagram 2' },
+];
+
 const HamburgerIcon = () => (
   <div className="flex flex-col justify-around w-6 h-6">
     <div className="h-0.5 w-full bg-foreground rounded-full" />
@@ -114,9 +122,11 @@ export function Header() {
 
                 <div className="mt-auto p-6 border-t border-primary-foreground/20">
                     <div className="flex justify-center space-x-6">
-                      <Link href="https://facebook.com/RightFocusCrewInternational" className="text-primary-foreground/70 hover:text-white transition-colors"><Facebook size={24} /></Link>
-                      <Link href="https://x.com/rightfocuscrewi" className="text-primary-foreground/70 hover:text-white transition-colors"><Twitter size={24} /></Link>
-                      <Link href="https://instagram.com/rfcivetclinic" className="text-primary-foreground/70 hover:text-white transition-colors"><Instagram size={24} /></Link>
+                      {socialLinks.map(link => (
+                          <Link key={link.href} href={link.href} className="text-primary-foreground/70 hover:text-white transition-colors">
+                              {link.icon}
+                          </Link>
+                      ))}
                     </div>
                 </div>
 
