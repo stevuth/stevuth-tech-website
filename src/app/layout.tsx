@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     images: ['https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg'],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "https://i.postimg.cc/PrhvsgMB/Whats-App-Image-2025-08-21-at-13-03.png",
   },
   robots: {
     index: true,
