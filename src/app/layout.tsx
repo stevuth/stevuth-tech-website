@@ -20,7 +20,7 @@ const fontOpenSans = Open_Sans({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-live-url.com";
-const faviconUrl = "https://i.ibb.co/kXwL9H4/Whats-App-Image-2025-08-21-at-13-03.png";
+const faviconUrl = "/favicon.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
