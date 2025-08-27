@@ -133,7 +133,7 @@ export default function Home() {
               </div>
             </AnimatedWrapper>
             <AnimatedWrapper animation="slide-in-right">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">About Right Focus Intl</h2>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Who We Are</h2>
               <p className="text-muted-foreground mb-6">
                 Founded on the principles of precision and dedication, Right Focus Intl has grown into a diversified conglomerate. We are committed to delivering superior value and driving sustainable growth across all our ventures, from local communities to the global marketplace.
               </p>
