@@ -17,10 +17,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-    { href: '#', icon: <Facebook size={20} />, label: 'Facebook' },
-    { href: '#', icon: <Twitter size={20} />, label: 'Twitter' },
-    { href: '#', icon: <Linkedin size={20} />, label: 'LinkedIn' },
-    { href: '#', icon: <Instagram size={20} />, label: 'Instagram' },
+    { href: 'https://facebook.com/RightFocusCrewInternational', icon: <Facebook size={20} />, label: 'Facebook' },
+    { href: 'https://x.com/rightfocuscrewi', icon: <Twitter size={20} />, label: 'Twitter' },
+    { href: 'https://instagram.com/rfcivetclinic', icon: <Instagram size={20} />, label: 'Instagram' },
 ]
 
 export function Footer() {

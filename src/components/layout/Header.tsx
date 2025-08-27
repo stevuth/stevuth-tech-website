@@ -114,10 +114,9 @@ export function Header() {
 
                 <div className="mt-auto p-6 border-t border-primary-foreground/20">
                     <div className="flex justify-center space-x-6">
-                      <Link href="#" className="text-primary-foreground/70 hover:text-white transition-colors"><Facebook size={24} /></Link>
-                      <Link href="#" className="text-primary-foreground/70 hover:text-white transition-colors"><Twitter size={24} /></Link>
-                      <Link href="#" className="text-primary-foreground/70 hover:text-white transition-colors"><Linkedin size={24} /></Link>
-                      <Link href="#" className="text-primary-foreground/70 hover:text-white transition-colors"><Instagram size={24} /></Link>
+                      <Link href="https://facebook.com/RightFocusCrewInternational" className="text-primary-foreground/70 hover:text-white transition-colors"><Facebook size={24} /></Link>
+                      <Link href="https://x.com/rightfocuscrewi" className="text-primary-foreground/70 hover:text-white transition-colors"><Twitter size={24} /></Link>
+                      <Link href="https://instagram.com/rfcivetclinic" className="text-primary-foreground/70 hover:text-white transition-colors"><Instagram size={24} /></Link>
                     </div>
                 </div>
 
