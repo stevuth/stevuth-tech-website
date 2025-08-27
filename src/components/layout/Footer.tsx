@@ -59,7 +59,10 @@ export function Footer() {
             <h4 className="font-headline font-semibold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
               <li className="break-all">info@rightfocus.com</li>
-              <li className="break-all">+1 234 567 890</li>
+              <li className="break-all">+2348139940522</li>
+              <li className="break-all">+2349121715042</li>
+              <li className="break-all">+2348035289834</li>
+              <li className="break-all">+971586946934</li>
               <li>123 Focus Lane, Growth City</li>
             </ul>
              <div className="flex space-x-4 mt-6">

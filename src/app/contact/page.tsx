@@ -3,6 +3,13 @@ import { ContactForm } from "./ContactForm";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import Link from 'next/link';
 
+const phoneNumbers = [
+  { number: "+2348139940522" },
+  { number: "+2349121715042" },
+  { number: "+2348035289834" },
+  { number: "+971586946934" },
+];
+
 export default function ContactPage() {
   return (
     <div>
@@ -34,7 +41,11 @@ export default function ContactPage() {
                       <Phone className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold">Phone</h4>
-                        <a href="tel:+1234567890" className="text-muted-foreground hover:text-accent transition-colors break-all">+1 234 567 890</a>
+                        <div className="flex flex-col space-y-1">
+                          {phoneNumbers.map((phone) => (
+                             <a key={phone.number} href={`tel:${phone.number}`} className="text-muted-foreground hover:text-accent transition-colors break-all">{phone.number}</a>
+                          ))}
+                        </div>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
