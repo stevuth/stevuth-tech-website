@@ -52,7 +52,7 @@ const services = [
     description: 'Seamless flight bookings, curated tours, and visa assistance.',
     href: '/services#travels-tours',
     aiHint: 'travel tourism',
-    image: 'https://picsum.photos/1200/800?random=12',
+    image: 'https://i.postimg.cc/dtLcpQxW/Whisk-e405484ec8.jpg',
   },
   {
     icon: <Baby className="h-10 w-10 text-accent" />,
