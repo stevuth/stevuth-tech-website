@@ -21,24 +21,24 @@ export default function PrivacyPolicyPage() {
             </p>
 
             <h2>2. Information We Collect</h2>
-            <p>
+            <div>
               We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:
               <ul>
                 <li><strong>Identity Data</strong> includes first name, last name, username or similar identifier.</li>
                 <li><strong>Contact Data</strong> includes billing address, delivery address, email address and telephone numbers.</li>
                 <li><strong>Technical Data</strong> includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
               </ul>
-            </p>
+            </div>
 
             <h2>3. How We Use Your Personal Data</h2>
-            <p>
+            <div>
               We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:
               <ul>
                 <li>Where we need to perform the contract we are about to enter into or have entered into with you.</li>
                 <li>Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.</li>
                 <li>Where we need to comply with a legal obligation.</li>
               </ul>
-            </p>
+            </div>
 
             <h2>4. Data Security</h2>
             <p>
