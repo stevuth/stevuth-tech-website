@@ -20,6 +20,7 @@ const fontOpenSans = Open_Sans({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-live-url.com";
+const faviconUrl = "https://i.postimg.cc/0jTGc7nS/Whats-App-Image-2025-08-21-at-13-03.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -62,9 +63,9 @@ export const metadata: Metadata = {
     images: ['https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg'],
   },
   icons: {
-    icon: "https://i.postimg.cc/0jTGc7nS/Whats-App-Image-2025-08-21-at-13-03.png",
-    shortcut: "https://i.postimg.cc/0jTGc7nS/Whats-App-Image-2025-08-21-at-13-03.png",
-    apple: "https://i.postimg.cc/0jTGc7nS/Whats-App-Image-2025-08-21-at-13-03.png",
+    icon: faviconUrl,
+    shortcut: faviconUrl,
+    apple: faviconUrl,
   },
   robots: {
     index: true,
