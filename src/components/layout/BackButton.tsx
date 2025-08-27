@@ -9,25 +9,11 @@ import { cn } from '@/lib/utils';
 export function BackButton() {
   const router = useRouter();
   const pathname = usePathname();
-  const [isAtTop, setIsAtTop] = useState(true);
   const [isOnHomepage, setIsOnHomepage] = useState(false);
 
   useEffect(() => {
     setIsOnHomepage(pathname === '/');
   }, [pathname]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsAtTop(window.scrollY < 50);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Check on initial render
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const handleBack = () => {
     if (window.history.length > 1) {
@@ -42,18 +28,15 @@ export function BackButton() {
   }
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      className={cn(
-        "fixed top-5 left-5 z-50 transition-all duration-300 hover:scale-110",
-        isAtTop ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-20 pointer-events-none"
-      )}
-      onClick={handleBack}
-      aria-label="Go back"
-      tabIndex={isAtTop ? 0 : -1}
-    >
-      <ArrowLeft className="h-8 w-8" />
-    </Button>
+    <div className="container px-4 md:px-6 pt-4">
+        <Button
+          variant="ghost"
+          onClick={handleBack}
+          aria-label="Go back"
+          className="p-0 h-auto hover:bg-transparent"
+        >
+          <ArrowLeft className="h-6 w-6" />
+        </Button>
+    </div>
   );
 }
