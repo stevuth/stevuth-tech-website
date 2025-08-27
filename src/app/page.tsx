@@ -60,7 +60,7 @@ const services = [
     description: 'Providing a safe and nurturing environment for children in need, offering care, education, and support.',
     href: '/services#orphanage-home',
     aiHint: 'happy children',
-    image: 'https://picsum.photos/1200/800?random=13',
+    image: 'https://i.postimg.cc/J4pr9dxq/result-0.png',
   },
   {
     icon: <GraduationCap className="h-10 w-10 text-accent" />,
