@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap } from "lucide-react";
+import { HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap, Heart } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const services = [
   {
@@ -48,7 +49,7 @@ const services = [
     description: "Professional cleaning services for residential, commercial, and agricultural properties, including fumigation, pest control, laundry, and bush clearing.",
     imageUrl: "https://picsum.photos/1200/800?random=11",
     features: ["Fumigation", "Pest Control", "Home Cleaning", "Dry Cleaning & Laundry", "Office Cleaning", "Bush Clearing"],
-    aiHint: "professional cleaning",
+aiHint: "professional cleaning",
   },
   {
     id: "travels-tours",
@@ -108,9 +109,26 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
               </li>
             ))}
           </ul>
-           <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+           {service.id === 'orphanage-home' ? (
+             <Card className="bg-primary/5 mt-6">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-xl font-headline">
+                  <Heart className="h-6 w-6 text-accent" />
+                  Donate to Support Our Cause
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2 text-sm">
+                <p>Your generous donations help us provide care and support to children in need.</p>
+                <p className="font-semibold">Account Number: <span className="font-mono">1016055464</span></p>
+                <p className="font-semibold">Bank Name: <span className="font-mono">Zenith Bank Plc</span></p>
+                <p className="font-semibold">Account Name: <span className="font-mono">Right Focus Crew International</span></p>
+              </CardContent>
+            </Card>
+           ) : (
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link href="/contact">Contact for Service</Link>
             </Button>
+           )}
         </AnimatedWrapper>
       </div>
     </div>
