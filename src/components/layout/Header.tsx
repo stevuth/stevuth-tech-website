@@ -86,9 +86,9 @@ export function Header() {
                 <X className={cn("absolute h-7 w-7 transition-transform duration-300", isOpen ? "rotate-0 scale-100" : "-rotate-90 scale-0")} />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[85vw] max-w-sm p-0">
-              <div className="flex h-full flex-col">
-                <div className="flex h-20 items-center justify-between px-4 border-b">
+            <SheetContent side="top" className="h-auto p-0">
+              <div className="flex flex-col">
+                 <div className="flex h-20 items-center justify-between px-4 border-b">
                   <Logo />
                   <SheetClose asChild>
                      <Button variant="ghost" size="icon" aria-label="Close menu">
