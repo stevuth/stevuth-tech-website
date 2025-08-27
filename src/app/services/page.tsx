@@ -11,7 +11,7 @@ const services = [
     icon: <BriefcaseMedical className="h-10 w-10 text-accent" />,
     title: "Veterinary Medical Services",
     description: "Comprehensive veterinary services including medical treatments, boarding, farm consultations, pet travel clearance, and professional training.",
-    imageUrl: "https://picsum.photos/1200/800?random=7",
+    imageUrl: "https://i.postimg.cc/TYLkVzZ5/Chat-GPT-Image-Aug-27-2025-11-46-57-AM.png",
     features: ["Boarding Facilities", "Vaccinations & Treatments", "Farm Visitation & Consultation", "Pet Travel Clearance", "Training Institute"],
     aiHint: "veterinary clinic",
   },

@@ -12,7 +12,7 @@ const services = [
     description: 'Comprehensive veterinary services including medical treatments, boarding, farm consultations, pet travel clearance, and professional training.',
     href: '/services#veterinary',
     aiHint: 'veterinary clinic',
-    image: 'https://picsum.photos/1200/800?random=7',
+    image: 'https://i.postimg.cc/TYLkVzZ5/Chat-GPT-Image-Aug-27-2025-11-46-57-AM.png',
   },
   {
     icon: <Network className="h-10 w-10 text-accent" />,
