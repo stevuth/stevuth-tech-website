@@ -5,7 +5,6 @@ import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster"
-import { BackButton } from '@/components/layout/BackButton';
 import { DonationStrip } from '@/components/layout/DonationStrip';
 
 const fontPoppins = Poppins({
@@ -44,7 +43,6 @@ export default function RootLayout({
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
           <Header />
-          <BackButton />
           <main className="flex-1">{children}</main>
           <DonationStrip />
           <Footer />

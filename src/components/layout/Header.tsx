@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { Logo } from '@/components/Logo';
 import { cn } from '@/lib/utils';
+import { BackButton } from './BackButton';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -85,9 +86,12 @@ export function Header() {
       )}
     >
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" aria-label="Back to homepage">
-          <Logo />
-        </Link>
+        <div className="flex items-center gap-2">
+            <BackButton />
+            <Link href="/" aria-label="Back to homepage" className={cn(pathname !== '/' && 'hidden sm:block')}>
+              <Logo />
+            </Link>
+        </div>
         <nav className="hidden items-center space-x-8 md:flex">
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href}>

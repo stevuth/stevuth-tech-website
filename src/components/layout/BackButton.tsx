@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 export function BackButton() {
   const router = useRouter();
   const pathname = usePathname();
-  const [isOnHomepage, setIsOnHomepage] = useState(false);
+  const [isOnHomepage, setIsOnHomepage] = useState(true);
 
   useEffect(() => {
     setIsOnHomepage(pathname === '/');
@@ -28,15 +28,16 @@ export function BackButton() {
   }
 
   return (
-    <div className="container px-4 md:px-6 pt-4">
-        <Button
-          variant="ghost"
-          onClick={handleBack}
-          aria-label="Go back"
-          className="p-0 h-auto hover:bg-transparent"
-        >
-          <ArrowLeft className="h-6 w-6" />
-        </Button>
-    </div>
+    <Button
+      variant="ghost"
+      onClick={handleBack}
+      aria-label="Go back"
+      className={cn(
+        "h-10 w-10 p-0",
+        "hover:bg-transparent text-foreground hover:text-accent"
+      )}
+    >
+      <ArrowLeft className="h-6 w-6" />
+    </Button>
   );
 }
