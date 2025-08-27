@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { CheckCircle, Target, Globe, Users, TrendingUp, ShieldCheck, Lightbulb } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const values = [
   {
@@ -84,9 +84,12 @@ export default function AboutPage() {
               <p className="text-muted-foreground mb-4">
                 Founded over a decade ago with a singular vision, Right Focus Intl began as a specialized contracting firm. Fueled by a commitment to quality and strategic diversification, we have expanded our footprint across key sectors including agro-allied industries, healthcare, and global tourism.
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-6">
                 Our mission is to be a catalyst for growth and development, creating sustainable value for our stakeholders, communities, and partners. We achieve this by maintaining an unwavering focus on operational excellence, integrity, and innovation in every endeavor.
               </p>
+               <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Link href="/contact">Work With Us</Link>
+              </Button>
             </AnimatedWrapper>
           </div>
         </div>
