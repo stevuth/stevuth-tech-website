@@ -75,12 +75,12 @@ export function Footer() {
           </AnimatedWrapper>
         </div>
 
-        <div className="mt-12 border-t border-primary-foreground/20 pt-6 text-center text-sm text-primary-foreground/50">
-            <AnimatedWrapper delay={450}>
+        <div className="mt-12 border-t border-primary-foreground/20 pt-6 flex flex-col items-center justify-center">
+            <AnimatedWrapper delay={450} className="text-center">
                 <div className="mb-4">
                     <Logo isDark={true} />
                 </div>
-                <p>&copy; {new Date().getFullYear()} Right Focus Intl. All Rights Reserved.</p>
+                <p className="text-xs text-white">&copy; 2025 Right Focus Intl. All Rights Reserved. | CAC REG: BN 2701057</p>
             </AnimatedWrapper>
         </div>
       </div>
