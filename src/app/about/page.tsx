@@ -92,30 +92,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-10 md:py-12 bg-secondary">
-        <div className="container px-4 md:px-6">
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-10 items-center">
-            <AnimatedWrapper animation="slide-in-left" className="md:order-2">
-              <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
-                <Image
-                  src="https://picsum.photos/800/450"
-                  alt="Vision for the future"
-                  fill
-                  className="object-cover"
-                  data-ai-hint="future vision"
-                />
-              </div>
-            </AnimatedWrapper>
-            <AnimatedWrapper animation="slide-in-right" className="md:order-1">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Vision</h2>
-              <p className="text-muted-foreground">
-                To be a globally recognized leader across multiple industries, renowned for our innovative solutions, unwavering commitment to quality, and positive impact on society. We envision a future where our strategic initiatives foster economic prosperity and enhance quality of life worldwide.
-              </p>
-            </AnimatedWrapper>
-          </div>
-        </div>
-      </section>
-
       <section className="py-10 md:py-12">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
@@ -149,33 +125,20 @@ export default function AboutPage() {
             </p>
           </AnimatedWrapper>
         </div>
-        <div>
-          {values.map((value, index) => (
-             <div key={value.title} className={index % 2 === 0 ? 'bg-background' : 'bg-primary/5'}>
-                <div className="container px-4 md:px-6 py-10">
-                    <div className="grid md:grid-cols-2 gap-6 lg:gap-10 items-center">
-                        <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
-                            <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
-                                <Image
-                                src={value.image}
-                                alt={value.title}
-                                fill
-                                className="object-cover"
-                                data-ai-hint={value.aiHint}
-                                />
-                            </div>
-                        </AnimatedWrapper>
-                        <AnimatedWrapper animation="slide-in-right" className={index % 2 === 1 ? 'md:order-1' : ''}>
-                            <div className="flex items-center gap-4 mb-4">
+        <div className="container px-4 md:px-6 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {values.map((value, index) => (
+                  <AnimatedWrapper key={value.title} animation="fade-in-up" delay={index * 150}>
+                       <div className="text-center p-6 bg-background rounded-lg shadow-md h-full">
+                            <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/10 mb-6 mx-auto">
                                 {value.icon}
                             </div>
-                            <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4">{value.title}</h3>
-                            <p className="text-muted-foreground mb-6 max-w-md">{value.description}</p>
-                        </AnimatedWrapper>
-                    </div>
-                </div>
-            </div>
-          ))}
+                            <h3 className="text-xl font-headline font-bold mb-2">{value.title}</h3>
+                            <p className="text-muted-foreground text-sm">{value.description}</p>
+                       </div>
+                  </AnimatedWrapper>
+              ))}
+          </div>
         </div>
       </section>
       
