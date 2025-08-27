@@ -36,7 +36,7 @@ const services = [
     description: 'Connecting talent with opportunities through specialized recruitment and outsourcing services across various sectors.',
     href: '/services#human-resources',
     aiHint: 'human resources recruitment',
-    image: 'https://picsum.photos/1200/800?random=10',
+    image: 'https://i.postimg.cc/bvPcFxbP/Whisk-b6498e7b87.jpg',
   },
    {
     icon: <Sparkles className="h-10 w-10 text-accent" />,

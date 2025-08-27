@@ -38,7 +38,7 @@ const services = [
     icon: <Users className="h-10 w-10 text-accent" />,
     title: "Human Resources & Outsourcing Services",
     description: "We provide specialized recruitment and outsourcing services, connecting qualified professionals with opportunities in various sectors. Our services cover farm jobs, security, teaching, cleaning, laboratory technicians, and agri-business.",
-    imageUrl: "https://picsum.photos/1200/800?random=10",
+    imageUrl: "https://i.postimg.cc/bvPcFxbP/Whisk-b6498e7b87.jpg",
     features: ["Farm Jobs", "Security Jobs", "Teaching Jobs", "Cleaning Jobs", "Laboratory Technicians", "Agri-business"],
     aiHint: "human resources recruitment",
   },
