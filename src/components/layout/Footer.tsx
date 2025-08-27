@@ -81,7 +81,7 @@ export function Footer() {
                 <div className="mb-4">
                     <Logo isDark={true} />
                 </div>
-                <p className="text-xs text-white">&copy; 2025 Right Focus Intl. All Rights Reserved. | CAC REG: BN 2701057</p>
+                <p className="text-xs text-white">&copy; 2025 Right focus crew international. All Rights Reserved. | CAC REG: BN 2701057</p>
             </AnimatedWrapper>
         </div>
       </div>

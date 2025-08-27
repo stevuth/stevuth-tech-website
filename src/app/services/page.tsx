@@ -7,10 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Services - Right Focus Intl | Nigeria',
-  description: 'Explore the diverse range of services offered by Right Focus Intl in Nigeria, including Veterinary, Healthcare Diagnostics, Travels & Tours, HR, Cleaning, and more. Find expert solutions for your needs.',
+  title: 'Our Services - Right focus crew international | Nigeria',
+  description: 'Explore the diverse range of services offered by Right focus crew international in Nigeria, including Veterinary, Healthcare Diagnostics, Travels & Tours, HR, Cleaning, and more. Find expert solutions for your needs.',
   keywords: [
-    "Right Focus Intl services",
+    "Right focus crew international services",
     "Veterinary services Nigeria",
     "Human diagnostics Nigeria",
     "Travel agency Lagos",
@@ -107,7 +107,7 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
     "serviceType": service.title,
     "provider": {
       "@type": "Organization",
-      "name": "Right Focus Intl"
+      "name": "Right focus crew international"
     },
     "areaServed": {
       "@type": "Country",

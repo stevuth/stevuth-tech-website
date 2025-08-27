@@ -8,9 +8,9 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FAQ - Right Focus Intl | Answers to Your Questions',
-  description: 'Find answers to frequently asked questions about Right Focus Intl\'s services in Nigeria, including veterinary, diagnostics, travel, HR, and our orphanage home.',
-  keywords: ["Right Focus Intl FAQ", "veterinary services questions", "human diagnostics FAQ", "travel visa questions Nigeria", "orphanage donation info"],
+  title: 'FAQ - Right focus crew international | Answers to Your Questions',
+  description: 'Find answers to frequently asked questions about Right focus crew international\'s services in Nigeria, including veterinary, diagnostics, travel, HR, and our orphanage home.',
+  keywords: ["Right focus crew international FAQ", "veterinary services questions", "human diagnostics FAQ", "travel visa questions Nigeria", "orphanage donation info"],
   alternates: {
     canonical: '/faq',
   },

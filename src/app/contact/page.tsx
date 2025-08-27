@@ -5,9 +5,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Right Focus Intl - Get in Touch from Nigeria',
-  description: 'Contact Right Focus Intl for inquiries about our services in Nigeria. Reach us via phone, email, or our contact form. Our team is ready to assist you.',
-  keywords: ["contact Right Focus Intl", "Right Focus Intl address", "Right Focus Intl phone number", "email Right Focus Intl", "business inquiry Nigeria"],
+  title: 'Contact Right focus crew international - Get in Touch from Nigeria',
+  description: 'Contact Right focus crew international for inquiries about our services in Nigeria. Reach us via phone, email, or our contact form. Our team is ready to assist you.',
+  keywords: ["contact Right focus crew international", "Right focus crew international address", "Right focus crew international phone number", "email Right focus crew international", "business inquiry Nigeria"],
   alternates: {
     canonical: '/contact',
   },

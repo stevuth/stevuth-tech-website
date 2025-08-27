@@ -2,9 +2,9 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - Right Focus Intl',
-  description: 'Read the privacy policy for Right Focus Intl. We are committed to protecting your personal data and respecting your privacy when you use our website and services in Nigeria.',
-  keywords: ["privacy policy", "data protection Nigeria", "user data", "Right Focus Intl privacy"],
+  title: 'Privacy Policy - Right focus crew international',
+  description: 'Read the privacy policy for Right focus crew international. We are committed to protecting your personal data and respecting your privacy when you use our website and services in Nigeria.',
+  keywords: ["privacy policy", "data protection Nigeria", "user data", "Right focus crew international privacy"],
   alternates: {
     canonical: '/privacy-policy',
   },
@@ -31,7 +31,7 @@ export default function PrivacyPolicyPage() {
           <AnimatedWrapper className="prose dark:prose-invert max-w-none">
             <h2>1. Introduction</h2>
             <p>
-              Welcome to Right Focus Intl's Privacy Policy. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.
+              Welcome to Right focus crew international's Privacy Policy. We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.
             </p>
 
             <h2>2. Information We Collect</h2>

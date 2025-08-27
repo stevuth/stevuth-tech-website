@@ -6,7 +6,7 @@ export function Logo({ isDark = false, className }: { isDark?: boolean; classNam
     <div className={cn("flex items-center gap-2", className)}>
       <Image
         src="/logo.png"
-        alt="Right Focus Intl Logo"
+        alt="Right focus crew international Logo"
         width={32}
         height={32}
         className="rounded-full"
@@ -15,7 +15,7 @@ export function Logo({ isDark = false, className }: { isDark?: boolean; classNam
         "font-headline font-bold text-xl tracking-tight",
         isDark ? "text-white" : "text-primary"
       )}>
-        Right Focus Intl
+        Right focus crew intl
       </span>
     </div>
   );
