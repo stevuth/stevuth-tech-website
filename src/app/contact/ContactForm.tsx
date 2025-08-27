@@ -18,7 +18,7 @@ const initialState = {
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" disabled={pending} className="w-full bg-accent hover:bg-accent/90">
+    <Button type="submit" disabled={pending} className="bg-accent hover:bg-accent/90">
       {pending ? "Sending..." : "Send Message"}
     </Button>
   );
