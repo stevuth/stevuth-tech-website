@@ -5,7 +5,7 @@ export function Logo({ isDark = false, className }: { isDark?: boolean; classNam
   return (
     <div className={cn("flex items-center gap-2", className)}>
       <Image
-        src="https://i.ibb.co/kXwL9H4/Whats-App-Image-2025-08-21-at-13-03.png"
+        src="https://i.imgur.com/204F221.png"
         alt="Right Focus Intl Logo"
         width={32}
         height={32}
