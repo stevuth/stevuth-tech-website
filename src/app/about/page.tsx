@@ -183,7 +183,7 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
             <p className="text-sm text-muted-foreground max-w-4xl mx-auto">
-              Right Focus International is a duly registered company under the Corporate Affairs Commission (CAC) with registration number BN 2701057, operating across Agro-Allied, Healthcare, Travels & Tourism, Contracting, General Merchandising.
+              Right Focus International is a duly registered company under the Corporate Affairs Commission (CAC) with registration number BN 2701057, operating across Agro-Allied, Healthcare, Travels & Tourism, Contracting, and General Merchandising.
             </p>
           </AnimatedWrapper>
         </div>
