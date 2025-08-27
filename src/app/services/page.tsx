@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { HardHat, ShoppingCart, Check, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const services = [
   {
@@ -98,7 +100,7 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
             <h2 className="text-2xl md:text-3xl font-headline font-bold">{service.title}</h2>
           </div>
           <p className="text-muted-foreground mb-6">{service.description}</p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mb-6">
             {service.features.map(feature => (
               <li key={feature} className="flex items-center gap-2">
                 <Check className="h-5 w-5 text-accent flex-shrink-0" />
@@ -106,6 +108,9 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
               </li>
             ))}
           </ul>
+           <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Link href="/contact">Contact for Service</Link>
+            </Button>
         </AnimatedWrapper>
       </div>
     </div>
