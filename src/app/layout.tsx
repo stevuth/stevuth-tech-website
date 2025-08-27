@@ -63,10 +63,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "https://i.postimg.cc/PrhvsgMB/Whats-App-Image-2025-08-21-at-13-03.png", sizes: "32x32", type: "image/png" },
+      { url: "https://i.postimg.cc/0jTGc7nS/Whats-App-Image-2025-08-21-at-13-03.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "https://i.postimg.cc/PrhvsgMB/Whats-App-Image-2025-08-21-at-13-03.png", sizes: "180x180", type: "image/png" }
+      { url: "https://i.postimg.cc/0jTGc7nS/Whats-App-Image-2025-08-21-at-13-03.png", sizes: "180x180", type: "image/png" }
     ],
   },
   robots: {
