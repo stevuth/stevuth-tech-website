@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     "General contracting Nigeria",
     "Veterinary services Ota",
     "Human resources Nigeria",
-    "Orphanage home support Nigeria",
+    "Orphanage support Nigeria",
     "Fumigation services Ogun State"
   ],
   openGraph: {
@@ -85,7 +85,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
        <head>
-        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body
         className={cn(
