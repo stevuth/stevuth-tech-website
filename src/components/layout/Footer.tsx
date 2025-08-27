@@ -7,7 +7,7 @@ const footerLinks = {
   discover: [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'Who We Are' },
-    { href: '/services', label: 'Areas of Focus' },
+    { href: '/services', label: 'Solutions We Provide' },
   ],
   essentials: [
     { href: '/faq', label: 'FAQ' },

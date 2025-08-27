@@ -148,7 +148,7 @@ export default function Home() {
       <section className="bg-background">
         <div className="container px-4 md:px-6 py-10 md:py-12 text-center">
             <AnimatedWrapper>
-              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Areas of Focus</h2>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Solutions We Provide</h2>
               <p className="max-w-3xl mx-auto text-muted-foreground mb-6">
                 Delivering expertise across Agro-Allied, Healthcare, Tourism, and more.
               </p>
