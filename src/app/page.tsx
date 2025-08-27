@@ -200,19 +200,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10 md:py-12 bg-background">
+      <section className="py-8 md:py-10 bg-background">
         <div className="container px-4 md:px-6">
            <AnimatedWrapper className="text-center">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Choose Us?</h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-3">Why Choose Us?</h2>
+            <p className="max-w-2xl mx-auto text-muted-foreground mb-4">
               Our core values are the pillars of our success and your guarantee of satisfaction.
             </p>
           </AnimatedWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-center">
             {values.map((value, index) => (
               <AnimatedWrapper key={value.title} animation="fade-in-up" delay={index * 150}>
-                <div className="p-6">
-                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/10 mb-6 mx-auto">
+                <div className="p-4">
+                  <div className="flex items-center justify-center h-14 w-14 rounded-full bg-accent/10 mb-4 mx-auto">
                     {value.icon}
                   </div>
                   <h3 className="text-xl font-headline font-semibold mb-2">{value.title}</h3>
