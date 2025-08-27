@@ -4,6 +4,16 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
 import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Right Focus Intl - Driving Growth Across Industries in Nigeria',
+  description: 'Right Focus Intl is a leading multi-sector company in Nigeria, offering top-tier services in Agro-allied industries, Healthcare, Travels & Tourism, and General Contracting. Partner with us for excellence and innovation.',
+  keywords: ["Right Focus Intl Nigeria", "Agro-allied services", "Healthcare solutions Nigeria", "Travel agency Nigeria", "Contracting company Lagos", "Veterinary clinic Ota", "HR outsourcing Nigeria"],
+  alternates: {
+    canonical: '/',
+  },
+};
 
 const services = [
   {

@@ -1,4 +1,18 @@
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy - Right Focus Intl',
+  description: 'Read the privacy policy for Right Focus Intl. We are committed to protecting your personal data and respecting your privacy when you use our website and services in Nigeria.',
+  keywords: ["privacy policy", "data protection Nigeria", "user data", "Right Focus Intl privacy"],
+  alternates: {
+    canonical: '/privacy-policy',
+  },
+  robots: {
+    index: false,
+    follow: true,
+  }
+};
 
 export default function PrivacyPolicyPage() {
   return (
@@ -25,7 +39,7 @@ export default function PrivacyPolicyPage() {
               We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:
               <ul>
                 <li><strong>Identity Data</strong> includes first name, last name, username or similar identifier.</li>
-                <li><strong>Contact Data</strong> includes delivery address, email address and telephone numbers.</li>
+                <li><strong>Contact Data</strong> includes email address and telephone numbers.</li>
                 <li><strong>Technical Data</strong> includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
               </ul>
             </div>

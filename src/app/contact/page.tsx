@@ -2,6 +2,16 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { ContactForm } from "./ContactForm";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Right Focus Intl - Get in Touch from Nigeria',
+  description: 'Contact Right Focus Intl for inquiries about our services in Nigeria. Reach us via phone, email, or our contact form. Our team is ready to assist you.',
+  keywords: ["contact Right Focus Intl", "Right Focus Intl address", "Right Focus Intl phone number", "email Right Focus Intl", "business inquiry Nigeria"],
+  alternates: {
+    canonical: '/contact',
+  },
+};
 
 const phoneNumbers = [
   { number: "+2348139940522" },

@@ -3,6 +3,16 @@ import { CheckCircle, Target, Globe, Users, TrendingUp, ShieldCheck, Lightbulb }
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About Right Focus Intl - Our Mission and Values in Nigeria',
+  description: 'Discover the history, mission, and core values of Right Focus Intl. Learn why we are a trusted partner for growth and development across multiple sectors in Nigeria.',
+  keywords: ["About Right Focus Intl", "company mission Nigeria", "corporate values Nigeria", "multi-sector company Nigeria", "Nigerian conglomerate"],
+  alternates: {
+    canonical: '/about',
+  },
+};
 
 const values = [
   {
@@ -65,7 +75,7 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6">
           <div className="grid md:grid-cols-2 gap-6 lg:gap-10 items-center">
             <AnimatedWrapper animation="slide-in-left">
-              <div className="relative aspect-square rounded-lg overflow-hidden shadow-2xl">
+              <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
                 <Image
                   src="https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg"
                   alt="Company history collage"

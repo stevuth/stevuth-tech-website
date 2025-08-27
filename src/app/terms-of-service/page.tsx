@@ -1,4 +1,18 @@
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms of Service - Right Focus Intl',
+  description: 'Read the terms of service for using the Right Focus Intl website and services. By using our site, you agree to these terms and conditions.',
+  keywords: ["terms of service", "user agreement", "website terms", "Right Focus Intl terms"],
+  alternates: {
+    canonical: '/terms-of-service',
+  },
+  robots: {
+    index: false,
+    follow: true,
+  }
+};
 
 export default function TermsOfServicePage() {
   return (
