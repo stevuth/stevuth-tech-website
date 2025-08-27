@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
               We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:
               <ul>
                 <li><strong>Identity Data</strong> includes first name, last name, username or similar identifier.</li>
-                <li><strong>Contact Data</strong> includes billing address, delivery address, email address and telephone numbers.</li>
+                <li><strong>Contact Data</strong> includes delivery address, email address and telephone numbers.</li>
                 <li><strong>Technical Data</strong> includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
               </ul>
             </div>
