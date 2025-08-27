@@ -29,7 +29,7 @@ const services = [
     icon: <Stethoscope className="h-10 w-10 text-accent" />,
     title: "Human Diagnostic Services",
     description: "Offering a range of vital health diagnostic services including body weight assessment, pregnancy tests, blood pressure and blood sugar monitoring, and testing for various conditions like malaria, typhoid, infections, HIV/AIDS, and fertility issues.",
-    imageUrl: "https://picsum.photos/1200/800?random=9",
+    imageUrl: "https://i.postimg.cc/Dzkjxxqf/Whisk-8f29c728c8.jpg",
     features: ["Body Weight", "Pregnancy", "Blood Pressure", "Blood Sugar", "Malaria", "Typhoid", "Infections", "HIV/AIDS", "Fertility"],
     aiHint: "health diagnostics",
   },

@@ -28,7 +28,7 @@ const services = [
     description: 'Offering a range of vital health diagnostic services to monitor and manage your well-being.',
     href: '/services#human-diagnostics',
     aiHint: 'health diagnostics',
-    image: 'https://picsum.photos/1200/800?random=9',
+    image: 'https://i.postimg.cc/Dzkjxxqf/Whisk-8f29c728c8.jpg',
   },
   {
     icon: <Users className="h-10 w-10 text-accent" />,
