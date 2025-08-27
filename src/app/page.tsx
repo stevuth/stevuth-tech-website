@@ -157,7 +157,7 @@ export default function Home() {
         <div>
             {services.map((service, index) => (
                 <div key={service.title} className={index % 2 === 0 ? 'bg-background' : 'bg-primary/5'}>
-                    <div className="container px-4 md:px-6 py-10 md:py-12">
+                    <div className="container px-4 md:px-6 py-10">
                         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-center">
                            <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
                                 <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
@@ -186,6 +186,17 @@ export default function Home() {
                     </div>
                 </div>
             ))}
+        </div>
+      </section>
+      
+      <section className="bg-accent text-accent-foreground">
+        <div className="container px-4 md:px-6 py-10 text-center">
+          <AnimatedWrapper>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Partner with Right Focus Intl today — let’s grow together.</h2>
+            <Button asChild size="lg" variant="cta" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+          </AnimatedWrapper>
         </div>
       </section>
 
