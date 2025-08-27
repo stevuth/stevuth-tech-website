@@ -7,9 +7,9 @@ import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, Briefcas
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Right focus crew international - Driving Growth Across Industries in Nigeria',
-  description: 'Right focus crew international is a leading multi-sector company in Nigeria, offering top-tier services in Agro-allied industries, Healthcare, Travels & Tours, and General Contracting. Partner with us for excellence and innovation.',
-  keywords: ["Right focus crew international Nigeria", "Agro-allied services", "Healthcare solutions Nigeria", "Travel agency Nigeria", "Contracting company Lagos", "Veterinary clinic Ota", "HR outsourcing Nigeria"],
+  title: 'Right Focus Crew Intl - Driving Growth Across Industries in Nigeria',
+  description: 'Right Focus Crew Intl is a leading multi-sector company in Nigeria, offering top-tier services in Agro-allied industries, Healthcare, Travels & Tours, and General Contracting. Partner with us for excellence and innovation.',
+  keywords: ["Right Focus Crew Intl Nigeria", "Agro-allied services", "Healthcare solutions Nigeria", "Travel agency Nigeria", "Contracting company Lagos", "Veterinary clinic Ota", "HR outsourcing Nigeria"],
   alternates: {
     canonical: '/',
   },
@@ -119,7 +119,7 @@ export default function Home() {
               Driving Growth Across Industries with Focus & Integrity
             </h1>
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-200 mb-6">
-              Right focus crew international is a dynamic, multi-sector company committed to excellence and innovation.
+              Right Focus Crew Intl is a dynamic, multi-sector company committed to excellence and innovation.
             </p>
             <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link href="/services">Explore Our Services</Link>
@@ -147,7 +147,7 @@ export default function Home() {
             <AnimatedWrapper animation="slide-in-right">
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Who We Are</h2>
               <p className="text-muted-foreground mb-6 text-sm md:text-base">
-                We are a dynamic and forward-thinking conglomerate, built on a foundation of integrity and a relentless pursuit of excellence. At Right focus crew international, we are a team of innovators and industry experts dedicated to creating sustainable value and driving growth across diverse sectors.
+                We are a dynamic and forward-thinking conglomerate, built on a foundation of integrity and a relentless pursuit of excellence. At Right Focus Crew Intl, we are a team of innovators and industry experts dedicated to creating sustainable value and driving growth across diverse sectors.
               </p>
               <Button asChild variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                 <Link href="/about">Read More</Link>
@@ -205,7 +205,7 @@ export default function Home() {
       <section className="bg-accent text-accent-foreground">
         <div className="container px-4 md:px-6 py-10 text-center">
           <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Partner with Right focus crew international today — let’s grow together.</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Partner with Right Focus Crew Intl today — let’s grow together.</h2>
             <Button asChild size="lg" variant="cta" className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link href="/contact">Contact Us</Link>
             </Button>

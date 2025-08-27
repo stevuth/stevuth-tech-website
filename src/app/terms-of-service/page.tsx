@@ -2,9 +2,9 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - Right focus crew international',
-  description: 'Read the terms of service for using the Right focus crew international website and services. By using our site, you agree to these terms and conditions.',
-  keywords: ["terms of service", "user agreement", "website terms", "Right focus crew international terms"],
+  title: 'Terms of Service - Right Focus Crew Intl',
+  description: 'Read the terms of service for using the Right Focus Crew Intl website and services. By using our site, you agree to these terms and conditions.',
+  keywords: ["terms of service", "user agreement", "website terms", "Right Focus Crew Intl terms"],
   alternates: {
     canonical: '/terms-of-service',
   },
@@ -36,12 +36,12 @@ export default function TermsOfServicePage() {
 
             <h2>2. Intellectual Property</h2>
             <p>
-              The Service and its original content, features and functionality are and will remain the exclusive property of Right focus crew international and its licensors. The Service is protected by copyright, trademark, and other laws of both the country and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Right focus crew international.
+              The Service and its original content, features and functionality are and will remain the exclusive property of Right Focus Crew Intl and its licensors. The Service is protected by copyright, trademark, and other laws of both the country and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Right Focus Crew Intl.
             </p>
 
             <h2>3. Limitation of Liability</h2>
             <p>
-              In no event shall Right focus crew international, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
+              In no event shall Right Focus Crew Intl, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
             </p>
             
             <h2>4. Changes</h2>

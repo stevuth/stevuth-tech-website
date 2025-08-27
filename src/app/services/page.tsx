@@ -7,10 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Services - Right focus crew international | Nigeria',
-  description: 'Explore the diverse range of services offered by Right focus crew international in Nigeria, including Veterinary, Healthcare Diagnostics, Travels & Tours, HR, Cleaning, and more. Find expert solutions for your needs.',
+  title: 'Our Services - Right Focus Crew Intl | Nigeria',
+  description: 'Explore the diverse range of services offered by Right Focus Crew Intl in Nigeria, including Veterinary, Healthcare Diagnostics, Travels & Tours, HR, Cleaning, and more. Find expert solutions for your needs.',
   keywords: [
-    "Right focus crew international services",
+    "Right Focus Crew Intl services",
     "Veterinary services Nigeria",
     "Human diagnostics Nigeria",
     "Travel agency Lagos",
@@ -107,7 +107,7 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
     "serviceType": service.title,
     "provider": {
       "@type": "Organization",
-      "name": "Right focus crew international"
+      "name": "Right Focus Crew Intl"
     },
     "areaServed": {
       "@type": "Country",
@@ -166,7 +166,7 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
                   <p>Your generous donations help us provide care and support to children in need.</p>
                   <p className="font-semibold">Account Number: <span className="font-mono">1016055464</span></p>
                   <p className="font-semibold">Bank Name: <span className="font-mono">Zenith Bank Plc</span></p>
-                  <p className="font-semibold">Account Name: <span className="font-mono">Right Focus Crew International</span></p>
+                  <p className="font-semibold">Account Name: <span className="font-mono">Right Focus Crew Intl</span></p>
                 </CardContent>
               </Card>
              ) : (
