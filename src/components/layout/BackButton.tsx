@@ -43,17 +43,17 @@ export function BackButton() {
 
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="icon"
       className={cn(
-        "fixed top-5 left-5 z-50 h-12 w-12 rounded-full bg-background/80 shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-110",
+        "fixed top-5 left-5 z-50 transition-all duration-300 hover:scale-110",
         isAtTop ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-20 pointer-events-none"
       )}
       onClick={handleBack}
       aria-label="Go back"
       tabIndex={isAtTop ? 0 : -1}
     >
-      <ArrowLeft className="h-6 w-6" />
+      <ArrowLeft className="h-8 w-8" />
     </Button>
   );
 }
