@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Logo } from '@/components/Logo';
@@ -16,6 +16,29 @@ const navLinks = [
   { href: '/contact', label: 'Contact Us' },
   { href: '/faq', label: 'FAQ' },
 ];
+
+const AnimatedHamburgerIcon = ({ open }: { open: boolean }) => (
+  <div className="flex flex-col justify-around w-6 h-6">
+    <div
+      className={cn(
+        'h-0.5 bg-foreground rounded-full transition-all duration-300 ease-in-out',
+        open ? 'rotate-45 translate-y-[11px]' : 'rotate-0'
+      )}
+    />
+    <div
+      className={cn(
+        'h-0.5 bg-foreground rounded-full transition-all duration-300 ease-in-out',
+        open ? 'opacity-0' : 'opacity-100'
+      )}
+    />
+    <div
+      className={cn(
+        'h-0.5 bg-foreground rounded-full transition-all duration-300 ease-in-out',
+        open ? '-rotate-45 -translate-y-[11px]' : 'rotate-0'
+      )}
+    />
+  </div>
+);
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -82,8 +105,7 @@ export function Header() {
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open menu">
-                <Menu className={cn("h-7 w-7 transition-transform duration-300", isOpen ? "rotate-90 scale-0" : "rotate-0 scale-100")} />
-                <X className={cn("absolute h-7 w-7 transition-transform duration-300", isOpen ? "rotate-0 scale-100" : "-rotate-90 scale-0")} />
+                <AnimatedHamburgerIcon open={isOpen} />
               </Button>
             </SheetTrigger>
             <SheetContent side="top" className="h-auto p-0">
