@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import { Poppins, Open_Sans } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/Header';
@@ -8,10 +8,16 @@ import { Toaster } from "@/components/ui/toaster"
 import { BackButton } from '@/components/layout/BackButton';
 import { DonationStrip } from '@/components/layout/DonationStrip';
 
-const fontRoboto = Roboto({
+const fontPoppins = Poppins({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '700'],
-  variable: '--font-roboto',
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
+});
+
+const fontOpenSans = Open_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-open-sans',
 });
 
 export const metadata: Metadata = {
@@ -32,7 +38,8 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-body antialiased",
-          fontRoboto.variable
+          fontPoppins.variable,
+          fontOpenSans.variable
         )}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
