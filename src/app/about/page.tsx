@@ -55,7 +55,7 @@ export default function AboutPage() {
       <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
         <AnimatedWrapper>
           <h1 className="text-4xl md:text-5xl font-headline font-bold">About Right Focus Intl</h1>
-          <p className="mt-4 text-base md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
+          <p className="mt-4 text-base md:text-lg max-w-3xl mx-auto text-primary-foreground/80">
             Learn about our journey, our purpose, and the values that drive us forward.
           </p>
         </AnimatedWrapper>
@@ -78,7 +78,7 @@ export default function AboutPage() {
             <AnimatedWrapper animation="slide-in-right">
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our History & Mission</h2>
               <p className="text-muted-foreground mb-4">
-                Founded over a decade ago with a singular vision, Right Focus Intl began as a specialized contracting firm. Fueled by a commitment to quality and strategic diversification, we have expanded our footprint across key sectors including agro-allied industries, healthcare, and global tourism.
+                With a singular vision, Right Focus Intl began as a specialized contracting firm. Fueled by a commitment to quality and strategic diversification, we have expanded our footprint across key sectors including agro-allied industries, healthcare, and global tourism.
               </p>
               <p className="text-muted-foreground">
                 Our mission is to be a catalyst for growth and development, creating sustainable value for our stakeholders, communities, and partners. We achieve this by maintaining an unwavering focus on operational excellence, integrity, and innovation in every endeavor.
