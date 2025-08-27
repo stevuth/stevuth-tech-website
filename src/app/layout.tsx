@@ -20,7 +20,6 @@ const fontOpenSans = Open_Sans({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-live-url.com";
-const faviconUrl = "/favicon.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -62,11 +61,6 @@ export const metadata: Metadata = {
     description: 'A multi-sector company engaged in Agro-allied, Healthcare, Travels & Tourism, Contracting & General Merchandising, and more.',
     images: ['https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg'],
   },
-  icons: {
-    icon: faviconUrl,
-    shortcut: faviconUrl,
-    apple: faviconUrl,
-  },
   robots: {
     index: true,
     follow: true,
@@ -88,7 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
        <head>
-        <link rel="icon" href={faviconUrl} type="image/png" sizes="any" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="any" />
       </head>
       <body
         className={cn(
