@@ -10,28 +10,24 @@ const values = [
     title: "Innovation & Excellence",
     description: "We constantly push boundaries and embrace new technologies to deliver exceptional results and set new industry standards.",
     aiHint: "innovation technology",
-    image: "https://picsum.photos/1200/800?random=1",
   },
   {
     icon: <CheckCircle className="h-10 w-10 text-accent" />,
     title: "Integrity & Transparency",
     description: "Our operations are guided by strong ethical principles, ensuring trust and honesty in all our partnerships and dealings.",
     aiHint: "trust handshake",
-    image: "https://picsum.photos/1200/800?random=2",
   },
   {
     icon: <Globe className="h-10 w-10 text-accent" />,
     title: "Global Perspective",
     description: "With a deep understanding of global markets, we create opportunities and build connections that transcend borders.",
     aiHint: "global connections",
-    image: "https://picsum.photos/1200/800?random=3",
   },
   {
     icon: <Users className="h-10 w-10 text-accent" />,
     title: "Customer-Centricity",
     description: "Our clients are at the heart of everything we do. We are dedicated to understanding their needs and exceeding their expectations.",
     aiHint: "customer support",
-    image: "https://picsum.photos/1200/800?random=4",
   },
 ];
 
@@ -59,7 +55,7 @@ export default function AboutPage() {
       <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
         <AnimatedWrapper>
           <h1 className="text-4xl md:text-5xl font-headline font-bold">About Right Focus Intl</h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
+          <p className="mt-4 text-base md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
             Learn about our journey, our purpose, and the values that drive us forward.
           </p>
         </AnimatedWrapper>
