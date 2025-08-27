@@ -20,7 +20,7 @@ const services = [
     description: 'Integrated digital solutions including e-commerce, secure payments, and global trade services.',
     href: '/services#network-services',
     aiHint: 'digital network',
-    image: 'https://picsum.photos/1200/800?random=8',
+    image: 'https://i.postimg.cc/8CfG6XT1/Whisk-ebb171bffb.jpg',
   },
   {
     icon: <Stethoscope className="h-10 w-10 text-accent" />,

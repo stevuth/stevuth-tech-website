@@ -20,7 +20,7 @@ const services = [
     icon: <Network className="h-10 w-10 text-accent" />,
     title: "Network Services",
     description: "Integrated digital solutions including e-commerce, secure payments, and global trade services. We facilitate everything from online shopping to international cryptocurrency transactions.",
-    imageUrl: "https://picsum.photos/1200/800?random=8",
+    imageUrl: "https://i.postimg.cc/8CfG6XT1/Whisk-ebb171bffb.jpg",
     features: ["E-commerce", "Buy Recharge Cards & Data", "E-trading", "Receive & Pay Money Worldwide", "Register with Govt/CAC", "Import & Export", "Cryptocurrency"],
     aiHint: "digital network",
   },
