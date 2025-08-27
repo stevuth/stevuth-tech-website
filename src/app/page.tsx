@@ -134,7 +134,7 @@ export default function Home() {
             </AnimatedWrapper>
             <AnimatedWrapper animation="slide-in-right">
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Who We Are</h2>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6 text-sm md:text-base">
                 We are a dynamic and forward-thinking conglomerate, built on a foundation of integrity and a relentless pursuit of excellence. At Right Focus Intl, we are a team of innovators and industry experts dedicated to creating sustainable value and driving growth across diverse sectors.
               </p>
               <Button asChild variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
