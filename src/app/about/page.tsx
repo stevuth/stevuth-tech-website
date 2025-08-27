@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CheckCircle, Target, Globe, Users } from "lucide-react";
+import { CheckCircle, Target, Globe, Users, TrendingUp, ShieldCheck, Lightbulb } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -33,6 +33,24 @@ const values = [
     aiHint: "customer support",
     image: "https://picsum.photos/1200/800?random=4",
   },
+];
+
+const trustFactors = [
+  {
+    icon: <TrendingUp className="h-10 w-10 text-primary" />,
+    title: "Proven Experience",
+    description: "With over a decade of navigating complex market dynamics, our seasoned expertise ensures we deliver on our promises with precision and deep industry knowledge."
+  },
+  {
+    icon: <ShieldCheck className="h-10 w-10 text-primary" />,
+    title: "Unwavering Reliability",
+    description: "Our commitment to integrity and transparency is the cornerstone of our operations. Clients trust us to act in their best interest, every single time."
+  },
+  {
+    icon: <Lightbulb className="h-10 w-10 text-primary" />,
+    title: "Continuous Innovation",
+    description: "We are relentlessly driven to find better, smarter, and more effective ways to achieve our goals, ensuring our partners always stay ahead of the curve."
+  }
 ];
 
 export default function AboutPage() {
@@ -99,6 +117,30 @@ export default function AboutPage() {
       </section>
 
       <section className="py-10 md:py-12">
+        <div className="container px-4 md:px-6 text-center">
+          <AnimatedWrapper>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Trust Us?</h2>
+            <p className="max-w-3xl mx-auto text-muted-foreground mb-8">
+              Our success is built on a foundation of trust, earned through decades of dedication and excellence.
+            </p>
+          </AnimatedWrapper>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {trustFactors.map((factor, index) => (
+              <AnimatedWrapper key={factor.title} animation="fade-in-up" delay={index * 150}>
+                <div className="p-6">
+                   <div className="flex items-center justify-center h-20 w-20 rounded-full bg-accent/10 mb-6 mx-auto">
+                    {factor.icon}
+                  </div>
+                  <h3 className="text-xl font-headline font-bold mb-2">{factor.title}</h3>
+                  <p className="text-muted-foreground">{factor.description}</p>
+                </div>
+              </AnimatedWrapper>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 md:py-12 bg-primary/5">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Values</h2>
