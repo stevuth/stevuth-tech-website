@@ -19,13 +19,15 @@ const navLinks = [
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -49,7 +51,7 @@ export function Header() {
     return (
         <SheetClose asChild>
             <Link href={href} className={cn(
-                "block rounded-md px-3 py-2 text-base font-medium",
+                "block rounded-md px-4 py-3 text-lg font-medium transition-colors",
                 isActive ? "bg-accent text-accent-foreground" : "hover:bg-secondary"
             )}>
                 {children}
@@ -65,11 +67,11 @@ export function Header() {
         isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent'
       )}
     >
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="container flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" aria-label="Back to homepage">
           <Logo />
         </Link>
-        <nav className="hidden items-center space-x-6 md:flex">
+        <nav className="hidden items-center space-x-8 md:flex">
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href}>
               {link.label}
@@ -77,25 +79,24 @@ export function Header() {
           ))}
         </nav>
         <div className="md:hidden">
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Open menu</span>
+              <Button variant="ghost" size="icon" aria-label="Open menu">
+                <Menu className={cn("h-7 w-7 transition-transform duration-300", isOpen ? "rotate-90 scale-0" : "rotate-0 scale-100")} />
+                <X className={cn("absolute h-7 w-7 transition-transform duration-300", isOpen ? "rotate-0 scale-100" : "-rotate-90 scale-0")} />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[80vw] p-4">
-              <div className="flex flex-col">
-                <div className="mb-8 flex justify-between items-center">
+            <SheetContent side="right" className="w-[85vw] max-w-sm p-0">
+              <div className="flex h-full flex-col">
+                <div className="flex h-20 items-center justify-between px-4 border-b">
                   <Logo />
                   <SheetClose asChild>
-                     <Button variant="ghost" size="icon">
-                        <X className="h-6 w-6" />
-                        <span className="sr-only">Close menu</span>
+                     <Button variant="ghost" size="icon" aria-label="Close menu">
+                        <X className="h-7 w-7" />
                       </Button>
                   </SheetClose>
                 </div>
-                <nav className="flex flex-col space-y-2">
+                <nav className="flex flex-col space-y-2 p-4">
                   {navLinks.map((link) => (
                     <MobileNavLink key={link.href} href={link.href}>
                       {link.label}
