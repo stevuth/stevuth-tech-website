@@ -59,7 +59,7 @@ export function Footer() {
           <AnimatedWrapper delay={300}>
             <h4 className="font-headline font-semibold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li className="break-all">info@rightfocus.com</li>
+              <li className="break-all">info@rightfocusintl.com</li>
               <li className="break-all">+2348139940522</li>
               <li className="break-all">+2349121715042</li>
               <li className="break-all">+2348035289834</li>
