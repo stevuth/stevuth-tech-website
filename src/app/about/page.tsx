@@ -80,6 +80,7 @@ export default function AboutPage() {
                   src="https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg"
                   alt="Company history collage"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                   data-ai-hint="corporate history"
                 />

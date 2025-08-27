@@ -137,6 +137,7 @@ export default function Home() {
                   src="https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg"
                   alt="Team collaboration"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                   data-ai-hint="corporate team"
                  />
@@ -175,6 +176,7 @@ export default function Home() {
                                     src={service.image}
                                     alt={service.title}
                                     fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     className="object-cover"
                                     data-ai-hint={service.aiHint}
                                     />

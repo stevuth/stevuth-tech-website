@@ -133,6 +133,7 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
                 src={service.imageUrl}
                 alt={service.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 data-ai-hint={service.aiHint}
               />
