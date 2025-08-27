@@ -124,7 +124,7 @@ export default function Home() {
             <AnimatedWrapper animation="slide-in-left">
               <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
                  <Image
-                  src="https://picsum.photos/600/800"
+                  src="https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg"
                   alt="Team collaboration"
                   fill
                   className="object-cover"
