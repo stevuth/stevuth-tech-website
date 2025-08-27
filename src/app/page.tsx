@@ -44,7 +44,7 @@ const services = [
     description: 'Professional cleaning services for residential, commercial, and agricultural properties, from fumigation to laundry.',
     href: '/services#farm-home-cleaning',
     aiHint: 'professional cleaning',
-    image: 'https://picsum.photos/1200/800?random=11',
+    image: 'https://i.postimg.cc/kX97Hddz/Whisk-f3c2b5e9e7.jpg',
   },
   {
     icon: <Plane className="h-10 w-10 text-accent" />,

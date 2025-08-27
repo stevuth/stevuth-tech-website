@@ -47,7 +47,7 @@ const services = [
     icon: <Sparkles className="h-10 w-10 text-accent" />,
     title: "Farm & Home Cleaning",
     description: "Professional cleaning services for residential, commercial, and agricultural properties, including fumigation, pest control, laundry, and bush clearing.",
-    imageUrl: "https://picsum.photos/1200/800?random=11",
+    imageUrl: "https://i.postimg.cc/kX97Hddz/Whisk-f3c2b5e9e7.jpg",
     features: ["Fumigation", "Pest Control", "Home Cleaning", "Dry Cleaning & Laundry", "Office Cleaning", "Bush Clearing"],
 aiHint: "professional cleaning",
   },
