@@ -62,7 +62,7 @@ export default function ContactPage() {
                       <Mail className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold">Email</h4>
-                        <a href="mailto:info@rightfocusintl.com" className="text-muted-foreground hover:text-accent transition-colors break-all">info@rightfocusintl.com</a>
+                        <a href="mailto:info@rightfocuscrewinternational.com" className="text-muted-foreground hover:text-accent transition-colors break-all">info@rightfocuscrewinternational.com</a>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
