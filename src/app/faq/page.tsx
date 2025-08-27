@@ -31,6 +31,10 @@ const faqs = [
     question: "Do you offer educational or tutorial services?",
     answer: "Yes, our Tutorial Center provides specialized preparation for a variety of examinations, including WAEC, JAMB, SAT, TOEFL, and IELTS. We also offer an adult night school program.",
   },
+  {
+    question: "How can I donate to the Orphanage Home?",
+    answer: "Your support is greatly appreciated. You can donate to our cause through the following bank details: Account Name: Right Focus Crew International, Bank Name: Zenith Bank Plc, Account Number: 1016055464. Donations help us provide care, education, and a safe environment for the children.",
+  },
 ];
 
 export default function FaqPage() {
