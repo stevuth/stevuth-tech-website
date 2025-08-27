@@ -71,7 +71,7 @@ export default function AboutPage() {
             <AnimatedWrapper animation="slide-in-left">
               <div className="relative aspect-square rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="https://picsum.photos/800/800"
+                  src="https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg"
                   alt="Company history collage"
                   fill
                   className="object-cover"
