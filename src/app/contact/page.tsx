@@ -59,7 +59,7 @@ export default function ContactPage() {
                       <MapPin className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold">Address</h4>
-                        <p className="text-muted-foreground">123 Focus Lane, Growth City, 10101</p>
+                        <p className="text-muted-foreground">4, Ogooluwa Street off Cele - Ifihan, Baba Mushin, Olaotan B/S, ljoko Road, Sango Ota, Ogun State.</p>
                       </div>
                     </div>
                      <div className="flex items-start gap-4">
