@@ -68,7 +68,7 @@ const services = [
     description: 'Specialized tutorial services for various examinations and educational programs.',
     href: '/services#tutorial-center',
     aiHint: 'education classroom',
-    image: 'https://picsum.photos/1200/800?random=14',
+    image: 'https://i.postimg.cc/V63J3ZFv/aiease-1756298208694.jpg',
   },
 ];
 
