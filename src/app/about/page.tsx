@@ -84,12 +84,9 @@ export default function AboutPage() {
               <p className="text-muted-foreground mb-4">
                 Founded over a decade ago with a singular vision, Right Focus Intl began as a specialized contracting firm. Fueled by a commitment to quality and strategic diversification, we have expanded our footprint across key sectors including agro-allied industries, healthcare, and global tourism.
               </p>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground">
                 Our mission is to be a catalyst for growth and development, creating sustainable value for our stakeholders, communities, and partners. We achieve this by maintaining an unwavering focus on operational excellence, integrity, and innovation in every endeavor.
               </p>
-               <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link href="/contact">Work With Us</Link>
-              </Button>
             </AnimatedWrapper>
           </div>
         </div>
@@ -143,8 +140,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-10 md:py-12 bg-primary/5">
-        <div className="container px-4 md:px-6 text-center">
+      <section className="bg-primary/5">
+        <div className="container px-4 md:px-6 py-10 text-center">
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Values</h2>
             <p className="max-w-2xl mx-auto text-muted-foreground mb-6">
@@ -155,7 +152,7 @@ export default function AboutPage() {
         <div>
           {values.map((value, index) => (
              <div key={value.title} className={index % 2 === 0 ? 'bg-background' : 'bg-primary/5'}>
-                <div className="container px-4 md:px-6 py-10 md:py-12">
+                <div className="container px-4 md:px-6 py-10">
                     <div className="grid md:grid-cols-2 gap-6 lg:gap-10 items-center">
                         <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
                             <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
@@ -179,6 +176,20 @@ export default function AboutPage() {
                 </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="bg-primary text-primary-foreground">
+        <div className="container px-4 md:px-6 py-10 text-center">
+          <AnimatedWrapper>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Ready to Grow With Us?</h2>
+            <p className="max-w-2xl mx-auto mb-6">
+              Let's build a prosperous future together. Reach out to discuss how we can achieve your goals.
+            </p>
+            <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Link href="/contact">Talk to Us Today</Link>
+            </Button>
+          </AnimatedWrapper>
         </div>
       </section>
     </div>
