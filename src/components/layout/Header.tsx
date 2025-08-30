@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { Logo } from '@/components/Logo';
@@ -16,14 +16,6 @@ const navLinks = [
   { href: '/services', label: 'Solutions We Provide' },
   { href: '/contact', label: 'Contact Us' },
   { href: '/faq', label: 'FAQ' },
-];
-
-const socialLinks = [
-    { href: 'https://facebook.com/RightFocusCrewInternational', icon: <Facebook size={24} />, label: 'Facebook' },
-    { href: 'https://x.com/rightfocuscrewi', icon: <Twitter size={24} />, label: 'Twitter' },
-    { href: 'https://x.com/rfci4life', icon: <Twitter size={24} />, label: 'Twitter 2' },
-    { href: 'https://instagram.com/rfcivetclinic', icon: <Instagram size={24} />, label: 'Instagram' },
-    { href: 'https://instagram.com/rfcintltravelstourism', icon: <Instagram size={24} />, label: 'Instagram 2' },
 ];
 
 const HamburgerIcon = () => (
@@ -131,13 +123,6 @@ export function Header() {
                 </nav>
 
                 <div className="mt-auto p-6 border-t border-primary-foreground/20">
-                    <div className="flex justify-center space-x-6">
-                      {socialLinks.map(link => (
-                          <Link key={link.href} href={link.href} className="text-primary-foreground/70 hover:text-white transition-colors">
-                              {link.icon}
-                          </Link>
-                      ))}
-                    </div>
                 </div>
 
             </SheetContent>
