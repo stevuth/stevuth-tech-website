@@ -180,9 +180,9 @@ export default function Home() {
       <section className="bg-accent text-accent-foreground">
         <div className="container px-4 md:px-6 py-10 text-center">
           <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Partner with Stevuth Tech today — let’s grow together.</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Ready to Build Your Digital Future?</h2>
             <Button asChild size="lg" variant="cta" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/contact">Get a Quote</Link>
             </Button>
           </AnimatedWrapper>
         </div>
@@ -215,9 +215,9 @@ export default function Home() {
       <section className="bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6 py-10 text-center">
           <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Partner with Us Today</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Let's Build Something Great Together</h2>
             <p className="max-w-2xl mx-auto mb-6">
-              Let's build a prosperous future together. Reach out to discuss how we can achieve your goals.
+             Contact us today to discuss your project and discover how we can help you succeed.
             </p>
             <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link href="/contact">Contact Us</Link>

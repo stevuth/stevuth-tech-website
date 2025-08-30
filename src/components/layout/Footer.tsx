@@ -77,7 +77,7 @@ export function Footer() {
                 <div className="mb-4">
                     <Logo isDark={true} />
                 </div>
-                <p className="text-xs text-white">&copy; 2025 Stevuth Tech. All Rights Reserved. | CAC REG: BN 2701057</p>
+                <p className="text-xs text-white">&copy; 2025 Stevuth Tech. All Rights Reserved.</p>
             </AnimatedWrapper>
         </div>
       </div>
