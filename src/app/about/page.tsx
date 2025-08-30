@@ -7,8 +7,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About Stevuth Tech - Our Mission and Values in Nigeria',
-  description: 'Discover the history, mission, and core values of Stevuth Tech. Learn why we are a trusted partner for growth and development across multiple sectors in Nigeria.',
-  keywords: ["About Stevuth Tech", "company mission Nigeria", "corporate values Nigeria", "multi-sector company Nigeria", "Nigerian conglomerate"],
+  description: 'Discover the history, mission, and core values of Stevuth Tech. Learn why we are a trusted partner for creating powerful and effective web solutions.',
+  keywords: ["About Stevuth Tech", "web development Nigeria", "UI/UX design", "tech company mission", "digital solutions Nigeria"],
   alternates: {
     canonical: '/about',
   },
@@ -24,18 +24,18 @@ const values = [
   {
     icon: <CheckCircle className="h-10 w-10 text-accent" />,
     title: "Integrity & Transparency",
-    description: "Our operations are guided by strong ethical principles, ensuring trust and honesty in all our partnerships and dealings.",
+    description: "Our operations are guided by strong ethical principles, ensuring trust and honesty in all our client partnerships and dealings.",
     aiHint: "trust handshake",
   },
   {
     icon: <Globe className="h-10 w-10 text-accent" />,
-    title: "Global Perspective",
-    description: "With a deep understanding of global markets, we create opportunities and build connections that transcend borders.",
+    title: "Global Standards",
+    description: "With a deep understanding of modern web trends, we create digital experiences that are competitive and effective on a global scale.",
     aiHint: "global connections",
   },
   {
     icon: <Users className="h-10 w-10 text-accent" />,
-    title: "Customer-Centricity",
+    title: "Client-Centricity",
     description: "Our clients are at the heart of everything we do. We are dedicated to understanding their needs and exceeding their expectations.",
     aiHint: "customer support",
   },
@@ -44,18 +44,18 @@ const values = [
 const trustFactors = [
   {
     icon: <TrendingUp className="h-10 w-10 text-primary" />,
-    title: "Proven Experience",
-    description: "With over a decade of navigating complex market dynamics, our seasoned expertise ensures we deliver on our promises with precision and deep industry knowledge."
+    title: "Proven Expertise",
+    description: "With seasoned experience in navigating complex digital challenges, we deliver on our promises with precision and deep industry knowledge."
   },
   {
     icon: <ShieldCheck className="h-10 w-10 text-primary" />,
     title: "Unwavering Reliability",
-    description: "Our commitment to integrity and transparency is the cornerstone of our operations. Clients trust us to act in their best interest, every single time."
+    description: "Our commitment to quality and transparency is the cornerstone of our operations. Clients trust us to act in their best interest, every single time."
   },
   {
     icon: <Lightbulb className="h-10 w-10 text-primary" />,
     title: "Continuous Innovation",
-    description: "We are relentlessly driven to find better, smarter, and more effective ways to achieve our goals, ensuring our partners always stay ahead of the curve."
+    description: "We are relentlessly driven to find better, smarter, and more effective ways to build websites and applications, ensuring our partners stay ahead of the curve."
   }
 ];
 
@@ -66,7 +66,7 @@ export default function AboutPage() {
         <AnimatedWrapper>
           <h1 className="text-4xl md:text-5xl font-headline font-bold">About Stevuth Tech</h1>
           <p className="mt-4 text-base md:text-lg max-w-3xl mx-auto text-primary-foreground/80">
-            Learn about our journey, our purpose, and the values that drive us forward.
+            Learn about our journey, our purpose, and the values that drive us to build the future of the web.
           </p>
         </AnimatedWrapper>
       </section>
@@ -77,23 +77,23 @@ export default function AboutPage() {
             <AnimatedWrapper animation="slide-in-left">
               <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg"
-                  alt="Company history collage"
+                  src="https://picsum.photos/600/400"
+                  alt="A modern office space with developers collaborating"
                   fill
                   sizes="100vw"
                   priority
                   className="object-cover"
-                  data-ai-hint="corporate history"
+                  data-ai-hint="tech collaboration"
                 />
               </div>
             </AnimatedWrapper>
             <AnimatedWrapper animation="slide-in-right">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our History & Mission</h2>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Story & Mission</h2>
               <p className="text-muted-foreground mb-4">
-                With a singular vision, Stevuth Tech began as a specialized contracting firm. Fueled by a commitment to quality and strategic diversification, we have expanded our footprint across key sectors including agro-allied industries, healthcare, and global tourism.
+                Stevuth Tech was founded with a singular vision: to empower businesses by building exceptional digital experiences. Fueled by a commitment to quality and innovation, we specialize in creating high-performance websites, applications, and brand identities that drive growth.
               </p>
               <p className="text-muted-foreground">
-                Our mission is to be a catalyst for growth and development, creating sustainable value for our stakeholders, communities, and partners. We achieve this by maintaining an unwavering focus on operational excellence, integrity, and innovation in every endeavor.
+                Our mission is to be a catalyst for our clients' success. We achieve this by translating their vision into reality through cutting-edge technology, user-centric design, and an unwavering focus on delivering measurable results.
               </p>
             </AnimatedWrapper>
           </div>
@@ -105,7 +105,7 @@ export default function AboutPage() {
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Trust Us?</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground mb-8">
-              Our success is built on a foundation of trust, earned through decades of dedication and excellence.
+              Our success is built on a foundation of trust, earned through dedication and excellence in every project.
             </p>
           </AnimatedWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -129,7 +129,7 @@ export default function AboutPage() {
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Core Values</h2>
             <p className="max-w-2xl mx-auto text-muted-foreground mb-6">
-              These principles are the bedrock of our corporate culture and guide our decisions every day.
+              These principles are the bedrock of our company culture and guide our decisions every day.
             </p>
           </AnimatedWrapper>
         </div>
@@ -149,23 +149,13 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      
-      <section className="py-10 md:py-12">
-        <div className="container px-4 md:px-6 text-center">
-          <AnimatedWrapper>
-            <p className="text-sm text-muted-foreground max-w-4xl mx-auto">
-              Stevuth Tech is a duly registered company under the Corporate Affairs Commission (CAC) with registration number BN 2701057, operating across Agro-Allied, Healthcare, Travels & Tourism, Contracting, and General Merchandising.
-            </p>
-          </AnimatedWrapper>
-        </div>
-      </section>
 
       <section className="bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6 py-10 text-center">
           <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Ready to Grow With Us?</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Ready to Build With Us?</h2>
             <p className="max-w-2xl mx-auto mb-6">
-              Let's build a prosperous future together. Reach out to discuss how we can achieve your goals.
+              Let's create something amazing together. Reach out to discuss how we can bring your ideas to life.
             </p>
             <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
               <Link href="/contact">Talk to Us Today</Link>
