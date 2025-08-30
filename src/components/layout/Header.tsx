@@ -29,6 +29,7 @@ const HamburgerIcon = () => (
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [pageTitle, setPageTitle] = useState('');
   const pathname = usePathname();
   const isHomepage = pathname === '/';
 
@@ -42,6 +43,19 @@ export function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    let title = '';
+    const currentLink = navLinks.find(link => link.href === pathname);
+    if (currentLink && currentLink.href !== '/') {
+      title = currentLink.label;
+    } else if (pathname === '/privacy-policy') {
+      title = 'Privacy Policy';
+    } else if (pathname === '/terms-of-service') {
+      title = 'Terms of Service';
+    }
+    setPageTitle(title);
+  }, [pathname]);
 
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
     const isActive = pathname === href;
@@ -90,7 +104,16 @@ export function Header() {
             )}
         </div>
         
-        <nav className={cn("hidden items-center space-x-8 md:flex", { 'md:hidden': isHomepage && !isScrolled })}>
+        {!isHomepage && (
+           <h1 className={cn(
+              "text-lg font-bold tracking-tight absolute left-1/2 -translate-x-1/2",
+              isScrolled || !isHomepage ? "text-primary" : "text-white"
+            )}>
+              {pageTitle}
+            </h1>
+        )}
+
+        <nav className={cn("hidden items-center space-x-8 md:flex")}>
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href}>
               {link.label}
