@@ -54,12 +54,6 @@ export function RotatingBenefits() {
                     className="rotating-benefits-container"
                     style={{ '--total-items': benefits.length } as React.CSSProperties}
                 >
-                    <div className="rotating-benefits-hub">
-                        <h3 className="font-headline font-bold text-center text-xl md:text-2xl text-primary">
-                            Stevuth Tech – Building Websites That Win Customers
-                        </h3>
-                    </div>
-
                     <div className="rotating-benefits-orbit">
                         {benefits.map((benefit, index) => (
                             <div
