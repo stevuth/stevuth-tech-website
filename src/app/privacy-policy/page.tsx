@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
     <div>
       <section className="bg-primary text-primary-foreground py-12 md:py-16 text-center">
         <AnimatedWrapper>
-          <h1 className="text-4xl md:text-5xl font-headline font-bold">Privacy Policy</h1>
+          <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Privacy Policy</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
             Your privacy is important to us.
           </p>

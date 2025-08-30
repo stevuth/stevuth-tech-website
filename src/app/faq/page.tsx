@@ -52,7 +52,7 @@ export default function FaqPage() {
     <div>
       <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
         <AnimatedWrapper>
-          <h1 className="text-4xl md:text-5xl font-headline font-bold">Frequently Asked Questions</h1>
+          <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Frequently Asked Questions</h1>
           <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
             Find answers to common questions about our services and operations.
           </p>

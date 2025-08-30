@@ -64,7 +64,7 @@ export default function AboutPage() {
     <div>
       <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
         <AnimatedWrapper>
-          <h1 className="text-4xl md:text-5xl font-headline font-bold">About Stevuth Tech</h1>
+          <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">About Stevuth Tech</h1>
           <p className="mt-4 text-base md:text-lg max-w-3xl mx-auto text-primary-foreground/80">
             Learn about our journey, our purpose, and the values that drive us to build the future of the web.
           </p>
@@ -153,7 +153,7 @@ export default function AboutPage() {
       <section className="bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6 py-10 text-center">
           <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Ready to Build With Us?</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-4">Ready to Build With Us?</h2>
             <p className="max-w-2xl mx-auto mb-6">
               Let's create something amazing together. Reach out to discuss how we can bring your ideas to life.
             </p>
