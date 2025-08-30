@@ -89,7 +89,7 @@ const benefits = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative h-[calc(100vh)] w-full flex items-center justify-center text-center text-white overflow-hidden">
+      <section className="relative h-[calc(100vh)] w-full flex items-center justify-start text-left text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <video
           src="/hero-video.mp4"
@@ -101,13 +101,13 @@ export default function Home() {
         />
         <div className="relative z-20 container px-4 md:px-6">
           <AnimatedWrapper>
-            <h1 className="text-4xl md:text-5xl font-headline font-bold tracking-tighter mb-4 text-white">
-             Your Next Customer Is Online, Let’s Get Their Attention
+            <h1 className="text-3xl md:text-4xl font-headline font-bold tracking-tighter mb-4 text-white">
+             Your Next Customer Is Online, <br /> Let’s Get Their Attention
             </h1>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-200 mb-8">
+            <p className="max-w-xl text-md md:text-lg text-slate-200 mb-8">
               We build modern mobile-friendly websites that attract engage and convert visitors into paying customers. No monthly fees, no hidden charges, just powerful websites designed to grow your business.
             </p>
-            <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground !mx-0">
               <Link href="/contact">Start My Project</Link>
             </Button>
           </AnimatedWrapper>
