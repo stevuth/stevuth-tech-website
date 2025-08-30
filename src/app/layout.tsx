@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Poppins, Open_Sans } from 'next/font/google';
+import { Poppins, Inter } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/Header';
@@ -12,10 +12,10 @@ const fontPoppins = Poppins({
   variable: '--font-poppins',
 });
 
-const fontOpenSans = Open_Sans({
+const fontInter = Inter({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-open-sans',
+  variable: '--font-inter',
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-live-url.com";
@@ -90,7 +90,7 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-body antialiased",
           fontPoppins.variable,
-          fontOpenSans.variable
+          fontInter.variable
         )}
       >
         <div className="relative flex min-h-dvh flex-col bg-background">
