@@ -97,7 +97,7 @@ export default function Home() {
           muted
           loop
           playsInline
-          className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
+          className="absolute z-0 w-full h-full object-cover object-center"
         />
         <div className="relative z-20 container px-4 md:px-6">
           <AnimatedWrapper>
