@@ -1,6 +1,6 @@
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { ContactForm } from "./ContactForm";
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Phone, Mail, MessageCircle } from "lucide-react";
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -14,8 +14,7 @@ export const metadata: Metadata = {
 };
 
 const phoneNumbers = [
-  { number: "+2348139940522" },
-  { number: "+2349121715042" },
+  { number: "+2349016772065" },
 ];
 
 export default function ContactPage() {
@@ -60,21 +59,14 @@ export default function ContactPage() {
                       <Mail className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold">Email</h4>
-                        <a href="mailto:info@rightfocuscrewinternational.com" className="text-muted-foreground hover:text-accent transition-colors break-all">info@rightfocuscrewinternational.com</a>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                      <MapPin className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold">Address</h4>
-                        <p className="text-muted-foreground">4, Ogooluwa Street off Cele - Ifihan, Baba Mushin, Olaotan B/S, ljoko Road, Sango Ota, Ogun State.</p>
+                        <a href="mailto:info@stevuthtech.com" className="text-muted-foreground hover:text-accent transition-colors break-all">info@stevuthtech.com</a>
                       </div>
                     </div>
                      <div className="flex items-start gap-4">
                       <MessageCircle className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold">WhatsApp</h4>
-                        <Link href="https://wa.me/2348139940522" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
+                        <Link href="https://wa.me/2349016772065" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
                             Chat with us
                         </Link>
                       </div>

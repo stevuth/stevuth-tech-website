@@ -59,10 +59,8 @@ export function Footer() {
           <AnimatedWrapper delay={300}>
             <h4 className="font-headline font-semibold mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li className="break-all">info@rightfocuscrewinternational.com</li>
-              <li className="break-all">+2348139940522</li>
-              <li className="break-all">+2349121715042</li>
-              <li className="break-all">4, Ogooluwa Street off Cele - Ifihan, Baba Mushin, Olaotan B/S, ljoko Road, Sango Ota, Ogun State.</li>
+              <li className="break-all">info@stevuthtech.com</li>
+              <li className="break-all">+2349016772065</li>
             </ul>
              <div className="flex space-x-4 mt-6">
                 {socialLinks.map(social => (
