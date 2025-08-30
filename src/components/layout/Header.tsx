@@ -73,7 +73,7 @@ export function Header() {
   };
 
   const headerClasses = cn(
-    'sticky top-0 z-50 w-full transition-all duration-300',
+    'fixed top-0 z-50 w-full transition-all duration-300',
     isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent',
     isHomepage && !isScrolled ? 'text-white' : 'text-primary'
   );
