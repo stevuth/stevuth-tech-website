@@ -3,13 +3,23 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap } from 'lucide-react';
+import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap, Code, Brush, Rocket } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
-  description: 'Stevuth Tech is a leading multi-sector company in Nigeria, offering top-tier services in Agro-allied industries, Healthcare, Travels & Tours, and General Contracting. Partner with us for excellence and innovation.',
-  keywords: ["Stevuth Tech Nigeria", "Agro-allied services", "Healthcare solutions Nigeria", "Travel agency Nigeria", "Contracting company Lagos", "Veterinary clinic Ota", "HR outsourcing Nigeria"],
+  description: 'Stevuth Tech is a leading multi-sector company in Nigeria, specializing in Agro-allied, Healthcare, Travels & Tourism, and Contracting services. Your trusted partner for growth and development.',
+  keywords: [
+    "Stevuth Tech",
+    "Agro-allied services Nigeria",
+    "Healthcare diagnostics Nigeria",
+    "Travels and tours Nigeria",
+    "General contracting Nigeria",
+    "Veterinary services Ota",
+    "Human resources Nigeria",
+    "Orphanage support Nigeria",
+    "Fumigation services Ogun State"
+  ],
   alternates: {
     canonical: '/',
   },
@@ -17,68 +27,28 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: <BriefcaseMedical className="h-10 w-10 text-accent" />,
-    title: 'Veterinary Medical Services',
-    description: 'Comprehensive veterinary services including medical treatments, boarding, farm consultations, pet travel clearance, and professional training.',
-    href: '/services',
-    aiHint: 'veterinary clinic',
-    image: 'https://i.postimg.cc/TYLkVzZ5/Chat-GPT-Image-Aug-27-2025-11-46-57-AM.png',
+    icon: <Code className="h-10 w-10 text-accent" />,
+    title: 'Custom Website Development',
+    description: 'Tailored websites built from scratch to meet unique business needs.',
+    href: '/services#custom-website-development',
+    aiHint: 'web development',
+    image: 'https://picsum.photos/600/400',
   },
   {
-    icon: <Network className="h-10 w-10 text-accent" />,
-    title: 'Network Services',
-    description: 'Integrated digital solutions including e-commerce, secure payments, and global trade services.',
-    href: '/services',
+    icon: <Brush className="h-10 w-10 text-accent" />,
+    title: 'UI/UX & Brand Design',
+    description: 'Engaging, user-friendly designs and creative brand visuals that align with your website.',
+    href: '/services#ui-ux-design',
     aiHint: 'digital network',
-    image: 'https://i.postimg.cc/8CfG6XT1/Whisk-ebb171bffb.jpg',
+    image: 'https://picsum.photos/600/400',
   },
   {
-    icon: <Stethoscope className="h-10 w-10 text-accent" />,
-    title: 'Human Diagnostic Services',
-    description: 'Offering a range of vital health diagnostic services to monitor and manage your well-being.',
-    href: '/services',
-    aiHint: 'health diagnostics',
-    image: 'https://i.postimg.cc/Dzkjxxqf/Whisk-8f29c728c8.jpg',
-  },
-  {
-    icon: <Users className="h-10 w-10 text-accent" />,
-    title: 'Human Resources & Outsourcing',
-    description: 'Connecting talent with opportunities through specialized recruitment and outsourcing services across various sectors.',
-    href: '/services',
-    aiHint: 'human resources recruitment',
-    image: 'https://i.postimg.cc/bvPcFxbP/Whisk-b6498e7b87.jpg',
-  },
-   {
-    icon: <Sparkles className="h-10 w-10 text-accent" />,
-    title: 'Farm & Home Cleaning',
-    description: 'Professional cleaning services for residential, commercial, and agricultural properties, from fumigation to laundry.',
-    href: '/services',
-    aiHint: 'professional cleaning',
-    image: 'https://i.postimg.cc/kX97Hddz/Whisk-f3c2b5e9e7.jpg',
-  },
-  {
-    icon: <Plane className="h-10 w-10 text-accent" />,
-    title: 'Travels & Tours',
-    description: 'Seamless flight bookings, curated tours, and visa assistance.',
-    href: '/services',
-    aiHint: 'travel tourism',
-    image: 'https://i.postimg.cc/dtLcpQxW/Whisk-e405484ec8.jpg',
-  },
-  {
-    icon: <Baby className="h-10 w-10 text-accent" />,
-    title: 'Orphanage Home',
-    description: 'Providing a safe and nurturing environment for children in need, offering care, education, and support.',
-    href: '/services',
-    aiHint: 'happy children',
-    image: 'https://i.postimg.cc/J4pr9dxq/result-0.png',
-  },
-  {
-    icon: <GraduationCap className="h-10 w-10 text-accent" />,
-    title: 'Tutorial Center',
-    description: 'Specialized tutorial services for various examinations and educational programs.',
-    href: '/services',
-    aiHint: 'education classroom',
-    image: 'https://i.postimg.cc/V63J3ZFv/aiease-1756298208694.jpg',
+    icon: <Rocket className="h-10 w-10 text-accent" />,
+    title: 'Performance & Optimization',
+    description: 'Enhancing website performance, speed, and search engine ranking.',
+    href: '/services#speed-optimization',
+    aiHint: 'rocket launch',
+    image: 'https://picsum.photos/600/400',
   },
 ];
 
@@ -157,18 +127,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-background">
+      <section className="bg-primary/5">
         <div className="container px-4 md:px-6 py-10 md:py-12 text-center">
             <AnimatedWrapper>
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Solutions We Provide</h2>
               <p className="max-w-3xl mx-auto text-muted-foreground mb-6">
-                Delivering expertise across Agro-Allied, Healthcare, Tourism, and more.
+                Delivering expertise in web development, design, and performance optimization.
               </p>
             </AnimatedWrapper>
         </div>
         <div>
             {services.map((service, index) => (
-                <div key={service.title} className={index % 2 === 0 ? 'bg-background' : 'bg-primary/5'}>
+                <div key={service.title} className={'bg-primary/5'}>
                     <div className="container px-4 md:px-6 py-10">
                         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-center">
                            <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
@@ -199,6 +169,11 @@ export default function Home() {
                     </div>
                 </div>
             ))}
+             <div className="text-center py-10">
+                <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                    <Link href="/services">View All Services</Link>
+                </Button>
+            </div>
         </div>
       </section>
       

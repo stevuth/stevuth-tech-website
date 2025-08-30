@@ -9,8 +9,8 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'FAQ - Stevuth Tech | Answers to Your Questions',
-  description: 'Find answers to frequently asked questions about Stevuth Tech\'s services in Nigeria, including veterinary, diagnostics, travel, HR, and our orphanage home.',
-  keywords: ["Stevuth Tech FAQ", "veterinary services questions", "human diagnostics FAQ", "travel visa questions Nigeria", "orphanage donation info"],
+  description: 'Find answers to frequently asked questions about Stevuth Tech\'s web development, design, and SEO services in Nigeria.',
+  keywords: ["Stevuth Tech FAQ", "web development questions", "e-commerce FAQ", "SEO services questions", "website maintenance"],
   alternates: {
     canonical: '/faq',
   },
@@ -18,33 +18,33 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "What kind of veterinary services do you offer?",
-    answer: "We provide a full range of veterinary services, including medical treatments, vaccinations, boarding facilities, farm visitation and consultations, and assistance with pet travel clearance. We also have a training institute for veterinary professionals.",
+    question: "What is Custom Website Development?",
+    answer: "Custom website development involves creating a unique website tailored specifically to your business requirements, brand identity, and target audience. Unlike template-based sites, a custom site offers full flexibility in design and functionality."
   },
   {
-    question: "What is included in your Human Diagnostic Services?",
-    answer: "Our diagnostic services include body weight assessment, blood pressure and blood sugar monitoring, pregnancy tests, and screening for various conditions like malaria, typhoid, infections, and fertility issues.",
+    question: "Do you build e-commerce websites?",
+    answer: "Yes, we specialize in e-commerce development. We build fully functional online stores complete with secure payment gateways, inventory management systems, shipping integrations, and customer accounts."
   },
   {
-    question: "Can you help me with international travel arrangements?",
-    answer: "Yes, our Travels & Tours division offers comprehensive services, including flight bookings, visa applications for tourism, work, or study, international passport procurement, and hotel reservations.",
+    question: "What is UI/UX design and why is it important?",
+    answer: "UI (User Interface) design focuses on the visual layout and look of your website, while UX (User Experience) design is about making it easy and enjoyable to use. Good UI/UX is crucial for keeping visitors on your site and guiding them towards your goals."
   },
   {
-    question: "What types of jobs can I find through your HR & Outsourcing services?",
-    answer: "We connect qualified professionals with opportunities in various sectors. This includes farm jobs, security positions, teaching roles, cleaning services, laboratory technicians, and agri-business careers.",
+    question: "Can you help my website rank higher on Google?",
+    answer: "Absolutely. Our SEO services focus on on-page optimization, which includes improving your site's structure, content, keywords, and speed to make it more attractive to search engines like Google."
   },
   {
-    question: "What cleaning services do you provide?",
-    answer: "Our Farm & Home Cleaning division offers professional cleaning for residential, commercial, and agricultural properties. This includes fumigation, pest control, home and office cleaning, laundry services, and bush clearing.",
+    question: "Do you offer website maintenance after the site is live?",
+    answer: "Yes, we provide comprehensive website maintenance and support plans. This includes regular updates, security checks, backups, bug fixes, and technical assistance to ensure your website remains secure and runs smoothly."
   },
   {
-    question: "Do you offer educational or tutorial services?",
-    answer: "Yes, our Tutorial Center provides specialized preparation for a variety of examinations, including WAEC, JAMB, SAT, TOEFL, and IELTS. We also offer an adult night school program.",
+    question: "Will my website work on mobile devices?",
+    answer: "Yes, all the websites we build are fully responsive. We ensure your site looks and functions perfectly on all devices, including desktops, tablets, and smartphones, which is essential for modern audiences."
   },
   {
-    question: "How can I donate to the Orphanage Home?",
-    answer: "Your support is greatly appreciated. You can donate to our cause through the following bank details: Account Name: Stevuth Tech, Bank Name: Zenith Bank Plc, Account Number: 1016055464. Donations help us provide care, education, and a safe environment for the children.",
-  },
+    question: "What is a web application?",
+    answer: "A web application is a more complex, interactive website that functions like software. Examples include online dashboards, SaaS platforms, booking systems, and custom business tools. We can develop advanced web applications to meet your specific operational needs."
+  }
 ];
 
 export default function FaqPage() {

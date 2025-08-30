@@ -20,7 +20,6 @@ const fontOpenSans = Open_Sans({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-live-url.com";
 
-const DonationStrip = dynamic(() => import('@/components/layout/DonationStrip').then(mod => mod.DonationStrip));
 const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => mod.Footer));
 
 
@@ -97,7 +96,6 @@ export default function RootLayout({
         <div className="relative flex min-h-dvh flex-col bg-background">
           <Header />
           <main className="flex-1">{children}</main>
-          <DonationStrip />
           <Footer />
         </div>
         <Toaster />
