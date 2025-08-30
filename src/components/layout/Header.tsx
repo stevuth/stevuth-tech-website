@@ -30,6 +30,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const isHomepage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +49,8 @@ export function Header() {
       <Link href={href} className={cn(
         "relative text-sm font-medium transition-colors hover:text-accent",
         "after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-accent after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100",
-        isActive ? "text-accent after:scale-x-100" : "text-foreground/80"
+        isActive ? "text-accent after:scale-x-100" : "text-foreground/80",
+         isHomepage && !isScrolled ? "text-white hover:text-accent" : "text-foreground/80"
       )}>
         {children}
       </Link>
@@ -70,31 +72,34 @@ export function Header() {
     );
   };
 
+  const headerClasses = cn(
+    'sticky top-0 z-50 w-full transition-all duration-300',
+    isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent',
+    isHomepage && !isScrolled ? 'text-white' : 'text-primary'
+  );
+
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300',
-        isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent'
-      )}
-    >
+    <header className={headerClasses}>
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
             <BackButton />
-            <Link href="/" aria-label="Back to homepage" className={cn(pathname !== '/' && 'hidden sm:block')}>
-              <Logo />
+            <Link href="/" aria-label="Back to homepage">
+              <Logo isDark={isHomepage && !isScrolled} />
             </Link>
         </div>
-        <nav className="hidden items-center space-x-8 md:flex">
+        
+        <nav className={cn("hidden items-center space-x-8 md:flex", { 'md:hidden': isHomepage })}>
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href}>
               {link.label}
             </NavLink>
           ))}
         </nav>
+
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu">
+              <Button variant="ghost" size="icon" aria-label="Open menu" className="hover:bg-white/10">
                 <HamburgerIcon />
               </Button>
             </SheetTrigger>

@@ -73,8 +73,8 @@ const values = [
 export default function Home() {
   return (
     <div className="flex flex-col">
-      <section className="relative h-[70vh] md:h-[80vh] w-full flex items-center justify-center text-center text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/40 z-10" />
+      <section className="relative h-screen w-full flex items-center justify-center text-center text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/50 z-10" />
         <video
           src="/hero-video.mp4"
           autoPlay
@@ -85,7 +85,7 @@ export default function Home() {
         />
         <div className="relative z-20 container px-4 md:px-6">
           <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold tracking-tighter mb-4">
+            <h1 className="text-3xl md:text-4xl font-headline font-bold tracking-tighter mb-4">
              Your Next Customer Is Online, Let’s Get Their Attention
             </h1>
             <p className="max-w-3xl mx-auto text-base md:text-lg text-slate-200 mb-6">
