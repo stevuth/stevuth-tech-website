@@ -50,8 +50,8 @@ export function Footer() {
           <AnimatedWrapper delay={300}>
             <h4 className="font-headline font-semibold text-white mb-4">Get in Touch</h4>
             <ul className="space-y-2 text-sm">
-              <li className="break-all text-white">info@stevuthtech.com</li>
-              <li className="break-all text-white">+2349016772065</li>
+              <li className="break-all text-primary-foreground/80">info@stevuthtech.com</li>
+              <li className="break-all text-primary-foreground/80">+2349016772065</li>
             </ul>
           </AnimatedWrapper>
         </div>
