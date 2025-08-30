@@ -5,13 +5,13 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 224 71% 4%; /* Very Dark Navy */
+    --foreground: 240 59% 9%; /* Very Dark Navy */
     --card: 0 0% 100%;
     --card-foreground: 224 71% 4%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71% 4%;
     --primary: 240 59% 9%; /* Very Dark Navy */
-    --primary-foreground: 0 0% 93%;
+    --primary-foreground: 0 0% 98%;
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
@@ -32,17 +32,17 @@
   }
   .dark {
     --background: 240 59% 9%;
-    --foreground: 0 0% 93%;
+    --foreground: 0 0% 98%;
     --card: 240 59% 9%;
-    --card-foreground: 0 0% 93%;
+    --card-foreground: 0 0% 98%;
     --popover: 240 59% 9%;
-    --popover-foreground: 0 0% 93%;
+    --popover-foreground: 0 0% 98%;
     --primary: 0 0% 98%;
     --primary-foreground: 240 59% 9%;
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 88%; /* Light Gray */
+    --muted-foreground: 0 0% 63%; /* Light Gray */
     --accent: 212 92% 45%; /* Sapphire Blue */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
@@ -81,134 +81,9 @@
      color: hsl(var(--muted-foreground));
   }
   .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-      color: hsl(var(--primary-foreground));
+      color: hsl(var(--foreground));
   }
   .dark p, .dark div, .dark span, .dark li, .dark a {
       color: hsl(var(--muted-foreground));
   }
-}
-
-
-@layer utilities {
-    .bg-grid-pattern {
-        background-image: linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px), linear-gradient(to right, hsl(var(--primary) / 0.1) 1px, transparent 1px);
-        background-size: 3rem 3rem;
-    }
-
-    .rotating-benefits-container {
-        @apply relative flex items-center justify-center;
-        height: var(--orbit-size-lg);
-        width: var(--orbit-size-lg);
-        margin: 8rem auto;
-    }
-
-    .rotating-benefits-hub {
-        @apply absolute z-10 flex items-center justify-center p-6;
-        width: 60%;
-        height: 60%;
-        background-color: white;
-        border-radius: 50%;
-        box-shadow: 0 0 40px 10px hsl(var(--accent) / 0.4), 0 0 60px 20px hsl(var(--accent) / 0.2);
-    }
-    
-    .rotating-benefits-orbit {
-        @apply absolute w-full h-full;
-        animation: rotate 40s linear infinite;
-        transform-style: preserve-3d;
-    }
-
-    .rotating-benefits-container:hover .rotating-benefits-orbit {
-        animation-play-state: paused;
-    }
-
-    .rotating-benefit-item {
-        @apply absolute w-28 h-28 md:w-32 md:h-32;
-        --angle: calc((360deg / var(--total-items)) * var(--item-index));
-        transform: rotate(var(--angle)) translateY(calc(var(--orbit-size) * -1)) rotate(calc(var(--angle) * -1));
-    }
-    
-    .benefit-content {
-        @apply relative w-full h-full flex flex-col items-center justify-center text-center p-2 rounded-full bg-white text-primary transition-all duration-300 ease-in-out cursor-pointer;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
-    }
-
-    .benefit-content:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 20px 5px hsl(var(--accent) / 0.5);
-    }
-    
-    .benefit-icon {
-        @apply text-accent transition-all duration-300;
-    }
-
-    .benefit-title {
-        @apply font-headline font-bold text-sm mt-1 transition-all duration-300 text-primary;
-    }
-
-    .benefit-description {
-        @apply absolute inset-0 flex items-center justify-center p-3 text-xs text-center text-white bg-accent/90 rounded-full opacity-0 transition-opacity duration-300;
-        transform: scale(0.9);
-    }
-
-    .benefit-content:hover .benefit-description {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    .benefit-content:hover .benefit-icon,
-    .benefit-content:hover .benefit-title {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    
-    @media (min-width: 768px) {
-        .rotating-benefit-item {
-            transform: rotate(var(--angle)) translateY(calc(var(--orbit-size-md) * -1)) rotate(calc(var(--angle) * -1));
-        }
-    }
-
-     @media (min-width: 1024px) {
-        .rotating-benefit-item {
-            transform: rotate(var(--angle)) translateY(calc(var(--orbit-size-lg) * -1)) rotate(calc(var(--angle) * -1));
-        }
-    }
-
-    /* Stack layout for mobile */
-    @media (max-width: 767px) {
-        .rotating-benefits-container {
-            @apply flex-col space-y-8 h-auto w-auto;
-            margin: 2rem auto;
-        }
-        .rotating-benefits-orbit {
-            @apply relative grid grid-cols-2 gap-6 w-full h-auto;
-            animation: none;
-        }
-        .rotating-benefit-item {
-            @apply relative w-full h-36;
-            transform: none !important;
-        }
-        .benefit-description {
-            @apply hidden;
-        }
-        .benefit-content:hover .benefit-description {
-           @apply hidden;
-        }
-        .benefit-content:hover .benefit-icon,
-        .benefit-content:hover .benefit-title {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-    }
-
-
-    @keyframes rotate {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
 }

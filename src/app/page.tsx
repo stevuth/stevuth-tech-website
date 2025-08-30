@@ -3,9 +3,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap, Code, Brush, Rocket } from 'lucide-react';
+import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap, Code, Brush, Rocket, Zap, Smartphone, ShieldCheck } from 'lucide-react';
 import type { Metadata } from 'next';
-import { RotatingBenefits } from '@/components/layout/RotatingBenefits';
 
 export const metadata: Metadata = {
   title: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
@@ -53,23 +52,39 @@ const services = [
   },
 ];
 
-const values = [
+const benefits = [
   {
-    icon: <Target className="h-8 w-8 text-primary" />,
-    title: 'Innovation',
-    description: 'We leverage cutting-edge solutions to drive progress and efficiency in every sector we operate.',
+    icon: <Rocket className="h-10 w-10" />,
+    title: "Fast Delivery",
+    description: "Get your website live in as little as 7 days.",
   },
   {
-    icon: <CheckCircle className="h-8 w-8 text-primary" />,
-    title: 'Trust & Integrity',
-    description: 'Our business is built on a foundation of transparency, reliability, and ethical practices.',
+    icon: <Zap className="h-10 w-10" />,
+    title: "No Hidden Costs",
+    description: "One-time payment, no monthly fees.",
   },
   {
-    icon: <Globe className="h-8 w-8 text-primary" />,
-    title: 'Global Reach',
-    description: 'With a worldwide network, we connect opportunities and deliver value across continents.',
+    icon: <Smartphone className="h-10 w-10" />,
+    title: "Mobile-First Design",
+    description: "Optimized for users on phones.",
+  },
+  {
+    icon: <Target className="h-10 w-10" />,
+    title: "Conversion-Focused",
+    description: "Designed to turn visitors into paying customers.",
+  },
+  {
+    icon: <Globe className="h-10 w-10" />,
+    title: "Trusted by Businesses",
+    description: "From startups to growing brands worldwide.",
+  },
+  {
+    icon: <ShieldCheck className="h-10 w-10" />,
+    title: "Ongoing Support",
+    description: "We don’t just build, we stay to support you.",
   },
 ];
+
 
 export default function Home() {
   return (
@@ -189,7 +204,33 @@ export default function Home() {
         </div>
       </section>
 
-      <RotatingBenefits />
+      <section className="py-10 md:py-12 bg-background">
+        <div className="container px-4 md:px-6 text-center">
+          <AnimatedWrapper>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Partner With Us?</h2>
+            <p className="max-w-3xl mx-auto text-muted-foreground mb-12">
+              We're more than just developers. We're partners in your success, committed to delivering excellence at every step.
+            </p>
+          </AnimatedWrapper>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <AnimatedWrapper key={benefit.title} animation="fade-in-up" delay={index * 150}>
+                <Card className="h-full text-center bg-card hover:bg-card/95 hover:shadow-xl transition-shadow">
+                  <CardHeader>
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent mb-4">
+                      {benefit.icon}
+                    </div>
+                    <CardTitle className="text-xl font-bold">{benefit.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{benefit.description}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedWrapper>
+            ))}
+          </div>
+        </div>
+      </section>
       
       <section className="bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6 py-10 text-center">
