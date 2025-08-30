@@ -214,7 +214,11 @@ export default function Home() {
           </AnimatedWrapper>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
-              <AnimatedWrapper key={benefit.title} animation="fade-in-up" delay={index * 150}>
+               <AnimatedWrapper 
+                key={benefit.title} 
+                animation={index % 2 === 0 ? 'slide-in-left' : 'slide-in-right'} 
+                delay={index * 150}
+              >
                 <Card className="h-full text-center bg-card hover:bg-card/95 hover:shadow-xl transition-shadow">
                   <CardHeader>
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent mb-4">
