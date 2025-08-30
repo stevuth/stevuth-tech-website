@@ -115,7 +115,7 @@ export default function Home() {
               </div>
             </AnimatedWrapper>
             <AnimatedWrapper animation="slide-in-right">
-              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Who We Are</h2>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Meet Stevuth Tech</h2>
               <p className="text-muted-foreground mb-6 text-sm md:text-base">
                 We are a dynamic and forward-thinking web development agency, built on a foundation of integrity and a relentless pursuit of excellence. At Stevuth Tech, we are a team of innovators and industry experts dedicated to creating exceptional digital experiences that drive growth.
               </p>
@@ -130,7 +130,7 @@ export default function Home() {
       <section className="bg-primary/5">
         <div className="container px-4 md:px-6 py-10 md:py-12 text-center">
             <AnimatedWrapper>
-              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Solutions We Provide</h2>
+              <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">What We Do</h2>
               <p className="max-w-3xl mx-auto text-muted-foreground mb-6">
                 Delivering expertise in web development, design, and performance optimization.
               </p>
