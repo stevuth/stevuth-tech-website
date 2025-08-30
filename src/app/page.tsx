@@ -92,7 +92,7 @@ export default function Home() {
       <section className="relative h-[calc(100vh)] w-full flex items-center justify-start text-left text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10" />
         <video
-          src="/hero-video.mp4"
+          src="/stevuth-hero-video.mp4"
           autoPlay
           muted
           loop
