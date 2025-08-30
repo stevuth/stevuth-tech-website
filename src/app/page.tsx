@@ -74,7 +74,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <section className="relative h-screen w-full flex items-center justify-center text-center text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="absolute inset-0 bg-black/60 z-10" />
         <video
           src="/hero-video.mp4"
           autoPlay

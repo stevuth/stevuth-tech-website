@@ -20,9 +20,9 @@ const navLinks = [
 
 const HamburgerIcon = () => (
   <div className="flex flex-col justify-around w-6 h-6">
-    <div className="h-0.5 w-full bg-foreground rounded-full" />
-    <div className="h-0.5 w-full bg-foreground rounded-full" />
-    <div className="h-0.5 w-full bg-foreground rounded-full" />
+    <div className="h-0.5 w-full bg-current rounded-full" />
+    <div className="h-0.5 w-full bg-current rounded-full" />
+    <div className="h-0.5 w-full bg-current rounded-full" />
   </div>
 );
 
@@ -49,8 +49,8 @@ export function Header() {
       <Link href={href} className={cn(
         "relative text-sm font-medium transition-colors hover:text-accent",
         "after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-accent after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100",
-        isActive ? "text-accent after:scale-x-100" : "text-foreground/80",
-         isHomepage && !isScrolled ? "text-white hover:text-accent" : "text-foreground/80"
+        isActive ? "text-accent after:scale-x-100" : "",
+        isHomepage && !isScrolled ? "text-white hover:text-accent" : "text-foreground/80"
       )}>
         {children}
       </Link>
@@ -88,7 +88,7 @@ export function Header() {
             </Link>
         </div>
         
-        <nav className={cn("hidden items-center space-x-8 md:flex", { 'md:hidden': isHomepage })}>
+        <nav className={cn("hidden items-center space-x-8 md:flex", { 'md:hidden': isHomepage && !isScrolled })}>
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href}>
               {link.label}
@@ -99,7 +99,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu" className="hover:bg-white/10">
+              <Button variant="ghost" size="icon" aria-label="Open menu" className={cn("hover:bg-white/10", isHomepage && !isScrolled ? "text-white" : "text-foreground" )}>
                 <HamburgerIcon />
               </Button>
             </SheetTrigger>
