@@ -41,7 +41,7 @@ const benefits = [
 export function RotatingBenefits() {
     return (
         <section 
-            className="relative bg-[#0b0c10] py-20 md:py-32 overflow-hidden"
+            className="relative bg-primary py-20 md:py-32 overflow-hidden"
             style={{
                 '--orbit-size': '250px',
                 '--orbit-size-md': '300px',
@@ -61,18 +61,13 @@ export function RotatingBenefits() {
                                 className="rotating-benefit-item"
                                 style={{ '--item-index': index } as React.CSSProperties}
                             >
-                                <AnimatedWrapper
-                                    animation="fade-in"
-                                    delay={index * 150}
-                                >
-                                    <div className="benefit-content">
-                                        <div className="benefit-icon">
-                                            {benefit.icon}
-                                            <h4 className="benefit-title">{benefit.title}</h4>
-                                        </div>
-                                        <p className="benefit-description">{benefit.description}</p>
+                                <div className="benefit-content">
+                                    <div className="benefit-icon">
+                                        {benefit.icon}
+                                        <h4 className="benefit-title">{benefit.title}</h4>
                                     </div>
-                                </AnimatedWrapper>
+                                    <p className="benefit-description">{benefit.description}</p>
+                                </div>
                             </div>
                         ))}
                     </div>

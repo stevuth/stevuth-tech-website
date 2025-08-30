@@ -181,7 +181,7 @@ export default function Home() {
       <section className="bg-accent text-accent-foreground">
         <div className="container px-4 md:px-6 py-10 text-center">
           <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Ready to Build Your Digital Future?</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-4">Ready to Build Your Digital Future?</h2>
             <Button asChild size="lg" variant="cta" className="bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link href="/contact">Get a Quote</Link>
             </Button>

@@ -22,11 +22,11 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           
           <AnimatedWrapper delay={0} className="flex flex-col items-start">
-            <h4 className="font-headline font-semibold mb-4">Discover</h4>
+            <h4 className="font-headline font-semibold text-white mb-4">Discover</h4>
             <ul className="space-y-2">
               {footerLinks.discover.map(link => (
                   <li key={link.href}>
-                      <Link href={link.href} className="text-sm text-primary-foreground/70 hover:text-accent transition-all duration-300 hover:-translate-y-0.5 block">
+                      <Link href={link.href} className="text-sm text-primary-foreground/80 hover:text-accent transition-all duration-300 hover:-translate-y-0.5 block">
                           {link.label}
                       </Link>
                   </li>
@@ -35,11 +35,11 @@ export function Footer() {
           </AnimatedWrapper>
 
           <AnimatedWrapper delay={150}>
-            <h4 className="font-headline font-semibold mb-4">Essentials</h4>
+            <h4 className="font-headline font-semibold text-white mb-4">Essentials</h4>
             <ul className="space-y-2">
               {footerLinks.essentials.map(link => (
                   <li key={link.href}>
-                       <Link href={link.href} className="text-sm text-primary-foreground/70 hover:text-accent transition-all duration-300 hover:-translate-y-0.5 block">
+                       <Link href={link.href} className="text-sm text-primary-foreground/80 hover:text-accent transition-all duration-300 hover:-translate-y-0.5 block">
                           {link.label}
                       </Link>
                   </li>
@@ -48,8 +48,8 @@ export function Footer() {
           </AnimatedWrapper>
 
           <AnimatedWrapper delay={300}>
-            <h4 className="font-headline font-semibold mb-4">Get in Touch</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/70">
+            <h4 className="font-headline font-semibold text-white mb-4">Get in Touch</h4>
+            <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li className="break-all">info@stevuthtech.com</li>
               <li className="break-all">+2349016772065</li>
             </ul>
@@ -61,7 +61,7 @@ export function Footer() {
                 <div className="mb-4">
                     <Logo isDark={true} />
                 </div>
-                <p className="text-xs text-white">&copy; 2025 Stevuth Tech. All Rights Reserved.</p>
+                <p className="text-xs text-white/80">&copy; 2025 Stevuth Tech. All Rights Reserved.</p>
             </AnimatedWrapper>
         </div>
       </div>
