@@ -8,9 +8,9 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FAQ - Right Focus Crew Intl | Answers to Your Questions',
-  description: 'Find answers to frequently asked questions about Right Focus Crew Intl\'s services in Nigeria, including veterinary, diagnostics, travel, HR, and our orphanage home.',
-  keywords: ["Right Focus Crew Intl FAQ", "veterinary services questions", "human diagnostics FAQ", "travel visa questions Nigeria", "orphanage donation info"],
+  title: 'FAQ - Stevuth Tech | Answers to Your Questions',
+  description: 'Find answers to frequently asked questions about Stevuth Tech\'s services in Nigeria, including veterinary, diagnostics, travel, HR, and our orphanage home.',
+  keywords: ["Stevuth Tech FAQ", "veterinary services questions", "human diagnostics FAQ", "travel visa questions Nigeria", "orphanage donation info"],
   alternates: {
     canonical: '/faq',
   },
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     question: "How can I donate to the Orphanage Home?",
-    answer: "Your support is greatly appreciated. You can donate to our cause through the following bank details: Account Name: Right Focus Crew Intl, Bank Name: Zenith Bank Plc, Account Number: 1016055464. Donations help us provide care, education, and a safe environment for the children.",
+    answer: "Your support is greatly appreciated. You can donate to our cause through the following bank details: Account Name: Stevuth Tech, Bank Name: Zenith Bank Plc, Account Number: 1016055464. Donations help us provide care, education, and a safe environment for the children.",
   },
 ];
 

@@ -22,7 +22,7 @@ export function DonationStrip() {
               </CardHeader>
               <CardContent className="space-y-3">
                 <p className="text-sm">
-                  Donate to: <span className='font-semibold'>Right Focus Crew Intl</span>
+                  Donate to: <span className='font-semibold'>Stevuth Tech</span>
                 </p>
                 <p className="text-sm">
                   Bank: <span className='font-semibold'>Zenith Bank Plc</span>

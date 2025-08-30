@@ -7,10 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Our Services - Right Focus Crew Intl | Nigeria',
-  description: 'Explore the diverse range of services offered by Right Focus Crew Intl in Nigeria, including Veterinary, Healthcare Diagnostics, Travels & Tours, HR, Cleaning, and more. Find expert solutions for your needs.',
+  title: 'Our Services - Stevuth Tech | Nigeria',
+  description: 'Explore the diverse range of services offered by Stevuth Tech in Nigeria, including Veterinary, Healthcare Diagnostics, Travels & Tours, HR, Cleaning, and more. Find expert solutions for your needs.',
   keywords: [
-    "Right Focus Crew Intl services",
+    "Stevuth Tech services",
     "Veterinary services Nigeria",
     "Human diagnostics Nigeria",
     "Travel agency Lagos",
@@ -107,7 +107,7 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
     "serviceType": service.title,
     "provider": {
       "@type": "Organization",
-      "name": "Right Focus Crew Intl"
+      "name": "Stevuth Tech"
     },
     "areaServed": {
       "@type": "Country",
@@ -166,7 +166,7 @@ const ServiceSection = ({ service, index }: { service: (typeof services)[0], ind
                   <p>Your generous donations help us provide care and support to children in need.</p>
                   <p className="font-semibold">Account Number: <span className="font-mono">1016055464</span></p>
                   <p className="font-semibold">Bank Name: <span className="font-mono">Zenith Bank Plc</span></p>
-                  <p className="font-semibold">Account Name: <span className="font-mono">Right Focus Crew Intl</span></p>
+                  <p className="font-semibold">Account Name: <span className="font-mono">Stevuth Tech</span></p>
                 </CardContent>
               </Card>
              ) : (

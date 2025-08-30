@@ -6,9 +6,9 @@ import Link from "next/link";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Right Focus Crew Intl - Our Mission and Values in Nigeria',
-  description: 'Discover the history, mission, and core values of Right Focus Crew Intl. Learn why we are a trusted partner for growth and development across multiple sectors in Nigeria.',
-  keywords: ["About Right Focus Crew Intl", "company mission Nigeria", "corporate values Nigeria", "multi-sector company Nigeria", "Nigerian conglomerate"],
+  title: 'About Stevuth Tech - Our Mission and Values in Nigeria',
+  description: 'Discover the history, mission, and core values of Stevuth Tech. Learn why we are a trusted partner for growth and development across multiple sectors in Nigeria.',
+  keywords: ["About Stevuth Tech", "company mission Nigeria", "corporate values Nigeria", "multi-sector company Nigeria", "Nigerian conglomerate"],
   alternates: {
     canonical: '/about',
   },
@@ -64,7 +64,7 @@ export default function AboutPage() {
     <div>
       <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
         <AnimatedWrapper>
-          <h1 className="text-4xl md:text-5xl font-headline font-bold">About Right Focus Crew Intl</h1>
+          <h1 className="text-4xl md:text-5xl font-headline font-bold">About Stevuth Tech</h1>
           <p className="mt-4 text-base md:text-lg max-w-3xl mx-auto text-primary-foreground/80">
             Learn about our journey, our purpose, and the values that drive us forward.
           </p>
@@ -90,7 +90,7 @@ export default function AboutPage() {
             <AnimatedWrapper animation="slide-in-right">
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our History & Mission</h2>
               <p className="text-muted-foreground mb-4">
-                With a singular vision, Right Focus Crew Intl began as a specialized contracting firm. Fueled by a commitment to quality and strategic diversification, we have expanded our footprint across key sectors including agro-allied industries, healthcare, and global tourism.
+                With a singular vision, Stevuth Tech began as a specialized contracting firm. Fueled by a commitment to quality and strategic diversification, we have expanded our footprint across key sectors including agro-allied industries, healthcare, and global tourism.
               </p>
               <p className="text-muted-foreground">
                 Our mission is to be a catalyst for growth and development, creating sustainable value for our stakeholders, communities, and partners. We achieve this by maintaining an unwavering focus on operational excellence, integrity, and innovation in every endeavor.
@@ -154,7 +154,7 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
             <p className="text-sm text-muted-foreground max-w-4xl mx-auto">
-              Right Focus Crew Intl is a duly registered company under the Corporate Affairs Commission (CAC) with registration number BN 2701057, operating across Agro-Allied, Healthcare, Travels & Tourism, Contracting, and General Merchandising.
+              Stevuth Tech is a duly registered company under the Corporate Affairs Commission (CAC) with registration number BN 2701057, operating across Agro-Allied, Healthcare, Travels & Tourism, Contracting, and General Merchandising.
             </p>
           </AnimatedWrapper>
         </div>

@@ -27,12 +27,12 @@ const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => mo
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Right Focus Crew Intl - Driving Growth Across Industries in Nigeria',
-    template: '%s | Right Focus Crew Intl',
+    default: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
+    template: '%s | Stevuth Tech',
   },
-  description: 'Right Focus Crew Intl is a leading multi-sector company in Nigeria, specializing in Agro-allied, Healthcare, Travels & Tourism, and Contracting services. Your trusted partner for growth and development.',
+  description: 'Stevuth Tech is a leading multi-sector company in Nigeria, specializing in Agro-allied, Healthcare, Travels & Tourism, and Contracting services. Your trusted partner for growth and development.',
   keywords: [
-    "Right Focus Crew Intl",
+    "Stevuth Tech",
     "Agro-allied services Nigeria",
     "Healthcare diagnostics Nigeria",
     "Travels and tours Nigeria",
@@ -43,16 +43,16 @@ export const metadata: Metadata = {
     "Fumigation services Ogun State"
   ],
   openGraph: {
-    title: 'Right Focus Crew Intl - Driving Growth Across Industries in Nigeria',
+    title: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
     description: 'A multi-sector company engaged in Agro-allied, Healthcare, Travels & Tourism, Contracting & General Merchandising, and more.',
     url: siteUrl,
-    siteName: 'Right Focus Crew Intl',
+    siteName: 'Stevuth Tech',
     images: [
       {
         url: 'https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg',
         width: 1200,
         height: 630,
-        alt: 'Right Focus Crew Intl Team Collaboration',
+        alt: 'Stevuth Tech Team Collaboration',
       },
     ],
     locale: 'en_NG',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Right Focus Crew Intl - Driving Growth Across Industries in Nigeria',
+    title: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
     description: 'A multi-sector company engaged in Agro-allied, Healthcare, Travels & Tourism, Contracting & General Merchandising, and more.',
     images: ['https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg'],
   },
