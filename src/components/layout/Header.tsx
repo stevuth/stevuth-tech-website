@@ -13,7 +13,7 @@ import { BackButton } from './BackButton';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'Who We Are' },
-  { href: '/services', label: 'Solutions We Provide' },
+  { href: '/services', label: 'What We Do' },
   { href: '/contact', label: 'Contact Us' },
   { href: '/faq', label: 'FAQ' },
 ];
