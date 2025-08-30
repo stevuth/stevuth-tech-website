@@ -86,13 +86,13 @@ export default function Home() {
         <div className="relative z-20 container px-4 md:px-6">
           <AnimatedWrapper>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-bold tracking-tighter mb-4">
-              Driving Growth Across Industries with Focus & Integrity
+             Your Next Customer Is Online, Let’s Get Their Attention
             </h1>
             <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-200 mb-6">
-              Stevuth Tech is a dynamic, multi-sector company committed to excellence and innovation.
+              We build modern mobile-friendly websites that attract engage and convert visitors into paying customers. No monthly fees, no hidden charges, just powerful websites designed to grow your business.
             </p>
             <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-              <Link href="/services">Explore Our Services</Link>
+              <Link href="/contact">Start My Project</Link>
             </Button>
           </AnimatedWrapper>
         </div>
