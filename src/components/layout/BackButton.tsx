@@ -9,23 +9,11 @@ import { cn } from '@/lib/utils';
 export function BackButton() {
   const router = useRouter();
   const pathname = usePathname();
-  const [isOnHomepage, setIsOnHomepage] = useState(true);
-   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHomepage, setIsHomepage] = useState(true);
 
   useEffect(() => {
-    setIsOnHomepage(pathname === '/');
+    setIsHomepage(pathname === '/');
   }, [pathname]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const handleBack = () => {
     if (window.history.length > 1) {
@@ -35,14 +23,12 @@ export function BackButton() {
     }
   };
 
-  if (isOnHomepage) {
+  if (isHomepage) {
     return null;
   }
 
   const buttonClasses = cn(
-    "h-10 w-10 p-0",
-    "hover:bg-transparent",
-    pathname === '/' && !isScrolled ? "text-white hover:text-accent" : "text-foreground hover:text-accent"
+    "h-10 w-10 p-0 text-white hover:bg-transparent hover:text-accent"
   );
 
 
