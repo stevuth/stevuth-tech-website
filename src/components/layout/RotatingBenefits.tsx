@@ -62,21 +62,24 @@ export function RotatingBenefits() {
 
                     <div className="rotating-benefits-orbit">
                         {benefits.map((benefit, index) => (
-                            <AnimatedWrapper
+                            <div
                                 key={benefit.title}
-                                animation="fade-in"
-                                delay={index * 150}
                                 className="rotating-benefit-item"
                                 style={{ '--item-index': index } as React.CSSProperties}
                             >
-                                <div className="benefit-content">
-                                    <div className="benefit-icon">
-                                        {benefit.icon}
-                                        <h4 className="benefit-title">{benefit.title}</h4>
+                                <AnimatedWrapper
+                                    animation="fade-in"
+                                    delay={index * 150}
+                                >
+                                    <div className="benefit-content">
+                                        <div className="benefit-icon">
+                                            {benefit.icon}
+                                            <h4 className="benefit-title">{benefit.title}</h4>
+                                        </div>
+                                        <p className="benefit-description">{benefit.description}</p>
                                     </div>
-                                    <p className="benefit-description">{benefit.description}</p>
-                                </div>
-                            </AnimatedWrapper>
+                                </AnimatedWrapper>
+                            </div>
                         ))}
                     </div>
                 </div>
