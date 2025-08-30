@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
 import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap, Code, Brush, Rocket } from 'lucide-react';
 import type { Metadata } from 'next';
+import { RotatingBenefits } from '@/components/layout/RotatingBenefits';
 
 export const metadata: Metadata = {
   title: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
@@ -188,29 +189,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8 md:py-10 bg-background">
-        <div className="container px-4 md:px-6">
-           <AnimatedWrapper className="text-center">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-3">Why Choose Us?</h2>
-            <p className="max-w-2xl mx-auto text-muted-foreground mb-4">
-              Our core values are the pillars of our success and your guarantee of satisfaction.
-            </p>
-          </AnimatedWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 text-center">
-            {values.map((value, index) => (
-              <AnimatedWrapper key={value.title} animation="fade-in-up" delay={index * 150}>
-                <div className="p-4">
-                  <div className="flex items-center justify-center h-14 w-14 rounded-full bg-accent/10 mb-4 mx-auto">
-                    {value.icon}
-                  </div>
-                  <h3 className="text-xl font-headline font-semibold mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.description}</p>
-                </div>
-              </AnimatedWrapper>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RotatingBenefits />
       
       <section className="bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6 py-10 text-center">
