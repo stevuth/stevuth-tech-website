@@ -5,7 +5,7 @@ export function Logo({ isDark = false, className }: { isDark?: boolean; classNam
   return (
     <div className={cn("flex items-center gap-2", className)}>
       <Image
-        src="/logo.png"
+        src={`/logo.png?t=${new Date().getTime()}`}
         alt="Stevuth Tech Logo"
         width={32}
         height={32}
