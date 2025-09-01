@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { PlusCircle, FileText, Edit, Trash2 } from "lucide-react";
 import type { Metadata } from 'next';
 import { getPosts } from "@/lib/blog-data";
+import Link from "next/link";
 
 export const revalidate = 0; // Always fetch fresh data
 
@@ -40,9 +41,11 @@ export default async function AdminPage() {
                   <CardTitle className="text-2xl">Blog Posts</CardTitle>
                   <CardDescription>Create, edit, and delete blog posts.</CardDescription>
                 </div>
-                <Button>
-                  <PlusCircle className="mr-2 h-4 w-4" />
-                  New Post
+                <Button asChild>
+                  <Link href="/admin/new-post">
+                    <PlusCircle className="mr-2 h-4 w-4" />
+                    New Post
+                  </Link>
                 </Button>
               </CardHeader>
               <CardContent>
@@ -59,11 +62,11 @@ export default async function AdminPage() {
                             </div>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Button variant="outline" size="sm">
+                            <Button variant="outline" size="sm" disabled>
                               <Edit className="mr-2 h-4 w-4" />
                               Edit
                             </Button>
-                            <Button variant="destructive" size="sm">
+                            <Button variant="destructive" size="sm" disabled>
                               <Trash2 className="mr-2 h-4 w-4" />
                               Delete
                             </Button>
