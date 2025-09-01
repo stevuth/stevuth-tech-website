@@ -4,9 +4,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
 import { ArrowRight, Code, Brush, Rocket, Zap, Smartphone, Target, Globe, ShieldCheck } from 'lucide-react';
-import { posts } from '@/lib/blog-data';
+import { getPosts } from '@/lib/blog-data';
 import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
+
+export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
   title: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
@@ -87,9 +89,9 @@ const benefits = [
   },
 ];
 
-const featuredPosts = posts.slice(0, 3);
+export default async function Home() {
+  const featuredPosts = await getPosts({ limit: 3 });
 
-export default function Home() {
   return (
     <div className="flex flex-col">
       <section className="relative h-[calc(100vh)] w-full flex items-center justify-start text-left text-white overflow-hidden">

@@ -1,10 +1,12 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { posts } from '@/lib/blog-data';
+import { getPost, getPosts } from '@/lib/blog-data';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, User } from 'lucide-react';
 import type { Metadata, ResolvingMetadata } from 'next';
+
+export const revalidate = 3600; // Revalidate every hour
 
 type Props = {
   params: { slug: string };
@@ -14,7 +16,7 @@ export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = posts.find(p => p.slug === params.slug);
+  const post = await getPost(params.slug);
 
   if (!post) {
     return {
@@ -48,14 +50,15 @@ export async function generateMetadata(
 }
 
 export async function generateStaticParams() {
+  const posts = await getPosts();
   return posts.map(post => ({
     slug: post.slug,
   }));
 }
 
-export default function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params }: Props) {
   const { slug } = params;
-  const post = posts.find(p => p.slug === slug);
+  const post = await getPost(slug);
 
   if (!post) {
     notFound();

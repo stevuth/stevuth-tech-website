@@ -3,8 +3,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { PlusCircle, FileText, Edit, Trash2 } from "lucide-react";
 import type { Metadata } from 'next';
-import Link from "next/link";
-import { posts } from "@/lib/blog-data";
+import { getPosts } from "@/lib/blog-data";
+
+export const revalidate = 0; // Always fetch fresh data
 
 export const metadata: Metadata = {
   title: 'Admin Dashboard',
@@ -14,7 +15,9 @@ export const metadata: Metadata = {
   }
 };
 
-export default function AdminPage() {
+export default async function AdminPage() {
+  const posts = await getPosts();
+
   return (
     <div>
       <section className="bg-secondary/30">
@@ -45,27 +48,33 @@ export default function AdminPage() {
               <CardContent>
                 <div className="border rounded-lg">
                   <div className="divide-y">
-                    {posts.map(post => (
-                      <div key={post.id} className="flex items-center justify-between p-4 hover:bg-muted/50">
-                        <div className="flex items-center gap-4">
-                          <FileText className="h-6 w-6 text-muted-foreground" />
-                          <div>
-                            <p className="font-semibold">{post.title}</p>
-                            <p className="text-sm text-muted-foreground">Category: {post.category} | Published: {post.date}</p>
+                    {posts.length > 0 ? (
+                      posts.map(post => (
+                        <div key={post.id} className="flex items-center justify-between p-4 hover:bg-muted/50">
+                          <div className="flex items-center gap-4">
+                            <FileText className="h-6 w-6 text-muted-foreground" />
+                            <div>
+                              <p className="font-semibold">{post.title}</p>
+                              <p className="text-sm text-muted-foreground">Category: {post.category} | Published: {post.date}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Button variant="outline" size="sm">
+                              <Edit className="mr-2 h-4 w-4" />
+                              Edit
+                            </Button>
+                            <Button variant="destructive" size="sm">
+                              <Trash2 className="mr-2 h-4 w-4" />
+                              Delete
+                            </Button>
                           </div>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <Button variant="outline" size="sm">
-                            <Edit className="mr-2 h-4 w-4" />
-                            Edit
-                          </Button>
-                          <Button variant="destructive" size="sm">
-                            <Trash2 className="mr-2 h-4 w-4" />
-                            Delete
-                          </Button>
-                        </div>
+                      ))
+                    ) : (
+                      <div className="p-8 text-center text-muted-foreground">
+                        No posts found. Add your first post to see it here.
                       </div>
-                    ))}
+                    )}
                   </div>
                 </div>
               </CardContent>

@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { posts, Post } from "@/lib/blog-data";
+import { getPosts, Post } from "@/lib/blog-data";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from 'next';
+
+export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
   title: 'Blog - Stevuth Tech',
@@ -50,7 +52,9 @@ const BlogPostCard = ({ post, index }: { post: Post, index: number }) => (
   </AnimatedWrapper>
 );
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getPosts();
+
   return (
     <div>
       <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
