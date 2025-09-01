@@ -175,8 +175,8 @@ export default async function Home() {
                                     <Image
                                     src={service.image}
                                     alt={service.title}
-                                    width={600}
-                                    height={400}
+                                    fill
+                                    sizes="100vw"
                                     className="object-cover w-full h-full"
                                     data-ai-hint={service.aiHint}
                                     />
@@ -317,5 +317,3 @@ export default async function Home() {
     </div>
   );
 }
-
-    
