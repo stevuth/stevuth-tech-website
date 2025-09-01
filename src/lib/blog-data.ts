@@ -1,5 +1,5 @@
 import { db } from './firebase';
-import { collection, getDocs, query, where, limit, orderBy } from 'firebase/firestore';
+import { collection, getDocs, query, where, limit, orderBy, FirestoreError } from 'firebase/firestore';
 
 export interface Post {
   id: string;
@@ -31,6 +31,19 @@ const postFromDoc = (doc: any): Post => {
   };
 };
 
+const handleFirestoreError = (error: unknown, context: string) => {
+  if (error instanceof FirestoreError) {
+    if (error.code === 'permission-denied') {
+      console.error(`Firestore permission denied in ${context}. Please check your security rules in the Firebase console.`);
+    } else {
+      console.error(`Firestore error in ${context} (${error.code}):`, error.message);
+    }
+  } else {
+    console.error(`An unknown error occurred in ${context}:`, error);
+  }
+};
+
+
 export async function getPosts(options: { limit?: number } = {}): Promise<Post[]> {
   try {
     const postsRef = collection(db, 'posts');
@@ -44,7 +57,7 @@ export async function getPosts(options: { limit?: number } = {}): Promise<Post[]
     }
     return querySnapshot.docs.map(postFromDoc);
   } catch (error) {
-    console.error("Error fetching posts from Firestore:", error);
+    handleFirestoreError(error, 'getPosts');
     return [];
   }
 }
@@ -63,7 +76,7 @@ export async function getPost(slug: string): Promise<Post | null> {
     const doc = querySnapshot.docs[0];
     return postFromDoc(doc);
   } catch (error) {
-    console.error(`Error fetching post with slug ${slug}:`, error);
+    handleFirestoreError(error, `getPost with slug: ${slug}`);
     return null;
   }
 }
