@@ -187,11 +187,10 @@ const ServiceSection = ({ service, index }: { service: (typeof serviceCategories
           <Image
             src={service.imageUrl}
             alt={service.title}
-            width={600}
-            height={400}
-            sizes="100vw"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             priority={index === 0}
-            className="object-cover w-full h-full"
+            className="object-cover"
             data-ai-hint={service.aiHint}
           />
         </div>

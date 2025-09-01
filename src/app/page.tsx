@@ -174,13 +174,12 @@ export default async function Home() {
                            <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
                                 <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
                                     <Image
-                                    src={service.image}
-                                    alt={service.title}
-                                    width={600}
-                                    height={400}
-                                    sizes="100vw"
-                                    className="object-cover w-full h-full"
-                                    data-ai-hint={service.aiHint}
+                                      src={service.image}
+                                      alt={service.title}
+                                      fill
+                                      sizes="(max-width: 768px) 100vw, 50vw"
+                                      className="object-cover"
+                                      data-ai-hint={service.aiHint}
                                     />
                                 </div>
                             </AnimatedWrapper>
