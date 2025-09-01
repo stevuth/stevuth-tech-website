@@ -39,7 +39,7 @@ export function PostForm() {
         description: state.message,
       });
       router.push('/admin');
-    } else if (state.message && !state.success) {
+    } else if (state.message && (state.errors || !state.success)) {
        toast({
         title: "Error Creating Post",
         description: state.message,

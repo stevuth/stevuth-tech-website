@@ -61,6 +61,16 @@ export async function createPost(prevState: State, formData: FormData): Promise<
       createdAt: Timestamp.now(),
     };
     await addDoc(collection(db, "posts"), newPost);
+    
+    revalidatePath('/admin');
+    revalidatePath('/blog');
+    revalidatePath('/');
+    
+    return {
+      message: "Post created successfully!",
+      success: true,
+    };
+
   } catch (error) {
     console.error("Error creating post in Firestore:", error);
     return {
@@ -68,13 +78,4 @@ export async function createPost(prevState: State, formData: FormData): Promise<
       success: false,
     };
   }
-
-  revalidatePath('/admin');
-  revalidatePath('/blog');
-  revalidatePath('/');
-  
-  return {
-    message: "Post created successfully!",
-    success: true,
-  };
 }
