@@ -98,7 +98,7 @@ export default async function Home() {
       <section className="relative h-[calc(100vh)] w-full flex items-center justify-start text-left text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10" />
          <video
-          src="/desktop-hero-video.mp4"
+          src="desktop-hero-video.mp4"
           autoPlay
           muted
           loop
@@ -106,7 +106,7 @@ export default async function Home() {
           className="absolute z-0 hidden md:block w-full h-full object-cover object-center"
         />
         <video
-          src="/mobile-hero-video.mp4"
+          src="mobile-hero-video.mp4"
           autoPlay
           muted
           loop
