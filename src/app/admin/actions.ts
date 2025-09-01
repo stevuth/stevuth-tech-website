@@ -3,7 +3,6 @@
 import { z } from "zod";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { redirect } from 'next/navigation';
 import { revalidatePath } from "next/cache";
 
 const postSchema = z.object({
@@ -73,5 +72,9 @@ export async function createPost(prevState: State, formData: FormData): Promise<
   revalidatePath('/admin');
   revalidatePath('/blog');
   revalidatePath('/');
-  redirect('/admin');
+  
+  return {
+    message: "Post created successfully!",
+    success: true,
+  };
 }

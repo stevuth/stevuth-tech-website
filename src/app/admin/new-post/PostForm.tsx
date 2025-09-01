@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { ImageUploader } from "@/components/ImageUploader";
+import { useRouter } from "next/navigation";
 
 const initialState = {
   message: "",
@@ -29,16 +30,23 @@ export function PostForm() {
   const [state, formAction] = useActionState(createPost, initialState);
   const [imageUrl, setImageUrl] = useState("https://picsum.photos/600/400");
   const { toast } = useToast();
+  const router = useRouter();
 
   useEffect(() => {
-    if (state.message && !state.success) {
+    if (state.success) {
+      toast({
+        title: "Success!",
+        description: state.message,
+      });
+      router.push('/admin');
+    } else if (state.message && !state.success) {
        toast({
         title: "Error Creating Post",
         description: state.message,
         variant: "destructive",
       });
     }
-  }, [state, toast]);
+  }, [state, toast, router]);
 
   return (
     <form action={formAction} className="space-y-6">
