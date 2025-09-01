@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { HardHat, ShoppingCart, CheckCircle, Target, Globe, ArrowRight, BriefcaseMedical, Network, Stethoscope, Users, Sparkles, Plane, Baby, GraduationCap, Code, Brush, Rocket, Zap, Smartphone, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Code, Brush, Rocket, Zap, Smartphone, Target, Globe, ShieldCheck } from 'lucide-react';
+import { posts } from '@/lib/blog-data';
+import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -85,6 +87,7 @@ const benefits = [
   },
 ];
 
+const featuredPosts = posts.slice(0, 3);
 
 export default function Home() {
   return (
@@ -244,6 +247,58 @@ export default function Home() {
         </div>
       </section>
       
+      <section className="py-10 md:py-12 bg-primary/5">
+        <div className="container px-4 md:px-6 text-center">
+          <AnimatedWrapper>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">From Our Blog</h2>
+            <p className="max-w-3xl mx-auto text-muted-foreground mb-12">
+              Stay updated with our latest insights on technology, design, and business growth.
+            </p>
+          </AnimatedWrapper>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredPosts.map((post, index) => (
+              <AnimatedWrapper key={post.id} animation="fade-in-up" delay={index * 150}>
+                <Card className="h-full flex flex-col overflow-hidden transition-shadow hover:shadow-xl text-left">
+                  <CardHeader className="p-0">
+                    <Link href={`/blog/${post.slug}`} className="block relative aspect-video w-full">
+                      <Image
+                        src={post.imageUrl}
+                        alt={post.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover"
+                        data-ai-hint={post.aiHint}
+                      />
+                    </Link>
+                  </CardHeader>
+                  <CardContent className="flex-grow p-6">
+                    <Badge variant="secondary" className="mb-2 text-sm">{post.category}</Badge>
+                    <CardTitle className="text-lg leading-snug mb-2 font-bold">
+                      <Link href={`/blog/${post.slug}`} className="text-primary hover:text-accent transition-colors">
+                        {post.title}
+                      </Link>
+                    </CardTitle>
+                    <p className="text-muted-foreground text-sm line-clamp-3">{post.excerpt}</p>
+                  </CardContent>
+                  <CardFooter className="p-6 pt-0">
+                    <Button asChild variant="link" className="p-0 h-auto text-accent hover:text-accent/90">
+                      <Link href={`/blog/${post.slug}`}>
+                        Read Full Article <ArrowRight className="h-4 w-4 ml-2" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </AnimatedWrapper>
+            ))}
+          </div>
+          <AnimatedWrapper className="mt-12">
+            <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Link href="/blog">View All Articles</Link>
+            </Button>
+          </AnimatedWrapper>
+        </div>
+      </section>
+
       <section className="bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6 py-10 text-center">
           <AnimatedWrapper>
