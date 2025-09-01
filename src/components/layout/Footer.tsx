@@ -7,8 +7,10 @@ const footerLinks = {
     { href: '/', label: 'Home' },
     { href: '/about', label: 'Who We Are' },
     { href: '/services', label: 'What We Do' },
+    { href: '/blog', label: 'Blog' },
   ],
   essentials: [
+    { href: '/contact', label: 'Contact Us' },
     { href: '/faq', label: 'FAQ' },
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: '/terms-of-service', label: 'Terms of Service' },

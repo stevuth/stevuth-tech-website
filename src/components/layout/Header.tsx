@@ -14,6 +14,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'Who We Are' },
   { href: '/services', label: 'What We Do' },
+  { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact Us' },
   { href: '/faq', label: 'FAQ' },
 ];
@@ -44,7 +45,7 @@ export function Header() {
   }, []);
 
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-    const isActive = pathname === href;
+    const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
     return (
       <Link href={href} className={cn(
         "relative text-sm font-medium transition-colors hover:text-accent",
@@ -58,7 +59,7 @@ export function Header() {
   };
 
   const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-    const isActive = pathname === href;
+    const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
     return (
         <SheetClose asChild>
             <Link href={href} className={cn(
@@ -74,11 +75,11 @@ export function Header() {
 
   const headerClasses = cn(
     'fixed top-0 z-50 w-full transition-all duration-300',
-    isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent'
+    isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent',
   );
 
   return (
-    <header className={headerClasses}>
+    <header className={cn(headerClasses, 'group/header')}>
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
             <BackButton />
@@ -87,7 +88,7 @@ export function Header() {
                 <Logo isDark={isHomepage && !isScrolled} />
               </Link>
             )}
-             {!isHomepage && (
+            {!isHomepage && (
               <Link href="/" aria-label="Back to homepage">
                 <Logo isDark={false} />
               </Link>
@@ -105,7 +106,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu" className={cn("hover:bg-white/10", isHomepage && !isScrolled ? "text-white" : "text-foreground" )}>
+              <Button variant="ghost" size="icon" aria-label="Open menu" className={cn("hover:bg-white/10", isHomepage && !isScrolled ? "text-white group-hover/header:text-white" : "text-foreground" )}>
                 <HamburgerIcon />
               </Button>
             </SheetTrigger>
