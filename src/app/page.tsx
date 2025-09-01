@@ -36,7 +36,7 @@ const services = [
     description: 'Tailored websites built from scratch to meet unique business needs.',
     href: '/services#custom-website-development',
     aiHint: 'web development',
-    image: 'https://picsum.photos/600/400',
+    image: '/images/services/custom-website-development.jpg',
   },
   {
     icon: <Brush className="h-10 w-10 text-accent" />,
@@ -44,7 +44,7 @@ const services = [
     description: 'Engaging, user-friendly designs and creative brand visuals that align with your website.',
     href: '/services#ui-ux-design',
     aiHint: 'digital network',
-    image: 'https://picsum.photos/600/400',
+    image: '/images/services/ui-ux-brand-design.jpg',
   },
   {
     icon: <Rocket className="h-10 w-10 text-accent" />,
@@ -52,7 +52,7 @@ const services = [
     description: 'Enhancing website performance, speed, and search engine ranking.',
     href: '/services#speed-optimization',
     aiHint: 'rocket launch',
-    image: 'https://picsum.photos/600/400',
+    image: '/images/services/performance-optimization.jpg',
   },
 ];
 
@@ -175,9 +175,9 @@ export default async function Home() {
                                     <Image
                                     src={service.image}
                                     alt={service.title}
-                                    fill
-                                    sizes="100vw"
-                                    className="object-cover"
+                                    width={600}
+                                    height={400}
+                                    className="object-cover w-full h-full"
                                     data-ai-hint={service.aiHint}
                                     />
                                 </div>
@@ -317,3 +317,5 @@ export default async function Home() {
     </div>
   );
 }
+
+    
