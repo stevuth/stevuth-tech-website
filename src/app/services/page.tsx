@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { Code, Brush, Rocket, Layers, Check } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
@@ -186,10 +187,11 @@ const ServiceSection = ({ service, index }: { service: (typeof serviceCategories
           <Image
             src={service.imageUrl}
             alt={service.title}
-            fill
+            width={600}
+            height={400}
             sizes="100vw"
             priority={index === 0}
-            className="object-cover"
+            className="object-cover w-full h-full"
             data-ai-hint={service.aiHint}
           />
         </div>

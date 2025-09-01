@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -175,7 +176,8 @@ export default async function Home() {
                                     <Image
                                     src={service.image}
                                     alt={service.title}
-                                    fill
+                                    width={600}
+                                    height={400}
                                     sizes="100vw"
                                     className="object-cover w-full h-full"
                                     data-ai-hint={service.aiHint}
