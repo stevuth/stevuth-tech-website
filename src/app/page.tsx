@@ -95,24 +95,26 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative h-[calc(100vh)] w-full flex items-center justify-start text-left text-white overflow-hidden">
+      <section className="relative h-screen w-full flex items-center justify-start text-left text-white overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <video
+            src="/desktop-hero-video.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute z-0 hidden md:block w-full h-full object-cover object-center"
+          />
+          <video
+            src="/mobile-hero-video.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute z-0 md:hidden w-full h-full object-cover object-center"
+          />
+        </div>
         <div className="absolute inset-0 bg-black/60 z-10" />
-         <video
-          src="desktop-hero-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute z-0 hidden md:block w-full h-full object-cover object-center"
-        />
-        <video
-          src="mobile-hero-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute z-0 md:hidden w-full h-full object-cover object-center scale-125"
-        />
         <div className="relative z-20 container px-4 md:px-6">
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold tracking-tighter mb-4 text-white">
