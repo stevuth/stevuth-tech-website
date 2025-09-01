@@ -91,13 +91,21 @@ export default function Home() {
     <div className="flex flex-col">
       <section className="relative h-[calc(100vh)] w-full flex items-center justify-start text-left text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10" />
-        <video
-          src="/stevuth-hero-video.mp4"
+         <video
+          src="/desktop-hero-video.mp4"
           autoPlay
           muted
           loop
           playsInline
-          className="absolute z-0 w-full h-full object-cover object-center md:scale-100 scale-125"
+          className="absolute z-0 hidden md:block w-full h-full object-cover object-center"
+        />
+        <video
+          src="/mobile-hero-video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute z-0 md:hidden w-full h-full object-cover object-center scale-125"
         />
         <div className="relative z-20 container px-4 md:px-6">
           <AnimatedWrapper>
