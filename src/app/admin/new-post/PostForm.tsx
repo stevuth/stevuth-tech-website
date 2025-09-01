@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { createPost } from "../actions";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { ImageUploader } from "@/components/ImageUploader";
 
 const initialState = {
   message: "",
@@ -26,6 +27,7 @@ function SubmitButton() {
 
 export function PostForm() {
   const [state, formAction] = useActionState(createPost, initialState);
+  const [imageUrl, setImageUrl] = useState("https://picsum.photos/600/400");
   const { toast } = useToast();
 
   useEffect(() => {
@@ -64,19 +66,19 @@ export function PostForm() {
         {state.errors?.content && <p className="text-sm text-destructive">{state.errors.content[0]}</p>}
       </div>
 
-       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-         <div className="space-y-2">
-          <Label htmlFor="imageUrl">Image URL</Label>
-          <Input id="imageUrl" name="imageUrl" placeholder="https://example.com/image.jpg" defaultValue="https://picsum.photos/600/400" required />
-          {state.errors?.imageUrl && <p className="text-sm text-destructive">{state.errors.imageUrl[0]}</p>}
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="aiHint">Image AI Hint</Label>
-          <Input id="aiHint" name="aiHint" placeholder="e.g. 'tech code'" />
-          {state.errors?.aiHint && <p className="text-sm text-destructive">{state.errors.aiHint[0]}</p>}
-        </div>
+       <div className="space-y-2">
+         <Label htmlFor="imageUrl">Featured Image</Label>
+         <ImageUploader onUploadSuccess={setImageUrl} />
+         <Input type="hidden" name="imageUrl" value={imageUrl} />
+         {state.errors?.imageUrl && <p className="text-sm text-destructive">{state.errors.imageUrl[0]}</p>}
       </div>
+
+       <div className="space-y-2">
+        <Label htmlFor="aiHint">Image AI Hint</Label>
+        <Input id="aiHint" name="aiHint" placeholder="e.g. 'tech code'" />
+        {state.errors?.aiHint && <p className="text-sm text-destructive">{state.errors.aiHint[0]}</p>}
+      </div>
+
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="space-y-2">

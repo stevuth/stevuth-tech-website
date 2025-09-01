@@ -11,7 +11,7 @@ const postSchema = z.object({
   slug: z.string().min(5, "Slug must be at least 5 characters.").regex(/^[a-z0-9-]+$/, "Slug must be lowercase with no spaces."),
   excerpt: z.string().min(10, "Excerpt must be at least 10 characters."),
   content: z.string().min(20, "Content must be at least 20 characters."),
-  imageUrl: z.string().url("Please enter a valid URL."),
+  imageUrl: z.string().url("Please upload an image."),
   author: z.string().min(2, "Author name must be at least 2 characters."),
   category: z.string().min(3, "Category must be at least 3 characters."),
   aiHint: z.string().optional(),
