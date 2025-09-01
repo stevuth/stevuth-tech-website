@@ -87,6 +87,11 @@ export function Header() {
                 <Logo isDark={isHomepage && !isScrolled} />
               </Link>
             )}
+             {!isHomepage && (
+              <Link href="/" aria-label="Back to homepage">
+                <Logo isDark={false} />
+              </Link>
+            )}
         </div>
         
         <nav className={cn("hidden items-center space-x-8 md:flex")}>
