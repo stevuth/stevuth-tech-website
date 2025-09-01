@@ -3,9 +3,10 @@
 import { useState, useActionState, useEffect, useRef } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { uploadImageAction } from '@/app/admin/upload/actions';
-import { UploadCloud, X, Image as ImageIcon } from 'lucide-react';
+import { UploadCloud, X } from 'lucide-react';
 import Image from 'next/image';
 import { Progress } from './ui/progress';
+import { Button } from './ui/button';
 
 interface ImageUploaderProps {
   onUploadSuccess: (url: string) => void;
@@ -23,19 +24,31 @@ export function ImageUploader({ onUploadSuccess }: ImageUploaderProps) {
   const [isUploading, setIsUploading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({
-    onDrop: (acceptedFiles) => {
+  const onDrop = (acceptedFiles: File[]) => {
       const file = acceptedFiles[0];
       if (file) {
         setPreview(URL.createObjectURL(file));
         const formData = new FormData();
         formData.append('image', file);
         setIsUploading(true);
-        formAction(formData);
+        // Manually call the action.
+        // This is not a form submission, but a direct call to the action.
+        uploadImageAction(initialState, formData).then((newState) => {
+            if (newState.success && newState.imageUrl) {
+              onUploadSuccess(newState.imageUrl);
+              setPreview(newState.imageUrl);
+            }
+             setIsUploading(false);
+        });
       }
-    },
+  };
+
+  const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
+    onDrop,
     accept: { 'image/*': ['.jpeg', '.png', '.jpg', '.gif'] },
     multiple: false,
+    noClick: true,
+    noKeyboard: true,
   });
 
   useEffect(() => {
@@ -49,7 +62,8 @@ export function ImageUploader({ onUploadSuccess }: ImageUploaderProps) {
     }
   }, [state, onUploadSuccess]);
 
-  const handleRemoveImage = () => {
+  const handleRemoveImage = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation(); // prevent opening the file dialog
     setPreview(null);
     onUploadSuccess("");
     if (fileInputRef.current) {
@@ -66,19 +80,21 @@ export function ImageUploader({ onUploadSuccess }: ImageUploaderProps) {
       >
         <input {...getInputProps({ref: fileInputRef})} />
         {preview ? (
-          <div className="relative group">
-            <Image src={preview} alt="Image preview" width={200} height={200} className="mx-auto rounded-md" />
-            <button
+          <div className="relative group mx-auto max-w-[200px]">
+            <Image src={preview} alt="Image preview" width={200} height={200} className="rounded-md" />
+            <Button
               type="button"
+              variant="destructive"
+              size="icon"
               onClick={handleRemoveImage}
-              className="absolute top-1 right-1 bg-red-600 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute top-1 right-1 h-7 w-7 opacity-0 group-hover:opacity-100 transition-opacity"
               aria-label="Remove image"
             >
               <X className="h-4 w-4" />
-            </button>
+            </Button>
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center gap-2 text-muted-foreground">
+          <div onClick={open} className="flex flex-col items-center justify-center gap-2 text-muted-foreground">
             <UploadCloud className="h-10 w-10" />
             <p className="font-semibold">Drag & drop an image here, or click to select</p>
             <p className="text-xs">PNG, JPG, GIF up to 10MB</p>
