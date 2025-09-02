@@ -38,7 +38,7 @@ const serviceCategories = [
         id: "ecommerce-development",
         title: "E-Commerce Development",
         description: "Fully functional online stores with payment integration, inventory, and shipping features.",
-        imageUrl: "https://i.ibb.co/j920D9P/e-commerce.jpg",
+        imageUrl: "https://iili.io/Kq6XywG.jpg",
         aiHint: "online store",
       },
       {
