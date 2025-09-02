@@ -37,7 +37,7 @@ const services = [
     description: 'Tailored websites built from scratch to meet unique business needs.',
     href: '/services#custom-website-development',
     aiHint: 'web development',
-    image: '/images/services/custom-website-development.jpg',
+    image: 'https://picsum.photos/600/400',
   },
   {
     icon: <Brush className="h-10 w-10 text-accent" />,
@@ -45,7 +45,7 @@ const services = [
     description: 'Engaging, user-friendly designs and creative brand visuals that align with your website.',
     href: '/services#ui-ux-design',
     aiHint: 'digital network',
-    image: '/images/services/ui-ux-brand-design.jpg',
+    image: 'https://picsum.photos/600/400',
   },
   {
     icon: <Rocket className="h-10 w-10 text-accent" />,
@@ -53,7 +53,7 @@ const services = [
     description: 'Enhancing website performance, speed, and search engine ranking.',
     href: '/services#speed-optimization',
     aiHint: 'rocket launch',
-    image: '/images/services/performance-optimization.jpg',
+    image: 'https://picsum.photos/600/400',
   },
 ];
 
