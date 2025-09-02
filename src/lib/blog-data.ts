@@ -35,6 +35,8 @@ const handleFirestoreError = (error: unknown, context: string) => {
   if (error instanceof FirestoreError) {
     if (error.code === 'permission-denied') {
       console.error(`Firestore permission denied in ${context}. Please check your security rules in the Firebase console.`);
+    } else if (error.code === 'not-found') {
+      console.error(`Firestore database not found in ${context}. Please create a Firestore database in the Firebase Console for your project.`);
     } else {
       console.error(`Firestore error in ${context} (${error.code}):`, error.message);
     }
