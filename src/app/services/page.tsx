@@ -31,7 +31,7 @@ const serviceCategories = [
         id: "custom-website-development",
         title: "Custom Website Development",
         description: "Tailored websites built from scratch to meet unique business needs.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://iili.io/KBBB0Xt.jpg",
         aiHint: "custom code",
       },
       {
