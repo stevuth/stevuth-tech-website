@@ -62,13 +62,15 @@ const trustFactors = [
 export default function AboutPage() {
   return (
     <div>
-      <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
-        <AnimatedWrapper>
-          <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">About Stevuth Tech</h1>
-          <p className="mt-4 text-base md:text-lg max-w-3xl mx-auto text-primary-foreground/80">
-            Learn about our journey, our purpose, and the values that drive us to build the future of the web.
-          </p>
-        </AnimatedWrapper>
+      <section className="bg-primary text-primary-foreground py-10 md:py-12">
+        <div className="container px-4 md:px-6">
+          <AnimatedWrapper>
+            <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">About Stevuth Tech</h1>
+            <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
+              Learn about our journey, our purpose, and the values that drive us to build the future of the web.
+            </p>
+          </AnimatedWrapper>
+        </div>
       </section>
 
       <section className="py-10 md:py-12">

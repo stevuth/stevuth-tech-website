@@ -209,13 +209,15 @@ const ServiceSection = ({ service, index }: { service: (typeof serviceCategories
 export default function ServicesPage() {
   return (
     <div>
-      <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
-        <AnimatedWrapper>
-          <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Our Services</h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-primary-foreground/80">
-            Expert solutions to build, brand, and boost your online presence.
-          </p>
-        </AnimatedWrapper>
+      <section className="bg-primary text-primary-foreground py-10 md:py-12">
+        <div className="container px-4 md:px-6">
+          <AnimatedWrapper>
+            <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Our Services</h1>
+            <p className="mt-4 text-lg md:text-xl max-w-3xl text-primary-foreground/80">
+              Expert solutions to build, brand, and boost your online presence.
+            </p>
+          </AnimatedWrapper>
+        </div>
       </section>
 
       {serviceCategories.map((category, categoryIndex) => (

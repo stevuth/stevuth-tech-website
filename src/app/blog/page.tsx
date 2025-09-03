@@ -57,13 +57,15 @@ export default async function BlogPage() {
 
   return (
     <div>
-      <section className="bg-primary text-primary-foreground py-10 md:py-12 text-center">
-        <AnimatedWrapper>
-          <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Our Blog</h1>
-          <p className="mt-4 text-base md:text-lg max-w-3xl mx-auto text-primary-foreground/80">
-            Insights, tutorials, and news from the forefront of technology and design.
-          </p>
-        </AnimatedWrapper>
+      <section className="bg-primary text-primary-foreground py-10 md:py-12">
+        <div className="container px-4 md:px-6">
+          <AnimatedWrapper>
+            <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Our Blog</h1>
+            <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
+              Insights, tutorials, and news from the forefront of technology and design.
+            </p>
+          </AnimatedWrapper>
+        </div>
       </section>
 
       <section className="py-10 md:py-12">
