@@ -37,7 +37,7 @@ const services = [
     description: 'Tailored websites built from scratch to meet unique business needs.',
     href: '/services#custom-website-development',
     aiHint: 'web development',
-    image: 'https://picsum.photos/600/400',
+    image: 'https://iili.io/KBBB0Xt.jpg',
   },
   {
     icon: <Brush className="h-10 w-10 text-accent" />,
