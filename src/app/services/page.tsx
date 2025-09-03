@@ -45,7 +45,7 @@ const serviceCategories = [
         id: "business-website-design",
         title: "Business Website Design",
         description: "Professional websites for companies, startups, and SMEs to build credibility online.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://iili.io/KBM2lrF.jpg",
         aiHint: "corporate building",
       },
       {
