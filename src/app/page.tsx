@@ -37,7 +37,7 @@ const services = [
     description: 'Tailored websites built from scratch to meet unique business needs.',
     href: '/services#custom-website-development',
     aiHint: 'web development',
-    image: 'https://iili.io/KBBB0Xt.jpg',
+    image: 'https://picsum.photos/600/400',
   },
   {
     icon: <Brush className="h-10 w-10 text-accent" />,
@@ -45,7 +45,7 @@ const services = [
     description: 'Engaging, user-friendly designs and creative brand visuals that align with your website.',
     href: '/services#ui-ux-design',
     aiHint: 'digital network',
-    image: 'https://picsum.photos/600/400',
+    image: 'https://iili.io/KBBB0Xt.jpg',
   },
   {
     icon: <Rocket className="h-10 w-10 text-accent" />,
