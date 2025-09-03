@@ -52,7 +52,7 @@ const serviceCategories = [
         id: "landing-page-design",
         title: "Landing Page Design",
         description: "High-converting landing pages designed for marketing campaigns and promotions.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://iili.io/KBV9YYJ.jpg",
         aiHint: "marketing chart",
       },
       {
