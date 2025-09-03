@@ -31,7 +31,7 @@ const serviceCategories = [
         id: "custom-website-development",
         title: "Custom Website Development",
         description: "Tailored websites built from scratch to meet unique business needs.",
-        imageUrl: "https://iili.io/KBBB0Xt.jpg",
+        imageUrl: "https://picsum.photos/600/400",
         aiHint: "custom code",
       },
       {
@@ -72,7 +72,7 @@ const serviceCategories = [
         id: "ui-ux-design",
         title: "UI/UX Design",
         description: "Engaging and user-friendly designs that deliver smooth experiences for visitors.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://iili.io/KBBB0Xt.jpg",
         aiHint: "design wireframe",
       },
       {
