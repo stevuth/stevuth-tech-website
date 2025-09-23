@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useActionState, useEffect, useState } from "react";
@@ -10,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { ImageUploader } from "@/components/ImageUploader";
 import { useRouter } from "next/navigation";
+import imageData from '@/lib/placeholder-images.json';
 
 const initialState = {
   message: "",
@@ -28,7 +30,7 @@ function SubmitButton() {
 
 export function PostForm() {
   const [state, formAction] = useActionState(createPost, initialState);
-  const [imageUrl, setImageUrl] = useState("https://i.ibb.co/yN9pXj8/blog-placeholder.jpg");
+  const [imageUrl, setImageUrl] = useState(imageData.blog.default.src);
   const { toast } = useToast();
   const router = useRouter();
 
@@ -83,7 +85,7 @@ export function PostForm() {
 
        <div className="space-y-2">
         <Label htmlFor="aiHint">Image AI Hint</Label>
-        <Input id="aiHint" name="aiHint" placeholder="e.g. 'tech code'" />
+        <Input id="aiHint" name="aiHint" placeholder="e.g. 'tech code'" defaultValue={imageData.blog.default.hint} />
         {state.errors?.aiHint && <p className="text-sm text-destructive">{state.errors.aiHint[0]}</p>}
       </div>
 

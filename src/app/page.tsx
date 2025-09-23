@@ -8,6 +8,7 @@ import { ArrowRight, Code, Brush, Rocket, Zap, Smartphone, Target, Globe, Shield
 import { getPosts } from '@/lib/blog-data';
 import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
+import imageData from '@/lib/placeholder-images.json';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -36,24 +37,24 @@ const services = [
     title: 'Custom Website Development',
     description: 'Tailored websites built from scratch to meet unique business needs.',
     href: '/services#custom-website-development',
-    aiHint: 'web development',
-    image: 'https://i.ibb.co/dGtHw7Q/custom-website.jpg',
+    image: imageData.home.customWebsite.src,
+    aiHint: imageData.home.customWebsite.hint,
   },
   {
     icon: <Brush className="h-10 w-10 text-accent" />,
     title: 'UI/UX & Brand Design',
     description: 'Engaging, user-friendly designs and creative brand visuals that align with your website.',
     href: '/services#ui-ux-design',
-    aiHint: 'digital network',
-    image: 'https://iili.io/KBBB0Xt.jpg',
+    image: imageData.home.uiUx.src,
+    aiHint: imageData.home.uiUx.hint,
   },
   {
     icon: <Rocket className="h-10 w-10 text-accent" />,
     title: 'Performance & Optimization',
     description: 'Enhancing website performance, speed, and search engine ranking.',
     href: '/services#speed-optimization',
-    aiHint: 'rocket launch',
-    image: 'https://i.ibb.co/hR2gV3P/performance.jpg',
+    image: imageData.home.performance.src,
+    aiHint: imageData.home.performance.hint,
   },
 ];
 
@@ -126,13 +127,13 @@ export default async function Home() {
             <AnimatedWrapper animation="slide-in-left">
               <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
                  <Image
-                  src="https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg"
+                  src={imageData.home.meetStevuth.src}
                   alt="Team collaboration"
                   fill
                   sizes="100vw"
                   priority
                   className="object-cover"
-                  data-ai-hint="corporate team"
+                  data-ai-hint={imageData.home.meetStevuth.hint}
                  />
               </div>
             </AnimatedWrapper>

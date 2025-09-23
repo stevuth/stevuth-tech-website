@@ -1,9 +1,11 @@
+
 import Image from "next/image";
 import { CheckCircle, Target, Globe, Users, TrendingUp, ShieldCheck, Lightbulb } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import type { Metadata } from 'next';
+import imageData from '@/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'About Stevuth Tech - Our Mission and Values in Nigeria',
@@ -79,13 +81,13 @@ export default function AboutPage() {
             <AnimatedWrapper animation="slide-in-left">
               <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="https://i.ibb.co/Fm1d9f8/about-us.jpg"
+                  src={imageData.about.story.src}
                   alt="A modern office space with developers collaborating"
                   fill
                   sizes="100vw"
                   priority
                   className="object-cover"
-                  data-ai-hint="tech collaboration"
+                  data-ai-hint={imageData.about.story.hint}
                 />
               </div>
             </AnimatedWrapper>

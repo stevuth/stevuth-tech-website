@@ -1,5 +1,7 @@
+
 import { db } from './firebase';
 import { collection, getDocs, query, where, limit, orderBy, FirestoreError } from 'firebase/firestore';
+import imageData from '@/lib/placeholder-images.json';
 
 export interface Post {
   id: string;
@@ -22,12 +24,12 @@ const postFromDoc = (doc: any): Post => {
     slug: data.slug || '',
     title: data.title || '',
     excerpt: data.excerpt || '',
-    imageUrl: data.imageUrl || '',
+    imageUrl: data.imageUrl || imageData.blog.default.src,
     date: data.date || '',
     author: data.author || '',
     category: data.category || '',
     content: data.content || '',
-    aiHint: data.aiHint || '',
+    aiHint: data.aiHint || imageData.blog.default.hint,
   };
 };
 

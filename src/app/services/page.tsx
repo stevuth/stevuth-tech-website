@@ -5,6 +5,7 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import type { Metadata } from 'next';
+import imageData from '@/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
   title: 'Our Services - Stevuth Tech | Nigeria',
@@ -31,36 +32,36 @@ const serviceCategories = [
         id: "custom-website-development",
         title: "Custom Website Development",
         description: "Tailored websites built from scratch to meet unique business needs.",
-        imageUrl: "https://i.ibb.co/dGtHw7Q/custom-website.jpg",
-        aiHint: "custom code",
+        imageUrl: imageData.services.customWebsite.src,
+        aiHint: imageData.services.customWebsite.hint,
       },
       {
         id: "ecommerce-development",
         title: "E-Commerce Development",
         description: "Fully functional online stores with payment integration, inventory, and shipping features.",
-        imageUrl: "https://iili.io/Kq6XywG.jpg",
-        aiHint: "online store",
+        imageUrl: imageData.services.ecommerce.src,
+        aiHint: imageData.services.ecommerce.hint,
       },
       {
         id: "business-website-design",
         title: "Business Website Design",
         description: "Professional websites for companies, startups, and SMEs to build credibility online.",
-        imageUrl: "https://iili.io/KBM2lrF.jpg",
-        aiHint: "corporate building",
+        imageUrl: imageData.services.businessWebsite.src,
+        aiHint: imageData.services.businessWebsite.hint,
       },
       {
         id: "landing-page-design",
         title: "Landing Page Design",
         description: "High-converting landing pages designed for marketing campaigns and promotions.",
-        imageUrl: "https://iili.io/KBV9YYJ.jpg",
-        aiHint: "marketing chart",
+        imageUrl: imageData.services.landingPage.src,
+        aiHint: imageData.services.landingPage.hint,
       },
       {
         id: "web-application-development",
         title: "Web Application Development",
         description: "Advanced, interactive web apps such as dashboards, SaaS platforms, and custom solutions.",
-        imageUrl: "https://i.ibb.co/6yv9rz0/web-application.jpg",
-        aiHint: "saas dashboard",
+        imageUrl: imageData.services.webApplication.src,
+        aiHint: imageData.services.webApplication.hint,
       },
     ]
   },
@@ -72,15 +73,15 @@ const serviceCategories = [
         id: "ui-ux-design",
         title: "UI/UX Design",
         description: "Engaging and user-friendly designs that deliver smooth experiences for visitors.",
-        imageUrl: "https://iili.io/KBBB0Xt.jpg",
-        aiHint: "design wireframe",
+        imageUrl: imageData.services.uiUx.src,
+        aiHint: imageData.services.uiUx.hint,
       },
       {
         id: "brand-identity-design",
         title: "Brand Identity Design",
         description: "Creative logos, color palettes, and brand visuals that align with your website.",
-        imageUrl: "https://i.ibb.co/2WcKx9f/brand-identity.jpg",
-        aiHint: "brand logo",
+        imageUrl: imageData.services.brandIdentity.src,
+        aiHint: imageData.services.brandIdentity.hint,
       },
     ]
   },
@@ -92,29 +93,29 @@ const serviceCategories = [
         id: "website-maintenance",
         title: "Website Maintenance & Support",
         description: "Continuous updates, bug fixes, backups, and security checks.",
-        imageUrl: "https://i.ibb.co/P9t7YpB/maintenance.jpg",
-        aiHint: "website support",
+        imageUrl: imageData.services.maintenance.src,
+        aiHint: imageData.services.maintenance.hint,
       },
       {
         id: "speed-optimization",
         title: "Website Speed Optimization",
         description: "Enhancing performance to make websites load faster.",
-        imageUrl: "https://i.ibb.co/hR2gV3P/performance.jpg",
-        aiHint: "fast loading",
+        imageUrl: imageData.services.speedOptimization.src,
+        aiHint: imageData.services.speedOptimization.hint,
       },
       {
         id: "seo-services",
         title: "SEO Services",
         description: "On-page optimization to help websites rank higher on Google.",
-        imageUrl: "https://i.ibb.co/D8pL4M3/seo.jpg",
-        aiHint: "seo ranking",
+        imageUrl: imageData.services.seo.src,
+        aiHint: imageData.services.seo.hint,
       },
       {
         id: "mobile-optimization",
         title: "Mobile Optimization",
         description: "Fully responsive websites optimized for all devices.",
-        imageUrl: "https://i.ibb.co/wJtPcNv/mobile-optimization.jpg",
-        aiHint: "responsive design",
+        imageUrl: imageData.services.mobileOptimization.src,
+        aiHint: imageData.services.mobileOptimization.hint,
       },
     ]
   },
@@ -126,29 +127,29 @@ const serviceCategories = [
         id: "saas-development",
         title: "SaaS Development",
         description: "Custom software-as-a-service platforms for businesses.",
-        imageUrl: "https://i.ibb.co/yQxGzV1/saas.jpg",
-        aiHint: "software platform",
+        imageUrl: imageData.services.saas.src,
+        aiHint: imageData.services.saas.hint,
       },
       {
         id: "api-development",
         title: "API Development & Integration",
         description: "Connecting websites with payment gateways, CRMs, and other tools.",
-        imageUrl: "https://i.ibb.co/bF9gY6G/api.jpg",
-        aiHint: "api integration",
+        imageUrl: imageData.services.api.src,
+        aiHint: imageData.services.api.hint,
       },
       {
         id: "booking-systems",
         title: "Booking & Reservation Systems",
         description: "Online booking solutions for hotels, events, and service providers.",
-        imageUrl: "https://i.ibb.co/qYf8Jp8/booking.jpg",
-        aiHint: "booking calendar",
+        imageUrl: imageData.services.booking.src,
+        aiHint: imageData.services.booking.hint,
       },
       {
         id: "marketplace-development",
         title: "Marketplace Development",
         description: "Multi-vendor platforms for buying and selling products, cars, or real estate.",
-        imageUrl: "https://i.ibb.co/tCK2L0L/marketplace.jpg",
-        aiHint: "e-commerce marketplace",
+        imageUrl: imageData.services.marketplace.src,
+        aiHint: imageData.services.marketplace.hint,
       },
     ]
   }
@@ -188,6 +189,8 @@ const ServiceSection = ({ service, index }: { service: (typeof serviceCategories
             src={service.imageUrl}
             alt={service.title}
             fill
+            width={800}
+            height={600}
             sizes="(max-width: 768px) 100vw, 50vw"
             priority={index === 0}
             className="object-cover"
@@ -221,7 +224,7 @@ export default function ServicesPage() {
       </section>
 
       {serviceCategories.map((category, categoryIndex) => (
-        <section key={category.category} className={`py-10 md:py-12 ${categoryIndex % 2 === 1 ? 'bg-secondary' : 'bg-background'}`}>
+        <section key={category.category} className={`py-10 md:py-12 ${categoryIndex % 2 === 1 ? 'bg-secondary/10' : 'bg-background'}`}>
           <div className="container px-4 md:px-6">
             <AnimatedWrapper>
               <div className="flex items-center gap-4 mb-8">
