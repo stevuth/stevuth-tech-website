@@ -50,8 +50,7 @@ export function Header() {
       <Link href={href} className={cn(
         "relative text-sm font-medium transition-colors hover:text-accent",
         "after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-accent after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100",
-        isActive ? "text-accent after:scale-x-100" : "",
-        isHomepage && !isScrolled ? "text-white hover:text-accent" : "text-foreground/80"
+        isActive ? "text-accent after:scale-x-100" : "text-white/80"
       )}>
         {children}
       </Link>
@@ -63,9 +62,9 @@ export function Header() {
     return (
         <SheetClose asChild>
             <Link href={href} className={cn(
-                "relative text-2xl font-bold text-white transition-colors hover:text-blue-400 py-3",
-                 "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:bg-blue-500 after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-50",
-                isActive ? "text-blue-400 after:scale-x-50" : ""
+                "relative text-2xl font-bold text-white transition-colors hover:text-accent py-3",
+                 "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:bg-accent after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-50",
+                isActive ? "text-accent after:scale-x-50" : ""
             )}>
                 {children}
             </Link>
@@ -83,16 +82,9 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
             <BackButton />
-            {isHomepage && (
               <Link href="/" aria-label="Back to homepage">
-                <Logo isDark={isHomepage && !isScrolled} />
+                <Logo isDark={true} />
               </Link>
-            )}
-            {!isHomepage && (
-              <Link href="/" aria-label="Back to homepage">
-                <Logo isDark={false} />
-              </Link>
-            )}
         </div>
         
         <nav className={cn("hidden items-center space-x-8 md:flex")}>
@@ -106,7 +98,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu" className={cn("hover:bg-white/10", isHomepage && !isScrolled ? "text-white group-hover/header:text-white" : "text-foreground" )}>
+              <Button variant="ghost" size="icon" aria-label="Open menu" className="text-white hover:bg-white/10">
                 <HamburgerIcon />
               </Button>
             </SheetTrigger>
