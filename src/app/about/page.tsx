@@ -63,7 +63,7 @@ export default function AboutPage() {
   return (
     <div>
       <section className="bg-primary text-primary-foreground py-10 md:py-12">
-        <div className="container px-4 md:px-6">
+        <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
             <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">About Stevuth Tech</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
@@ -79,7 +79,7 @@ export default function AboutPage() {
             <AnimatedWrapper animation="slide-in-left">
               <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
                 <Image
-                  src="https://picsum.photos/600/400"
+                  src="https://i.ibb.co/Fm1d9f8/about-us.jpg"
                   alt="A modern office space with developers collaborating"
                   fill
                   sizes="100vw"

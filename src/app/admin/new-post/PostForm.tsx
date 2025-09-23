@@ -28,7 +28,7 @@ function SubmitButton() {
 
 export function PostForm() {
   const [state, formAction] = useActionState(createPost, initialState);
-  const [imageUrl, setImageUrl] = useState("https://picsum.photos/600/400");
+  const [imageUrl, setImageUrl] = useState("https://i.ibb.co/yN9pXj8/blog-placeholder.jpg");
   const { toast } = useToast();
   const router = useRouter();
 

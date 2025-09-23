@@ -31,7 +31,7 @@ const serviceCategories = [
         id: "custom-website-development",
         title: "Custom Website Development",
         description: "Tailored websites built from scratch to meet unique business needs.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/dGtHw7Q/custom-website.jpg",
         aiHint: "custom code",
       },
       {
@@ -59,7 +59,7 @@ const serviceCategories = [
         id: "web-application-development",
         title: "Web Application Development",
         description: "Advanced, interactive web apps such as dashboards, SaaS platforms, and custom solutions.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/6yv9rz0/web-application.jpg",
         aiHint: "saas dashboard",
       },
     ]
@@ -79,7 +79,7 @@ const serviceCategories = [
         id: "brand-identity-design",
         title: "Brand Identity Design",
         description: "Creative logos, color palettes, and brand visuals that align with your website.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/2WcKx9f/brand-identity.jpg",
         aiHint: "brand logo",
       },
     ]
@@ -92,28 +92,28 @@ const serviceCategories = [
         id: "website-maintenance",
         title: "Website Maintenance & Support",
         description: "Continuous updates, bug fixes, backups, and security checks.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/P9t7YpB/maintenance.jpg",
         aiHint: "website support",
       },
       {
         id: "speed-optimization",
         title: "Website Speed Optimization",
         description: "Enhancing performance to make websites load faster.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/hR2gV3P/performance.jpg",
         aiHint: "fast loading",
       },
       {
         id: "seo-services",
         title: "SEO Services",
         description: "On-page optimization to help websites rank higher on Google.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/D8pL4M3/seo.jpg",
         aiHint: "seo ranking",
       },
       {
         id: "mobile-optimization",
         title: "Mobile Optimization",
         description: "Fully responsive websites optimized for all devices.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/wJtPcNv/mobile-optimization.jpg",
         aiHint: "responsive design",
       },
     ]
@@ -126,28 +126,28 @@ const serviceCategories = [
         id: "saas-development",
         title: "SaaS Development",
         description: "Custom software-as-a-service platforms for businesses.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/yQxGzV1/saas.jpg",
         aiHint: "software platform",
       },
       {
         id: "api-development",
         title: "API Development & Integration",
         description: "Connecting websites with payment gateways, CRMs, and other tools.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/bF9gY6G/api.jpg",
         aiHint: "api integration",
       },
       {
         id: "booking-systems",
         title: "Booking & Reservation Systems",
         description: "Online booking solutions for hotels, events, and service providers.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/qYf8Jp8/booking.jpg",
         aiHint: "booking calendar",
       },
       {
         id: "marketplace-development",
         title: "Marketplace Development",
         description: "Multi-vendor platforms for buying and selling products, cars, or real estate.",
-        imageUrl: "https://picsum.photos/600/400",
+        imageUrl: "https://i.ibb.co/tCK2L0L/marketplace.jpg",
         aiHint: "e-commerce marketplace",
       },
     ]
@@ -210,7 +210,7 @@ export default function ServicesPage() {
   return (
     <div>
       <section className="bg-primary text-primary-foreground py-10 md:py-12">
-        <div className="container px-4 md:px-6">
+        <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
             <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Our Services</h1>
             <p className="mt-4 text-lg md:text-xl max-w-3xl text-primary-foreground/80">
