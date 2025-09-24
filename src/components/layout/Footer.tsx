@@ -28,7 +28,7 @@ export function Footer() {
                     <Logo isDark={true} />
                 </div>
                 
-                <nav className="hidden md:flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+                <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center md:text-left">
                     {footerLinks.map(link => (
                         <Link key={link.href} href={link.href} className="text-sm text-primary-foreground/80 hover:text-accent transition-colors duration-300">
                             {link.label}
