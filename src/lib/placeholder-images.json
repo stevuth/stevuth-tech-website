@@ -1,94 +1,94 @@
 {
   "about": {
     "story": {
-      "src": "https://picsum.photos/seed/aboutStory/800/600",
-      "hint": "tech collaboration"
+      "src": "https://picsum.photos/seed/techStory/800/600",
+      "hint": "modern office"
     }
   },
   "home": {
     "meetStevuth": {
-      "src": "https://picsum.photos/seed/teamCollab/800/600",
-      "hint": "corporate team"
+      "src": "https://picsum.photos/seed/techTeam/800/600",
+      "hint": "team meeting"
     },
     "customWebsite": {
-      "src": "https://picsum.photos/seed/customWebsite/800/600",
-      "hint": "web development"
+      "src": "https://picsum.photos/seed/laptopCode/800/600",
+      "hint": "laptop code"
     },
     "uiUx": {
-      "src": "https://picsum.photos/seed/uiUxDesign/800/600",
-      "hint": "digital network"
+      "src": "https://picsum.photos/seed/designSketch/800/600",
+      "hint": "design sketch"
     },
     "performance": {
-      "src": "https://picsum.photos/seed/performance/800/600",
-      "hint": "rocket launch"
+      "src": "https://picsum.photos/seed/fastWebsite/800/600",
+      "hint": "fast website"
     }
   },
   "services": {
     "customWebsite": {
-      "src": "https://picsum.photos/seed/customCode/800/600",
-      "hint": "custom code"
+      "src": "https://picsum.photos/seed/developerCoding/800/600",
+      "hint": "developer coding"
     },
     "ecommerce": {
-      "src": "https://picsum.photos/seed/onlineStore/800/600",
-      "hint": "online store"
+      "src": "https://iili.io/Kq6XywG.jpg",
+      "hint": "online shopping"
     },
     "businessWebsite": {
-      "src": "https://picsum.photos/seed/corpBuilding/800/600",
-      "hint": "corporate building"
+      "src": "https://i.ibb.co/6gS9P2s/KBM2lrF.jpg",
+      "hint": "professional handshake"
     },
     "landingPage": {
-      "src": "https://picsum.photos/seed/marketingChart/800/600",
-      "hint": "marketing chart"
+      "src": "https://i.ibb.co/k3Pz20x/KBV9YYJ.jpg",
+      "hint": "product launch"
     },
     "webApplication": {
-      "src": "https://picsum.photos/seed/saasDashboard/800/600",
-      "hint": "saas dashboard"
+      "src": "https://picsum.photos/seed/webAppUi/800/600",
+      "hint": "application interface"
     },
     "uiUx": {
-      "src": "https://picsum.photos/seed/designWireframe/800/600",
-      "hint": "design wireframe"
+      "src": "https://i.ibb.co/yQn7qP1/KBBB0Xt.jpg",
+      "hint": "user experience"
     },
     "brandIdentity": {
-      "src": "https://picsum.photos/seed/brandLogo/800/600",
-      "hint": "brand logo"
+      "src": "https://picsum.photos/seed/companyLogo/800/600",
+      "hint": "company logo"
     },
     "maintenance": {
-      "src": "https://picsum.photos/seed/websiteSupport/800/600",
-      "hint": "website support"
+      "src": "https://picsum.photos/seed/serverRoom/800/600",
+      "hint": "server room"
     },
     "speedOptimization": {
-      "src": "https://picsum.photos/seed/fastLoading/800/600",
-      "hint": "fast loading"
+      "src": "https://picsum.photos/seed/speedometer/800/600",
+      "hint": "website speed"
     },
     "seo": {
-      "src": "https://picsum.photos/seed/seoRanking/800/600",
-      "hint": "seo ranking"
+      "src": "https://picsum.photos/seed/analyticsChart/800/600",
+      "hint": "analytics chart"
     },
     "mobileOptimization": {
-      "src": "https://picsum.photos/seed/responsiveDesign/800/600",
-      "hint": "responsive design"
+      "src": "https://picsum.photos/seed/mobileApp/800/600",
+      "hint": "mobile application"
     },
     "saas": {
-      "src": "https://picsum.photos/seed/softwarePlatform/800/600",
-      "hint": "software platform"
+      "src": "https://picsum.photos/seed/saasPlatform/800/600",
+      "hint": "cloud software"
     },
     "api": {
-      "src": "https://picsum.photos/seed/apiIntegration/800/600",
-      "hint": "api integration"
+      "src": "https://picsum.photos/seed/apiCode/800/600",
+      "hint": "api code"
     },
     "booking": {
-      "src": "https://picsum.photos/seed/bookingCalendar/800/600",
-      "hint": "booking calendar"
+      "src": "https://picsum.photos/seed/onlineBooking/800/600",
+      "hint": "online booking"
     },
     "marketplace": {
-      "src": "https://picsum.photos/seed/ecommerceMarketplace/800/600",
-      "hint": "e-commerce marketplace"
+      "src": "https://picsum.photos/seed/digitalMarket/800/600",
+      "hint": "digital marketplace"
     }
   },
   "blog": {
     "default": {
-      "src": "https://picsum.photos/seed/blogPlaceholder/800/600",
-      "hint": "writing desk"
+      "src": "https://picsum.photos/seed/deskSetup/800/600",
+      "hint": "desk setup"
     }
   }
 }
