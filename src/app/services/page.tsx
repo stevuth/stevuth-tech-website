@@ -189,8 +189,6 @@ const ServiceSection = ({ service, index }: { service: (typeof serviceCategories
             src={service.imageUrl}
             alt={service.title}
             fill
-            width={800}
-            height={600}
             sizes="(max-width: 768px) 100vw, 50vw"
             priority={index === 0}
             className="object-cover"
