@@ -12,7 +12,7 @@ export function Logo({ isDark = false, className }: { isDark?: boolean; classNam
         className="rounded-full"
       />
       <span className={cn(
-        "font-headline font-bold text-xl tracking-tight",
+        "font-headline font-bold text-xl tracking-tight sr-only",
         isDark ? "text-white" : "text-white"
       )}>
         Stevuth Tech

@@ -84,9 +84,6 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
             <BackButton />
-              <Link href="/" aria-label="Back to homepage">
-                <Logo isDark={true} />
-              </Link>
         </div>
         
         <nav className={cn("hidden items-center space-x-8 md:flex")}>
