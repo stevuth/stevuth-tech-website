@@ -231,10 +231,10 @@ export default async function Home() {
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent mb-4">
                       {benefit.icon}
                     </div>
-                    <CardTitle className="text-xl font-bold">{benefit.title}</CardTitle>
+                    <CardTitle className="text-xl font-bold text-card-foreground">{benefit.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-muted-foreground">{benefit.description}</p>
+                    <p className="text-card-foreground/80">{benefit.description}</p>
                   </CardContent>
                 </Card>
               </AnimatedWrapper>
