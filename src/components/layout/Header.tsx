@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -110,12 +111,6 @@ export function Header() {
                       <Link href="/">
                         <Logo isDark={true} />
                       </Link>
-                    </SheetClose>
-                     <SheetClose asChild>
-                      <Button variant="ghost" size="icon" className="text-primary-foreground hover:bg-white/10">
-                        <X className="h-6 w-6" />
-                        <span className="sr-only">Close menu</span>
-                      </Button>
                     </SheetClose>
                 </div>
 
