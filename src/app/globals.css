@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 212 35% 10%; /* #0D1117 */
+    --background: 0 0% 10%; /* #1A1A1A */
     --foreground: 0 0% 96%; /* #F5F5F5 */
-    --card: 212 35% 10%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 96%;
-    --popover: 212 35% 10%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 96%;
-    --primary: 191 100% 43%; /* #00B8D9 */
-    --primary-foreground: 212 35% 10%;
+    --primary: 0 0% 88%; /* #E0E0E0 */
+    --primary-foreground: 0 0% 10%;
     --secondary: 232 58% 60%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 212 35% 15%;
-    --muted-foreground: 220 13% 82%; /* #CBD5E1 */
-    --accent: 191 100% 43%; /* #00B8D9 */
-    --accent-foreground: 212 35% 10%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%; /* Adjusted for readability */
+    --accent: 0 0% 88%; /* #E0E0E0 */
+    --accent-foreground: 0 0% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 191 100% 33%;
-    --input: 191 100% 33%;
-    --ring: 191 100% 43%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 88%;
     --chart-1: 191 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -31,25 +31,25 @@
     --radius: 0.5rem;
   }
   .dark {
-    --background: 212 35% 10%; /* #0D1117 */
+    --background: 0 0% 10%; /* #1A1A1A */
     --foreground: 0 0% 96%; /* #F5F5F5 */
-    --card: 212 35% 10%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 96%;
-    --popover: 212 35% 10%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 96%;
-    --primary: 191 100% 43%; /* #00B8D9 */
-    --primary-foreground: 212 35% 10%;
+    --primary: 0 0% 88%; /* #E0E0E0 */
+    --primary-foreground: 0 0% 10%;
     --secondary: 232 58% 60%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 212 35% 15%;
-    --muted-foreground: 220 13% 82%; /* #CBD5E1 */
-    --accent: 191 100% 43%; /* #00B8D9 */
-    --accent-foreground: 212 35% 10%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%; /* Adjusted for readability */
+    --accent: 0 0% 88%; /* #E0E0E0 */
+    --accent-foreground: 0 0% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 191 100% 33%;
-    --input: 191 100% 33%;
-    --ring: 191 100% 43%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 88%;
     --chart-1: 191 70% 50%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
