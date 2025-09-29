@@ -6,21 +6,21 @@
   :root {
     --background: 0 0% 0%; /* #000000 */
     --foreground: 0 0% 96%; /* #F5F5F5 */
-    --card: 0 0% 10%; /* #1A1A1A */
+    --card: 0 0% 17%; /* #2C2C2C */
     --card-foreground: 0 0% 96%;
-    --popover: 0 0% 10%;
+    --popover: 0 0% 17%;
     --popover-foreground: 0 0% 96%;
     --primary: 217 98% 52%; /* #0D6EFD */
     --primary-foreground: 0 0% 100%;
     --secondary: 220 39% 37%; /* #1E40AF - Richer Variant */
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 17%; /* #2C2C2C */
+    --muted: 0 0% 10%; /* #1A1A1A */
     --muted-foreground: 0 0% 60%;
     --accent: 217 98% 52%; /* #0D6EFD */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 17%; /* #2C2C2C */
+    --border: 0 0% 25%; /* Slightly lighter for better visibility */
     --input: 0 0% 17%;
     --ring: 217 98% 52%;
     --chart-1: 217 70% 50%;
@@ -33,21 +33,21 @@
   .dark {
     --background: 0 0% 0%; /* #000000 */
     --foreground: 0 0% 96%; /* #F5F5F5 */
-    --card: 0 0% 10%; /* #1A1A1A */
+    --card: 0 0% 17%; /* #2C2C2C */
     --card-foreground: 0 0% 96%;
-    --popover: 0 0% 10%;
+    --popover: 0 0% 17%;
     --popover-foreground: 0 0% 96%;
     --primary: 217 98% 52%; /* #0D6EFD */
     --primary-foreground: 0 0% 100%;
     --secondary: 220 39% 37%; /* #1E40AF - Richer Variant */
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 17%; /* #2C2C2C */
+    --muted: 0 0% 10%; /* #1A1A1A */
     --muted-foreground: 0 0% 60%;
     --accent: 217 98% 52%; /* #0D6EFD */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 17%; /* #2C2C2C */
+    --border: 0 0% 25%; /* Slightly lighter for better visibility */
     --input: 0 0% 17%;
     --ring: 217 98% 52%;
     --chart-1: 217 70% 50%;
