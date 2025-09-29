@@ -53,8 +53,8 @@ const services = [
     title: 'Performance & Optimization',
     description: 'Enhancing website performance, speed, and search engine ranking.',
     href: '/services#speed-optimization',
-    image: imageData.home.performance.src,
-    aiHint: imageData.home.performance.hint,
+    image: "/web seo.jpg",
+    aiHint: "",
   },
 ];
 
@@ -311,5 +311,7 @@ export default async function Home() {
     </div>
   );
 }
+
+    
 
     
