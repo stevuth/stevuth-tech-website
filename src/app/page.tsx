@@ -37,8 +37,8 @@ const services = [
     title: 'Custom Website Development',
     description: 'Tailored websites built from scratch to meet unique business needs.',
     href: '/services#custom-website-development',
-    image: imageData.home.customWebsite.src,
-    aiHint: imageData.home.customWebsite.hint,
+    image: "/custom web.jpg",
+    aiHint: "",
   },
   {
     icon: <Brush className="h-10 w-10 text-accent" />,
@@ -60,32 +60,32 @@ const services = [
 
 const benefits = [
   {
-    icon: <Rocket className="h-10 w-10" />,
+    icon: <Rocket className="h-10 w-10 text-card-foreground" />,
     title: "Fast Delivery",
     description: "Get your website live in as little as 7 days.",
   },
   {
-    icon: <Zap className="h-10 w-10" />,
+    icon: <Zap className="h-10 w-10 text-card-foreground" />,
     title: "No Hidden Costs",
     description: "One-time payment, no monthly fees.",
   },
   {
-    icon: <Smartphone className="h-10 w-10" />,
+    icon: <Smartphone className="h-10 w-10 text-card-foreground" />,
     title: "Mobile-First Design",
     description: "Optimized for users on phones.",
   },
   {
-    icon: <Target className="h-10 w-10" />,
+    icon: <Target className="h-10 w-10 text-card-foreground" />,
     title: "Conversion-Focused",
     description: "Designed to turn visitors into paying customers.",
   },
   {
-    icon: <Globe className="h-10 w-10" />,
+    icon: <Globe className="h-10 w-10 text-card-foreground" />,
     title: "Trusted by Businesses",
     description: "From startups to growing brands worldwide.",
   },
   {
-    icon: <ShieldCheck className="h-10 w-10" />,
+    icon: <ShieldCheck className="h-10 w-10 text-card-foreground" />,
     title: "Ongoing Support",
     description: "We don’t just build, we stay to support you.",
   },
