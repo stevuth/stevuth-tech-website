@@ -85,13 +85,13 @@ export function Header() {
         <div className="flex items-center gap-2">
             <div className={cn(
               "transition-opacity duration-300", 
-              (isHomepage || isScrolled) ? "opacity-100" : "opacity-0"
+              isScrolled ? "opacity-100" : "opacity-0"
             )}>
               <BackButton />
             </div>
              <Link href="/" className={cn(
                "flex items-center transition-opacity duration-300",
-               (isHomepage || isScrolled) ? "opacity-100" : "opacity-0"
+                isScrolled ? "opacity-100" : "opacity-0"
              )}>
                 <Logo isDark={true} />
             </Link>
