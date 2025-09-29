@@ -226,7 +226,7 @@ export default async function Home() {
                 animation={index % 2 === 0 ? 'slide-in-left' : 'slide-in-right'} 
                 delay={index * 150}
               >
-                <Card className="h-full text-center bg-card hover:bg-card/95 hover:shadow-xl transition-shadow">
+                <Card className="h-full text-center bg-card hover:bg-card/80 hover:shadow-xl transition-shadow">
                   <CardHeader>
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent mb-4">
                       {benefit.icon}
