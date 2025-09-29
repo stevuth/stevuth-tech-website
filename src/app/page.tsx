@@ -45,8 +45,8 @@ const services = [
     title: 'UI/UX & Brand Design',
     description: 'Engaging, user-friendly designs and creative brand visuals that align with your website.',
     href: '/services#ui-ux-design',
-    image: imageData.home.uiUx.src,
-    aiHint: imageData.home.uiUx.hint,
+    image: "/ui-ux.jpg",
+    aiHint: "",
   },
   {
     icon: <Rocket className="h-10 w-10 text-accent" />,
@@ -234,7 +234,7 @@ export default async function Home() {
                     <CardTitle className="text-xl font-bold text-card-foreground">{benefit.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-card-foreground">{benefit.description}</p>
+                    <p className="text-card-foreground/80">{benefit.description}</p>
                   </CardContent>
                 </Card>
               </AnimatedWrapper>

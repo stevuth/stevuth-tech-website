@@ -73,8 +73,8 @@ const serviceCategories = [
         id: "ui-ux-design",
         title: "UI/UX Design",
         description: "Engaging and user-friendly designs that deliver smooth experiences for visitors.",
-        imageUrl: imageData.services.uiUx.src,
-        aiHint: imageData.services.uiUx.hint,
+        imageUrl: "/ui-ux.jpg",
+        aiHint: "",
       },
       {
         id: "brand-identity-design",
