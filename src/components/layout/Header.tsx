@@ -79,12 +79,17 @@ export function Header() {
     isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent',
   );
 
+  const logoClasses = cn(
+    'transition-opacity duration-300',
+    isHomepage ? 'opacity-100' : (isScrolled ? 'opacity-0' : 'opacity-100'),
+  );
+
   return (
     <header className={cn(headerClasses, 'group/header')}>
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
             <BackButton />
-             <Link href="/">
+             <Link href="/" className={logoClasses}>
                 <Logo isDark={true} />
             </Link>
         </div>
