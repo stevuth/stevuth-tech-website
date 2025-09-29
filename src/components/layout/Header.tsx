@@ -48,9 +48,10 @@ export function Header() {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
     return (
       <Link href={href} className={cn(
-        "relative text-sm font-medium transition-colors hover:text-accent",
+        "relative text-sm font-medium transition-all hover:text-accent",
         "after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-full after:bg-accent after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100",
-        isActive ? "text-accent after:scale-x-100" : "text-white/80"
+        isActive ? "text-accent after:scale-x-100" : "text-white/80",
+        "hover:drop-shadow-[0_0_5px_#00E5FF]"
       )}>
         {children}
       </Link>
