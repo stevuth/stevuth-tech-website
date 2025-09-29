@@ -6,7 +6,7 @@
   :root {
     --background: 0 0% 0%; /* #000000 */
     --foreground: 0 0% 96%; /* #F5F5F5 */
-    --card: 220 39% 37%; /* #1E40AF */
+    --card: 217 98% 52%; /* #0D6EFD */
     --card-foreground: 0 0% 96%; /* #F5F5F5 */
     --popover: 0 0% 17%;
     --popover-foreground: 0 0% 96%;
@@ -33,7 +33,7 @@
   .dark {
     --background: 0 0% 0%; /* #000000 */
     --foreground: 0 0% 96%; /* #F5F5F5 */
-    --card: 220 39% 37%; /* #1E40AF */
+    --card: 217 98% 52%; /* #0D6EFD */
     --card-foreground: 0 0% 96%; /* #F5F5F5 */
     --popover: 0 0% 17%;
     --popover-foreground: 0 0% 96%;
