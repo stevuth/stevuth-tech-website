@@ -32,8 +32,8 @@ const serviceCategories = [
         id: "custom-website-development",
         title: "Custom Website Development",
         description: "Tailored websites built from scratch to meet unique business needs.",
-        imageUrl: imageData.services.customWebsite.src,
-        aiHint: imageData.services.customWebsite.hint,
+        imageUrl: "/custom web.jpg",
+        aiHint: "",
       },
       {
         id: "ecommerce-development",
