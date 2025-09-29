@@ -83,8 +83,16 @@ export function Header() {
     <header className={cn(headerClasses, 'group/header')}>
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
-            <BackButton />
-             <Link href="/" className="flex items-center">
+            <div className={cn(
+              "transition-opacity duration-300", 
+              (isHomepage || isScrolled) ? "opacity-100" : "opacity-0"
+            )}>
+              <BackButton />
+            </div>
+             <Link href="/" className={cn(
+               "flex items-center transition-opacity duration-300",
+               (isHomepage || isScrolled) ? "opacity-100" : "opacity-0"
+             )}>
                 <Logo isDark={true} />
             </Link>
         </div>
