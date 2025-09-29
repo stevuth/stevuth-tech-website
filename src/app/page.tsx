@@ -234,7 +234,7 @@ export default async function Home() {
                     <CardTitle className="text-xl font-bold text-card-foreground">{benefit.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-card-foreground/80">{benefit.description}</p>
+                    <p className="text-card-foreground">{benefit.description}</p>
                   </CardContent>
                 </Card>
               </AnimatedWrapper>
