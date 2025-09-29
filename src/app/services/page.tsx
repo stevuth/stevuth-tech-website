@@ -73,7 +73,7 @@ const serviceCategories = [
         id: "ui-ux-design",
         title: "UI/UX Design",
         description: "Engaging and user-friendly designs that deliver smooth experiences for visitors.",
-        imageUrl: "/ui-ux.jpg",
+        imageUrl: "/ux.jpg",
         aiHint: "",
       },
       {
@@ -241,3 +241,5 @@ export default function ServicesPage() {
     </div>
   );
 }
+
+    
