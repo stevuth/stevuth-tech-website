@@ -228,7 +228,7 @@ export default async function Home() {
               >
                 <Card className="h-full text-center bg-card hover:bg-card/80 hover:shadow-xl transition-shadow">
                   <CardHeader>
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent mb-4">
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-card-foreground mb-4">
                       {benefit.icon}
                     </div>
                     <CardTitle className="text-xl font-bold text-card-foreground">{benefit.title}</CardTitle>
