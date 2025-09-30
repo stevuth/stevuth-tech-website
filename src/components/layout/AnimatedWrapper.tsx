@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
-type AnimationVariant = 'fade-in' | 'fade-in-up' | 'slide-in-left' | 'slide-in-right';
+type AnimationVariant = 'fade-in' | 'fade-in-up' | 'slide-in-left' | 'slide-in-right' | 'zoom-in';
 
 interface AnimatedWrapperProps {
   children: ReactNode;
@@ -49,6 +49,7 @@ export function AnimatedWrapper({
     'fade-in-up': 'transition-all duration-1000 ease-out transform',
     'slide-in-left': 'transition-all duration-1000 ease-out transform',
     'slide-in-right': 'transition-all duration-1000 ease-out transform',
+    'zoom-in': 'transition-all duration-700 ease-out transform',
   };
 
   const initialStates = {
@@ -56,9 +57,10 @@ export function AnimatedWrapper({
     'fade-in-up': 'opacity-0 translate-y-8',
     'slide-in-left': 'opacity-0 -translate-x-16',
     'slide-in-right': 'opacity-0 translate-x-16',
+    'zoom-in': 'opacity-0 scale-90',
   };
 
-  const finalStates = 'opacity-100 translate-y-0 translate-x-0';
+  const finalStates = 'opacity-100 translate-y-0 translate-x-0 scale-100';
 
   return (
     <div

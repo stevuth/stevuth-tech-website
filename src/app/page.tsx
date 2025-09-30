@@ -223,10 +223,10 @@ export default async function Home() {
             {benefits.map((benefit, index) => (
                <AnimatedWrapper 
                 key={benefit.title} 
-                animation={index % 2 === 0 ? 'slide-in-left' : 'slide-in-right'} 
+                animation='zoom-in'
                 delay={index * 150}
               >
-                <Card className="h-full text-center bg-card hover:bg-card/80 hover:shadow-xl transition-shadow">
+                <Card className="h-full text-center bg-card hover:bg-card/80 hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <CardHeader>
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-card-foreground mb-4">
                       {benefit.icon}
