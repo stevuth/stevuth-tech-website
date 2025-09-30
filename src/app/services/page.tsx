@@ -60,8 +60,8 @@ const serviceCategories = [
         id: "web-application-development",
         title: "Web Application Development",
         description: "Advanced, interactive web apps such as dashboards, SaaS platforms, and custom solutions.",
-        imageUrl: imageData.services.webApplication.src,
-        aiHint: imageData.services.webApplication.hint,
+        imageUrl: "/web app.jpg",
+        aiHint: "",
       },
     ]
   },
