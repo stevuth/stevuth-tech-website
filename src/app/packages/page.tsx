@@ -9,9 +9,9 @@ import type { Metadata } from 'next';
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: 'Website Development Packages - Stevuth Tech',
-  description: 'Explore our affordable website development packages in Nigeria, from starter sites to custom e-commerce and SaaS solutions. Transparent pricing with no hidden fees.',
-  keywords: ["website packages Nigeria", "web design pricing", "e-commerce website cost", "small business website", "custom web development"],
+  title: 'Affordable Website Packages in Nigeria | Stevuth Tech',
+  description: 'Explore website development packages from the best agency in Nigeria. We offer transparent pricing for starter sites, e-commerce stores, and custom solutions in Lagos and beyond.',
+  keywords: ["website packages Nigeria", "web design pricing Lagos", "e-commerce website cost Nigeria", "affordable websites Nigeria", "best web developer pricing"],
   alternates: {
     canonical: '/packages',
   },
@@ -131,7 +131,7 @@ export default function PackagesPage() {
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold">Website Development Packages</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-muted-foreground">
-              Affordable, transparent pricing for every business size. Let's build something amazing together.
+              Affordable, transparent pricing from the best web development agency in Nigeria. Let's build something amazing.
             </p>
           </AnimatedWrapper>
         </div>
@@ -145,9 +145,7 @@ export default function PackagesPage() {
                 ? "/contact"
                 : createWhatsAppLink(pkg.title);
               
-              const ctaText = pkg.title === 'Custom Package' 
-                ? "Request a Quote"
-                : "Order Now";
+              const ctaText = "Order Now";
 
               return (
                 <AnimatedWrapper 

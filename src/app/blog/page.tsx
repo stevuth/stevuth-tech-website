@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import { getPosts, Post } from "@/lib/blog-data";
@@ -10,9 +11,9 @@ import type { Metadata } from 'next';
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: 'Blog - Stevuth Tech',
-  description: 'Explore articles and insights from the Stevuth Tech team on web development, design, and technology trends in Nigeria.',
-  keywords: ["Stevuth Tech blog", "web development Nigeria blog", "tech insights", "UI/UX design articles"],
+  title: 'Blog - Insights from The Best Tech Company in Nigeria',
+  description: 'Read articles from Stevuth Tech, the best tech company in Nigeria. Get insights on web development, SEO, and technology trends for businesses in Lagos and beyond.',
+  keywords: ["tech blog Nigeria", "web development Nigeria blog", "Stevuth Tech blog", "SEO tips", "Lagos tech scene"],
   alternates: {
     canonical: '/blog',
   },
@@ -62,7 +63,7 @@ export default async function BlogPage() {
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Our Blog</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
-              Insights, tutorials, and news from the forefront of technology and design.
+              Insights, tutorials, and news from the forefront of technology and design in Nigeria.
             </p>
           </AnimatedWrapper>
         </div>

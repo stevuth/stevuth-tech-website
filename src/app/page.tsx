@@ -14,18 +14,18 @@ import { CardDescription } from '@/components/ui/card';
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
-  description: 'Stevuth Tech is a leading multi-sector company in Nigeria, specializing in Agro-allied, Healthcare, Travels & Tourism, and Contracting services. Your trusted partner for growth and development.',
+  title: 'Best Website Development Agency in Nigeria - Stevuth Tech',
+  description: 'As the best website development agency in Nigeria, Stevuth Tech offers custom web design, e-commerce solutions, and SEO services to help your business grow. Contact the top tech company in Lagos today.',
   keywords: [
+    "best website development agency in Nigeria",
+    "top tech company in Nigeria",
+    "web design Lagos",
+    "custom website development Nigeria",
+    "e-commerce developers in Nigeria",
+    "SEO services Lagos",
     "Stevuth Tech",
-    "Agro-allied services Nigeria",
-    "Healthcare diagnostics Nigeria",
-    "Travels and tours Nigeria",
-    "General contracting Nigeria",
-    "Veterinary services Ota",
-    "Human resources Nigeria",
-    "Orphanage support Nigeria",
-    "Fumigation services Ogun State"
+    "get a website in Nigeria",
+    "professional web designers"
   ],
   alternates: {
     canonical: '/',
@@ -163,14 +163,14 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative h-[calc(100vh)] w-full flex items-center justify-start text-left text-white overflow-hidden">
+      <section className="relative h-[calc(100vh)] w-full flex items-center justify-start text-left text-white overflow-hidden pt-16">
         <video
           src="/desktop-hero-video.mp4"
           autoPlay
           muted
           loop
           playsInline
-          className="absolute z-0 w-full h-full object-cover"
+          className="absolute z-0 w-full h-full object-cover top-0 left-0"
         />
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="relative z-20 container px-4 md:px-6">
@@ -195,7 +195,7 @@ export default async function Home() {
               <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
                  <Image
                   src={imageData.home.meetStevuth.src}
-                  alt="Team collaboration"
+                  alt="Team collaboration at the best website development agency in Nigeria"
                   fill
                   sizes="100vw"
                   priority

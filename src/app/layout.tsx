@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Poppins, Inter } from 'next/font/google';
 import './globals.css';
@@ -26,24 +27,24 @@ const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => mo
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
+    default: 'Best Website Development Agency in Nigeria - Stevuth Tech',
     template: '%s | Stevuth Tech',
   },
-  description: 'Stevuth Tech is a leading multi-sector company in Nigeria, specializing in Agro-allied, Healthcare, Travels & Tourism, and Contracting services. Your trusted partner for growth and development.',
+  description: 'Stevuth Tech is the best website development agency in Nigeria, specializing in custom web design, e-commerce, and SEO. Partner with the top tech company in Lagos for growth.',
   keywords: [
+    "best website development agency in Nigeria",
+    "best tech company in Nigeria",
+    "web design Nigeria",
+    "website developer in Lagos",
+    "e-commerce development Nigeria",
     "Stevuth Tech",
-    "Agro-allied services Nigeria",
-    "Healthcare diagnostics Nigeria",
-    "Travels and tours Nigeria",
-    "General contracting Nigeria",
-    "Veterinary services Ota",
-    "Human resources Nigeria",
-    "Orphanage support Nigeria",
-    "Fumigation services Ogun State"
+    "top web development companies in Nigeria",
+    "affordable web design Lagos",
+    "SEO services Nigeria"
   ],
   openGraph: {
-    title: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
-    description: 'A multi-sector company engaged in Agro-allied, Healthcare, Travels & Tourism, Contracting & General Merchandising, and more.',
+    title: 'Best Website Development Agency in Nigeria - Stevuth Tech',
+    description: 'Looking for the best web development in Nigeria? Stevuth Tech, a top tech company in Lagos, builds high-performance websites that drive business growth.',
     url: siteUrl,
     siteName: 'Stevuth Tech',
     images: [
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
         url: 'https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg',
         width: 1200,
         height: 630,
-        alt: 'Stevuth Tech Team Collaboration',
+        alt: 'Stevuth Tech - Best Website Development Agency in Nigeria',
       },
     ],
     locale: 'en_NG',
@@ -59,8 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stevuth Tech - Driving Growth Across Industries in Nigeria',
-    description: 'A multi-sector company engaged in Agro-allied, Healthcare, Travels & Tourism, Contracting & General Merchandising, and more.',
+    title: 'Best Website Development Agency in Nigeria - Stevuth Tech',
+    description: 'Looking for the best web development in Nigeria? Stevuth Tech, a top tech company in Lagos, builds high-performance websites that drive business growth.',
     images: ['https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg'],
   },
   robots: {

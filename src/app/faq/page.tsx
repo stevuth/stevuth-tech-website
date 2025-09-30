@@ -1,3 +1,4 @@
+
 import {
   Accordion,
   AccordionContent,
@@ -8,9 +9,9 @@ import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'FAQ - Stevuth Tech | Answers to Your Questions',
-  description: 'Find answers to frequently asked questions about Stevuth Tech\'s web development, design, and SEO services in Nigeria.',
-  keywords: ["Stevuth Tech FAQ", "web development questions", "e-commerce FAQ", "SEO services questions", "website maintenance"],
+  title: 'FAQ - Best Web Development Agency in Nigeria',
+  description: 'Find answers to questions about services from the best web development agency in Nigeria. Learn about our process for custom design, e-commerce, and SEO for clients in Lagos and beyond.',
+  keywords: ["web development FAQ Nigeria", "e-commerce questions", "SEO services FAQ", "best website agency questions", "Stevuth Tech FAQ"],
   alternates: {
     canonical: '/faq',
   },
@@ -54,7 +55,7 @@ export default function FaqPage() {
         <div className="container px-4 md:px-6">
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Frequently Asked Questions</h1>
-            <p className="mt-4 text-lg md:text-xl max-w-3xl text-primary-foreground/80">
+            <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
               Find answers to common questions about our services and operations.
             </p>
           </AnimatedWrapper>

@@ -8,9 +8,9 @@ import type { Metadata } from 'next';
 import imageData from '@/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
-  title: 'About Stevuth Tech - Our Mission and Values in Nigeria',
-  description: 'Discover the history, mission, and core values of Stevuth Tech. Learn why we are a trusted partner for creating powerful and effective web solutions.',
-  keywords: ["About Stevuth Tech", "web development Nigeria", "UI/UX design", "tech company mission", "digital solutions Nigeria"],
+  title: 'About The Best Web Development Agency in Nigeria | Stevuth Tech',
+  description: 'Discover the mission and values of Stevuth Tech, the best website development agency in Nigeria. Learn why top businesses in Lagos and beyond trust us for web solutions.',
+  keywords: ["best web development agency Nigeria", "about Stevuth Tech", "top tech company in Lagos", "our mission", "web design company profile"],
   alternates: {
     canonical: '/about',
   },
@@ -69,7 +69,7 @@ export default function AboutPage() {
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">About Stevuth Tech</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
-              Learn about our journey, our purpose, and the values that drive us to build the future of the web.
+              Learn about our journey, our purpose, and the values that drive us to be the best website development agency in Nigeria.
             </p>
           </AnimatedWrapper>
         </div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
               <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
                 <Image
                   src={imageData.about.story.src}
-                  alt="A modern office space with developers collaborating"
+                  alt="Office of Stevuth Tech, the best website development agency in Nigeria"
                   fill
                   sizes="100vw"
                   priority

@@ -8,15 +8,15 @@ import type { Metadata } from 'next';
 import imageData from '@/lib/placeholder-images.json';
 
 export const metadata: Metadata = {
-  title: 'Our Services - Stevuth Tech | Nigeria',
-  description: 'Explore the diverse range of web development and design services offered by Stevuth Tech in Nigeria. Find expert solutions for your needs.',
+  title: 'Web Development Services in Nigeria by Stevuth Tech',
+  description: 'Explore expert web development services in Nigeria from Stevuth Tech. We offer custom websites, e-commerce, UI/UX design, and SEO to make you the best in your industry.',
   keywords: [
-    "Stevuth Tech services",
-    "Custom Website Development",
-    "E-Commerce Development",
-    "UI/UX Design",
-    "SEO Services",
-    "SaaS Development"
+    "web development services Nigeria",
+    "custom website development",
+    "e-commerce development Nigeria",
+    "UI/UX design Lagos",
+    "SEO services Nigeria",
+    "best tech company in Nigeria for web services"
   ],
   alternates: {
     canonical: '/services',
@@ -214,8 +214,8 @@ export default function ServicesPage() {
         <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Our Services</h1>
-            <p className="mt-4 text-lg md:text-xl max-w-3xl text-primary-foreground/80">
-              Expert solutions to build, brand, and boost your online presence.
+            <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
+              Expert solutions from Nigeria's best web development agency to build, brand, and boost your online presence.
             </p>
           </AnimatedWrapper>
         </div>

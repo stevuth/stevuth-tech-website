@@ -1,3 +1,4 @@
+
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { ContactForm } from "./ContactForm";
 import { Phone, Mail, MessageCircle } from "lucide-react";
@@ -5,9 +6,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Stevuth Tech - Get in Touch from Nigeria',
-  description: 'Contact Stevuth Tech for inquiries about our services in Nigeria. Reach us via phone, email, or our contact form. Our team is ready to assist you.',
-  keywords: ["contact Stevuth Tech", "Stevuth Tech address", "Stevuth Tech phone number", "email Stevuth Tech", "business inquiry Nigeria"],
+  title: 'Contact The Best Web Development Agency in Nigeria',
+  description: 'Get in touch with Stevuth Tech, the best web development agency in Nigeria. Whether you are in Lagos or anywhere else, our team is ready to discuss your project.',
+  keywords: ["contact best web development agency Nigeria", "Stevuth Tech contact", "Lagos web developer contact", "website design inquiry Nigeria"],
   alternates: {
     canonical: '/contact',
   },
@@ -24,8 +25,8 @@ export default function ContactPage() {
         <div className="container px-4 md:px-6">
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Contact Us</h1>
-            <p className="mt-4 text-lg md:text-xl max-w-3xl text-primary-foreground/80">
-              We're here to help. Reach out to us with your questions or proposals.
+            <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
+              We're here to help. Reach out to us with your questions or to start your project with the best tech company in Nigeria.
             </p>
           </AnimatedWrapper>
         </div>
