@@ -1,4 +1,5 @@
 
+
 import { Check, ArrowRight } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -32,7 +33,7 @@ const packages = [
       "Professional Email Address Setup",
     ],
     delivery: "5 days",
-    cta: "Get Started",
+    cta: "Order Now",
     isPopular: false,
   },
   {
@@ -51,7 +52,7 @@ const packages = [
       "Professional Email Address Setup",
     ],
     delivery: "7–10 days",
-    cta: "Get Started",
+    cta: "Order Now",
     isPopular: true,
   },
   {
@@ -70,7 +71,7 @@ const packages = [
       "Professional Email Address Setup",
     ],
     delivery: "10–14 days",
-    cta: "Get Started",
+    cta: "Order Now",
     isPopular: false,
   },
   {
@@ -89,7 +90,7 @@ const packages = [
       "Free 1-Month Support",
     ],
     delivery: "3–5 weeks",
-    cta: "Get Started",
+    cta: "Order Now",
     isPopular: false,
   },
     {
@@ -112,6 +113,13 @@ const packages = [
   },
 ];
 
+const whatsAppNumber = "2349016772065";
+
+const createWhatsAppLink = (packageName: string) => {
+  const message = `Hello, I'm interested in the ${packageName}. Please provide more details.`;
+  return `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`;
+};
+
 export default function PackagesPage() {
   return (
     <div>
@@ -129,46 +137,58 @@ export default function PackagesPage() {
       <section className="py-10 md:py-12">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-            {packages.map((pkg, index) => (
-              <AnimatedWrapper 
-                key={pkg.title} 
-                animation="fade-in-up" 
-                delay={index * 150}
-                className={pkg.title === "Pro Package" || pkg.title === "Custom Package" ? "md:col-span-2 lg:col-span-1" : ""}
-              >
-                <Card className={`h-full flex flex-col ${pkg.isPopular ? 'border-accent border-2 shadow-accent/20 shadow-lg' : 'hover:shadow-xl transition-shadow'}`}>
-                    {pkg.isPopular && (
-                       <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1 text-sm font-bold">
-                           Most Popular
-                       </Badge>
-                    )}
-                  <CardHeader className="pt-8">
-                    <CardTitle className="text-2xl font-bold">{pkg.title}</CardTitle>
-                     <div className="flex items-baseline gap-2">
-                        <span className="text-3xl font-extrabold text-foreground">{pkg.price}</span>
-                        {pkg.priceUsd && <span className="text-muted-foreground">{pkg.priceUsd}</span>}
-                    </div>
-                    <CardDescription>{pkg.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <ul className="space-y-3">
-                      {pkg.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-3">
-                          <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <CardFooter className="flex-col items-stretch gap-4 pt-4">
-                    <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                      <Link href="/contact">{pkg.cta} <ArrowRight className="h-4 w-4 ml-2" /></Link>
-                    </Button>
-                    <p className="text-center text-sm text-muted-foreground">Delivery: {pkg.delivery}</p>
-                  </CardFooter>
-                </Card>
-              </AnimatedWrapper>
-            ))}
+            {packages.map((pkg, index) => {
+              const ctaLink = pkg.title === 'Custom Package' 
+                ? "/contact"
+                : createWhatsAppLink(pkg.title);
+              
+              const ctaText = pkg.title === 'Custom Package' 
+                ? "Request a Quote"
+                : "Order Now";
+
+              return (
+                <AnimatedWrapper 
+                  key={pkg.title} 
+                  animation="fade-in-up" 
+                  delay={index * 150}
+                  className={pkg.title === "Pro Package" || pkg.title === "Custom Package" ? "md:col-span-2 lg:col-span-1" : ""}
+                >
+                  <Card className={`h-full flex flex-col ${pkg.isPopular ? 'border-accent border-2 shadow-accent/20 shadow-lg' : 'hover:shadow-xl transition-shadow'}`}>
+                      {pkg.isPopular && (
+                        <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1 text-sm font-bold">
+                            Most Popular
+                        </Badge>
+                      )}
+                    <CardHeader className="pt-8">
+                      <CardTitle className="text-2xl font-bold">{pkg.title}</CardTitle>
+                      <div className="flex items-baseline gap-2">
+                          <span className="text-3xl font-extrabold text-foreground">{pkg.price}</span>
+                          {pkg.priceUsd && <span className="text-muted-foreground">{pkg.priceUsd}</span>}
+                      </div>
+                      <CardDescription>{pkg.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <ul className="space-y-3">
+                        {pkg.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-3">
+                            <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                    <CardFooter className="flex-col items-stretch gap-4 pt-4">
+                      <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                        <Link href={ctaLink} target={pkg.title !== 'Custom Package' ? '_blank' : '_self'}>
+                          {ctaText} <ArrowRight className="h-4 w-4 ml-2" />
+                        </Link>
+                      </Button>
+                      <p className="text-center text-sm text-muted-foreground">Delivery: {pkg.delivery}</p>
+                    </CardFooter>
+                  </Card>
+                </AnimatedWrapper>
+              )
+            })}
           </div>
         </div>
       </section>
