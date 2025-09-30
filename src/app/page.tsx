@@ -107,7 +107,7 @@ const homePackages = [
       "Google Business Profile setup",
       "Professional Email Address Setup",
     ],
-    cta: "Get Started",
+    cta: "Order Now",
     isPopular: false,
   },
   {
@@ -125,7 +125,7 @@ const homePackages = [
       "Social media integration",
       "Professional Email Address Setup",
     ],
-    cta: "Get Started",
+    cta: "Order Now",
     isPopular: true,
   },
   {
@@ -143,10 +143,17 @@ const homePackages = [
       "Google Business Profile setup",
       "Professional Email Address Setup",
     ],
-    cta: "Get Started",
+    cta: "Order Now",
     isPopular: false,
   },
 ];
+
+const whatsAppNumber = "2349016772065";
+
+const createWhatsAppLink = (packageName: string) => {
+  const message = `Hello, I'm interested in the ${packageName}. Please provide more details.`;
+  return `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`;
+};
 
 export default async function Home() {
   const featuredPosts = await getPosts({ limit: 3 });
@@ -298,7 +305,9 @@ export default async function Home() {
                   </CardContent>
                   <CardFooter className="flex-col items-stretch gap-4 pt-4">
                     <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                      <Link href="/contact">{pkg.cta} <ArrowRight className="h-4 w-4 ml-2" /></Link>
+                      <Link href={createWhatsAppLink(pkg.title)} target="_blank">
+                        {pkg.cta} <ArrowRight className="h-4 w-4 ml-2" />
+                      </Link>
                     </Button>
                   </CardFooter>
                 </Card>
