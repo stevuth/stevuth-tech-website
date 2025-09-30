@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { ArrowRight, Code, Brush, Rocket, Zap, Smartphone, Target, Globe, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Code, Brush, Rocket, Zap, Smartphone, Target, Globe, ShieldCheck, Check } from 'lucide-react';
 import { getPosts } from '@/lib/blog-data';
 import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import imageData from '@/lib/placeholder-images.json';
+import { CardDescription } from '@/components/ui/card';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -88,6 +89,48 @@ const benefits = [
     icon: <ShieldCheck className="h-10 w-10 text-card-foreground" />,
     title: "Ongoing Support",
     description: "We don’t just build, we stay to support you.",
+  },
+];
+
+const homePackages = [
+  {
+    title: "Starter Package",
+    price: "₦100,000",
+    description: "For individuals & small businesses.",
+    features: [
+      "1–3 pages",
+      "Mobile responsive design",
+      "Basic SEO optimization",
+      "1 Year Hosting & Domain",
+    ],
+    cta: "Get Started",
+    isPopular: false,
+  },
+  {
+    title: "Standard Package",
+    price: "₦200,000",
+    description: "Best for growing businesses.",
+    features: [
+      "Up to 7 pages",
+      "Custom design & branding",
+      "Full SEO optimization",
+      "Social media integration",
+    ],
+    cta: "Get Started",
+    isPopular: true,
+  },
+  {
+    title: "Premium Package",
+    price: "₦350,000",
+    description: "For e-commerce businesses.",
+    features: [
+      "Online store setup",
+      "Payment integration",
+      "Shopping cart & order management",
+      "Advanced SEO",
+    ],
+    cta: "Get Started",
+    isPopular: false,
   },
 ];
 
@@ -240,6 +283,61 @@ export default async function Home() {
               </AnimatedWrapper>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-10 md:py-12 bg-primary/5">
+        <div className="container px-4 md:px-6 text-center">
+           <AnimatedWrapper>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Packages</h2>
+            <p className="max-w-3xl mx-auto text-muted-foreground mb-12">
+              Transparent pricing for every business size. No hidden fees, just results.
+            </p>
+          </AnimatedWrapper>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            {homePackages.map((pkg, index) => (
+              <AnimatedWrapper 
+                key={pkg.title} 
+                animation="fade-in-up" 
+                delay={index * 150}
+              >
+                <Card className={`h-full flex flex-col ${pkg.isPopular ? 'border-accent border-2 shadow-accent/20 shadow-lg' : 'hover:shadow-xl transition-shadow'}`}>
+                    {pkg.isPopular && (
+                       <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1 text-sm font-bold">
+                           Most Popular
+                       </Badge>
+                    )}
+                  <CardHeader className="pt-8">
+                    <CardTitle className="text-2xl font-bold">{pkg.title}</CardTitle>
+                     <div className="flex items-baseline gap-2">
+                        <span className="text-3xl font-extrabold text-foreground">{pkg.price}</span>
+                    </div>
+                    <CardDescription>{pkg.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <ul className="space-y-3">
+                      {pkg.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-3">
+                          <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardFooter className="flex-col items-stretch gap-4 pt-4">
+                    <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                      <Link href="/contact">{pkg.cta} <ArrowRight className="h-4 w-4 ml-2" /></Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </AnimatedWrapper>
+            ))}
+          </div>
+           <AnimatedWrapper className="mt-12">
+            <Button asChild size="lg" variant="outline" className="text-accent hover:text-accent hover:bg-accent/10 border-accent">
+              <Link href="/packages">View All Packages</Link>
+            </Button>
+          </AnimatedWrapper>
         </div>
       </section>
       
