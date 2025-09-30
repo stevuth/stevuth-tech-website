@@ -200,7 +200,7 @@ const ServiceSection = ({ service, index }: { service: (typeof serviceCategories
         <h3 className="text-2xl font-headline font-bold">{service.title}</h3>
         <p className="text-muted-foreground mt-2 mb-4">{service.description}</p>
         <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-          <Link href="/contact">Request a Free Consultation</Link>
+          <Link href="/contact">Let’s Discuss Your Project</Link>
         </Button>
       </AnimatedWrapper>
     </div>
