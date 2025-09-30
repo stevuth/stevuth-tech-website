@@ -93,8 +93,8 @@ const serviceCategories = [
         id: "website-maintenance",
         title: "Website Maintenance & Support",
         description: "Continuous updates, bug fixes, backups, and security checks.",
-        imageUrl: imageData.services.maintenance.src,
-        aiHint: imageData.services.maintenance.hint,
+        imageUrl: "/web support.jpg",
+        aiHint: "",
       },
       {
         id: "speed-optimization",
