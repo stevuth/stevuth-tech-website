@@ -302,7 +302,7 @@ export default async function Home() {
             <p className="max-w-2xl mx-auto mb-6 text-primary-foreground/80">
              Contact us today to discuss your project and discover how we can help you succeed.
             </p>
-            <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild size="lg" variant="cta-secondary">
               <Link href="/contact">Contact Us</Link>
             </Button>
           </AnimatedWrapper>
