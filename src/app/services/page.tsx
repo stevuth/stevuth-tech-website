@@ -127,8 +127,8 @@ const serviceCategories = [
         id: "saas-development",
         title: "SaaS Development",
         description: "Custom software-as-a-service platforms for businesses.",
-        imageUrl: imageData.services.saas.src,
-        aiHint: imageData.services.saas.hint,
+        imageUrl: "/web saas.jpg",
+        aiHint: "",
       },
       {
         id: "api-development",
