@@ -100,8 +100,8 @@ const serviceCategories = [
         id: "speed-optimization",
         title: "Website Speed Optimization",
         description: "Enhancing performance to make websites load faster.",
-        imageUrl: imageData.services.speedOptimization.src,
-        aiHint: imageData.services.speedOptimization.hint,
+        imageUrl: "/web speed.jpg",
+        aiHint: "",
       },
       {
         id: "seo-services",
