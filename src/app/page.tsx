@@ -313,17 +313,6 @@ export default async function Home() {
         </div>
       </section>
       
-      <section className="bg-accent text-accent-foreground">
-        <div className="container px-4 md:px-6 py-10 text-center">
-          <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-4">Ready to Build Your Digital Future?</h2>
-            <Button asChild size="lg" variant="cta-secondary" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="/contact">Get a Quote</Link>
-            </Button>
-          </AnimatedWrapper>
-        </div>
-      </section>
-
       <section className="py-10 md:py-12 bg-background">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
@@ -411,7 +400,7 @@ export default async function Home() {
       <section className="bg-primary text-primary-foreground">
         <div className="container px-4 md:px-6 py-10 text-center">
           <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4 text-white">Let's Build Something Great Together</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-4">Let's Build Something Great Together</h2>
             <p className="max-w-2xl mx-auto mb-6 text-primary-foreground/80">
              Contact us today to discuss your project and discover how we can help you succeed.
             </p>
