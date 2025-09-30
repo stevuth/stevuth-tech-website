@@ -30,21 +30,8 @@ const HamburgerIcon = () => (
 );
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isHomepage = pathname === '/';
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
@@ -77,12 +64,7 @@ export function Header() {
 
   const headerClasses = cn(
     'fixed top-0 z-50 w-full transition-all duration-300',
-    isScrolled ? 'bg-background/80 shadow-md backdrop-blur-sm' : 'bg-transparent',
-  );
-
-  const logoClasses = cn(
-    'transition-opacity duration-300',
-    isHomepage ? 'opacity-100' : (isScrolled ? 'opacity-0' : 'opacity-100'),
+    'bg-background/80 shadow-md backdrop-blur-sm',
   );
 
   return (
@@ -90,7 +72,7 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
             <BackButton />
-             <Link href="/" className={logoClasses}>
+             <Link href="/">
                 <Logo isDark={true} />
             </Link>
         </div>
