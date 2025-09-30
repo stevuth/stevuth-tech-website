@@ -31,7 +31,29 @@ const HamburgerIcon = () => (
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    if (isHomePage) {
+      window.addEventListener('scroll', handleScroll);
+      handleScroll(); // Check on initial load
+    } else {
+      setIsScrolled(true); // Always scrolled on non-home pages
+    }
+
+    return () => {
+      if (isHomePage) {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, [isHomePage]);
+
 
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
@@ -64,7 +86,9 @@ export function Header() {
 
   const headerClasses = cn(
     'fixed top-0 z-50 w-full transition-all duration-300',
-    'bg-background/80 shadow-md backdrop-blur-sm',
+    isHomePage && !isScrolled
+      ? 'bg-transparent'
+      : 'bg-background/80 shadow-md backdrop-blur-sm'
   );
 
   return (

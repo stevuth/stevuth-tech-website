@@ -153,7 +153,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative h-screen w-full flex items-center justify-start text-left text-white overflow-hidden -mt-16">
+      <section className="relative h-screen w-full flex items-center justify-start text-left text-white overflow-hidden">
         <video
           src="/desktop-hero-video.mp4"
           autoPlay
