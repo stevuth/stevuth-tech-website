@@ -46,8 +46,8 @@ const serviceCategories = [
         id: "business-website-design",
         title: "Business Website Design",
         description: "Professional websites for companies, startups, and SMEs to build credibility online.",
-        imageUrl: imageData.services.businessWebsite.src,
-        aiHint: imageData.services.businessWebsite.hint,
+        imageUrl: "/business web.jpg",
+        aiHint: "",
       },
       {
         id: "landing-page-design",
