@@ -1,13 +1,13 @@
 {
   "about": {
     "story": {
-      "src": "/about.jpg",
+      "src": "/about.jpg?v=2",
       "hint": ""
     }
   },
   "home": {
     "meetStevuth": {
-      "src": "/about.jpg",
+      "src": "/about.jpg?v=2",
       "hint": ""
     },
     "customWebsite": {
