@@ -1,14 +1,14 @@
 {
   "about": {
     "story": {
-      "src": "https://picsum.photos/seed/techStory/800/600",
-      "hint": "modern office"
+      "src": "/about.jpg",
+      "hint": ""
     }
   },
   "home": {
     "meetStevuth": {
-      "src": "https://picsum.photos/seed/techTeam/800/600",
-      "hint": "team meeting"
+      "src": "/about.jpg",
+      "hint": ""
     },
     "customWebsite": {
       "src": "https://picsum.photos/seed/laptopCode/800/600",
@@ -33,48 +33,48 @@
       "hint": "online shopping"
     },
     "businessWebsite": {
-      "src": "https://i.ibb.co/6gS9P2s/KBM2lrF.jpg",
-      "hint": "professional handshake"
+      "src": "/business web.jpg",
+      "hint": ""
     },
     "landingPage": {
-      "src": "https://i.ibb.co/k3Pz20x/KBV9YYJ.jpg",
-      "hint": "product launch"
+      "src": "/landing.jpg",
+      "hint": ""
     },
     "webApplication": {
-      "src": "https://picsum.photos/seed/webAppUi/800/600",
-      "hint": "application interface"
+      "src": "/web app.jpg",
+      "hint": ""
     },
     "uiUx": {
-      "src": "https://i.ibb.co/yQn7qP1/KBBB0Xt.jpg",
-      "hint": "user experience"
+      "src": "/ux.jpg",
+      "hint": ""
     },
     "brandIdentity": {
-      "src": "https://picsum.photos/seed/companyLogo/800/600",
-      "hint": "company logo"
+      "src": "/brand iden.jpg",
+      "hint": ""
     },
     "maintenance": {
-      "src": "https://picsum.photos/seed/serverRoom/800/600",
-      "hint": "server room"
+      "src": "/web support.jpg",
+      "hint": ""
     },
     "speedOptimization": {
-      "src": "https://picsum.photos/seed/speedometer/800/600",
-      "hint": "website speed"
+      "src": "/web speed.jpg",
+      "hint": ""
     },
     "seo": {
-      "src": "https://picsum.photos/seed/analyticsChart/800/600",
-      "hint": "analytics chart"
+      "src": "/seo.jpg",
+      "hint": ""
     },
     "mobileOptimization": {
-      "src": "https://picsum.photos/seed/mobileApp/800/600",
-      "hint": "mobile application"
+      "src": "/mobile.jpg",
+      "hint": ""
     },
     "saas": {
-      "src": "https://picsum.photos/seed/saasPlatform/800/600",
-      "hint": "cloud software"
+      "src": "/web saas.jpg",
+      "hint": ""
     },
     "api": {
-      "src": "https://picsum.photos/seed/apiCode/800/600",
-      "hint": "api code"
+      "src": "/api.jpg",
+      "hint": ""
     },
     "booking": {
       "src": "/booking.jpg",
