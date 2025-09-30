@@ -25,12 +25,12 @@
   },
   "services": {
     "customWebsite": {
-      "src": "https://picsum.photos/seed/developerCoding/800/600",
-      "hint": "developer coding"
+      "src": "/custom web.jpg",
+      "hint": ""
     },
     "ecommerce": {
       "src": "https://iili.io/Kq6XywG.jpg",
-      "hint": "online shopping"
+      "hint": ""
     },
     "businessWebsite": {
       "src": "/business web.jpg",
