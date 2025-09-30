@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 import { AnimatedWrapper } from './AnimatedWrapper';
-import { Linkedin, Twitter, Facebook } from 'lucide-react';
 
 const footerLinks = [
     { href: '/about', label: 'Who We Are' },
@@ -11,12 +10,6 @@ const footerLinks = [
     { href: '/contact', label: 'Contact Us' },
     { href: '/faq', label: 'FAQ' },
     { href: '/privacy-policy', label: 'Privacy Policy' },
-];
-
-const socialLinks = [
-  { href: '#', label: 'LinkedIn', icon: <Linkedin className="h-5 w-5" /> },
-  { href: '#', label: 'Twitter', icon: <Twitter className="h-5 w-5" /> },
-  { href: '#', label: 'Facebook', icon: <Facebook className="h-5 w-5" /> },
 ];
 
 export function Footer() {
@@ -36,14 +29,6 @@ export function Footer() {
                         </Link>
                     ))}
                 </nav>
-                
-                <div className="flex space-x-4">
-                    {socialLinks.map(social => (
-                        <Link key={social.label} href={social.href} aria-label={social.label} className="text-primary-foreground/80 hover:text-accent transition-colors duration-300">
-                            {social.icon}
-                        </Link>
-                    ))}
-                </div>
             </div>
         </AnimatedWrapper>
 
