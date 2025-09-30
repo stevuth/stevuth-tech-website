@@ -124,7 +124,6 @@ const homePackages = [
       "Google Business Profile setup",
       "Social media integration",
       "Google Analytics integration",
-      "Google Maps integration",
       "Professional Email Address Setup",
     ],
     cta: "Order Now",

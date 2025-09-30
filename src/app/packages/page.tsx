@@ -50,7 +50,6 @@ const packages = [
       "Google Business Profile setup",
       "Social media integration",
       "Google Analytics integration",
-      "Google Maps integration",
       "Professional Email Address Setup",
     ],
     delivery: "7–10 days",
@@ -127,18 +126,18 @@ const createWhatsAppLink = (packageName: string) => {
 export default function PackagesPage() {
   return (
     <div className="pt-16">
-      <section className="bg-primary text-primary-foreground py-10 md:py-12">
+      <section className="py-10 md:py-12">
         <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Website Development Packages</h1>
-            <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
+            <h1 className="text-3xl md:text-4xl font-headline font-bold">Website Development Packages</h1>
+            <p className="mt-4 text-base md:text-lg max-w-3xl text-muted-foreground">
               Affordable, transparent pricing for every business size. Let's build something amazing together.
             </p>
           </AnimatedWrapper>
         </div>
       </section>
 
-      <section className="py-10 md:py-12">
+      <section className="pb-10 md:pb-12">
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
             {packages.map((pkg, index) => {
