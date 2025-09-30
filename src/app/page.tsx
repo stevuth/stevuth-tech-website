@@ -256,49 +256,6 @@ export default async function Home() {
             </div>
         </div>
       </section>
-      
-      <section className="bg-accent text-accent-foreground">
-        <div className="container px-4 md:px-6 py-10 text-center">
-          <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-4">Ready to Build Your Digital Future?</h2>
-            <Button asChild size="lg" variant="cta" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <Link href="/contact">Get a Quote</Link>
-            </Button>
-          </AnimatedWrapper>
-        </div>
-      </section>
-
-      <section className="py-10 md:py-12 bg-background">
-        <div className="container px-4 md:px-6 text-center">
-          <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Partner With Us?</h2>
-            <p className="max-w-3xl mx-auto text-muted-foreground mb-12">
-              We're more than just developers. We're partners in your success, committed to delivering excellence at every step.
-            </p>
-          </AnimatedWrapper>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-               <AnimatedWrapper 
-                key={benefit.title} 
-                animation='zoom-in'
-                delay={index * 150}
-              >
-                <Card className="h-full text-center bg-card hover:bg-card/80 hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <CardHeader>
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-card-foreground mb-4">
-                      {benefit.icon}
-                    </div>
-                    <CardTitle className="text-xl font-bold text-card-foreground">{benefit.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-card-foreground">{benefit.description}</p>
-                  </CardContent>
-                </Card>
-              </AnimatedWrapper>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="py-10 md:py-12 bg-primary/5">
         <div className="container px-4 md:px-6 text-center">
@@ -356,6 +313,49 @@ export default async function Home() {
         </div>
       </section>
       
+      <section className="bg-accent text-accent-foreground">
+        <div className="container px-4 md:px-6 py-10 text-center">
+          <AnimatedWrapper>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-white mb-4">Ready to Build Your Digital Future?</h2>
+            <Button asChild size="lg" variant="cta-secondary" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Link href="/contact">Get a Quote</Link>
+            </Button>
+          </AnimatedWrapper>
+        </div>
+      </section>
+
+      <section className="py-10 md:py-12 bg-background">
+        <div className="container px-4 md:px-6 text-center">
+          <AnimatedWrapper>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Partner With Us?</h2>
+            <p className="max-w-3xl mx-auto text-muted-foreground mb-12">
+              We're more than just developers. We're partners in your success, committed to delivering excellence at every step.
+            </p>
+          </AnimatedWrapper>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+               <AnimatedWrapper 
+                key={benefit.title} 
+                animation='zoom-in'
+                delay={index * 150}
+              >
+                <Card className="h-full text-center bg-card hover:bg-card/80 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <CardHeader>
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-card-foreground mb-4">
+                      {benefit.icon}
+                    </div>
+                    <CardTitle className="text-xl font-bold text-card-foreground">{benefit.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-card-foreground">{benefit.description}</p>
+                  </CardContent>
+                </Card>
+              </AnimatedWrapper>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-10 md:py-12 bg-primary/5">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
@@ -424,8 +424,3 @@ export default async function Home() {
     </div>
   );
 }
-
-    
-
-    
-
