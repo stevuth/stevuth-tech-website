@@ -96,12 +96,16 @@ const homePackages = [
   {
     title: "Starter Package",
     price: "₦100,000",
-    description: "For individuals & small businesses.",
+    priceUsd: "$70",
+    description: "For individuals & very small businesses.",
     features: [
-      "1–3 pages",
+      "1–3 pages (Home, About, Contact)",
       "Mobile responsive design",
+      "Contact form",
       "Basic SEO optimization",
       "1 Year Hosting & Domain",
+      "Google Business Profile setup",
+      "Professional Email Address Setup",
     ],
     cta: "Get Started",
     isPopular: false,
@@ -109,12 +113,17 @@ const homePackages = [
   {
     title: "Standard Package",
     price: "₦200,000",
+    priceUsd: "$135",
     description: "Best for growing businesses.",
     features: [
-      "Up to 7 pages",
+      "Up to 7 pages (Home, About, Services, Contact, etc.)",
       "Custom design & branding",
-      "Full SEO optimization",
+      "Blog setup (optional)",
+      "Full SEO optimization (on-page + indexing)",
+      "1 Year Hosting & Domain",
+      "Google Business Profile setup",
       "Social media integration",
+      "Professional Email Address Setup",
     ],
     cta: "Get Started",
     isPopular: true,
@@ -122,12 +131,17 @@ const homePackages = [
   {
     title: "Premium Package",
     price: "₦350,000",
-    description: "For e-commerce businesses.",
+    priceUsd: "$240",
+    description: "Perfect for e-commerce businesses.",
     features: [
-      "Online store setup",
-      "Payment integration",
+      "Online store setup (unlimited products)",
+      "Payment integration (Paystack, Flutterwave, Stripe)",
       "Shopping cart & order management",
-      "Advanced SEO",
+      "Customer accounts & login",
+      "Advanced SEO optimization",
+      "1 Year Hosting & Domain",
+      "Google Business Profile setup",
+      "Professional Email Address Setup",
     ],
     cta: "Get Started",
     isPopular: false,
@@ -311,6 +325,7 @@ export default async function Home() {
                     <CardTitle className="text-2xl font-bold">{pkg.title}</CardTitle>
                      <div className="flex items-baseline gap-2">
                         <span className="text-3xl font-extrabold text-foreground">{pkg.price}</span>
+                        {pkg.priceUsd && <span className="text-muted-foreground">{pkg.priceUsd}</span>}
                     </div>
                     <CardDescription>{pkg.description}</CardDescription>
                   </CardHeader>
@@ -413,3 +428,4 @@ export default async function Home() {
     
 
     
+
