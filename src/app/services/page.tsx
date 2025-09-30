@@ -80,8 +80,8 @@ const serviceCategories = [
         id: "brand-identity-design",
         title: "Brand Identity Design",
         description: "Creative logos, color palettes, and brand visuals that align with your website.",
-        imageUrl: imageData.services.brandIdentity.src,
-        aiHint: imageData.services.brandIdentity.hint,
+        imageUrl: "/brand iden.jpg",
+        aiHint: "",
       },
     ]
   },
@@ -241,5 +241,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-
-    
