@@ -50,10 +50,10 @@ const services = [
   },
   {
     icon: <Rocket className="h-10 w-10 text-accent" />,
-    title: 'Performance & Optimization',
-    description: 'Enhancing website performance, speed, and search engine ranking.',
-    href: '/services#speed-optimization',
-    image: "/web seo.jpg",
+    title: 'SEO Services',
+    description: 'On-page optimization to help websites rank higher on Google.',
+    href: '/services#seo-services',
+    image: "/seo.jpg",
     aiHint: "",
   },
 ];
