@@ -107,8 +107,8 @@ const serviceCategories = [
         id: "seo-services",
         title: "SEO Services",
         description: "On-page optimization to help websites rank higher on Google.",
-        imageUrl: imageData.services.seo.src,
-        aiHint: imageData.services.seo.hint,
+        imageUrl: "/seo.jpg",
+        aiHint: "",
       },
       {
         id: "mobile-optimization",
