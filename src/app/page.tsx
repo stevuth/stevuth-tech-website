@@ -123,6 +123,8 @@ const homePackages = [
       "1 Year Hosting & Domain",
       "Google Business Profile setup",
       "Social media integration",
+      "Google Analytics integration",
+      "Google Maps integration",
       "Professional Email Address Setup",
     ],
     cta: "Order Now",
@@ -141,6 +143,8 @@ const homePackages = [
       "Advanced SEO optimization",
       "1 Year Hosting & Domain",
       "Google Business Profile setup",
+      "Google Analytics integration",
+      "Google Maps integration",
       "Professional Email Address Setup",
     ],
     cta: "Order Now",
@@ -160,7 +164,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative h-screen w-full flex items-center justify-start text-left text-white overflow-hidden">
+      <section className="relative h-[calc(100vh)] w-full flex items-center justify-start text-left text-white overflow-hidden">
         <video
           src="/desktop-hero-video.mp4"
           autoPlay
