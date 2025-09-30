@@ -81,8 +81,8 @@
       "hint": ""
     },
     "marketplace": {
-      "src": "https://picsum.photos/seed/digitalMarket/800/600",
-      "hint": "digital marketplace"
+      "src": "/marketplace.jpg",
+      "hint": ""
     }
   },
   "blog": {

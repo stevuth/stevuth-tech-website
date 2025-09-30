@@ -148,8 +148,8 @@ const serviceCategories = [
         id: "marketplace-development",
         title: "Marketplace Development",
         description: "Multi-vendor platforms for buying and selling products, cars, or real estate.",
-        imageUrl: imageData.services.marketplace.src,
-        aiHint: imageData.services.marketplace.hint,
+        imageUrl: "/marketplace.jpg",
+        aiHint: "",
       },
     ]
   }
