@@ -141,8 +141,8 @@ const serviceCategories = [
         id: "booking-systems",
         title: "Booking & Reservation Systems",
         description: "Online booking solutions for hotels, events, and service providers.",
-        imageUrl: imageData.services.booking.src,
-        aiHint: imageData.services.booking.hint,
+        imageUrl: "/booking.jpg",
+        aiHint: "",
       },
       {
         id: "marketplace-development",

@@ -77,8 +77,8 @@
       "hint": "api code"
     },
     "booking": {
-      "src": "https://picsum.photos/seed/onlineBooking/800/600",
-      "hint": "online booking"
+      "src": "/booking.jpg",
+      "hint": ""
     },
     "marketplace": {
       "src": "https://picsum.photos/seed/digitalMarket/800/600",
