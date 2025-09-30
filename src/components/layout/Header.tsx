@@ -15,6 +15,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'Who We Are' },
   { href: '/services', label: 'What We Do' },
+  { href: '/packages', label: 'Packages' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact Us' },
   { href: '/faq', label: 'FAQ' },

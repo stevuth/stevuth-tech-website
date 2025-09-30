@@ -1,0 +1,177 @@
+
+import { Check, ArrowRight } from "lucide-react";
+import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import type { Metadata } from 'next';
+import { Badge } from "@/components/ui/badge";
+
+export const metadata: Metadata = {
+  title: 'Website Development Packages - Stevuth Tech',
+  description: 'Explore our affordable website development packages in Nigeria, from starter sites to custom e-commerce and SaaS solutions. Transparent pricing with no hidden fees.',
+  keywords: ["website packages Nigeria", "web design pricing", "e-commerce website cost", "small business website", "custom web development"],
+  alternates: {
+    canonical: '/packages',
+  },
+};
+
+const packages = [
+  {
+    title: "Starter Package",
+    price: "₦100,000",
+    priceUsd: "$70",
+    description: "For individuals & very small businesses.",
+    features: [
+      "1–3 pages (Home, About, Contact)",
+      "Mobile responsive design",
+      "Contact form",
+      "Basic SEO optimization",
+      "1 Year Hosting & Domain",
+      "Google Business Profile setup",
+      "Professional Email Address Setup",
+    ],
+    delivery: "5 days",
+    cta: "Get Started",
+    isPopular: false,
+  },
+  {
+    title: "Standard Package",
+    price: "₦200,000",
+    priceUsd: "$135",
+    description: "Best for growing businesses.",
+    features: [
+      "Up to 7 pages (Home, About, Services, Contact, etc.)",
+      "Custom design & branding",
+      "Blog setup (optional)",
+      "Full SEO optimization (on-page + indexing)",
+      "1 Year Hosting & Domain",
+      "Google Business Profile setup",
+      "Social media integration",
+      "Professional Email Address Setup",
+    ],
+    delivery: "7–10 days",
+    cta: "Get Started",
+    isPopular: true,
+  },
+  {
+    title: "Premium Package",
+    price: "₦350,000",
+    priceUsd: "$240",
+    description: "Perfect for e-commerce businesses.",
+    features: [
+      "Online store setup (unlimited products)",
+      "Payment integration (Paystack, Flutterwave, Stripe)",
+      "Shopping cart & order management",
+      "Customer accounts & login",
+      "Advanced SEO optimization",
+      "1 Year Hosting & Domain",
+      "Google Business Profile setup",
+      "Professional Email Address Setup",
+    ],
+    delivery: "10–14 days",
+    cta: "Get Started",
+    isPopular: false,
+  },
+  {
+    title: "Pro Package",
+    price: "₦800,000",
+    priceUsd: "$550",
+    description: "For startups & enterprises needing advanced solutions.",
+    features: [
+      "Custom-built solution (Marketplace, SaaS, etc.)",
+      "Unlimited pages & features",
+      "API integrations (WhatsApp, payment gateways, etc.)",
+      "Advanced SEO optimization",
+      "1 Year Hosting & Domain",
+      "Google Business Profile setup",
+      "Professional Email Address Setup",
+      "Free 1-Month Support",
+    ],
+    delivery: "3–5 weeks",
+    cta: "Get Started",
+    isPopular: false,
+  },
+    {
+    title: "Custom Package",
+    price: "Price On Request",
+    priceUsd: "",
+    description: "Tailored for unique solutions outside the listed packages.",
+    features: [
+      "Fully customized website or web app",
+      "Features built specifically for your business",
+      "API & third-party integrations",
+      "Advanced functionalities (booking systems, dashboards)",
+      "SEO optimization",
+      "Hosting & Google Business Profile included",
+      "Professional Email Address Setup",
+    ],
+    delivery: "Depends on project scope",
+    cta: "Request a Quote",
+    isPopular: false,
+  },
+];
+
+export default function PackagesPage() {
+  return (
+    <div>
+      <section className="bg-primary text-primary-foreground py-10 md:py-12">
+        <div className="container px-4 md:px-6 text-left">
+          <AnimatedWrapper>
+            <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Website Development Packages</h1>
+            <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
+              Affordable, transparent pricing for every business size. Let's build something amazing together.
+            </p>
+          </AnimatedWrapper>
+        </div>
+      </section>
+
+      <section className="py-10 md:py-12">
+        <div className="container px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            {packages.map((pkg, index) => (
+              <AnimatedWrapper 
+                key={pkg.title} 
+                animation="fade-in-up" 
+                delay={index * 150}
+                className={pkg.title === "Pro Package" || pkg.title === "Custom Package" ? "md:col-span-2 lg:col-span-1" : ""}
+              >
+                <Card className={`h-full flex flex-col ${pkg.isPopular ? 'border-accent border-2 shadow-accent/20 shadow-lg' : 'hover:shadow-xl transition-shadow'}`}>
+                    {pkg.isPopular && (
+                       <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1 text-sm font-bold">
+                           Most Popular
+                       </Badge>
+                    )}
+                  <CardHeader className="pt-8">
+                    <CardTitle className="text-2xl font-bold">{pkg.title}</CardTitle>
+                     <div className="flex items-baseline gap-2">
+                        <span className="text-3xl font-extrabold text-foreground">{pkg.price}</span>
+                        {pkg.priceUsd && <span className="text-muted-foreground">{pkg.priceUsd}</span>}
+                    </div>
+                    <CardDescription>{pkg.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <ul className="space-y-3">
+                      {pkg.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-3">
+                          <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardFooter className="flex-col items-stretch gap-4 pt-4">
+                    <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+                      <Link href="/contact">{pkg.cta} <ArrowRight className="h-4 w-4 ml-2" /></Link>
+                    </Button>
+                    <p className="text-center text-sm text-muted-foreground">Delivery: {pkg.delivery}</p>
+                  </CardFooter>
+                </Card>
+              </AnimatedWrapper>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
