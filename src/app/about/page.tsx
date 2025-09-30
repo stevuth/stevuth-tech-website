@@ -10,7 +10,7 @@ import imageData from '@/lib/placeholder-images.json';
 export const metadata: Metadata = {
   title: 'About The Best Web Development Agency in Nigeria | Stevuth Tech',
   description: 'Discover the mission and values of Stevuth Tech, the best website development agency in Nigeria. Learn why top businesses in Lagos and beyond trust us for web solutions.',
-  keywords: ["best web development agency Nigeria", "about Stevuth Tech", "top tech company in Lagos", "our mission", "web design company profile"],
+  keywords: ["about Stevuth Tech", "best web development agency Nigeria", "top tech company in Lagos", "our mission", "web design company profile"],
   alternates: {
     canonical: '/about',
   },

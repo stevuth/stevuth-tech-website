@@ -39,7 +39,7 @@ const services = [
     description: 'Tailored websites built from scratch to meet unique business needs.',
     href: '/services#custom-website-development',
     image: "/custom web.jpg",
-    aiHint: "",
+    aiHint: "developer coding on laptop",
   },
   {
     icon: <Brush className="h-10 w-10 text-accent" />,
@@ -47,7 +47,7 @@ const services = [
     description: 'Engaging, user-friendly designs and creative brand visuals that align with your website.',
     href: '/services#ui-ux-design',
     image: "/ux.jpg",
-    aiHint: "",
+    aiHint: "ui design mockup",
   },
   {
     icon: <Rocket className="h-10 w-10 text-accent" />,
@@ -55,7 +55,7 @@ const services = [
     description: 'On-page optimization to help websites rank higher on Google.',
     href: '/services#seo-services',
     image: "/seo.jpg",
-    aiHint: "",
+    aiHint: "seo analytics chart",
   },
 ];
 

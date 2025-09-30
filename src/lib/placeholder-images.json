@@ -2,13 +2,13 @@
   "about": {
     "story": {
       "src": "/about.jpg?v=2",
-      "hint": ""
+      "hint": "team meeting office"
     }
   },
   "home": {
     "meetStevuth": {
       "src": "/about.jpg?v=2",
-      "hint": ""
+      "hint": "modern office interior"
     },
     "customWebsite": {
       "src": "https://picsum.photos/seed/laptopCode/800/600",
@@ -26,63 +26,63 @@
   "services": {
     "customWebsite": {
       "src": "/custom web.jpg",
-      "hint": ""
+      "hint": "developer coding on laptop"
     },
     "ecommerce": {
       "src": "https://iili.io/Kq6XywG.jpg",
-      "hint": ""
+      "hint": "online shopping"
     },
     "businessWebsite": {
       "src": "/business web.jpg?v=2",
-      "hint": ""
+      "hint": "corporate building"
     },
     "landingPage": {
       "src": "/landing.jpg",
-      "hint": ""
+      "hint": "website landing page"
     },
     "webApplication": {
       "src": "/web app.jpg",
-      "hint": ""
+      "hint": "dashboard analytics"
     },
     "uiUx": {
       "src": "/ux.jpg",
-      "hint": ""
+      "hint": "ui design mockup"
     },
     "brandIdentity": {
       "src": "/brand iden.jpg",
-      "hint": ""
+      "hint": "brand logo design"
     },
     "maintenance": {
       "src": "/web support.jpg",
-      "hint": ""
+      "hint": "man fixing gears"
     },
     "speedOptimization": {
       "src": "/web speed.jpg",
-      "hint": ""
+      "hint": "fast loading speed"
     },
     "seo": {
       "src": "/seo.jpg",
-      "hint": ""
+      "hint": "seo analytics chart"
     },
     "mobileOptimization": {
       "src": "/mobile.jpg",
-      "hint": ""
+      "hint": "mobile phone responsive"
     },
     "saas": {
       "src": "/web saas.jpg",
-      "hint": ""
+      "hint": "saas platform interface"
     },
     "api": {
       "src": "/api.jpg",
-      "hint": ""
+      "hint": "api code integration"
     },
     "booking": {
       "src": "/booking.jpg",
-      "hint": ""
+      "hint": "online booking calendar"
     },
     "marketplace": {
       "src": "/marketplace.jpg?v=2",
-      "hint": ""
+      "hint": "online marketplace products"
     }
   },
   "blog": {

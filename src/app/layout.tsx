@@ -19,7 +19,7 @@ const fontInter = Inter({
   variable: '--font-inter',
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-live-url.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stevuth.web.app";
 
 const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => mod.Footer));
 

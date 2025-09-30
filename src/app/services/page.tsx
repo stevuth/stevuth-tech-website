@@ -33,7 +33,7 @@ const serviceCategories = [
         title: "Custom Website Development",
         description: "Tailored websites built from scratch to meet unique business needs.",
         imageUrl: "/custom web.jpg",
-        aiHint: "",
+        aiHint: "developer coding on laptop",
       },
       {
         id: "ecommerce-development",
@@ -47,21 +47,21 @@ const serviceCategories = [
         title: "Business Website Design",
         description: "Professional websites for companies, startups, and SMEs to build credibility online.",
         imageUrl: "/business web.jpg?v=2",
-        aiHint: "",
+        aiHint: "corporate building",
       },
       {
         id: "landing-page-design",
         title: "Landing Page Design",
         description: "High-converting landing pages designed for marketing campaigns and promotions.",
         imageUrl: "/landing.jpg",
-        aiHint: "",
+        aiHint: "website landing page",
       },
       {
         id: "web-application-development",
         title: "Web Application Development",
         description: "Advanced, interactive web apps such as dashboards, SaaS platforms, and custom solutions.",
         imageUrl: "/web app.jpg",
-        aiHint: "",
+        aiHint: "dashboard analytics",
       },
     ]
   },
@@ -74,14 +74,14 @@ const serviceCategories = [
         title: "UI/UX Design",
         description: "Engaging and user-friendly designs that deliver smooth experiences for visitors.",
         imageUrl: "/ux.jpg",
-        aiHint: "",
+        aiHint: "ui design mockup",
       },
       {
         id: "brand-identity-design",
         title: "Brand Identity Design",
         description: "Creative logos, color palettes, and brand visuals that align with your website.",
         imageUrl: "/brand iden.jpg",
-        aiHint: "",
+        aiHint: "brand logo design",
       },
     ]
   },
@@ -94,28 +94,28 @@ const serviceCategories = [
         title: "Website Maintenance & Support",
         description: "Continuous updates, bug fixes, backups, and security checks.",
         imageUrl: "/web support.jpg",
-        aiHint: "",
+        aiHint: "man fixing gears",
       },
       {
         id: "speed-optimization",
         title: "Website Speed Optimization",
         description: "Enhancing performance to make websites load faster.",
         imageUrl: "/web speed.jpg",
-        aiHint: "",
+        aiHint: "fast loading speed",
       },
       {
         id: "seo-services",
         title: "SEO Services",
         description: "On-page optimization to help websites rank higher on Google.",
         imageUrl: "/seo.jpg",
-        aiHint: "",
+        aiHint: "seo analytics chart",
       },
       {
         id: "mobile-optimization",
         title: "Mobile Optimization",
         description: "Fully responsive websites optimized for all devices.",
         imageUrl: "/mobile.jpg",
-        aiHint: "",
+        aiHint: "mobile phone responsive",
       },
     ]
   },
@@ -128,34 +128,34 @@ const serviceCategories = [
         title: "SaaS Development",
         description: "Custom software-as-a-service platforms for businesses.",
         imageUrl: "/web saas.jpg",
-        aiHint: "",
+        aiHint: "saas platform interface",
       },
       {
         id: "api-development",
         title: "API Development & Integration",
         description: "Connecting websites with payment gateways, CRMs, and other tools.",
         imageUrl: "/api.jpg",
-        aiHint: "",
+        aiHint: "api code integration",
       },
       {
         id: "booking-systems",
         title: "Booking & Reservation Systems",
         description: "Online booking solutions for hotels, events, and service providers.",
         imageUrl: "/booking.jpg",
-        aiHint: "",
+        aiHint: "online booking calendar",
       },
       {
         id: "marketplace-development",
         title: "Marketplace Development",
         description: "Multi-vendor platforms for buying and selling products, cars, or real estate.",
         imageUrl: "/marketplace.jpg?v=2",
-        aiHint: "",
+        aiHint: "online marketplace products",
       },
     ]
   }
 ];
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-live-url.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stevuth.web.app";
 
 const ServiceSection = ({ service, index }: { service: (typeof serviceCategories)[0]['services'][0], index: number }) => {
   const jsonLd = {
