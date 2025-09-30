@@ -4,7 +4,7 @@ import { PostForm } from "./PostForm";
 
 export default function NewPostPage() {
   return (
-    <div>
+    <div className="pt-16">
       <section className="bg-secondary/30">
         <div className="container px-4 md:px-6 py-10">
           <AnimatedWrapper>

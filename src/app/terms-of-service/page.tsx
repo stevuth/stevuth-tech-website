@@ -16,11 +16,11 @@ export const metadata: Metadata = {
 
 export default function TermsOfServicePage() {
   return (
-    <div>
+    <div className="pt-16">
       <section className="bg-primary text-primary-foreground py-12 md:py-16">
         <div className="container px-4 md:px-6">
           <AnimatedWrapper>
-            <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Terms of Service</h1>
+            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Terms of Service</h1>
             <p className="mt-4 text-lg md:text-xl max-w-3xl text-primary-foreground/80">
               Please read these terms and conditions carefully before using Our Service.
             </p>

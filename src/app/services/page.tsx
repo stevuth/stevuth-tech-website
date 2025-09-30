@@ -209,11 +209,11 @@ const ServiceSection = ({ service, index }: { service: (typeof serviceCategories
 
 export default function ServicesPage() {
   return (
-    <div>
+    <div className="pt-16">
       <section className="bg-primary text-primary-foreground py-10 md:py-12">
         <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
-            <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Our Services</h1>
+            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Our Services</h1>
             <p className="mt-4 text-lg md:text-xl max-w-3xl text-primary-foreground/80">
               Expert solutions to build, brand, and boost your online presence.
             </p>

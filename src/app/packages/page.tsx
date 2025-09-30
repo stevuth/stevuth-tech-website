@@ -122,11 +122,11 @@ const createWhatsAppLink = (packageName: string) => {
 
 export default function PackagesPage() {
   return (
-    <div>
+    <div className="pt-16">
       <section className="bg-primary text-primary-foreground py-10 md:py-12">
         <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
-            <h1 className="text-4xl md:text-5xl font-headline font-bold text-white">Website Development Packages</h1>
+            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Website Development Packages</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
               Affordable, transparent pricing for every business size. Let's build something amazing together.
             </p>
