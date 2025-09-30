@@ -114,8 +114,8 @@ const serviceCategories = [
         id: "mobile-optimization",
         title: "Mobile Optimization",
         description: "Fully responsive websites optimized for all devices.",
-        imageUrl: imageData.services.mobileOptimization.src,
-        aiHint: imageData.services.mobileOptimization.hint,
+        imageUrl: "/mobile.jpg",
+        aiHint: "",
       },
     ]
   },
