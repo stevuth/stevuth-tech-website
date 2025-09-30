@@ -53,8 +53,8 @@ const serviceCategories = [
         id: "landing-page-design",
         title: "Landing Page Design",
         description: "High-converting landing pages designed for marketing campaigns and promotions.",
-        imageUrl: imageData.services.landingPage.src,
-        aiHint: imageData.services.landingPage.hint,
+        imageUrl: "/landing.jpg",
+        aiHint: "",
       },
       {
         id: "web-application-development",
