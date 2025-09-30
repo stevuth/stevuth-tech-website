@@ -134,8 +134,8 @@ const serviceCategories = [
         id: "api-development",
         title: "API Development & Integration",
         description: "Connecting websites with payment gateways, CRMs, and other tools.",
-        imageUrl: imageData.services.api.src,
-        aiHint: imageData.services.api.hint,
+        imageUrl: "/api.jpg",
+        aiHint: "",
       },
       {
         id: "booking-systems",
