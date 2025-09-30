@@ -46,7 +46,7 @@ const serviceCategories = [
         id: "business-website-design",
         title: "Business Website Design",
         description: "Professional websites for companies, startups, and SMEs to build credibility online.",
-        imageUrl: "/business web.jpg",
+        imageUrl: "/business web.jpg?v=2",
         aiHint: "",
       },
       {
@@ -148,7 +148,7 @@ const serviceCategories = [
         id: "marketplace-development",
         title: "Marketplace Development",
         description: "Multi-vendor platforms for buying and selling products, cars, or real estate.",
-        imageUrl: "/marketplace.jpg",
+        imageUrl: "/marketplace.jpg?v=2",
         aiHint: "",
       },
     ]

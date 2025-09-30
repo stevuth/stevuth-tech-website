@@ -33,7 +33,7 @@
       "hint": ""
     },
     "businessWebsite": {
-      "src": "/business web.jpg",
+      "src": "/business web.jpg?v=2",
       "hint": ""
     },
     "landingPage": {
@@ -81,7 +81,7 @@
       "hint": ""
     },
     "marketplace": {
-      "src": "/marketplace.jpg",
+      "src": "/marketplace.jpg?v=2",
       "hint": ""
     }
   },
