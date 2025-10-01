@@ -85,7 +85,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" style={{ colorScheme: 'dark' }} suppressHydrationWarning>
        <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/logo.png" sizes="any" />
       </head>
       <body
         className={cn(
