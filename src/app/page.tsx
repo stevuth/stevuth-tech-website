@@ -357,7 +357,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-10 md:py-12 bg-background">
+      <section className="py-10 md:py-12 bg-background animated-gradient">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Partners</h2>
