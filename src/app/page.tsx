@@ -360,7 +360,7 @@ export default async function Home() {
       <section className="py-10 md:py-12 animated-gradient">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Partners</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">In Partnership With DesignRush</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground mb-8">
               We are recognized by industry leaders for our commitment to quality and excellence.
             </p>
