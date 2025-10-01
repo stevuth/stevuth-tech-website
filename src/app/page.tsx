@@ -367,7 +367,7 @@ export default async function Home() {
             <div className="flex justify-center">
               <Link href="https://www.designrush.com/agency/profile/stevuth-tech" rel="dofollow" target="_blank">
                 <Image
-                  src="https://i.postimg.cc/q7d3LqYj/Design-Rush-Badge-2025.png"
+                  src="/design rush.png"
                   alt="Stevuth Tech's 2025 rating badge on DesignRush, the industry-leading B2B Marketplace connecting brands with agencies"
                   width={150}
                   height={175}
