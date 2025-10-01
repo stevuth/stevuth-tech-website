@@ -357,6 +357,28 @@ export default async function Home() {
         </div>
       </section>
 
+      <section className="py-10 md:py-12 bg-background">
+        <div className="container px-4 md:px-6 text-center">
+          <AnimatedWrapper>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Partners</h2>
+            <p className="max-w-3xl mx-auto text-muted-foreground mb-8">
+              We are recognized by industry leaders for our commitment to quality and excellence.
+            </p>
+            <div className="flex justify-center">
+              <Link href="https://www.designrush.com/agency/profile/stevuth-tech" rel="dofollow" target="_blank">
+                <Image
+                  src="https://i.postimg.cc/q7d3LqYj/Design-Rush-Badge-2025.png"
+                  alt="Stevuth Tech's 2025 rating badge on DesignRush, the industry-leading B2B Marketplace connecting brands with agencies"
+                  width={150}
+                  height={175}
+                  className="transition-transform hover:scale-105"
+                />
+              </Link>
+            </div>
+          </AnimatedWrapper>
+        </div>
+      </section>
+
       <section className="py-10 md:py-12 bg-primary/5">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
