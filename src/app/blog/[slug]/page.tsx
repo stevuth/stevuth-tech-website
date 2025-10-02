@@ -102,7 +102,7 @@ export default async function BlogPostPage({ params }: Props) {
               />
             </div>
             <article 
-              className="prose dark:prose-invert max-w-none text-muted-foreground prose-headings:text-foreground prose-a:text-accent hover:prose-a:text-accent/90 prose-strong:text-foreground"
+              className="prose dark:prose-invert lg:prose-xl max-w-none prose-headings:text-foreground prose-a:text-accent hover:prose-a:text-accent/90 prose-strong:text-foreground"
             >
                <ReactMarkdown rehypePlugins={[rehypeSanitize]}>{post.content}</ReactMarkdown>
             </article>

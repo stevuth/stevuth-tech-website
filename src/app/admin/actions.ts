@@ -68,7 +68,7 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     revalidatePath('/admin');
     revalidatePath('/blog');
     revalidatePath('/');
-    revalidatePath('/admin/new-post');
+    revalidatePath(`/blog/${postData.slug}`);
     
     return {
       message: "Post created successfully!",
