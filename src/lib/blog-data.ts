@@ -74,7 +74,8 @@ export async function getPosts(options: { limit?: number } = {}): Promise<Post[]
     }
     return querySnapshot.docs.map(postFromDoc);
   } catch (error) {
-    return handleFirestoreError(error, 'getPosts') as Post[];
+    handleFirestoreError(error, 'getPosts');
+    return []; // Return an empty array on error to prevent crashing the page
   }
 }
 
@@ -92,6 +93,7 @@ export async function getPost(slug: string): Promise<Post | null> {
     const doc = querySnapshot.docs[0];
     return postFromDoc(doc);
   } catch (error) {
-    return handleFirestoreError(error, `getPost with slug: ${slug}`) as Post | null;
+     handleFirestoreError(error, `getPost with slug: ${slug}`);
+     return null; // Return null on error
   }
 }
