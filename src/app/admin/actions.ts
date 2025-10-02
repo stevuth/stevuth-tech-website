@@ -28,6 +28,7 @@ export type State = {
     author?: string[];
     category?: string[];
     aiHint?: string[];
+    _form?: string[];
   };
   message: string;
   success: boolean;
@@ -66,21 +67,31 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     await addDoc(collection(db, "posts"), newPost);
     
     // Revalidate paths to ensure content is fresh.
-    // This can be slow, but is necessary.
     revalidatePath('/admin');
     revalidatePath('/blog');
     revalidatePath(`/blog/${postData.slug}`);
-    revalidatePath('/');
     
     return {
       message: "Post created successfully!",
       success: true,
     };
 
-  } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
-    console.error("Error creating post in Firestore:", errorMessage);
+  } catch (error: any) {
+    let errorMessage = "An unknown error occurred.";
+    if (error.code === 'permission-denied') {
+        errorMessage = "Permission denied. Please check your Firestore security rules.";
+    } else if (error.code === 'not-found') {
+        errorMessage = "Firestore database not found. Please create a Firestore database in the Firebase Console.";
+    } else if (error instanceof Error) {
+        errorMessage = error.message;
+    }
+    
+    console.error("Error creating post in Firestore:", error);
+    
     return {
+      errors: {
+        _form: [errorMessage],
+      },
       message: `An unexpected error occurred: ${errorMessage}`,
       success: false,
     };

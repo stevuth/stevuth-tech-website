@@ -14,6 +14,8 @@ import { useRouter } from "next/navigation";
 import imageData from '@/lib/placeholder-images.json';
 import MDEditor from '@uiw/react-md-editor';
 import rehypeSanitize from 'rehype-sanitize';
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Terminal } from "lucide-react";
 
 const initialState = {
   message: "",
@@ -45,17 +47,20 @@ export function PostForm() {
       });
       // Redirect to the admin dashboard on success.
       router.push('/admin');
-    } else if (state.message && (state.errors || !state.success)) {
-       toast({
-        title: "Error Creating Post",
-        description: state.message,
-        variant: "destructive",
-      });
     }
-  }, [state, toast, router]);
+  }, [state.success, state.message, router, toast]);
 
   return (
     <form action={formAction} className="space-y-6">
+       {state.errors?._form && (
+         <Alert variant="destructive">
+            <Terminal className="h-4 w-4" />
+            <AlertTitle>Error Creating Post</AlertTitle>
+            <AlertDescription>
+                {state.errors._form[0]}
+            </AlertDescription>
+        </Alert>
+       )}
       <div className="space-y-2">
         <Label htmlFor="title">Title</Label>
         <Input id="title" name="title" placeholder="Post Title" required />
