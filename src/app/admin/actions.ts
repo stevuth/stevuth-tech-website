@@ -78,6 +78,7 @@ export async function createPost(prevState: State, formData: FormData): Promise<
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
     console.error("Error creating post in Firestore:", errorMessage);
+    // Return a plain, serializable object for the error case
     return {
       message: `An unexpected error occurred: ${errorMessage}`,
       success: false,
