@@ -6,6 +6,7 @@ import { db } from "@/lib/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import imageData from '@/lib/placeholder-images.json';
 import { revalidatePath } from "next/cache";
+import { redirect } from 'next/navigation';
 
 const postSchema = z.object({
   title: z.string().min(5, "Title must be at least 5 characters."),
@@ -18,23 +19,9 @@ const postSchema = z.object({
   aiHint: z.string().optional(),
 });
 
-export type State = {
-  errors?: {
-    title?: string[];
-    slug?: string[];
-    excerpt?: string[];
-    content?: string[];
-    imageUrl?: string[];
-    author?: string[];
-    category?: string[];
-    aiHint?: string[];
-    _form?: string[];
-  };
-  message: string;
-  success: boolean;
-};
-
-export async function createPost(prevState: State, formData: FormData): Promise<State> {
+// This function will not return a state object anymore.
+// It will either throw an error or redirect.
+export async function createPost(formData: FormData) {
   const validatedFields = postSchema.safeParse({
     title: formData.get("title"),
     slug: formData.get("slug"),
@@ -47,11 +34,12 @@ export async function createPost(prevState: State, formData: FormData): Promise<
   });
 
   if (!validatedFields.success) {
-    return {
-      errors: validatedFields.error.flatten().fieldErrors,
-      message: "Please correct the errors and try again.",
-      success: false,
-    };
+    // In a real app, you'd want a better way to communicate this back.
+    // For now, we'll just log it. The form should have client-side validation anyway.
+    console.error("Validation failed:", validatedFields.error.flatten().fieldErrors);
+    // You could redirect to an error page or back to the form with a query param.
+    // For now, we just won't proceed.
+    return;
   }
 
   const { aiHint, imageUrl, ...postData } = validatedFields.data;
@@ -65,35 +53,17 @@ export async function createPost(prevState: State, formData: FormData): Promise<
       createdAt: Timestamp.now(),
     };
     await addDoc(collection(db, "posts"), newPost);
-    
-    // Only revalidate the admin path. This is fast and crucial.
-    revalidatePath('/admin');
-    
-    return {
-      message: "Post created successfully!",
-      success: true,
-    };
-
   } catch (error: unknown) {
-    let errorMessage = "An unknown error occurred while creating the post.";
-    if (error instanceof Error) {
-        if ('code' in error && error.code === 'permission-denied') {
-            errorMessage = "Permission denied. Please check your Firestore security rules.";
-        } else if ('code' in error && error.code === 'not-found') {
-            errorMessage = "Firestore database not found. Please create a Firestore database in the Firebase Console.";
-        } else {
-            errorMessage = error.message;
-        }
-    }
-    
-    console.error("Error creating post:", errorMessage);
-    
-    return {
-      errors: {
-        _form: [errorMessage],
-      },
-      message: errorMessage,
-      success: false,
-    };
+    console.error("Error creating post:", error);
+    // In a real app, you should handle this more gracefully,
+    // maybe redirecting to a page with an error message.
+    // For now, just throwing will show the Next.js error boundary.
+    throw new Error("Could not create post. Please check Firestore permissions and network status.");
   }
+
+  // Revalidate the admin path to show the new post.
+  revalidatePath('/admin');
+  
+  // Redirect to the admin dashboard on success.
+  redirect('/admin');
 }
