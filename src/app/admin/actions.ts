@@ -66,10 +66,8 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     };
     await addDoc(collection(db, "posts"), newPost);
     
-    // Revalidate paths to ensure content is fresh.
+    // Revalidate only the admin path to prevent timeouts on other pages.
     revalidatePath('/admin');
-    revalidatePath('/blog');
-    revalidatePath(`/blog/${postData.slug}`);
     
     return {
       message: "Post created successfully!",

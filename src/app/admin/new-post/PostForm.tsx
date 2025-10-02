@@ -47,8 +47,14 @@ export function PostForm() {
       });
       // Redirect to the admin dashboard on success.
       router.push('/admin');
+    } else if (state.errors?._form) {
+      toast({
+        variant: "destructive",
+        title: "Error Creating Post",
+        description: state.errors._form[0],
+      });
     }
-  }, [state.success, state.message, router, toast]);
+  }, [state, router, toast]);
 
   return (
     <form action={formAction} className="space-y-6">
