@@ -38,10 +38,44 @@ const handleFirestoreError = (error: unknown, context: string): [] | null => {
   if (error instanceof FirestoreError) {
     switch (error.code) {
       case 'permission-denied':
-        console.error("Firestore permission denied. Please check your security rules in the Firebase console. You may need to allow read access.");
+        console.error(`
+          ============================================================
+          FIREBASE PERMISSION DENIED
+          ------------------------------------------------------------
+          This is a security rules issue. Please go to your Firebase
+          console, select your project, go to Build > Firestore Database >
+          Rules tab, and ensure your rules allow read access.
+          For a public blog, you can use:
+          
+          rules_version = '2';
+          service cloud.firestore {
+            match /databases/{database}/documents {
+              match /posts/{postId} {
+                allow read: if true;
+                allow write: if false; // Or your auth logic
+              }
+            }
+          }
+
+          Click 'Publish' after making the change.
+          ============================================================
+        `);
         break;
       case 'not-found':
-        console.error("Firestore database not found or API not enabled. Please ensure you have created a Firestore database in the Firebase Console and that the 'Cloud Firestore API' is enabled in your Google Cloud project.");
+        console.error(`
+          ============================================================
+          FIREBASE DATABASE NOT FOUND
+          ------------------------------------------------------------
+          This means the server could not find your Firestore database.
+          Please check the following:
+          1. The 'projectId' in your .env.local file matches your
+             Firebase project ID exactly.
+          2. You have created a Firestore database in your Firebase
+             project.
+          3. The 'Cloud Firestore API' is enabled in your Google Cloud
+             project console.
+          ============================================================
+        `);
         break;
       case 'unauthenticated':
         console.error("Firestore unauthenticated. The request does not have valid authentication credentials.");
@@ -53,6 +87,7 @@ const handleFirestoreError = (error: unknown, context: string): [] | null => {
     console.error("An unknown error occurred while fetching data from Firestore.");
   }
   
+  // To prevent app crashes, always return an expected type.
   if (context.startsWith('getPost')) {
     return null;
   }
@@ -65,16 +100,18 @@ export async function getPosts(options: { limit?: number } = {}): Promise<Post[]
     const postsRef = collection(db, 'posts');
     let q = query(postsRef, orderBy('date', 'desc'));
     if (options.limit) {
-      q = query(postsRef, orderBy('date', 'desc'), limit(options.limit));
+      q = query(posts-ref, orderBy('date', 'desc'), limit(options.limit));
     }
     const querySnapshot = await getDocs(q);
     if (querySnapshot.empty) {
+      // It's not an error if there are no posts, just return an empty array.
       return [];
     }
     return querySnapshot.docs.map(postFromDoc);
   } catch (error) {
+    // Gracefully handle errors and return an empty array to prevent crashes.
     handleFirestoreError(error, 'getPosts');
-    return []; // Always return an array to prevent crashes
+    return [];
   }
 }
 
@@ -92,7 +129,8 @@ export async function getPost(slug: string): Promise<Post | null> {
     const doc = querySnapshot.docs[0];
     return postFromDoc(doc);
   } catch (error) {
+     // Gracefully handle errors and return null.
      handleFirestoreError(error, `getPost with slug: ${slug}`);
-     return null; // Return null on error
+     return null;
   }
 }
