@@ -6,7 +6,6 @@ import { db } from "@/lib/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import imageData from '@/lib/placeholder-images.json';
 import { revalidatePath } from "next/cache";
-import { redirect } from 'next/navigation';
 
 const postSchema = z.object({
   title: z.string().min(5, "Title must be at least 5 characters."),
@@ -19,9 +18,22 @@ const postSchema = z.object({
   aiHint: z.string().optional(),
 });
 
-// This function will not return a state object anymore.
-// It will either throw an error or redirect.
-export async function createPost(formData: FormData) {
+type State = {
+  errors?: {
+    title?: string[];
+    slug?: string[];
+    excerpt?: string[];
+    content?: string[];
+    imageUrl?: string[];
+    author?: string[];
+    category?: string[];
+    aiHint?: string[];
+  };
+  message: string;
+  success: boolean;
+};
+
+export async function createPost(prevState: State, formData: FormData): Promise<State> {
   const validatedFields = postSchema.safeParse({
     title: formData.get("title"),
     slug: formData.get("slug"),
@@ -34,12 +46,11 @@ export async function createPost(formData: FormData) {
   });
 
   if (!validatedFields.success) {
-    // In a real app, you'd want a better way to communicate this back.
-    // For now, we'll just log it. The form should have client-side validation anyway.
-    console.error("Validation failed:", validatedFields.error.flatten().fieldErrors);
-    // You could redirect to an error page or back to the form with a query param.
-    // For now, we just won't proceed.
-    return;
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: "Validation failed. Please check the fields.",
+      success: false,
+    };
   }
 
   const { aiHint, imageUrl, ...postData } = validatedFields.data;
@@ -50,20 +61,31 @@ export async function createPost(formData: FormData) {
       imageUrl: imageUrl || imageData.blog.default.src,
       aiHint: aiHint || imageData.blog.default.hint,
       date: new Date().toISOString().split('T')[0],
-      createdAt: Timestamp.now(),
+      createdAt: Timestamp.now(), // This is a server-side object, not returned to client
     };
-    await addDoc(collection(db, "posts"), newPost);
-  } catch (error: unknown) {
-    console.error("Error creating post:", error);
-    // In a real app, you should handle this more gracefully,
-    // maybe redirecting to a page with an error message.
-    // For now, just throwing will show the Next.js error boundary.
-    throw new Error("Could not create post. Please check Firestore permissions and network status.");
-  }
+    
+    const docRef = await addDoc(collection(db, "posts"), newPost);
+    
+    // The docRef object is NOT serializable. Do not include it in the return.
 
-  // Revalidate the admin path to show the new post.
-  revalidatePath('/admin');
-  
-  // Redirect to the admin dashboard on success.
-  redirect('/admin');
+    revalidatePath('/admin');
+    revalidatePath('/blog');
+
+    return {
+        message: `Post "${postData.title}" created successfully!`,
+        success: true,
+    };
+
+  } catch (error: unknown) {
+    let errorMessage = "An unknown error occurred while creating the post.";
+    if (error instanceof Error) {
+        errorMessage = `Could not create post: ${error.message}`;
+    }
+    console.error("Error creating post:", error);
+    
+    return {
+        message: errorMessage,
+        success: false,
+    };
+  }
 }
