@@ -270,7 +270,7 @@ export default async function Home() {
       <section className="py-10 md:py-12 bg-primary/5">
         <div className="container px-4 md:px-6 text-center">
            <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Packages</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Pricing</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground mb-12">
               Transparent pricing for every business size. No hidden fees, just results.
             </p>
@@ -319,7 +319,7 @@ export default async function Home() {
           </div>
            <AnimatedWrapper className="mt-12">
             <Button asChild size="lg" variant="outline" className="text-accent hover:text-accent hover:bg-accent/10 border-accent">
-              <Link href="/packages">View All Packages</Link>
+              <Link href="/pricing">View All Plans</Link>
             </Button>
           </AnimatedWrapper>
         </div>

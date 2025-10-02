@@ -9,11 +9,11 @@ import type { Metadata } from 'next';
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: 'Affordable Website Packages in Nigeria | Stevuth Tech',
-  description: 'Explore website development packages from the best agency in Nigeria. We offer transparent pricing for starter sites, e-commerce stores, and custom solutions in Lagos and beyond.',
-  keywords: ["website packages Nigeria", "web design pricing Lagos", "e-commerce website cost Nigeria", "affordable websites Nigeria", "best web developer pricing"],
+  title: 'Affordable Website Pricing in Nigeria | Stevuth Tech',
+  description: 'Explore website development pricing from the best agency in Nigeria. We offer transparent pricing for starter sites, e-commerce stores, and custom solutions in Lagos and beyond.',
+  keywords: ["website pricing Nigeria", "web design pricing Lagos", "e-commerce website cost Nigeria", "affordable websites Nigeria", "best web developer pricing"],
   alternates: {
-    canonical: '/packages',
+    canonical: '/pricing',
   },
 };
 
@@ -123,13 +123,13 @@ const createWhatsAppLink = (packageName: string) => {
   return `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`;
 };
 
-export default function PackagesPage() {
+export default function PricingPage() {
   return (
     <div className="pt-16">
       <section className="py-10 md:py-12">
         <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl font-headline font-bold">Website Development Packages</h1>
+            <h1 className="text-3xl md:text-4xl font-headline font-bold">Website Development Pricing</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-muted-foreground">
               Affordable, transparent pricing from the best web development agency in Nigeria. Let's build something amazing.
             </p>
