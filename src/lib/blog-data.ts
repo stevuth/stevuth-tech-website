@@ -33,7 +33,7 @@ const postFromDoc = (doc: any): Post => {
   };
 };
 
-const handleFirestoreError = (error: unknown, context: string) => {
+const handleFirestoreError = (error: unknown, context: string): [] | null => {
   if (error instanceof FirestoreError) {
     if (error.code === 'permission-denied') {
       console.error(`Firestore permission denied in ${context}. Please check your security rules in the Firebase console.`);
@@ -45,6 +45,12 @@ const handleFirestoreError = (error: unknown, context: string) => {
   } else {
     console.error(`An unknown error occurred in ${context}:`, error);
   }
+  
+  // Return a value that matches the function's expected return type
+  if (context.startsWith('getPost')) {
+    return null;
+  }
+  return [];
 };
 
 
@@ -61,8 +67,7 @@ export async function getPosts(options: { limit?: number } = {}): Promise<Post[]
     }
     return querySnapshot.docs.map(postFromDoc);
   } catch (error) {
-    handleFirestoreError(error, 'getPosts');
-    return [];
+    return handleFirestoreError(error, 'getPosts') as Post[];
   }
 }
 
@@ -80,7 +85,6 @@ export async function getPost(slug: string): Promise<Post | null> {
     const doc = querySnapshot.docs[0];
     return postFromDoc(doc);
   } catch (error) {
-    handleFirestoreError(error, `getPost with slug: ${slug}`);
-    return null;
+    return handleFirestoreError(error, `getPost with slug: ${slug}`) as Post | null;
   }
 }
