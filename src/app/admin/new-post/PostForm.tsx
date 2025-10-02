@@ -1,9 +1,8 @@
-
 "use client";
 
 import { useState, useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
-import { createPost } from "../actions";
+import { createPost, type State } from "../actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,7 +13,7 @@ import MDEditor from '@uiw/react-md-editor';
 import rehypeSanitize from 'rehype-sanitize';
 import { useToast } from "@/hooks/use-toast";
 
-const initialState = {
+const initialState: State = {
   message: "",
   errors: undefined,
   success: false,

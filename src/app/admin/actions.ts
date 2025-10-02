@@ -1,4 +1,3 @@
-
 "use server";
 
 import { z } from "zod";
@@ -18,7 +17,7 @@ const postSchema = z.object({
   aiHint: z.string().optional(),
 });
 
-type State = {
+export type State = {
   errors?: {
     title?: string[];
     slug?: string[];
@@ -61,16 +60,15 @@ export async function createPost(prevState: State, formData: FormData): Promise<
       imageUrl: imageUrl || imageData.blog.default.src,
       aiHint: aiHint || imageData.blog.default.hint,
       date: new Date().toISOString().split('T')[0],
-      createdAt: Timestamp.now(), // This is a server-side object, not returned to client
+      createdAt: Timestamp.now(),
     };
     
     const docRef = await addDoc(collection(db, "posts"), newPost);
     
-    // The docRef object is NOT serializable. Do not include it in the return.
-
     revalidatePath('/admin');
     revalidatePath('/blog');
 
+    // ONLY return serializable data.
     return {
         message: `Post "${postData.title}" created successfully!`,
         success: true,
@@ -79,10 +77,12 @@ export async function createPost(prevState: State, formData: FormData): Promise<
   } catch (error: unknown) {
     let errorMessage = "An unknown error occurred while creating the post.";
     if (error instanceof Error) {
+        // Ensure we only extract the message string, not the whole object.
         errorMessage = `Could not create post: ${error.message}`;
     }
     console.error("Error creating post:", error);
     
+    // ONLY return serializable data.
     return {
         message: errorMessage,
         success: false,
