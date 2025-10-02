@@ -40,7 +40,8 @@ export function PostForm() {
         title: "Success!",
         description: state.message,
       });
-      router.push('/admin');
+      // We are intentionally not using router.push here to let the server action handle revalidation.
+      // The page will refresh as part of the revalidation process.
     } else if (state.message && (state.errors || !state.success)) {
        toast({
         title: "Error Creating Post",
