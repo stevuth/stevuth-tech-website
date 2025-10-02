@@ -34,16 +34,23 @@ const postFromDoc = (doc: any): Post => {
 };
 
 const handleFirestoreError = (error: unknown, context: string): [] | null => {
+  console.error(`Error in ${context}:`, error);
   if (error instanceof FirestoreError) {
-    if (error.code === 'permission-denied') {
-      console.error(`Firestore permission denied in ${context}. Please check your security rules in the Firebase console.`);
-    } else if (error.code === 'not-found') {
-      console.error(`Firestore database not found in ${context}. Please create a Firestore database in the Firebase Console for your project.`);
-    } else {
-      console.error(`Firestore error in ${context} (${error.code}):`, error.message);
+    switch (error.code) {
+      case 'permission-denied':
+        console.error("Firestore permission denied. Please check your security rules in the Firebase console.");
+        break;
+      case 'not-found':
+        console.error("Firestore database not found or API not enabled. Please ensure you have created a Firestore database in the Firebase Console and that the 'Cloud Firestore API' is enabled in your Google Cloud project.");
+        break;
+      case 'unauthenticated':
+        console.error("Firestore unauthenticated. The request does not have valid authentication credentials.");
+        break;
+      default:
+        console.error(`A Firestore error occurred (${error.code}): ${error.message}`);
     }
   } else {
-    console.error(`An unknown error occurred in ${context}:`, error);
+    console.error("An unknown error occurred while fetching data from Firestore.");
   }
   
   // Return a value that matches the function's expected return type
