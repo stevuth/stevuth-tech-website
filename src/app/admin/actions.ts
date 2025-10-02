@@ -18,7 +18,7 @@ const postSchema = z.object({
   aiHint: z.string().optional(),
 });
 
-type State = {
+export type State = {
   errors?: {
     title?: string[];
     slug?: string[];
@@ -65,6 +65,7 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     };
     await addDoc(collection(db, "posts"), newPost);
     
+    // Revalidate all necessary paths
     revalidatePath('/admin');
     revalidatePath('/blog');
     revalidatePath('/');
