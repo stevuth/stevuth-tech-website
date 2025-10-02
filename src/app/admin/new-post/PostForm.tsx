@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useActionState, useEffect, useRef } from "react";
+import { useActionState, useRef } from "react";
 import { useFormStatus } from "react-dom";
 import { createPost, type State } from "../actions";
 import { Button } from "@/components/ui/button";
@@ -11,12 +11,11 @@ import { ImageUploader } from "@/components/ImageUploader";
 import imageData from '@/lib/placeholder-images.json';
 import MDEditor from '@uiw/react-md-editor';
 import rehypeSanitize from 'rehype-sanitize';
-import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 const initialState: State = {
   message: "",
   errors: undefined,
-  success: false,
 };
 
 function SubmitButton() {
@@ -32,31 +31,11 @@ export function PostForm() {
   const [state, formAction] = useActionState(createPost, initialState);
   const [content, setContent] = useState("**Hello world!!!**");
   const [imageUrl, setImageUrl] = useState(imageData.blog.default.src);
-  const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
-
-  useEffect(() => {
-    if (!state.message) return;
-
-    if (state.success) {
-      toast({
-        title: "Success!",
-        description: state.message,
-      });
-      formRef.current?.reset();
-      setContent("**Hello world!!!**");
-      setImageUrl(imageData.blog.default.src);
-    } else {
-      toast({
-        title: "Error",
-        description: state.message,
-        variant: "destructive",
-      });
-    }
-  }, [state, toast]);
 
   return (
     <form ref={formRef} action={formAction} className="space-y-6">
+       {state.message && <p className="text-sm text-destructive">{state.message}</p>}
       <div className="space-y-2">
         <Label htmlFor="title">Title</Label>
         <Input id="title" name="title" placeholder="Post Title" required minLength={5} />

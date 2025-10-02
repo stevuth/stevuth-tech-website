@@ -5,6 +5,7 @@ import { db } from "@/lib/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import imageData from '@/lib/placeholder-images.json';
 import { revalidatePath } from "next/cache";
+import { redirect } from 'next/navigation';
 
 const postSchema = z.object({
   title: z.string().min(5, "Title must be at least 5 characters."),
@@ -29,7 +30,6 @@ export type State = {
     aiHint?: string[];
   };
   message: string;
-  success: boolean;
 };
 
 export async function createPost(prevState: State, formData: FormData): Promise<State> {
@@ -48,7 +48,6 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: "Validation failed. Please check the fields.",
-      success: false,
     };
   }
 
@@ -65,15 +64,6 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     
     await addDoc(collection(db, "posts"), newPost);
     
-    // Only revalidate the necessary pages to avoid timeouts.
-    revalidatePath('/admin');
-    revalidatePath('/blog');
-
-    return {
-        message: `Post "${postData.title}" created successfully!`,
-        success: true,
-    };
-
   } catch (error: unknown) {
     let errorMessage = "An unknown error occurred while creating the post.";
     if (error instanceof Error) {
@@ -83,7 +73,11 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     
     return {
         message: errorMessage,
-        success: false,
     };
   }
+
+  // Revalidate paths and redirect
+  revalidatePath('/admin');
+  revalidatePath('/blog');
+  redirect('/admin');
 }

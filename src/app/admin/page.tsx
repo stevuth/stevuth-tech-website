@@ -63,11 +63,11 @@ export default async function AdminPage() {
                             </div>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Button variant="outline" size="sm" disabled>
+                            <Button variant="outline" size="sm">
                               <Edit className="mr-2 h-4 w-4" />
                               Edit
                             </Button>
-                            <Button variant="destructive" size="sm" disabled>
+                            <Button variant="destructive" size="sm">
                               <Trash2 className="mr-2 h-4 w-4" />
                               Delete
                             </Button>
