@@ -36,22 +36,22 @@ export function PostForm() {
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    if (state.message) {
-      if (state.success) {
-        toast({
-          title: "Success!",
-          description: state.message,
-        });
-        formRef.current?.reset();
-        setContent("**Hello world!!!**");
-        setImageUrl(imageData.blog.default.src);
-      } else {
-        toast({
-          title: "Error",
-          description: state.message,
-          variant: "destructive",
-        });
-      }
+    if (!state.message) return;
+
+    if (state.success) {
+      toast({
+        title: "Success!",
+        description: state.message,
+      });
+      formRef.current?.reset();
+      setContent("**Hello world!!!**");
+      setImageUrl(imageData.blog.default.src);
+    } else {
+      toast({
+        title: "Error",
+        description: state.message,
+        variant: "destructive",
+      });
     }
   }, [state, toast]);
 
@@ -65,7 +65,7 @@ export function PostForm() {
 
       <div className="space-y-2">
         <Label htmlFor="slug">Slug</Label>
-        <Input id="slug" name="slug" placeholder="post-title" required minLength={5} pattern="^[a-z0-9-]+$" />
+        <Input id="slug" name="slug" placeholder="post-title" required minLength={5} />
         {state.errors?.slug && <p className="text-sm text-destructive">{state.errors.slug[0]}</p>}
       </div>
 

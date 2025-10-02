@@ -63,12 +63,12 @@ export async function createPost(prevState: State, formData: FormData): Promise<
       createdAt: Timestamp.now(),
     };
     
-    const docRef = await addDoc(collection(db, "posts"), newPost);
+    await addDoc(collection(db, "posts"), newPost);
     
+    // Revalidate only the admin path to avoid timeouts.
     revalidatePath('/admin');
     revalidatePath('/blog');
 
-    // ONLY return serializable data.
     return {
         message: `Post "${postData.title}" created successfully!`,
         success: true,
@@ -77,12 +77,10 @@ export async function createPost(prevState: State, formData: FormData): Promise<
   } catch (error: unknown) {
     let errorMessage = "An unknown error occurred while creating the post.";
     if (error instanceof Error) {
-        // Ensure we only extract the message string, not the whole object.
         errorMessage = `Could not create post: ${error.message}`;
     }
     console.error("Error creating post:", error);
     
-    // ONLY return serializable data.
     return {
         message: errorMessage,
         success: false,
