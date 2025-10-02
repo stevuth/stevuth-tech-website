@@ -4,8 +4,8 @@
 import { z } from "zod";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { revalidatePath } from "next/cache";
 import imageData from '@/lib/placeholder-images.json';
+import { revalidatePath } from "next/cache";
 
 const postSchema = z.object({
   title: z.string().min(5, "Title must be at least 5 characters."),
@@ -65,11 +65,12 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     };
     await addDoc(collection(db, "posts"), newPost);
     
-    // Revalidate all necessary paths
+    // Revalidate paths to ensure content is fresh.
+    // This can be slow, but is necessary.
     revalidatePath('/admin');
     revalidatePath('/blog');
-    revalidatePath('/');
     revalidatePath(`/blog/${postData.slug}`);
+    revalidatePath('/');
     
     return {
       message: "Post created successfully!",
@@ -79,7 +80,6 @@ export async function createPost(prevState: State, formData: FormData): Promise<
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
     console.error("Error creating post in Firestore:", errorMessage);
-    // Return a plain, serializable object for the error case
     return {
       message: `An unexpected error occurred: ${errorMessage}`,
       success: false,

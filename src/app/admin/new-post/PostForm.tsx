@@ -43,8 +43,8 @@ export function PostForm() {
         title: "Success!",
         description: state.message,
       });
-      // The page will refresh as part of the revalidation process.
-      // We no longer need to manually route.
+      // Redirect to the admin dashboard on success.
+      router.push('/admin');
     } else if (state.message && (state.errors || !state.success)) {
        toast({
         title: "Error Creating Post",
