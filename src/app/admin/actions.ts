@@ -66,7 +66,7 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     };
     await addDoc(collection(db, "posts"), newPost);
     
-    // Revalidate only the admin path to see immediate updates there.
+    // Only revalidate the admin path. This is fast and crucial.
     revalidatePath('/admin');
     
     return {
@@ -77,7 +77,6 @@ export async function createPost(prevState: State, formData: FormData): Promise<
   } catch (error: unknown) {
     let errorMessage = "An unknown error occurred while creating the post.";
     if (error instanceof Error) {
-        // More specific checks for Firebase errors
         if ('code' in error && error.code === 'permission-denied') {
             errorMessage = "Permission denied. Please check your Firestore security rules.";
         } else if ('code' in error && error.code === 'not-found') {
@@ -89,7 +88,6 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     
     console.error("Error creating post:", errorMessage);
     
-    // Always return a serializable object
     return {
       errors: {
         _form: [errorMessage],
