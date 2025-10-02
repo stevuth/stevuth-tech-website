@@ -5,6 +5,8 @@ import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, User } from 'lucide-react';
 import type { Metadata, ResolvingMetadata } from 'next';
+import ReactMarkdown from 'react-markdown';
+import rehypeSanitize from 'rehype-sanitize';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -101,8 +103,9 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
             <article 
               className="prose dark:prose-invert max-w-none text-muted-foreground prose-headings:text-foreground prose-a:text-accent hover:prose-a:text-accent/90 prose-strong:text-foreground"
-              dangerouslySetInnerHTML={{ __html: post.content }} 
-            />
+            >
+               <ReactMarkdown rehypePlugins={[rehypeSanitize]}>{post.content}</ReactMarkdown>
+            </article>
           </AnimatedWrapper>
         </div>
       </section>

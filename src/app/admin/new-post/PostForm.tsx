@@ -12,6 +12,8 @@ import { useToast } from "@/hooks/use-toast";
 import { ImageUploader } from "@/components/ImageUploader";
 import { useRouter } from "next/navigation";
 import imageData from '@/lib/placeholder-images.json';
+import MDEditor from '@uiw/react-md-editor';
+import rehypeSanitize from 'rehype-sanitize';
 
 const initialState = {
   message: "",
@@ -31,6 +33,7 @@ function SubmitButton() {
 export function PostForm() {
   const [state, formAction] = useActionState(createPost, initialState);
   const [imageUrl, setImageUrl] = useState(imageData.blog.default.src);
+  const [content, setContent] = useState("**Hello world!!!**");
   const { toast } = useToast();
   const router = useRouter();
 
@@ -72,10 +75,21 @@ export function PostForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="content">Content</Label>
-        <Textarea id="content" name="content" placeholder="Full content of the post..." rows={10} required />
+        <Label>Content</Label>
+        <div data-color-mode="dark">
+            <MDEditor
+              value={content}
+              onChange={(value) => setContent(value || "")}
+              previewOptions={{
+                rehypePlugins: [[rehypeSanitize]],
+              }}
+              height={400}
+            />
+        </div>
+        <input type="hidden" name="content" value={content} />
         {state.errors?.content && <p className="text-sm text-destructive">{state.errors.content[0]}</p>}
       </div>
+
 
        <div className="space-y-2">
          <Label htmlFor="imageUrl">Featured Image</Label>
