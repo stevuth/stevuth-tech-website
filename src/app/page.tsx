@@ -364,14 +364,15 @@ export default async function Home() {
             <p className="max-w-3xl mx-auto text-muted-foreground mb-8">
               We are recognized by industry leaders for our commitment to quality and excellence.
             </p>
-            <div className="flex justify-center">
-              <Link href="https://www.designrush.com/agency/profile/stevuth-tech" rel="dofollow" target="_blank">
+            <div className="flex justify-center group">
+              <Link href="https://www.designrush.com/agency/profile/stevuth-tech" rel="dofollow" target="_blank" className="relative">
+                <div className="animate-pulse-glow absolute inset-[-8px] rounded-full bg-accent/30 blur-xl group-hover:scale-125 transition-transform duration-500"></div>
                 <Image
                   src="/design rush.png"
                   alt="Stevuth Tech's 2025 rating badge on DesignRush, the industry-leading B2B Marketplace connecting brands with agencies"
                   width={150}
                   height={175}
-                  className="transition-transform hover:scale-105"
+                  className="transition-transform duration-500 group-hover:scale-110 animate-float"
                 />
               </Link>
             </div>
