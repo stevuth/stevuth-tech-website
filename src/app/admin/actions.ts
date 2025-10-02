@@ -1,16 +1,18 @@
+
 "use server";
 
 import { z } from "zod";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { revalidatePath } from "next/cache";
+import imageData from '@/lib/placeholder-images.json';
 
 const postSchema = z.object({
   title: z.string().min(5, "Title must be at least 5 characters."),
   slug: z.string().min(5, "Slug must be at least 5 characters.").regex(/^[a-z0-9-]+$/, "Slug must be lowercase with no spaces."),
   excerpt: z.string().min(10, "Excerpt must be at least 10 characters."),
   content: z.string().min(20, "Content must be at least 20 characters."),
-  imageUrl: z.string().url("Please upload an image."),
+  imageUrl: z.string().url("Please upload an image or use the default.").or(z.literal("")),
   author: z.string().min(2, "Author name must be at least 2 characters."),
   category: z.string().min(3, "Category must be at least 3 characters."),
   aiHint: z.string().optional(),
@@ -51,13 +53,14 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     };
   }
 
-  const { aiHint, ...postData } = validatedFields.data;
+  const { aiHint, imageUrl, ...postData } = validatedFields.data;
 
   try {
     const newPost = {
       ...postData,
-      aiHint: aiHint || '',
-      date: new Date().toISOString().split('T')[0], // Set current date in YYYY-MM-DD format
+      imageUrl: imageUrl || imageData.blog.default.src,
+      aiHint: aiHint || imageData.blog.default.hint,
+      date: new Date().toISOString().split('T')[0],
       createdAt: Timestamp.now(),
     };
     await addDoc(collection(db, "posts"), newPost);
@@ -72,9 +75,10 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     };
 
   } catch (error) {
-    console.error("Error creating post in Firestore:", error);
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred.";
+    console.error("Error creating post in Firestore:", errorMessage);
     return {
-      message: "An unexpected error occurred. Please try again.",
+      message: `An unexpected error occurred: ${errorMessage}`,
       success: false,
     };
   }
