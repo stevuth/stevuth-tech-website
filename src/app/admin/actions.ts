@@ -65,7 +65,7 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     
     await addDoc(collection(db, "posts"), newPost);
     
-    // Revalidate only the admin path to avoid timeouts.
+    // Only revalidate the necessary pages to avoid timeouts.
     revalidatePath('/admin');
     revalidatePath('/blog');
 
