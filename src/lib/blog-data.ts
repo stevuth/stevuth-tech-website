@@ -35,24 +35,25 @@ const postFromDoc = (doc: any): Post => {
 
 const handleFirestoreError = (error: unknown, context: string): [] | null => {
   console.error(`Error in ${context}:`, error);
+
   if (error instanceof FirestoreError) {
+    // This handles specific Firestore SDK errors
     switch (error.code) {
       case 'permission-denied':
         console.error(`
           ============================================================
-          FIREBASE PERMISSION DENIED
+          FIREBASE PERMISSION DENIED IN ${context.toUpperCase()}
           ------------------------------------------------------------
-          This is a security rules issue. Please go to your Firebase
-          console, select your project, go to Build > Firestore Database >
-          Rules tab, and ensure your rules allow read access.
-          For a public blog, you can use:
+          This is a security rules issue. Go to your Firebase project,
+          then Build > Firestore Database > Rules tab, and ensure your
+          rules allow this operation. For a public blog, you need:
           
           rules_version = '2';
           service cloud.firestore {
             match /databases/{database}/documents {
               match /posts/{postId} {
-                allow read: if true;
-                allow write: if false; // Or your auth logic
+                allow read: if true; // Allows anyone to read posts
+                allow write: if false; // Or your auth logic for admin
               }
             }
           }
@@ -62,29 +63,28 @@ const handleFirestoreError = (error: unknown, context: string): [] | null => {
         `);
         break;
       case 'not-found':
-        console.error(`
+         console.error(`
           ============================================================
-          FIREBASE DATABASE NOT FOUND
+          FIREBASE DATABASE/COLLECTION NOT FOUND IN ${context.toUpperCase()}
           ------------------------------------------------------------
-          This means the server could not find your Firestore database.
-          Please check the following:
-          1. The 'projectId' in your .env.local file matches your
-             Firebase project ID exactly.
-          2. You have created a Firestore database in your Firebase
-             project.
-          3. The 'Cloud Firestore API' is enabled in your Google Cloud
-             project console.
+          1. Check that the 'projectId' in your .env.local file matches
+             your Firebase project ID.
+          2. Ensure you have created a Firestore database in your
+             Firebase project.
+          3. Ensure you have a collection named 'posts'.
           ============================================================
         `);
-        break;
-      case 'unauthenticated':
-        console.error("Firestore unauthenticated. The request does not have valid authentication credentials.");
         break;
       default:
         console.error(`A Firestore error occurred (${error.code}): ${error.message}`);
     }
+  } else if (error instanceof Error) {
+    // This handles generic JavaScript errors (like ReferenceError from a typo)
+    console.error(`A JavaScript error occurred in ${context}: ${error.name} - ${error.message}`);
+    console.error(error.stack);
   } else {
-    console.error("An unknown error occurred while fetching data from Firestore.");
+    // Fallback for any other type of error
+    console.error(`An unknown error of type ${typeof error} occurred in ${context}.`);
   }
   
   // To prevent app crashes, always return an expected type.
@@ -100,16 +100,14 @@ export async function getPosts(options: { limit?: number } = {}): Promise<Post[]
     const postsRef = collection(db, 'posts');
     let q = query(postsRef, orderBy('date', 'desc'));
     if (options.limit) {
-      q = query(posts-ref, orderBy('date', 'desc'), limit(options.limit));
+      q = query(postsRef, orderBy('date', 'desc'), limit(options.limit));
     }
     const querySnapshot = await getDocs(q);
     if (querySnapshot.empty) {
-      // It's not an error if there are no posts, just return an empty array.
       return [];
     }
     return querySnapshot.docs.map(postFromDoc);
   } catch (error) {
-    // Gracefully handle errors and return an empty array to prevent crashes.
     handleFirestoreError(error, 'getPosts');
     return [];
   }
@@ -129,7 +127,6 @@ export async function getPost(slug: string): Promise<Post | null> {
     const doc = querySnapshot.docs[0];
     return postFromDoc(doc);
   } catch (error) {
-     // Gracefully handle errors and return null.
      handleFirestoreError(error, `getPost with slug: ${slug}`);
      return null;
   }
