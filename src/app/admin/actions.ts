@@ -66,7 +66,7 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     };
     await addDoc(collection(db, "posts"), newPost);
     
-    // Revalidate only the admin path to prevent timeouts on other pages.
+    // Revalidate only the admin path to see immediate updates there.
     revalidatePath('/admin');
     
     return {
@@ -74,23 +74,27 @@ export async function createPost(prevState: State, formData: FormData): Promise<
       success: true,
     };
 
-  } catch (error: any) {
-    let errorMessage = "An unknown error occurred.";
-    if (error.code === 'permission-denied') {
-        errorMessage = "Permission denied. Please check your Firestore security rules.";
-    } else if (error.code === 'not-found') {
-        errorMessage = "Firestore database not found. Please create a Firestore database in the Firebase Console.";
-    } else if (error instanceof Error) {
-        errorMessage = error.message;
+  } catch (error: unknown) {
+    let errorMessage = "An unknown error occurred while creating the post.";
+    if (error instanceof Error) {
+        // More specific checks for Firebase errors
+        if ('code' in error && error.code === 'permission-denied') {
+            errorMessage = "Permission denied. Please check your Firestore security rules.";
+        } else if ('code' in error && error.code === 'not-found') {
+            errorMessage = "Firestore database not found. Please create a Firestore database in the Firebase Console.";
+        } else {
+            errorMessage = error.message;
+        }
     }
     
-    console.error("Error creating post in Firestore:", error);
+    console.error("Error creating post:", errorMessage);
     
+    // Always return a serializable object
     return {
       errors: {
         _form: [errorMessage],
       },
-      message: `An unexpected error occurred: ${errorMessage}`,
+      message: errorMessage,
       success: false,
     };
   }

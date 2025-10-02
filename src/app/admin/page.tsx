@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { getPosts } from "@/lib/blog-data";
 import Link from "next/link";
 
-export const revalidate = 0; // Always fetch fresh data
+export const revalidate = 0; // Always fetch fresh data for the admin page
 
 export const metadata: Metadata = {
   title: 'Admin Dashboard',

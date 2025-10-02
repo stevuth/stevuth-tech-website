@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useActionState, useEffect, useState } from "react";
+import { useActionState, useEffect, useState, useTransition } from "react";
 import { useFormStatus } from "react-dom";
 import { createPost } from "../actions";
 import { Button } from "@/components/ui/button";
@@ -45,13 +45,14 @@ export function PostForm() {
         title: "Success!",
         description: state.message,
       });
-      // Redirect to the admin dashboard on success.
+      // On success, redirect to the admin dashboard where the new post will appear.
       router.push('/admin');
-    } else if (state.errors?._form) {
+    } else if (state.message && (state.errors?._form || !state.errors)) {
+      // Show error toast if there's a form-wide error or a message without specific field errors.
       toast({
         variant: "destructive",
         title: "Error Creating Post",
-        description: state.errors._form[0],
+        description: state.message,
       });
     }
   }, [state, router, toast]);
@@ -61,7 +62,7 @@ export function PostForm() {
        {state.errors?._form && (
          <Alert variant="destructive">
             <Terminal className="h-4 w-4" />
-            <AlertTitle>Error Creating Post</AlertTitle>
+            <AlertTitle>Error</AlertTitle>
             <AlertDescription>
                 {state.errors._form[0]}
             </AlertDescription>
