@@ -38,7 +38,7 @@ const handleFirestoreError = (error: unknown, context: string): [] | null => {
   if (error instanceof FirestoreError) {
     switch (error.code) {
       case 'permission-denied':
-        console.error("Firestore permission denied. Please check your security rules in the Firebase console.");
+        console.error("Firestore permission denied. Please check your security rules in the Firebase console. You may need to allow read access.");
         break;
       case 'not-found':
         console.error("Firestore database not found or API not enabled. Please ensure you have created a Firestore database in the Firebase Console and that the 'Cloud Firestore API' is enabled in your Google Cloud project.");
@@ -53,7 +53,6 @@ const handleFirestoreError = (error: unknown, context: string): [] | null => {
     console.error("An unknown error occurred while fetching data from Firestore.");
   }
   
-  // Return a value that matches the function's expected return type
   if (context.startsWith('getPost')) {
     return null;
   }
@@ -74,7 +73,8 @@ export async function getPosts(options: { limit?: number } = {}): Promise<Post[]
     }
     return querySnapshot.docs.map(postFromDoc);
   } catch (error) {
-    return handleFirestoreError(error, 'getPosts') as Post[];
+    handleFirestoreError(error, 'getPosts');
+    return []; // Always return an array to prevent crashes
   }
 }
 
@@ -92,6 +92,7 @@ export async function getPost(slug: string): Promise<Post | null> {
     const doc = querySnapshot.docs[0];
     return postFromDoc(doc);
   } catch (error) {
-     return handleFirestoreError(error, `getPost with slug: ${slug}`) as null;
+     handleFirestoreError(error, `getPost with slug: ${slug}`);
+     return null; // Return null on error
   }
 }
