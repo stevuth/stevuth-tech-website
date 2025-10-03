@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { uploadImageAction } from '@/app/admin/upload/actions';
 import { UploadCloud, X } from 'lucide-react';
@@ -11,6 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 
 interface ImageUploaderProps {
   onUploadSuccess: (url: string) => void;
+  initialImage?: string;
 }
 
 const initialState = {
@@ -19,10 +21,14 @@ const initialState = {
   success: false,
 };
 
-export function ImageUploader({ onUploadSuccess }: ImageUploaderProps) {
-  const [preview, setPreview] = useState<string | null>(null);
+export function ImageUploader({ onUploadSuccess, initialImage }: ImageUploaderProps) {
+  const [preview, setPreview] = useState<string | null>(initialImage || null);
   const [isUploading, setIsUploading] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    setPreview(initialImage || null);
+  }, [initialImage]);
 
   const onDrop = useCallback(async (acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
@@ -49,10 +55,10 @@ export function ImageUploader({ onUploadSuccess }: ImageUploaderProps) {
         description: newState.message || "An unexpected error occurred.",
         variant: "destructive",
       });
-      setPreview(null);
+      setPreview(initialImage || null);
     }
     setIsUploading(false);
-  }, [onUploadSuccess, toast]);
+  }, [onUploadSuccess, toast, initialImage]);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,

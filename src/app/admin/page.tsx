@@ -70,9 +70,11 @@ function AdminPage() {
                             </div>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Button variant="outline" size="sm">
-                              <Edit className="mr-2 h-4 w-4" />
-                              Edit
+                            <Button variant="outline" size="sm" asChild>
+                               <Link href={`/admin/edit/${post.slug}`}>
+                                <Edit className="mr-2 h-4 w-4" />
+                                Edit
+                              </Link>
                             </Button>
                             <Button variant="destructive" size="sm">
                               <Trash2 className="mr-2 h-4 w-4" />
