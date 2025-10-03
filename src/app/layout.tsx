@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     default: 'Best Website Development Agency in Nigeria - Stevuth Tech',
     template: '%s | Stevuth Tech',
   },
+  verification: {
+    google: 'google7cb1f9bd52be07f5.html',
+  },
   description: 'Stevuth Tech is the best website development agency in Nigeria, specializing in custom web design, e-commerce, and SEO. Partner with the top tech company in Lagos for growth.',
   keywords: [
     "best website development agency in Nigeria",
