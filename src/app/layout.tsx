@@ -7,6 +7,7 @@ import { Header } from '@/components/layout/Header';
 import { Toaster } from "@/components/ui/toaster"
 import dynamic from 'next/dynamic';
 import { AuthProvider } from '@/lib/auth';
+import Script from 'next/script';
 
 const fontPoppins = Poppins({
   subsets: ['latin'],
@@ -21,6 +22,7 @@ const fontInter = Inter({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stevuth.web.app";
+const gaMeasurementId = "G-N8EY0EF9QL";
 
 const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => mod.Footer));
 
@@ -106,6 +108,15 @@ export default function RootLayout({
             </div>
             <Toaster />
         </AuthProvider>
+        <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`} />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gaMeasurementId}');
+          `}
+        </Script>
       </body>
     </html>
   );
