@@ -1,15 +1,13 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Defines the rules for the 'posts' collection
     match /posts/{postId} {
-      // Anyone can read documents in the 'posts' collection.
-      // This is necessary for your blog to be public.
+      // Allow anyone to read blog posts
       allow read: if true;
 
-      // Only authenticated users can create, update, or delete documents.
-      // This secures your admin functionality.
-      allow write: if request.auth != null;
+      // Allow ANYONE to write, update, or delete blog posts.
+      // This is a security risk for a production app.
+      allow write: if true;
     }
   }
 }
