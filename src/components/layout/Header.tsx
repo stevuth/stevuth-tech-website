@@ -89,7 +89,7 @@ export function Header() {
   const MobileNavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
     const commonClasses = cn(
-        "relative text-2xl font-bold text-white transition-colors hover:text-accent py-3 w-full text-left",
+        "relative text-2xl font-bold text-white transition-colors hover:text-accent py-3 w-full text-left px-6 hover:bg-white/5",
          "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:bg-accent after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-50",
         isActive ? "text-accent after:scale-x-50" : ""
     );
@@ -188,7 +188,7 @@ export function Header() {
                     </SheetClose>
                 </div>
 
-                <nav className="flex flex-col p-6 mt-4">
+                <nav className="flex flex-col pt-6 mt-4">
                   {navLinks.map((link, index) => (
                      <div key={link.href} className="flex flex-col">
                       <MobileNavLink href={link.href}>
