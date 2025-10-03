@@ -1,0 +1,87 @@
+[33m66f5011[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: rebase (abort): returning to refs/heads/main
+[33m862c255[m HEAD@{1}: commit: feat: Remove login button and add analytics
+[33m15b2e7a[m HEAD@{2}: commit: remove the log in button in the main website
+[33m542f5b3[m HEAD@{3}: commit: Integrate Google Analytics into my Next.js website using GA4. Add the gl
+[33m019b94f[m HEAD@{4}: commit: put this in the <head> of the website, i want to use it for google searc
+[33m6f67116[m HEAD@{5}: commit: add animated connecting lines to the animated partnership section to sym
+[33ma998df2[m HEAD@{6}: commit: let the menu items in the hamburger menu modal be animated ( like them s
+[33mbc5c689[m HEAD@{7}: commit: enable the hamburger menu modal be opened and closed with animated effec
+[33m17ca4cd[m HEAD@{8}: commit: add hover effects on the menu buttons in the hamburger menu modal
+[33m0f82741[m HEAD@{9}: commit: add line seperator in between the menu buttons in the hamburger menu mod
+[33m84cd9df[m HEAD@{10}: commit: remove the login button in the hamburger menu modal of mobile devices
+[33mee18f01[m HEAD@{11}: commit: undo the last action
+[33mc5cad3e[m HEAD@{12}: commit: enhance the hamburger menu modal on mobile devices with Staggered Menu I
+[33m8361b55[m HEAD@{13}: commit: shorten the horizontal length of the cta button in the hero section
+[33mb8f0bd8[m HEAD@{14}: commit: you didnt implement the animation i asked you to do, Enhance the hamburg
+[33me890d48[m HEAD@{15}: commit: see you put it in the midst of the sub heading text
+[33m1a0b93d[m HEAD@{16}: commit: move the back button upward towards the left corner
+[33m5d24dba[m HEAD@{17}: commit: Enhance the hamburger menu modal with a smooth animated entrance when th
+[33m0162bfe[m HEAD@{18}: commit: Enhance the hamburger menu modal with a smooth animated entrance when th
+[33m9d3489a[m HEAD@{19}: commit: move the back button upwards ( in the left corner) a bit
+[33m07b6c5a[m HEAD@{20}: commit: move the back button from the nav bar to the sub-headings section
+[33m20aecf4[m HEAD@{21}: commit: Create a futuristic, professional animation effect for the Partnerships
+[33mdff5925[m HEAD@{22}: commit: remove the login button showing on the hamburger menu modal in the main
+[33m1e36c85[m HEAD@{23}: reset: moving to 1e36c85
+[33mad008cd[m HEAD@{24}: commit: remove the login button showing on the hamburger menu modal in the main
+[33mae290c1[m HEAD@{25}: commit: the images for uploaded posts in the blog page is using the default imag
+[33m1e36c85[m HEAD@{26}: commit: the delete button in the admin page is not working
+[33m69a3c93[m HEAD@{27}: commit: now update the rules to allow only authenticated users to write
+[33m1d78d79[m HEAD@{28}: commit: write out the rules here
+[33m2dec390[m HEAD@{29}: commit: lets change the rule to allow public write
+[33mc65745d[m HEAD@{30}: commit: react-dom-client.development.js:25022 Download the React DevTools for a
+[33m6e756f0[m HEAD@{31}: commit: Could not update post: 7 PERMISSION_DENIED: Missing or insufficient perm
+[33m4264a71[m HEAD@{32}: commit: Indexes
+[33mc66c3e1[m HEAD@{33}: commit: the edit button in the admin page is not working
+[33m268f8f9[m HEAD@{34}: commit: see this
+[33m12e10bf[m HEAD@{35}: commit: i have done the authentication, now lets do the rules
+[33m9616a09[m HEAD@{36}: commit: File changes
+[33m8f5e12b[m HEAD@{37}: commit: how should i handle the security rules
+[33m4bcd1b7[m HEAD@{38}: commit: Error: [ Server ] An unknown error occurred while fetching data from Fir
+[33m0d56811[m HEAD@{39}: commit: FirebaseError: Missing or insufficient permissions.
+[33m863f229[m HEAD@{40}: commit: this is the new configuration; apiKey: "AIzaSyCj_YDTb_-ScHnpKsQtH19c7
+[33m739eca4[m HEAD@{41}: commit: enable the uploaded blog posts to be visible on the admin page
+[33m5fdc762[m HEAD@{42}: commit: Error: [ Server ] [2025-10-02T16:37:39.446Z] @firebase/firestore: "Fire
+[33ma0ee47f[m HEAD@{43}: commit: add more animation elemnts to the partnership section, make it very enga
+[33m797a6ca[m HEAD@{44}: commit: Error: [ Server ] [2025-10-02T10:04:09.925Z] @firebase/firestore: "Fire
+[33m4e4526b[m HEAD@{45}: commit: let the admin page show the uploaded blog posts with edit and delete bu
+[33m4835256[m HEAD@{46}: commit: change page name packages to pricing
+[33m6166ef6[m HEAD@{47}: commit: the issue is at line 28 column 17
+[33m326db2f[m HEAD@{48}: commit: Pattern attribute value ^[a-z0-9-]+$ is not a valid regular expression:
+[33m6f762bd[m HEAD@{49}: commit: Error: An unexpected response was received from the server.
+[33m635a2d0[m HEAD@{50}: commit: That error again 👀 — Error: An unexpected response was received from th
+[33m4e246a5[m HEAD@{51}: commit: Error: An unexpected response was received from the server.
+[33m08e80b5[m HEAD@{52}: commit: and are the post details submitted in the admin page sent to the databas
+[33m3a5e980[m HEAD@{53}: commit: Error: An unexpected response was received from the server.
+[33mcf6db44[m HEAD@{54}: commit: i think the database is created already
+[33m6cdd5e9[m HEAD@{55}: commit: identitytoolkit.clients6.google.com/v2/projects/right-focus-stevuth/conf
+[33m2092f50[m HEAD@{56}: commit: Error: An unexpected response was received from the server.
+[33m64411fd[m HEAD@{57}: commit: actions.ts:36 POST https://9000-firebase-right-focus-stevuth-1756555665
+[33m023633f[m HEAD@{58}: commit: I am building a blog admin page with **Next.js (App Router) and Firebase
+[33mef5c381[m HEAD@{59}: commit: Error: [ Server ] [2025-10-02T06:49:16.195Z] @firebase/firestore: "Fire
+[33mc24dabb[m HEAD@{60}: commit: i have uploaded them in the .env.local folder
+[33m304b1d5[m HEAD@{61}: commit: the backend credentials are not stored in the code, they are supposed to
+[33m80c62ed[m HEAD@{62}: commit: Ahh got it ✅ — thanks for clarifying. Since you’re using **Firebase back
+[33m8fa284b[m HEAD@{63}: commit: Update the Admin blog post upload page to support Markdown input. Replac
+[33m8e60105[m HEAD@{64}: commit: Error: An unexpected response was received from the server.
+[33ma09228a[m HEAD@{65}: commit: i noticed that after creating the blog post, it appeared on the website,
+[33m6c2d6aa[m HEAD@{66}: commit: when i tried to upload a blog post on the website, i pressed the create
+[33m81bf4fd[m HEAD@{67}: commit: change the text 'our partners' to ' In Partnership With DesignRush'
+[33m791d50e[m HEAD@{68}: commit: also add animated lines to it
+[33m59bedc8[m HEAD@{69}: commit: this is not animation, this is just a background color
+[33mfd822dc[m HEAD@{70}: commit: use a strong background animation for the our partner section
+[33m4d10359[m HEAD@{71}: commit: i have uploaded the image for our partners section, the name is design r
+[33m27356ec[m HEAD@{72}: commit: Use dofollow link https://www.designrush.com/agency/profile/stevuth-tech
+[33mda89880[m HEAD@{73}: commit: make the website's logo also the favicon
+[33mf3a6e0e[m HEAD@{74}: commit: first commit
+[33m6a65f16[m HEAD@{75}: commit: Add a background color to the button text 'Contact Us'
+[33mf9a5654[m HEAD@{76}: commit: Implement advance SEO to make it rank no 1 on Google in Nigeria for the
+[33m7bff9c9[m HEAD@{77}: reset: moving to 7bff9c9
+[33m13ec49d[m HEAD@{78}: commit: Undo the last action you took
+[33me3d391d[m HEAD@{79}: commit: Try fixing this error: `Build Error: Parsing ecmascript source code fail
+[33m0a9cb15[m HEAD@{80}: rebase (pick): Remove the address in website, change the phone numbers to +234901677206
+[33m240b42a[m HEAD@{81}: commit: File changes
+[33m38ace01[m HEAD@{82}: commit: File changes
+[33m1a42ab8[m HEAD@{83}: commit: File changes
+[33me0108f7[m HEAD@{84}: pull --rebase (start): checkout e0108f7b3c6751527812d2a394fae6f4841073dc
+[33m66f5011[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{85}: Branch: renamed refs/heads/main to refs/heads/main
+[33m66f5011[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{87}: commit
