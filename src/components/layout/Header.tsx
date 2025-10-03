@@ -198,31 +198,23 @@ export function Header() {
                 </nav>
 
                 <div className="mt-auto p-6 border-t border-primary-foreground/20">
-                   {!loading && (
-                     user ? (
-                        <AlertDialog>
-                          <AlertDialogTrigger asChild>
-                             <Button variant="ghost" className="w-full justify-start text-2xl font-bold p-0 h-auto text-white hover:text-destructive">
-                                <LogOut className="mr-4"/> Logout
-                             </Button>
-                          </AlertDialogTrigger>
-                          <AlertDialogContent>
-                            <AlertDialogHeader>
-                              <AlertDialogTitle>Are you sure you want to log out?</AlertDialogTitle>
-                            </AlertDialogHeader>
-                            <AlertDialogFooter>
-                              <AlertDialogCancel>Cancel</AlertDialogCancel>
-                              <AlertDialogAction onClick={handleLogout}>Log Out</AlertDialogAction>
-                            </AlertDialogFooter>
-                          </AlertDialogContent>
-                        </AlertDialog>
-                     ) : (
-                        <MobileNavLink href="/login">
-                           <div className="flex items-center">
-                              <LogIn className="mr-4" /> Login
-                           </div>
-                        </MobileNavLink>
-                     )
+                   {!loading && user && (
+                      <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                           <Button variant="ghost" className="w-full justify-start text-2xl font-bold p-0 h-auto text-white hover:text-destructive">
+                              <LogOut className="mr-4"/> Logout
+                           </Button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                          <AlertDialogHeader>
+                            <AlertDialogTitle>Are you sure you want to log out?</AlertDialogTitle>
+                          </AlertDialogHeader>
+                          <AlertDialogFooter>
+                            <AlertDialogCancel>Cancel</AlertDialogCancel>
+                            <AlertDialogAction onClick={handleLogout}>Log Out</AlertDialogAction>
+                          </AlertDialogFooter>
+                        </AlertDialogContent>
+                      </AlertDialog>
                    )}
                 </div>
 
