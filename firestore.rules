@@ -5,8 +5,8 @@ service cloud.firestore {
       // Allow anyone to read blog posts
       allow read: if true;
 
-      // Allow ANYONE to write, update, or delete blog posts.
-      // This is a security risk for a production app.
+      // WARNING: Allow anyone to write, update, or delete blog posts.
+      // This is not recommended for a production application.
       allow write: if true;
     }
   }
