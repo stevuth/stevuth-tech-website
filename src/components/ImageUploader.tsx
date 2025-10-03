@@ -82,7 +82,12 @@ export function ImageUploader({ onUploadSuccess, initialImage }: ImageUploaderPr
         <input {...getInputProps()} />
         {preview ? (
           <div className="relative group mx-auto max-w-[200px]">
-            <Image src={preview} alt="Image preview" width={200} height={200} className="rounded-md object-cover" />
+            <Image 
+              src={preview} 
+              alt="Image preview" 
+              width={200} 
+              height={200} 
+              className="rounded-md object-cover w-full h-auto" />
             {!isUploading && (
               <Button
                 type="button"
