@@ -181,7 +181,7 @@ export default async function Home() {
             <p className="max-w-xl text-md md:text-lg text-slate-200 mb-8">
               We build modern mobile-friendly websites that attract engage and convert visitors into paying customers. No monthly fees, no hidden charges, just powerful websites designed to grow your business.
             </p>
-            <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground text-white !mx-0">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-auto !mx-0">
               <Link href="/contact">Start My Project</Link>
             </Button>
           </AnimatedWrapper>
