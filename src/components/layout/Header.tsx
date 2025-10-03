@@ -86,18 +86,22 @@ export function Header() {
     );
   };
 
-  const MobileNavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => {
+  const MobileNavLink = ({ href, children, onClick, isOpen, index }: { href: string; children: React.ReactNode; onClick?: () => void; isOpen: boolean; index: number; }) => {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
     const commonClasses = cn(
-        "relative text-2xl font-bold text-white transition-colors hover:text-accent py-3 w-full text-left px-6 hover:bg-white/5",
-         "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:bg-accent after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-50",
-        isActive ? "text-accent after:scale-x-50" : ""
+        "relative text-2xl font-bold text-white transition-all duration-300 hover:text-accent py-3 w-full text-left px-6 hover:bg-white/5",
+        isActive ? "text-accent" : "",
+        isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
     );
   
+    const itemStyle = {
+      transitionDelay: isOpen ? `${index * 75 + 150}ms` : `${(navLinks.length - index - 1) * 50}ms`,
+    };
+
     if (onClick) {
       return (
          <SheetClose asChild>
-          <button onClick={onClick} className={commonClasses}>
+          <button onClick={onClick} className={commonClasses} style={itemStyle}>
               {children}
           </button>
         </SheetClose>
@@ -106,7 +110,7 @@ export function Header() {
 
     return (
         <SheetClose asChild>
-            <Link href={href} className={commonClasses}>
+            <Link href={href} className={commonClasses} style={itemStyle}>
                 {children}
             </Link>
         </SheetClose>
@@ -191,7 +195,7 @@ export function Header() {
                 <nav className="flex flex-col pt-6 mt-4">
                   {navLinks.map((link, index) => (
                      <div key={link.href} className="flex flex-col">
-                      <MobileNavLink href={link.href}>
+                      <MobileNavLink href={link.href} isOpen={isOpen} index={index}>
                         {link.label}
                       </MobileNavLink>
                       {index < navLinks.length - 1 && <Separator className="bg-primary-foreground/20" />}
