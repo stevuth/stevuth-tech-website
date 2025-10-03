@@ -357,15 +357,16 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-10 md:py-12 animated-gradient">
+      <section className="py-10 md:py-12 futuristic-bg">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">In Partnership With DesignRush</h2>
-            <p className="max-w-3xl mx-auto text-muted-foreground mb-8">
-              We are recognized by industry leaders for our commitment to quality and excellence.
-            </p>
-            <div className="flex justify-center group">
-              <Link href="https://www.designrush.com/agency/profile/stevuth-tech" rel="dofollow" target="_blank" className="relative">
+             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">In Partnership With DesignRush</h2>
+             <p className="max-w-3xl mx-auto text-muted-foreground mb-8">
+                We are recognized by industry leaders for our commitment to quality and excellence.
+             </p>
+            <div className="relative flex justify-center group">
+               <div id="particles-js" className="absolute inset-0 z-0"></div>
+              <Link href="https://www.designrush.com/agency/profile/stevuth-tech" rel="dofollow" target="_blank" className="relative z-10">
                 <div className="animate-pulse-glow absolute inset-[-8px] rounded-full bg-accent/30 blur-xl group-hover:scale-125 transition-transform duration-500"></div>
                 <Image
                   src="/design rush.png"
