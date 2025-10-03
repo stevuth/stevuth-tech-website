@@ -3,7 +3,7 @@
 
 import { z } from "zod";
 import { db } from "@/lib/firebase";
-import { collection, addDoc, Timestamp, doc, updateDoc } from "firebase/firestore";
+import { collection, addDoc, Timestamp, doc, updateDoc, FirestoreError } from "firebase/firestore";
 import imageData from '@/lib/placeholder-images.json';
 import { revalidatePath } from "next/cache";
 import { redirect } from 'next/navigation';
@@ -32,6 +32,22 @@ export type State = {
   };
   message: string;
 };
+
+const handleFirestoreError = (error: unknown): string => {
+  if (error instanceof FirestoreError) {
+    console.error(`Firestore Error (${error.code}): ${error.message}`);
+    if (error.code === 'permission-denied') {
+      return "Permission Denied: Your security rules are preventing this operation. Please ensure your firestore.rules allow write access for authenticated users and that the rules are published in the Firebase console.";
+    }
+    return `A Firestore error occurred: ${error.message}`;
+  }
+  if (error instanceof Error) {
+    console.error(`Generic Error: ${error.message}`);
+    return error.message;
+  }
+  return "An unknown error occurred.";
+};
+
 
 export async function createPost(prevState: State, formData: FormData): Promise<State> {
   const validatedFields = postSchema.safeParse({
@@ -66,14 +82,9 @@ export async function createPost(prevState: State, formData: FormData): Promise<
     await addDoc(collection(db, "posts"), newPost);
     
   } catch (error: unknown) {
-    let errorMessage = "An unknown error occurred while creating the post.";
-    if (error instanceof Error) {
-        errorMessage = `Could not create post: ${error.message}`;
-    }
-    console.error("Error creating post:", error);
-    
+    const errorMessage = handleFirestoreError(error);
     return {
-        message: errorMessage,
+        message: `Could not create post: ${errorMessage}`,
     };
   }
 
@@ -114,14 +125,9 @@ export async function updatePost(postId: string, prevState: State, formData: For
             aiHint: aiHint || imageData.blog.default.hint,
         });
     } catch (error: unknown) {
-        let errorMessage = "An unknown error occurred while updating the post.";
-        if (error instanceof Error) {
-            errorMessage = `Could not update post: ${error.message}`;
-        }
-        console.error("Error updating post:", error);
-        
+        const errorMessage = handleFirestoreError(error);
         return {
-            message: errorMessage,
+            message: `Could not update post: ${errorMessage}`,
         };
     }
 
