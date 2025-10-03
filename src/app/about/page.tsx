@@ -65,10 +65,10 @@ const trustFactors = [
 export default function AboutPage() {
   return (
     <div className="pt-16">
-      <section className="bg-primary text-primary-foreground py-10 md:py-12">
+      <section className="bg-primary text-primary-foreground py-10 md:py-12 relative">
+        <BackButton />
         <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
-            <BackButton />
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">About Stevuth Tech</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
               Learn about our journey, our purpose, and the values that drive us to be the best website development agency in Nigeria.

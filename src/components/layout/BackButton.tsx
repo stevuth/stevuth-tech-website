@@ -13,6 +13,7 @@ export function BackButton() {
   const [isHomepage, setIsHomepage] = useState(true);
 
   useEffect(() => {
+    // This will only run on the client, after initial hydration
     setIsHomepage(pathname === '/');
   }, [pathname]);
 
@@ -29,7 +30,7 @@ export function BackButton() {
   }
 
   const buttonClasses = cn(
-    "h-10 w-10 p-0 text-white hover:bg-white/10 hover:text-white"
+    "absolute top-4 left-4 md:left-6 z-10 h-10 w-10 p-0 text-white hover:bg-white/10 hover:text-white"
   );
 
 

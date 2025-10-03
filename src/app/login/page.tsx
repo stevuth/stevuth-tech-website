@@ -48,11 +48,9 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="pt-16 flex items-center justify-center min-h-screen bg-background">
+    <div className="pt-16 flex items-center justify-center min-h-screen bg-background relative">
+        <BackButton />
        <AnimatedWrapper>
-        <div className="absolute top-20 left-4">
-            <BackButton />
-        </div>
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>

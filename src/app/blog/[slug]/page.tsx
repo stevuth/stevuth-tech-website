@@ -69,10 +69,10 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="pt-16">
-      <section className="bg-primary text-primary-foreground py-12 md:py-16">
+      <section className="bg-primary text-primary-foreground py-12 md:py-16 relative">
+        <BackButton />
         <AnimatedWrapper>
           <div className="container max-w-4xl px-4 md:px-6">
-            <BackButton />
             <Badge variant="secondary" className="mb-4 text-sm mt-4">{post.category}</Badge>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">{post.title}</h1>
             <div className="flex items-center gap-6 mt-6 text-sm text-primary-foreground/80">

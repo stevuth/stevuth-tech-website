@@ -52,10 +52,10 @@ const faqs = [
 export default function FaqPage() {
   return (
     <div className="pt-16">
-      <section className="bg-primary text-primary-foreground py-10 md:py-12">
+      <section className="bg-primary text-primary-foreground py-10 md:py-12 relative">
+        <BackButton />
         <div className="container px-4 md:px-6">
           <AnimatedWrapper>
-            <BackButton />
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Frequently Asked Questions</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
               Find answers to common questions about our services and operations.

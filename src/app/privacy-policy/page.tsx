@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <div className="pt-16">
-      <section className="bg-primary text-primary-foreground py-12 md:py-16">
+      <section className="bg-primary text-primary-foreground py-12 md:py-16 relative">
+        <BackButton />
         <div className="container px-4 md:px-6">
           <AnimatedWrapper>
-            <BackButton />
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Privacy Policy</h1>
             <p className="mt-4 text-lg md:text-xl max-w-3xl text-primary-foreground/80">
               Your privacy is important to us.
