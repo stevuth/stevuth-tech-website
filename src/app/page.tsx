@@ -1,4 +1,5 @@
 
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -10,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import imageData from '@/lib/placeholder-images.json';
 import { CardDescription } from '@/components/ui/card';
+import { Particle } from '@/components/layout/Particle';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -365,7 +367,9 @@ export default async function Home() {
                 We are recognized by industry leaders for our commitment to quality and excellence.
              </p>
             <div className="relative flex justify-center group">
-               <div id="particles-js" className="absolute inset-0 z-0"></div>
+               <div id="particles-js" className="absolute inset-0 z-0">
+                  <Particle />
+               </div>
               <Link href="https://www.designrush.com/agency/profile/stevuth-tech" rel="dofollow" target="_blank" className="relative z-10">
                 <div className="animate-pulse-glow absolute inset-[-8px] rounded-full bg-accent/30 blur-xl group-hover:scale-125 transition-transform duration-500"></div>
                 <Image
