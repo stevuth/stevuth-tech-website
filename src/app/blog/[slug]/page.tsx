@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { getPost, getPosts } from '@/lib/blog-data';
@@ -59,8 +60,7 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const { slug } = params;
-  const post = await getPost(slug);
+  const post = await getPost(params.slug);
 
   if (!post) {
     notFound();
