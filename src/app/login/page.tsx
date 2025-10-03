@@ -11,6 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
+import { BackButton } from '@/components/layout/BackButton';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -49,6 +50,9 @@ export default function LoginPage() {
   return (
     <div className="pt-16 flex items-center justify-center min-h-screen bg-background">
        <AnimatedWrapper>
+        <div className="absolute top-20 left-4">
+            <BackButton />
+        </div>
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>

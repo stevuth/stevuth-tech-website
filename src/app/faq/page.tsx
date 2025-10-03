@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import type { Metadata } from 'next';
+import { BackButton } from "@/components/layout/BackButton";
 
 export const metadata: Metadata = {
   title: 'FAQ - Best Web Development Agency in Nigeria',
@@ -54,7 +55,8 @@ export default function FaqPage() {
       <section className="bg-primary text-primary-foreground py-10 md:py-12">
         <div className="container px-4 md:px-6">
           <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Frequently Asked Questions</h1>
+            <BackButton />
+            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Frequently Asked Questions</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
               Find answers to common questions about our services and operations.
             </p>

@@ -21,6 +21,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { useToast } from "@/hooks/use-toast";
+import { BackButton } from "@/components/layout/BackButton";
 
 
 function AdminPage() {
@@ -62,7 +63,8 @@ function AdminPage() {
       <section className="bg-secondary/30">
         <div className="container px-4 md:px-6 py-10">
            <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl font-headline font-bold">Admin Dashboard</h1>
+            <BackButton />
+            <h1 className="text-3xl md:text-4xl font-headline font-bold mt-4">Admin Dashboard</h1>
             <p className="mt-2 text-muted-foreground">
                 Manage your website content.
             </p>

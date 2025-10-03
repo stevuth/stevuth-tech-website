@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { PostForm } from "../../new-post/PostForm";
 import { getPost } from "@/lib/blog-data";
 import { notFound } from 'next/navigation';
+import { BackButton } from "@/components/layout/BackButton";
 
 export default async function EditPostPage({ params }: { params: { slug: string } }) {
   const post = await getPost(params.slug);
@@ -17,7 +18,8 @@ export default async function EditPostPage({ params }: { params: { slug: string 
       <section className="bg-secondary/30">
         <div className="container px-4 md:px-6 py-10">
           <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl font-headline font-bold">Edit Post</h1>
+            <BackButton />
+            <h1 className="text-3xl md:text-4xl font-headline font-bold mt-4">Edit Post</h1>
             <p className="mt-2 text-muted-foreground">
               Modify the details of your existing blog post.
             </p>

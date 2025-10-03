@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import type { Metadata } from 'next';
 import imageData from '@/lib/placeholder-images.json';
+import { BackButton } from "@/components/layout/BackButton";
 
 export const metadata: Metadata = {
   title: 'Web Development Services in Nigeria by Stevuth Tech',
@@ -213,7 +214,8 @@ export default function ServicesPage() {
       <section className="bg-primary text-primary-foreground py-10 md:py-12">
         <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Our Services</h1>
+            <BackButton />
+            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Our Services</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
               Expert solutions from Nigeria's best web development agency to build, brand, and boost your online presence.
             </p>

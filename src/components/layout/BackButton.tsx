@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useRouter, usePathname } from 'next/navigation';
@@ -28,7 +29,7 @@ export function BackButton() {
   }
 
   const buttonClasses = cn(
-    "h-10 w-10 p-0 text-white hover:bg-transparent hover:text-accent"
+    "h-10 w-10 p-0 text-white hover:bg-white/10 hover:text-white"
   );
 
 

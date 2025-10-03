@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { Logo } from '@/components/Logo';
 import { cn } from '@/lib/utils';
-import { BackButton } from './BackButton';
 import { useAuth } from '@/lib/auth';
 import { getAuth } from 'firebase/auth';
 import { app } from '@/lib/firebase';
@@ -129,7 +128,6 @@ export function Header() {
     <header className={cn(headerClasses, 'group/header')}>
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
-            <BackButton />
              <Link href="/">
                 <Logo isDark={true} />
             </Link>

@@ -4,6 +4,7 @@ import { ContactForm } from "./ContactForm";
 import { Phone, Mail, MessageCircle } from "lucide-react";
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { BackButton } from "@/components/layout/BackButton";
 
 export const metadata: Metadata = {
   title: 'Contact The Best Web Development Agency in Nigeria',
@@ -24,7 +25,8 @@ export default function ContactPage() {
       <section className="bg-primary text-primary-foreground py-10 md:py-12">
         <div className="container px-4 md:px-6">
           <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Contact Us</h1>
+            <BackButton />
+            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Contact Us</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
               We're here to help. Reach out to us with your questions or to start your project with the best tech company in Nigeria.
             </p>

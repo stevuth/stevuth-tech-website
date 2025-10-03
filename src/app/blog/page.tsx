@@ -7,6 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import type { Metadata } from 'next';
+import { BackButton } from "@/components/layout/BackButton";
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -61,7 +62,8 @@ export default async function BlogPage() {
       <section className="bg-primary text-primary-foreground py-10 md:py-12">
         <div className="container px-4 md:px-6">
           <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">Our Blog</h1>
+            <BackButton />
+            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Our Blog</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
               Insights, tutorials, and news from the forefront of technology and design in Nigeria.
             </p>
