@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow public read access to blog posts
+    match /posts/{postId} {
+      allow read: if true;
+      allow write: if false; // Lock down write access. We will update this rule later when we add admin authentication.
+    }
+  }
+}
