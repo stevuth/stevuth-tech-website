@@ -3,7 +3,7 @@
 
 import { z } from "zod";
 import { db } from "@/lib/firebase";
-import { collection, addDoc, Timestamp, doc, updateDoc, FirestoreError } from "firebase/firestore";
+import { collection, addDoc, Timestamp, doc, updateDoc, deleteDoc, FirestoreError } from "firebase/firestore";
 import imageData from '@/lib/placeholder-images.json';
 import { revalidatePath } from "next/cache";
 import { redirect } from 'next/navigation';
@@ -135,4 +135,23 @@ export async function updatePost(postId: string, prevState: State, formData: For
     revalidatePath('/admin');
     revalidatePath(`/blog/${postData.slug}`);
     redirect('/admin');
+}
+
+export async function deletePost(postId: string): Promise<{ success: boolean; message: string }> {
+  if (!postId) {
+    return { success: false, message: "Post ID is missing." };
+  }
+
+  try {
+    const postRef = doc(db, "posts", postId);
+    await deleteDoc(postRef);
+
+    revalidatePath('/admin');
+    revalidatePath('/blog');
+    
+    return { success: true, message: "Post deleted successfully." };
+  } catch (error: unknown) {
+    const errorMessage = handleFirestoreError(error);
+    return { success: false, message: `Could not delete post: ${errorMessage}` };
+  }
 }
