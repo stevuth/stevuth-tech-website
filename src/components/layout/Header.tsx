@@ -85,7 +85,7 @@ export function Header() {
     );
   };
 
-  const MobileNavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => {
+  const MobileNavLink = ({ href, children, onClick, style }: { href: string; children: React.ReactNode; onClick?: () => void, style?: React.CSSProperties }) => {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
     const commonClasses = cn(
         "relative text-2xl font-bold text-white transition-colors hover:text-accent py-3 w-full text-left",
@@ -96,7 +96,7 @@ export function Header() {
     if (onClick) {
       return (
          <SheetClose asChild>
-          <button onClick={onClick} className={commonClasses}>
+          <button onClick={onClick} className={commonClasses} style={style}>
               {children}
           </button>
         </SheetClose>
@@ -105,7 +105,7 @@ export function Header() {
 
     return (
         <SheetClose asChild>
-            <Link href={href} className={commonClasses}>
+            <Link href={href} className={commonClasses} style={style}>
                 {children}
             </Link>
         </SheetClose>
@@ -188,15 +188,25 @@ export function Header() {
                 </div>
 
                 <nav className="flex flex-col p-6 space-y-5 mt-4">
-                  {navLinks.map((link) => (
-                    <MobileNavLink key={link.href} href={link.href}>
-                      {link.label}
-                    </MobileNavLink>
+                  {navLinks.map((link, index) => (
+                    <div
+                      key={link.href}
+                      className={cn(
+                        'transition-all duration-500',
+                        isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'
+                      )}
+                      style={{ transitionDelay: `${isOpen ? index * 100 + 300 : 0}ms` }}
+                    >
+                      <MobileNavLink href={link.href}>
+                        {link.label}
+                      </MobileNavLink>
+                    </div>
                   ))}
                 </nav>
 
                 <div className="mt-auto p-6 border-t border-primary-foreground/20">
-                   {!loading && user && (
+                   {!loading && (
+                    user ? (
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
                            <Button variant="ghost" className="w-full justify-start text-2xl font-bold p-0 h-auto text-white hover:text-destructive">
@@ -213,6 +223,11 @@ export function Header() {
                           </AlertDialogFooter>
                         </AlertDialogContent>
                       </AlertDialog>
+                   ) : (
+                      <MobileNavLink href="/login">
+                        <LogIn className="mr-4" /> Login
+                      </MobileNavLink>
+                   )
                    )}
                 </div>
 
