@@ -4,12 +4,26 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X } from 'lucide-react';
+import { X, LogIn, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { Logo } from '@/components/Logo';
 import { cn } from '@/lib/utils';
 import { BackButton } from './BackButton';
+import { useAuth } from '@/lib/auth';
+import { getAuth } from 'firebase/auth';
+import { app } from '@/lib/firebase';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -34,6 +48,9 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === '/';
+  const { user, loading } = useAuth();
+  const auth = getAuth(app);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,9 +59,9 @@ export function Header() {
 
     if (isHomePage) {
       window.addEventListener('scroll', handleScroll);
-      handleScroll(); // Check on initial load
+      handleScroll(); 
     } else {
-      setIsScrolled(true); // Always scrolled on non-home pages
+      setIsScrolled(true); 
     }
 
     return () => {
@@ -69,15 +86,27 @@ export function Header() {
     );
   };
 
-  const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
+  const MobileNavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void }) => {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
+    const commonClasses = cn(
+        "relative text-2xl font-bold text-white transition-colors hover:text-accent py-3 w-full text-left",
+         "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:bg-accent after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-50",
+        isActive ? "text-accent after:scale-x-50" : ""
+    );
+  
+    if (onClick) {
+      return (
+         <SheetClose asChild>
+          <button onClick={onClick} className={commonClasses}>
+              {children}
+          </button>
+        </SheetClose>
+      )
+    }
+
     return (
         <SheetClose asChild>
-            <Link href={href} className={cn(
-                "relative text-2xl font-bold text-white transition-colors hover:text-accent py-3",
-                 "after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:bg-accent after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-50",
-                isActive ? "text-accent after:scale-x-50" : ""
-            )}>
+            <Link href={href} className={commonClasses}>
                 {children}
             </Link>
         </SheetClose>
@@ -90,6 +119,11 @@ export function Header() {
       ? 'bg-transparent'
       : 'bg-background/80 shadow-md backdrop-blur-sm'
   );
+  
+  const handleLogout = () => {
+    auth.signOut();
+    setIsOpen(false);
+  };
 
   return (
     <header className={cn(headerClasses, 'group/header')}>
@@ -101,12 +135,41 @@ export function Header() {
             </Link>
         </div>
         
-        <nav className={cn("hidden items-center space-x-8 md:flex")}>
+        <nav className={cn("hidden items-center space-x-6 md:flex")}>
           {navLinks.map((link) => (
             <NavLink key={link.href} href={link.href}>
               {link.label}
             </NavLink>
           ))}
+           {!loading && (
+             user ? (
+               <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button variant="ghost" size="icon" className="text-white hover:text-destructive hover:bg-destructive/10">
+                      <LogOut />
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Are you sure you want to log out?</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        You will be returned to the login page.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction onClick={handleLogout} className="bg-destructive hover:bg-destructive/90">Log Out</AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+             ) : (
+                <Button asChild variant="ghost" size="sm" className="text-white hover:text-accent hover:bg-transparent">
+                  <Link href="/login">
+                    <LogIn className="mr-2" /> Login
+                  </Link>
+                </Button>
+             )
+           )}
         </nav>
 
         <div className="md:hidden">
@@ -135,6 +198,32 @@ export function Header() {
                 </nav>
 
                 <div className="mt-auto p-6 border-t border-primary-foreground/20">
+                   {!loading && (
+                     user ? (
+                        <AlertDialog>
+                          <AlertDialogTrigger asChild>
+                             <Button variant="ghost" className="w-full justify-start text-2xl font-bold p-0 h-auto text-white hover:text-destructive">
+                                <LogOut className="mr-4"/> Logout
+                             </Button>
+                          </AlertDialogTrigger>
+                          <AlertDialogContent>
+                            <AlertDialogHeader>
+                              <AlertDialogTitle>Are you sure you want to log out?</AlertDialogTitle>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                              <AlertDialogCancel>Cancel</AlertDialogCancel>
+                              <AlertDialogAction onClick={handleLogout}>Log Out</AlertDialogAction>
+                            </AlertDialogFooter>
+                          </AlertDialogContent>
+                        </AlertDialog>
+                     ) : (
+                        <MobileNavLink href="/login">
+                           <div className="flex items-center">
+                              <LogIn className="mr-4" /> Login
+                           </div>
+                        </MobileNavLink>
+                     )
+                   )}
                 </div>
 
             </SheetContent>

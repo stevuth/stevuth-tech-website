@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import { Header } from '@/components/layout/Header';
 import { Toaster } from "@/components/ui/toaster"
 import dynamic from 'next/dynamic';
+import { AuthProvider } from '@/lib/auth';
 
 const fontPoppins = Poppins({
   subsets: ['latin'],
@@ -94,12 +95,14 @@ export default function RootLayout({
           fontInter.variable
         )}
       >
-        <div className="relative flex min-h-dvh flex-col bg-background">
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
-        <Toaster />
+        <AuthProvider>
+            <div className="relative flex min-h-dvh flex-col bg-background">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            </div>
+            <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -1,24 +1,27 @@
 
+'use client';
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PlusCircle, FileText, Edit, Trash2 } from "lucide-react";
-import type { Metadata } from 'next';
-import { getPosts } from "@/lib/blog-data";
+import { getPosts, Post } from "@/lib/blog-data";
 import Link from "next/link";
+import { withAuth } from "@/lib/auth";
+import { useEffect, useState } from "react";
 
-export const revalidate = 0; // Always fetch fresh data for the admin page
 
-export const metadata: Metadata = {
-  title: 'Admin Dashboard',
-  robots: {
-    index: false,
-    follow: false,
-  }
-};
+function AdminPage() {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [loading, setLoading] = useState(true);
 
-export default async function AdminPage() {
-  const posts = await getPosts();
+  useEffect(() => {
+    async function fetchPosts() {
+      const fetchedPosts = await getPosts();
+      setPosts(fetchedPosts);
+      setLoading(false);
+    }
+    fetchPosts();
+  }, []);
 
   return (
     <div className="pt-16">
@@ -52,7 +55,11 @@ export default async function AdminPage() {
               <CardContent>
                 <div className="border rounded-lg">
                   <div className="divide-y">
-                    {posts.length > 0 ? (
+                    {loading ? (
+                      <div className="p-8 text-center text-muted-foreground">
+                        Loading posts...
+                      </div>
+                    ) : posts.length > 0 ? (
                       posts.map(post => (
                         <div key={post.id} className="flex items-center justify-between p-4 hover:bg-muted/50">
                           <div className="flex items-center gap-4">
@@ -89,3 +96,5 @@ export default async function AdminPage() {
     </div>
   );
 }
+
+export default withAuth(AdminPage);
