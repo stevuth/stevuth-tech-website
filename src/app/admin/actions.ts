@@ -37,9 +37,9 @@ const handleFirestoreError = (error: unknown): string => {
   if (error instanceof FirestoreError) {
     console.error(`Firestore Error (${error.code}): ${error.message}`);
     if (error.code === 'permission-denied') {
-      return "Permission Denied: Your security rules are preventing this operation. Please ensure your firestore.rules allow write access for authenticated users and that the rules are published in the Firebase console.";
+      return "PERMISSION DENIED: Your security rules are blocking this. Ensure you've updated the rules in the Firebase Console to allow writes for authenticated users. The rule should be 'allow write: if request.auth != null;'.";
     }
-    return `A Firestore error occurred: ${error.message}`;
+    return `A Firestore error occurred: ${error.message} (Code: ${error.code})`;
   }
   if (error instanceof Error) {
     console.error(`Generic Error: ${error.message}`);

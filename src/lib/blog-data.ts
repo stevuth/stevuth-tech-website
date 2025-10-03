@@ -38,56 +38,49 @@ const handleFirestoreError = (error: unknown, context: string): [] | null => {
 
   if (error instanceof FirestoreError) {
     // This handles specific Firestore SDK errors
-    switch (error.code) {
-      case 'permission-denied':
+    if (error.code === 'permission-denied') {
         console.error(`
-          ============================================================
-          FIREBASE PERMISSION DENIED IN ${context.toUpperCase()}
-          ------------------------------------------------------------
-          This is a security rules issue. Go to your Firebase project,
-          then Build > Firestore Database > Rules tab, and ensure your
-          rules allow this operation. For a public blog, you need:
-          
+          =======================================================================
+          CRITICAL: FIREBASE PERMISSION DENIED IN \`${context.toUpperCase()}\`
+          -----------------------------------------------------------------------
+          This is a security rules issue. Your app does not have permission to
+          access the 'posts' collection. You MUST update your rules in the
+          Firebase Console.
+
+          1. COPY THE RULES BELOW:
+          --------------------------
           rules_version = '2';
           service cloud.firestore {
             match /databases/{database}/documents {
               match /posts/{postId} {
-                allow read: if true; // Allows anyone to read posts
-                allow write: if false; // Or your auth logic for admin
+                // Allow anyone to read blog posts
+                allow read: if true;
+
+                // ONLY allow logged-in users to write, update, or delete
+                allow write: if request.auth != null;
               }
             }
           }
+          --------------------------
 
-          Click 'Publish' after making the change.
-          ============================================================
+          2. PASTE INTO FIREBASE CONSOLE:
+          Click this link to go directly to your rules page:
+          https://console.firebase.google.com/project/stevuth-tech-backend/firestore/rules
+
+          3. PUBLISH:
+          Delete the existing rules, paste the new ones, and click "Publish".
+          =======================================================================
         `);
-        break;
-      case 'not-found':
-         console.error(`
-          ============================================================
-          FIREBASE DATABASE/COLLECTION NOT FOUND IN ${context.toUpperCase()}
-          ------------------------------------------------------------
-          1. Check that the 'projectId' in your .env.local file matches
-             your Firebase project ID.
-          2. Ensure you have created a Firestore database in your
-             Firebase project.
-          3. Ensure you have a collection named 'posts'.
-          ============================================================
-        `);
-        break;
-      default:
-        console.error(`A Firestore error occurred (${error.code}): ${error.message}`);
-    }
+      } else {
+        console.error(`A Firestore error occurred in ${context} (${error.code}): ${error.message}`);
+      }
   } else if (error instanceof Error) {
-    // This handles generic JavaScript errors (like ReferenceError from a typo)
     console.error(`A JavaScript error occurred in ${context}: ${error.name} - ${error.message}`);
     console.error(error.stack);
   } else {
-    // Fallback for any other type of error
     console.error(`An unknown error of type ${typeof error} occurred in ${context}.`);
   }
   
-  // To prevent app crashes, always return an expected type.
   if (context.startsWith('getPost')) {
     return null;
   }
