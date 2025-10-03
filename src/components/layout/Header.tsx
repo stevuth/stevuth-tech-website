@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -11,6 +12,7 @@ import { cn } from '@/lib/utils';
 import { useAuth } from '@/lib/auth';
 import { getAuth } from 'firebase/auth';
 import { app } from '@/lib/firebase';
+import { Separator } from '@/components/ui/separator';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -176,7 +178,7 @@ export function Header() {
                 <HamburgerIcon />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-full max-w-sm bg-primary p-0 text-primary-foreground flex flex-col">
+            <SheetContent side="left" className="w-full max-w-sm bg-primary p-0 text-primary-foreground flex flex-col data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-left-48 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-left-48">
                <SheetTitle className="sr-only">Menu</SheetTitle>
                <div className="flex h-16 items-center justify-between px-6 border-b border-primary-foreground/20">
                     <SheetClose asChild>
@@ -186,11 +188,14 @@ export function Header() {
                     </SheetClose>
                 </div>
 
-                <nav className="flex flex-col p-6 space-y-5 mt-4">
-                  {navLinks.map((link) => (
-                      <MobileNavLink key={link.href} href={link.href}>
+                <nav className="flex flex-col p-6 mt-4">
+                  {navLinks.map((link, index) => (
+                     <div key={link.href} className="flex flex-col">
+                      <MobileNavLink href={link.href}>
                         {link.label}
                       </MobileNavLink>
+                      {index < navLinks.length - 1 && <Separator className="bg-primary-foreground/20" />}
+                    </div>
                   ))}
                 </nav>
 
