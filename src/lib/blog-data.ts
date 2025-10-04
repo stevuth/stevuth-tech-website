@@ -1,4 +1,48 @@
 
+/*
+================================================================================
+FIX FOR "Could not reach Cloud Firestore backend" or "PERMISSION DENIED"
+================================================================================
+
+This error means your app cannot connect to or read from the Firestore database.
+There are two common causes:
+
+1. The Firestore Database is not created yet.
+2. The Security Rules are incorrect.
+
+--- FIX ---
+
+1. CREATE THE DATABASE:
+   - Go to your Firebase Console: https://console.firebase.google.com/
+   - Select your project: "stevuth-tech-backend"
+   - In the left menu, click "Build" -> "Firestore Database".
+   - Click "Create database".
+   - Choose "Start in production mode" and click "Next".
+   - Select a Firestore location (e.g., nam5 (us-central)) and click "Enable".
+
+2. UPDATE SECURITY RULES:
+   - After the database is created, go to the "Rules" tab in Firestore.
+   - Delete the existing rules and PASTE THE FOLLOWING RULES EXACTLY:
+
+   rules_version = '2';
+   service cloud.firestore {
+     match /databases/{database}/documents {
+       match /posts/{postId} {
+         // Allow anyone to read blog posts
+         allow read: if true;
+
+         // ONLY allow logged-in users to write, update, or delete
+         allow write: if request.auth != null;
+       }
+     }
+   }
+
+   - Click "Publish".
+
+Your blog should now be able to fetch data.
+
+================================================================================
+*/
 import { db } from './firebase';
 import { collection, getDocs, query, where, limit, orderBy, FirestoreError } from 'firebase/firestore';
 import imageData from '@/lib/placeholder-images.json';
