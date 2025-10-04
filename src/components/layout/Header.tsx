@@ -166,11 +166,7 @@ export function Header() {
                   </AlertDialogContent>
                 </AlertDialog>
              ) : (
-                <Button asChild variant="ghost" size="sm" className="text-white hover:text-accent hover:bg-transparent">
-                  <Link href="/login">
-                    <LogIn className="mr-2" /> Login
-                  </Link>
-                </Button>
+                null
              )
            )}
         </nav>
