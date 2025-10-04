@@ -1,27 +1,46 @@
+
 "use client";
 
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import React from 'react';
+import { submitContactForm, type State } from "./actions";
+import { useToast } from "@/hooks/use-toast";
+import { useEffect } from "react";
+
+const initialState: State = {
+  message: "",
+  success: false,
+};
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <Button type="submit" disabled={pending} className="bg-accent hover:bg-accent/90">
+      {pending ? "Sending..." : "Send Message"}
+    </Button>
+  );
+}
 
 export function ContactForm() {
-  // The thank you page can be customized. For now, it redirects back to the contact page.
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "";
-  const thankYouUrl = `${siteUrl}/contact`;
+  const [state, formAction] = useActionState(submitContactForm, initialState);
+  const { toast } = useToast();
+
+  useEffect(() => {
+    if (state.message) {
+      toast({
+        title: state.success ? "Success!" : "Uh oh!",
+        description: state.message,
+        variant: state.success ? "default" : "destructive",
+      });
+    }
+  }, [state, toast]);
 
   return (
-    <form 
-      action="https://formsubmit.co/info@stevuthtech.com" 
-      method="POST" 
-      className="space-y-6"
-    >
-      {/* FormSubmit fields */}
-      <input type="hidden" name="_next" value={thankYouUrl} />
-      <input type="hidden" name="_captcha" value="false" /> 
-      <input type="hidden" name="_template" value="table" />
-
+    <form action={formAction} className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>
@@ -41,9 +60,7 @@ export function ContactForm() {
         <Textarea id="message" name="message" placeholder="Your message here..." rows={6} required />
       </div>
       <div>
-         <Button type="submit" className="bg-accent hover:bg-accent/90">
-            Send Message
-         </Button>
+        <SubmitButton />
       </div>
     </form>
   );
