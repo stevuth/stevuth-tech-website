@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
+import { getPosts } from '@/lib/blog-data';
  
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stevuth.web.app";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     '',
     '/about',
@@ -15,8 +16,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/terms-of-service',
   ];
 
-  return staticRoutes.map((route) => ({
+  const staticRouteObjects = staticRoutes.map((route) => ({
       url: `${siteUrl}${route}`,
       lastModified: new Date(),
-    }));
+  }));
+
+  const posts = await getPosts();
+  const postRouteObjects = posts.map(post => ({
+    url: `${siteUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+  }));
+
+  return [...staticRouteObjects, ...postRouteObjects];
 }
