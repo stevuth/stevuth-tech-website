@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { getPost, getPosts } from '@/lib/blog-data';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, User, Share2 } from 'lucide-react';
+import { Calendar, User } from 'lucide-react';
 import type { Metadata, ResolvingMetadata } from 'next';
 import ReactMarkdown from 'react-markdown';
 import rehypeSanitize from 'rehype-sanitize';
@@ -85,9 +85,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <User className="h-4 w-4" />
                 <span>{post.author}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Share2 className="h-4 w-4" />
-                <span>Share:</span>
+              <div className="flex items-center">
                 <ShareButtons post={post} />
               </div>
             </div>
@@ -114,6 +112,13 @@ export default async function BlogPostPage({ params }: Props) {
             >
                <ReactMarkdown rehypePlugins={[rehypeSanitize]}>{post.content}</ReactMarkdown>
             </article>
+
+            <div className="mt-12 pt-8 border-t">
+                <h3 className="text-lg font-bold text-center mb-4">Share this post</h3>
+                <div className="flex justify-center">
+                    <ShareButtons post={post} />
+                </div>
+            </div>
           </AnimatedWrapper>
         </div>
       </section>

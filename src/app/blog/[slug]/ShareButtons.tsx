@@ -9,9 +9,10 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 
 interface ShareButtonsProps {
   post: Post;
+  className?: string;
 }
 
-export function ShareButtons({ post }: ShareButtonsProps) {
+export function ShareButtons({ post, className }: ShareButtonsProps) {
   const [postUrl, setPostUrl] = useState('');
 
   useEffect(() => {
@@ -32,31 +33,31 @@ export function ShareButtons({ post }: ShareButtonsProps) {
   const socialLinks = [
     {
       platform: 'Facebook',
-      icon: <Facebook className="h-4 w-4" />,
+      icon: <Facebook className="h-5 w-5" />,
       url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`,
     },
     {
       platform: 'Twitter / X',
-      icon: <Twitter className="h-4 w-4" />,
+      icon: <Twitter className="h-5 w-5" />,
       url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${shareText}`,
     },
     {
       platform: 'LinkedIn',
-      icon: <Linkedin className="h-4 w-4" />,
+      icon: <Linkedin className="h-5 w-5" />,
       url: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(postUrl)}&title=${encodeURIComponent(post.title)}&summary=${encodeURIComponent(post.excerpt)}`,
     },
   ];
 
   return (
     <TooltipProvider>
-      <div className="flex items-center gap-1">
+      <div className={`flex items-center gap-2 ${className}`}>
         {socialLinks.map(({ platform, icon, url }) => (
           <Tooltip key={platform}>
             <TooltipTrigger asChild>
                <Button
-                variant="ghost"
+                variant="outline"
                 size="icon"
-                className="text-primary-foreground/80 hover:bg-white/10 hover:text-white"
+                className="rounded-full border-primary-foreground/50 text-primary-foreground/80 hover:bg-white/10 hover:text-white"
                 onClick={createShareLink(url)}
                 aria-label={`Share on ${platform}`}
               >
@@ -70,9 +71,9 @@ export function ShareButtons({ post }: ShareButtonsProps) {
         ))}
          <Tooltip>
             <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-primary-foreground/80 hover:bg-white/10 hover:text-white" asChild>
+                <Button asChild variant="outline" size="icon" className="rounded-full border-primary-foreground/50 text-primary-foreground/80 hover:bg-white/10 hover:text-white">
                     <a href={`https://wa.me/?text=${shareText}%20${encodeURIComponent(postUrl)}`} data-action="share/whatsapp/share" target="_blank" rel="noopener noreferrer" aria-label="Share on WhatsApp">
-                        <MessageSquare className="h-4 w-4" />
+                        <MessageSquare className="h-5 w-5" />
                     </a>
                 </Button>
             </TooltipTrigger>
@@ -84,4 +85,3 @@ export function ShareButtons({ post }: ShareButtonsProps) {
     </TooltipProvider>
   );
 }
-
