@@ -50,6 +50,7 @@ export function Header() {
   const isHomePage = pathname === '/';
   const { user, loading } = useAuth();
   const auth = getAuth(app);
+  const isAdminRoute = pathname.startsWith('/admin');
 
 
   useEffect(() => {
@@ -86,22 +87,17 @@ export function Header() {
     );
   };
 
-  const MobileNavLink = ({ href, children, onClick, isOpen, index }: { href: string; children: React.ReactNode; onClick?: () => void; isOpen: boolean; index: number; }) => {
+  const MobileNavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void; }) => {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
     const commonClasses = cn(
         "relative text-2xl font-bold text-white transition-all duration-300 hover:text-accent py-3 w-full text-left px-6 hover:bg-white/5",
-        isActive ? "text-accent" : "",
-        isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
+        isActive ? "text-accent" : ""
     );
   
-    const itemStyle = {
-      transitionDelay: isOpen ? `${index * 75 + 150}ms` : `${(navLinks.length - index - 1) * 50}ms`,
-    };
-
     if (onClick) {
       return (
          <SheetClose asChild>
-          <button onClick={onClick} className={commonClasses} style={itemStyle}>
+          <button onClick={onClick} className={commonClasses}>
               {children}
           </button>
         </SheetClose>
@@ -110,7 +106,7 @@ export function Header() {
 
     return (
         <SheetClose asChild>
-            <Link href={href} className={commonClasses} style={itemStyle}>
+            <Link href={href} className={commonClasses}>
                 {children}
             </Link>
         </SheetClose>
@@ -144,30 +140,26 @@ export function Header() {
               {link.label}
             </NavLink>
           ))}
-           {!loading && (
-             user ? (
-               <AlertDialog>
-                  <AlertDialogTrigger asChild>
-                    <Button variant="ghost" size="icon" className="text-white hover:text-destructive hover:bg-destructive/10">
-                      <LogOut />
-                    </Button>
-                  </AlertDialogTrigger>
-                  <AlertDialogContent>
-                    <AlertDialogHeader>
-                      <AlertDialogTitle>Are you sure you want to log out?</AlertDialogTitle>
-                      <AlertDialogDescription>
-                        You will be returned to the login page.
-                      </AlertDialogDescription>
-                    </AlertDialogHeader>
-                    <AlertDialogFooter>
-                      <AlertDialogCancel>Cancel</AlertDialogCancel>
-                      <AlertDialogAction onClick={handleLogout} className="bg-destructive hover:bg-destructive/90">Log Out</AlertDialogAction>
-                    </AlertDialogFooter>
-                  </AlertDialogContent>
-                </AlertDialog>
-             ) : (
-                null
-             )
+           {!loading && user && isAdminRoute && (
+             <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <Button variant="ghost" size="icon" className="text-white hover:text-destructive hover:bg-destructive/10">
+                    <LogOut />
+                  </Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>Are you sure you want to log out?</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      You will be returned to the login page.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction onClick={handleLogout} className="bg-destructive hover:bg-destructive/90">Log Out</AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
            )}
         </nav>
 
@@ -191,7 +183,7 @@ export function Header() {
                 <nav className="flex flex-col pt-6 mt-4">
                   {navLinks.map((link, index) => (
                      <div key={link.href} className="flex flex-col">
-                      <MobileNavLink href={link.href} isOpen={isOpen} index={index}>
+                      <MobileNavLink href={link.href}>
                         {link.label}
                       </MobileNavLink>
                       {index < navLinks.length - 1 && <Separator className="bg-primary-foreground/20" />}
