@@ -9,7 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { submitContactForm, type State } from "./actions";
 import { useToast } from "@/hooks/use-toast";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const initialState: State = {
   message: "",
@@ -28,6 +28,7 @@ function SubmitButton() {
 export function ContactForm() {
   const [state, formAction] = useActionState(submitContactForm, initialState);
   const { toast } = useToast();
+  const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     if (state.message) {
@@ -36,11 +37,14 @@ export function ContactForm() {
         description: state.message,
         variant: state.success ? "default" : "destructive",
       });
+      if (state.success) {
+        formRef.current?.reset();
+      }
     }
   }, [state, toast]);
 
   return (
-    <form action={formAction} className="space-y-6">
+    <form ref={formRef} action={formAction} className="space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>

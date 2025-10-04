@@ -3,7 +3,8 @@
 
 import { z } from "zod";
 
-const FORMSPARK_FORM_ID = "YOUR_FORMSPARK_FORM_ID"; // Replace with your Formspark form ID
+// IMPORTANT: Replace this with your actual Formspark form ID
+const FORMSPARK_FORM_ID = "YOUR_FORMSPARK_FORM_ID";
 const formsparkUrl = `https://submit-form.com/${FORMSPARK_FORM_ID}`;
 
 const contactSchema = z.object({
@@ -43,6 +44,15 @@ export async function submitContactForm(
     };
   }
 
+  // Ensure you have replaced YOUR_FORMSPARK_FORM_ID
+  if (FORMSPARK_FORM_ID === "YOUR_FORMSPARK_FORM_ID") {
+    return {
+        message: "Server action is not configured. Please add Formspark ID.",
+        success: false,
+    }
+  }
+
+
   try {
     const response = await fetch(formsparkUrl, {
       method: "POST",
@@ -54,6 +64,8 @@ export async function submitContactForm(
     });
 
     if (!response.ok) {
+      // This is the error you are seeing. It means Formspark rejected the submission.
+      // The most common cause is an incorrect Form ID.
       throw new Error("Failed to submit form. Please try again later.");
     }
 
