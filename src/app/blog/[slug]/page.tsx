@@ -9,6 +9,7 @@ import type { Metadata, ResolvingMetadata } from 'next';
 import ReactMarkdown from 'react-markdown';
 import rehypeSanitize from 'rehype-sanitize';
 import { BackButton } from '@/components/layout/BackButton';
+import { ShareButtons } from './ShareButtons';
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -75,7 +76,7 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="container max-w-4xl px-4 md:px-6">
             <Badge variant="secondary" className="mb-4 text-sm mt-4">{post.category}</Badge>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white">{post.title}</h1>
-            <div className="flex items-center gap-6 mt-6 text-sm text-primary-foreground/80">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4 mt-6 text-sm text-primary-foreground/80">
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
                 <span>{post.date}</span>
@@ -84,6 +85,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <User className="h-4 w-4" />
                 <span>{post.author}</span>
               </div>
+              <ShareButtons post={post} />
             </div>
           </div>
         </AnimatedWrapper>
