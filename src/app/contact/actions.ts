@@ -1,6 +1,12 @@
 "use server";
 
 import { z } from "zod";
+import { Resend } from 'resend';
+import { ContactFormEmail } from '@/components/emails/ContactFormEmail';
+import React from "react";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+const toEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@stevuthtech.com";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters."),
@@ -36,12 +42,35 @@ export async function submitContactForm(prevState: State, formData: FormData): P
     };
   }
 
-  // In a real application, you would process the data here,
-  // e.g., send an email, save to a database.
-  console.log("Contact form submitted successfully:", validatedFields.data);
+  const { name, email, subject, message } = validatedFields.data;
 
-  return {
-    message: "Thank you for your message! We will get back to you shortly.",
-    success: true,
-  };
+  try {
+    const { data, error } = await resend.emails.send({
+      from: `Stevuth Tech Contact Form <onboarding@resend.dev>`,
+      to: [toEmail],
+      subject: `New Message: ${subject}`,
+      reply_to: email,
+      react: ContactFormEmail({ name, email, subject, message }) as React.ReactElement,
+    });
+
+    if (error) {
+      console.error("Resend API Error:", error);
+      return {
+        message: `We're sorry, but there was an error sending your message. Error: ${error.message}`,
+        success: false,
+      };
+    }
+
+    return {
+      message: "Thank you for your message! We will get back to you shortly.",
+      success: true,
+    };
+
+  } catch (error) {
+    console.error("Email Sending Error:", error);
+    return {
+      message: "We're sorry, but there was a server error. Please try again later.",
+      success: false,
+    };
+  }
 }
