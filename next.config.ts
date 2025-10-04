@@ -1,5 +1,4 @@
 
-require('dotenv').config({ path: './.env.local' });
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -37,7 +36,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https',
+        protocol: 'https' ,
         hostname: 'i.imgur.com',
         port: '',
         pathname: '/**',

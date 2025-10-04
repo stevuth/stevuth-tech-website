@@ -2,6 +2,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
 import { getFirestore, Firestore } from "firebase/firestore";
+import dotenv from 'dotenv';
+import path from 'path';
+
+// Load environment variables from .env.local in the root directory
+dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
