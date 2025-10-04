@@ -2,13 +2,9 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp, getApps, getApp, FirebaseApp } from "firebase/app";
 import { getFirestore, Firestore } from "firebase/firestore";
-import dotenv from 'dotenv';
-import path from 'path';
-
-// Load environment variables from .env.local in the root directory
-dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 
 // Your web app's Firebase configuration
+// These variables are loaded from the .env.local file
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -22,6 +18,7 @@ const firebaseConfig = {
 let app: FirebaseApp;
 let db: Firestore;
 
+// Initialize Firebase only if it hasn't been initialized yet
 if (getApps().length === 0) {
   app = initializeApp(firebaseConfig);
 } else {
