@@ -7,14 +7,13 @@ import { Label } from "@/components/ui/label";
 import React from 'react';
 
 export function ContactForm() {
-  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@stevuthtech.com";
   // The thank you page can be customized. For now, it redirects back to the contact page.
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "";
   const thankYouUrl = `${siteUrl}/contact`;
 
   return (
     <form 
-      action={`https://formsubmit.co/${contactEmail}`} 
+      action="https://formsubmit.co/info@stevuthtech.com" 
       method="POST" 
       className="space-y-6"
     >
