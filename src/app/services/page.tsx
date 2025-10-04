@@ -156,7 +156,7 @@ const serviceCategories = [
   }
 ];
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stevuth.web.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.stevuthtech.com";
 
 const ServiceSection = ({ service, index }: { service: (typeof serviceCategories)[0]['services'][0], index: number }) => {
   const jsonLd = {

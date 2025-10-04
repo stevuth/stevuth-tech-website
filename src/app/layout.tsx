@@ -21,7 +21,7 @@ const fontInter = Inter({
   variable: '--font-inter',
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stevuth.web.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.stevuthtech.com";
 const gaMeasurementId = "G-N8EY0EF9QL";
 
 const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => mod.Footer));
