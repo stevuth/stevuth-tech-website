@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 import { AnimatedWrapper } from './AnimatedWrapper';
@@ -34,7 +35,8 @@ export function Footer() {
 
         <div className="mt-8 border-t border-primary-foreground/10 pt-6 text-center">
             <AnimatedWrapper delay={200}>
-                <p className="text-xs text-white/60">&copy; {new Date().getFullYear()} Stevuth Tech. All Rights Reserved. We build. You shine.</p>
+                <p className="text-xs text-white/60">&copy; {new Date().getFullYear()} Stevuth Tech. All Rights Reserved.</p>
+                <p className="text-xs text-white/60 mt-1">We build. You shine.</p>
             </AnimatedWrapper>
         </div>
       </div>
