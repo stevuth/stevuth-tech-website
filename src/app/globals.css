@@ -135,40 +135,6 @@
     z-index: 1;
   }
 
-  .animated-border-card {
-    @apply relative overflow-hidden;
-  }
-
-  .animated-border-card::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(var(--angle, 0deg));
-    width: calc(100% + 2px);
-    height: calc(100% + 2px);
-    z-index: 0;
-    background: conic-gradient(
-      from 180deg at 50% 50%,
-      transparent 0,
-      transparent 75%,
-      hsl(var(--primary)) 100%
-    );
-    animation: move-border 8s linear infinite;
-    transition: all 0.3s ease;
-  }
-  
-  .animated-border-card:hover::before {
-     animation-duration: 4s;
-     filter: brightness(1.5);
-  }
-
-  .animated-border-card > * {
-    position: relative;
-    z-index: 1;
-  }
-
-
   @keyframes AnimateBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -245,15 +211,6 @@
       background: hsl(var(--accent) / 0.5);
       animation: move-particle 25s linear infinite;
       box-shadow: 0 0 5px hsl(var(--accent) / 0.7), 0 0 10px hsl(var(--accent) / 0.5);
-  }
-
-  @keyframes move-border {
-    from {
-      --angle: 0deg;
-    }
-    to {
-      --angle: 360deg;
-    }
   }
 
   @keyframes move-particle {
