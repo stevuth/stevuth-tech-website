@@ -63,32 +63,32 @@ const services = [
 
 const benefits = [
   {
-    icon: <Rocket className="h-10 w-10 text-card-foreground" />,
+    icon: <Rocket className="h-10 w-10 text-accent" />,
     title: "Fast Delivery",
     description: "Get your website live in as little as 7 days.",
   },
   {
-    icon: <Zap className="h-10 w-10 text-card-foreground" />,
+    icon: <Zap className="h-10 w-10 text-accent" />,
     title: "No Hidden Costs",
     description: "One-time payment, no monthly fees.",
   },
   {
-    icon: <Smartphone className="h-10 w-10 text-card-foreground" />,
+    icon: <Smartphone className="h-10 w-10 text-accent" />,
     title: "Mobile-First Design",
     description: "Optimized for users on phones.",
   },
   {
-    icon: <Target className="h-10 w-10 text-card-foreground" />,
+    icon: <Target className="h-10 w-10 text-accent" />,
     title: "Conversion-Focused",
     description: "Designed to turn visitors into paying customers.",
   },
   {
-    icon: <Globe className="h-10 w-10 text-card-foreground" />,
+    icon: <Globe className="h-10 w-10 text-accent" />,
     title: "Trusted by Businesses",
     description: "From startups to growing brands worldwide.",
   },
   {
-    icon: <ShieldCheck className="h-10 w-10 text-card-foreground" />,
+    icon: <ShieldCheck className="h-10 w-10 text-accent" />,
     title: "Ongoing Support",
     description: "We don’t just build, we stay to support you.",
   },
@@ -342,7 +342,7 @@ export default async function Home() {
                 animation='zoom-in'
                 delay={index * 150}
               >
-                <Card className="text-center bg-transparent hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Card className="text-center bg-background hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <CardHeader>
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-card-foreground mb-4">
                       {benefit.icon}
