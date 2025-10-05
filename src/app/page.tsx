@@ -229,7 +229,7 @@ export default async function Home() {
               </p>
             </AnimatedWrapper>
         </div>
-        <div>
+        <div className="bg-background">
             {services.map((service, index) => (
                 <div key={service.title} className={'bg-background'}>
                     <div className="container px-4 md:px-6 py-10">
@@ -328,7 +328,7 @@ export default async function Home() {
         </div>
       </section>
       
-      <section className="py-10 md:py-12 bg-background">
+      <section className="py-10 md:py-12 bg-primary/5">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Partner With Us?</h2>
