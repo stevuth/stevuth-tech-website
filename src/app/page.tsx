@@ -220,7 +220,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-primary/5">
+      <section className="bg-background">
         <div className="container px-4 md:px-6 py-10 md:py-12 text-center">
             <AnimatedWrapper>
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">What We Do</h2>
@@ -229,9 +229,9 @@ export default async function Home() {
               </p>
             </AnimatedWrapper>
         </div>
-        <div className="bg-primary/5">
+        <div className="bg-background">
             {services.map((service, index) => (
-                <div key={service.title} className={'bg-primary/5'}>
+                <div key={service.title} className={'bg-background'}>
                     <div className="container px-4 md:px-6 py-10">
                         <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-center">
                            <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
@@ -262,7 +262,7 @@ export default async function Home() {
                     </div>
                 </div>
             ))}
-             <div className="text-center py-10 bg-primary/5">
+             <div className="text-center py-10 bg-background">
                 <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                     <Link href="/services">View All Services</Link>
                 </Button>
