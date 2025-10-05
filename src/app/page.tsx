@@ -285,7 +285,7 @@ export default async function Home() {
                 animation="fade-in-up" 
                 delay={index * 150}
               >
-                <Card className={`h-full flex flex-col bg-transparent ${pkg.isPopular ? 'border-accent border-2 shadow-accent/20 shadow-lg' : 'hover:shadow-xl transition-shadow'}`}>
+                <Card className={`h-full flex flex-col bg-transparent animated-border ${pkg.isPopular ? 'border-accent border-2 shadow-accent/20 shadow-lg' : 'hover:shadow-xl transition-shadow'}`}>
                     {pkg.isPopular && (
                        <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1 text-sm font-bold">
                            Most Popular
@@ -343,7 +343,7 @@ export default async function Home() {
                 animation='zoom-in'
                 delay={index * 150}
               >
-                <Card className="text-center bg-background hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Card className="text-center bg-background hover:shadow-xl transition-all duration-300 hover:scale-105 animated-border">
                   <CardHeader>
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 mb-4">
                       {React.cloneElement(benefit.icon, { className: 'h-10 w-10 text-accent' })}

@@ -1,4 +1,5 @@
 
+
 'use client';
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -95,7 +96,7 @@ function AdminPage() {
       <section className="py-10 md:py-12">
         <div className="container px-4 md:px-6">
           <AnimatedWrapper>
-            <Card>
+            <Card className="animated-border">
               <CardHeader className="flex flex-row items-center justify-between">
                 <div>
                   <CardTitle className="text-2xl">Blog Posts</CardTitle>

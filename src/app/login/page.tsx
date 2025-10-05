@@ -51,7 +51,7 @@ export default function LoginPage() {
     <div className="pt-16 flex items-center justify-center min-h-screen bg-background relative">
         <BackButton />
        <AnimatedWrapper>
-        <Card className="w-full max-w-md bg-background text-foreground">
+        <Card className="w-full max-w-md bg-background text-foreground animated-border">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold">Admin Login</CardTitle>
             <CardDescription>Enter your credentials to access the dashboard</CardDescription>

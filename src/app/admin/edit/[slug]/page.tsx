@@ -30,7 +30,7 @@ export default async function EditPostPage({ params }: { params: { slug: string 
       <section className="py-10 md:py-12">
         <div className="container px-4 md:px-6">
           <AnimatedWrapper>
-            <Card>
+            <Card className="animated-border">
               <CardHeader>
                 <CardTitle>Edit: {post.title}</CardTitle>
                 <CardDescription>Update the fields below and save your changes.</CardDescription>
