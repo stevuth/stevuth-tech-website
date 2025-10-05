@@ -170,9 +170,9 @@ export function Header() {
                 <HamburgerIcon />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-full max-w-sm bg-primary p-0 text-primary-foreground flex flex-col data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-left-48 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-left-48">
+            <SheetContent side="left" className="w-full max-w-sm bg-primary/5 backdrop-blur-sm p-0 text-white flex flex-col data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-left-48 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-left-48">
                <SheetTitle className="sr-only">Menu</SheetTitle>
-               <div className="flex h-16 items-center justify-between px-6 border-b border-primary-foreground/20">
+               <div className="flex h-16 items-center justify-between px-6 border-b border-white/20">
                     <SheetClose asChild>
                       <Link href="/">
                         <Logo isDark={true} />
@@ -186,12 +186,12 @@ export function Header() {
                       <MobileNavLink href={link.href}>
                         {link.label}
                       </MobileNavLink>
-                      {index < navLinks.length - 1 && <Separator className="bg-primary-foreground/20" />}
+                      {index < navLinks.length - 1 && <Separator className="bg-white/20" />}
                     </div>
                   ))}
                 </nav>
 
-                <div className="mt-auto p-6 border-t border-primary-foreground/20">
+                <div className="mt-auto p-6 border-t border-white/20">
                    {!loading && user && (
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
