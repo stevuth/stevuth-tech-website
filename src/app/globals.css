@@ -232,4 +232,22 @@
           transform: rotate(360deg);
       }
   }
+  
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  .animated-border {
+    --angle: 0deg;
+    border-image: conic-gradient(from var(--angle), hsl(var(--background)), hsl(var(--foreground)) 0.1turn, hsl(var(--foreground)) 0.15turn, hsl(var(--background)) 0.25turn) 30;
+    animation: 5s rotate linear infinite;
+  }
 }
