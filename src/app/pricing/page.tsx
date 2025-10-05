@@ -156,7 +156,7 @@ export default function PricingPage() {
                   delay={index * 150}
                   className={pkg.title === "Pro Package" || pkg.title === "Custom Package" ? "md:col-span-2 lg:col-span-1" : ""}
                 >
-                  <Card className={`h-full flex flex-col ${pkg.isPopular ? 'border-accent border-2 shadow-accent/20 shadow-lg' : 'hover:shadow-xl transition-shadow'}`}>
+                  <Card className={`h-full flex flex-col bg-transparent ${pkg.isPopular ? 'border-accent border-2 shadow-accent/20 shadow-lg' : 'hover:shadow-xl transition-shadow'}`}>
                       {pkg.isPopular && (
                         <Badge variant="secondary" className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-4 py-1 text-sm font-bold">
                             Most Popular
