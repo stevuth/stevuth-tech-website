@@ -327,7 +327,7 @@ export default async function Home() {
         </div>
       </section>
       
-      <section className="py-10 md:py-12 bg-background">
+      <section className="py-10 md:py-12 bg-dark-navy">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Partner With Us?</h2>
@@ -342,7 +342,7 @@ export default async function Home() {
                 animation='zoom-in'
                 delay={index * 150}
               >
-                <Card className="text-center bg-background hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Card className="text-center bg-transparent hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <CardHeader>
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-card-foreground mb-4">
                       {benefit.icon}

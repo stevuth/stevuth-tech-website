@@ -90,6 +90,9 @@
 }
 
 @layer utilities {
+  .bg-dark-navy {
+    background-color: hsl(225, 73%, 7%);
+  }
   .animated-gradient {
     position: relative;
     overflow: hidden;
