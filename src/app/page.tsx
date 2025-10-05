@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
@@ -261,7 +262,7 @@ export default async function Home() {
                     </div>
                 </div>
             ))}
-             <div className="text-center py-10">
+             <div className="text-center py-10 bg-primary/5">
                 <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
                     <Link href="/services">View All Services</Link>
                 </Button>
@@ -327,7 +328,7 @@ export default async function Home() {
         </div>
       </section>
       
-      <section className="py-10 md:py-12 bg-primary/5">
+      <section className="py-10 md:py-12 bg-background">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Partner With Us?</h2>
@@ -344,8 +345,8 @@ export default async function Home() {
               >
                 <Card className="text-center bg-background hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <CardHeader>
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-card-foreground mb-4">
-                      {benefit.icon}
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 mb-4">
+                      {React.cloneElement(benefit.icon, { className: 'h-10 w-10 text-accent' })}
                     </div>
                     <CardTitle className="text-xl font-bold text-foreground">{benefit.title}</CardTitle>
                   </CardHeader>
