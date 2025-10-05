@@ -342,7 +342,7 @@ export default async function Home() {
                 animation='zoom-in'
                 delay={index * 150}
               >
-                <Card className="h-full text-center bg-card hover:bg-card/80 hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <Card className="text-center bg-card hover:bg-card/80 hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <CardHeader>
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-card-foreground mb-4">
                       {benefit.icon}
