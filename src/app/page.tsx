@@ -180,15 +180,6 @@ export default async function Home() {
     <div className="flex flex-col">
       <section className="relative h-[calc(100vh)] w-full flex flex-col items-center justify-center text-center overflow-hidden pt-16 bg-background">
         <div className="absolute inset-0 z-0">
-          <Image
-            src={imageData.home.hero.src}
-            alt={imageData.home.hero.alt}
-            fill
-            priority
-            className="object-cover scale-125 md:scale-100"
-            data-ai-hint={imageData.home.hero.hint}
-          />
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
           <Particle />
         </div>
         <div className="relative z-20 flex flex-col items-center justify-center container text-center">
