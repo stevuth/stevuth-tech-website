@@ -6,6 +6,11 @@
     }
   },
   "home": {
+    "hero": {
+      "src": "https://picsum.photos/seed/webdevAgency/1920/1080",
+      "alt": "Dark, abstract background image related to web development",
+      "hint": "web development abstract"
+    },
     "meetStevuth": {
       "src": "/about.jpg?v=2",
       "hint": "modern office interior"

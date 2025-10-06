@@ -181,11 +181,12 @@ export default async function Home() {
       <section className="relative h-[calc(100vh)] w-full flex flex-col items-center justify-center text-center overflow-hidden pt-16 bg-background">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero image.jpg"
-            alt="Hero background image"
+            src={imageData.home.hero.src}
+            alt={imageData.home.hero.alt}
             fill
             priority
             className="object-cover scale-125 md:scale-100"
+            data-ai-hint={imageData.home.hero.hint}
           />
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
           <Particle />
