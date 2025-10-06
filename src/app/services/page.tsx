@@ -32,7 +32,7 @@ const serviceCategories = [
       {
         id: "custom-website-development",
         title: "Custom Website Development",
-        description: "We build fully tailored websites from the ground up — designed around your business goals, optimized for performance, and scalable for future growth.",
+        description: "We build fully tailored websites from the ground up, designed around your business goals, optimized for performance, and scalable for future growth.",
         imageUrl: "/custom web.jpg",
         aiHint: "developer coding on laptop",
       },
