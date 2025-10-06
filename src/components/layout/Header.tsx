@@ -174,9 +174,14 @@ export function Header() {
                  <Link href="/" onClick={() => setIsOpen(false)}>
                     <Logo />
                  </Link>
+                  <SheetClose asChild>
+                    <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full">
+                      <X className="h-6 w-6" />
+                    </Button>
+                  </SheetClose>
                 </div>
 
-                <nav className="flex flex-col pt-6 mt-4">
+                <nav className="flex flex-col pt-6">
                   {navLinks.map((link, index) => (
                      <div key={link.href} className="flex flex-col">
                       <MobileNavLink href={link.href}>

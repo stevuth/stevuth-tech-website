@@ -224,7 +224,7 @@ export default function ServicesPage() {
       </section>
 
       {serviceCategories.map((category, categoryIndex) => (
-        <section key={category.category} className={`py-10 md:py-12 ${categoryIndex % 2 === 1 ? 'bg-secondary/10' : 'bg-background'}`}>
+        <section key={category.category} className={`py-10 md:py-12 ${categoryIndex % 2 === 1 ? 'bg-primary/5' : 'bg-background'}`}>
           <div className="container px-4 md:px-6">
             <AnimatedWrapper>
               <div className="flex items-center gap-4 mb-8">

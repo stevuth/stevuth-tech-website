@@ -228,57 +228,54 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-background">
-        <div className="container px-4 md:px-6 py-10 md:py-12 text-center">
+      <section className="py-10 md:py-12 bg-primary/5">
+        <div className="container px-4 md:px-6 text-center">
             <AnimatedWrapper>
               <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">What We Do</h2>
-              <p className="max-w-3xl mx-auto text-muted-foreground mb-6">
+              <p className="max-w-3xl mx-auto text-muted-foreground mb-12">
                 Delivering expertise in web development, design, and performance optimization.
               </p>
             </AnimatedWrapper>
-        </div>
-        <div className="bg-background">
-            {services.map((service, index) => (
-                <div key={service.title} className={'bg-background'}>
-                    <div className="container px-4 md:px-6 py-10">
-                        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-center">
-                           <AnimatedWrapper animation="slide-in-left" className={index % 2 === 1 ? 'md:order-2' : ''}>
-                                <div className="relative aspect-video rounded-lg overflow-hidden shadow-xl">
-                                    <Image
-                                      src={service.image}
-                                      alt={service.title}
-                                      fill
-                                      sizes="(max-width: 768px) 100vw, 50vw"
-                                      className="object-cover"
-                                      data-ai-hint={service.aiHint}
-                                    />
-                                </div>
-                            </AnimatedWrapper>
-                            <AnimatedWrapper animation="slide-in-right" className={index % 2 === 1 ? 'md:order-1' : ''}>
-                                <div className="flex items-center gap-4 mb-4">
-                                    {service.icon}
-                                </div>
-                                <h3 className="text-2xl md:text-3xl font-headline font-bold mb-4">{service.title}</h3>
-                                <p className="text-muted-foreground mb-6 max-w-md">{service.description}</p>
-                                <Button asChild variant="link" className="p-0 h-auto text-accent hover:text-accent/90">
-                                    <Link href={service.href}>
-                                        Learn More <ArrowRight className="h-4 w-4 ml-2" />
-                                    </Link>
-                                </Button>
-                            </AnimatedWrapper>
-                        </div>
-                    </div>
-                </div>
-            ))}
-             <div className="text-center py-10 bg-background">
-                <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <AnimatedWrapper key={service.title} animation="fade-in-up" delay={index * 150}>
+                  <Card className="h-full flex flex-col overflow-hidden transition-shadow hover:shadow-xl text-left bg-background animated-border">
+                    <CardHeader className="p-0">
+                      <div className="relative aspect-video w-full">
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover"
+                          data-ai-hint={service.aiHint}
+                        />
+                      </div>
+                    </CardHeader>
+                    <CardContent className="flex-grow p-6">
+                      <CardTitle className="text-xl leading-snug mb-2 font-bold">{service.title}</CardTitle>
+                      <p className="text-muted-foreground text-sm line-clamp-3">{service.description}</p>
+                    </CardContent>
+                    <CardFooter className="p-6 pt-0">
+                      <Button asChild variant="link" className="p-0 h-auto text-accent hover:text-accent/90">
+                        <Link href={service.href}>
+                            Learn More <ArrowRight className="h-4 w-4 ml-2" />
+                        </Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                </AnimatedWrapper>
+              ))}
+            </div>
+             <AnimatedWrapper className="mt-12">
+                <Button asChild size="lg" variant="outline" className="text-accent hover:text-accent hover:bg-accent/10 border-accent">
                     <Link href="/services">View All Services</Link>
                 </Button>
-            </div>
+            </AnimatedWrapper>
         </div>
       </section>
 
-      <section className="py-10 md:py-12 bg-primary/5">
+      <section className="py-10 md:py-12 bg-background">
         <div className="container px-4 md:px-6 text-center">
            <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Our Pricing</h2>
@@ -354,7 +351,7 @@ export default async function Home() {
                 <Card className="text-center bg-background hover:shadow-xl transition-all duration-300 hover:scale-105 animated-border h-full">
                   <CardHeader className="p-4">
                     <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 mb-3">
-                      {React.cloneElement(benefit.icon, { className: 'h-8 w-8 text-accent' })}
+                      {React.cloneElement(benefit.icon, { className: 'h-10 w-10 text-accent' })}
                     </div>
                     <CardTitle className="text-lg font-bold text-foreground">{benefit.title}</CardTitle>
                   </CardHeader>
@@ -420,7 +417,7 @@ export default async function Home() {
                   </CardHeader>
                   <CardContent className="flex-grow p-6">
                     <Badge variant="secondary" className="mb-2 text-sm">{post.category}</Badge>
-                    <CardTitle className="text-lg leading-snug mb-2 font-bold">
+                    <CardTitle className="text-xl leading-snug mb-2 font-bold">
                       <Link href={`/blog/${post.slug}`} className="text-primary hover:text-accent transition-colors">
                         {post.title}
                       </Link>
