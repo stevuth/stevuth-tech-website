@@ -331,7 +331,7 @@ export default async function Home() {
       <section className="py-10 md:py-12 bg-primary/5">
         <div className="container px-4 md:px-6 text-center">
           <AnimatedWrapper>
-            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Partner With Us?</h2>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Innovation That Sets Us Apart</h2>
             <p className="max-w-3xl mx-auto text-muted-foreground mb-12">
               We're more than just developers. We're partners in your success, committed to delivering excellence at every step.
             </p>
