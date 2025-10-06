@@ -12,28 +12,44 @@ export function Particle() {
     const newParticles: any[] = [];
     for (let i = 0; i < NUM_PARTICLES; i++) {
       const size = Math.random() * 3 + 1; // size between 1px and 4px
-      const duration = Math.random() * 15 + 10; // duration between 10s and 25s
-      const delay = Math.random() * 25; // delay up to 25s
-      const xStart = Math.random() * 100;
-      const yStart = Math.random() * 100;
-      const xEnd = Math.random() * 100;
-      const yEnd = Math.random() * 100;
+      const isStatic = Math.random() < 0.3; // 30% chance of being static
+      const xPos = Math.random() * 100;
+      const yPos = Math.random() * 100;
 
-      newParticles.push({
-        id: i,
-        style: {
-          width: `${size}px`,
-          height: `${size}px`,
-          left: `${xStart}%`,
-          top: `${yStart}%`,
-          animationDuration: `${duration}s`,
-          animationDelay: `${delay}s`,
-          '--x-start': `${xStart}vw`,
-          '--y-start': `${yStart}vh`,
-          '--x-end': `${xEnd}vw`,
-          '--y-end': `${yEnd}vh`,
-        } as React.CSSProperties
-      });
+      if (isStatic) {
+        newParticles.push({
+          id: i,
+          isStatic: true,
+          style: {
+            width: `${size}px`,
+            height: `${size}px`,
+            left: `${xPos}%`,
+            top: `${yPos}%`,
+          } as React.CSSProperties
+        });
+      } else {
+        const duration = Math.random() * 15 + 10; // duration between 10s and 25s
+        const delay = Math.random() * 25; // delay up to 25s
+        const xEnd = Math.random() * 100;
+        const yEnd = Math.random() * 100;
+
+        newParticles.push({
+          id: i,
+          isStatic: false,
+          style: {
+            width: `${size}px`,
+            height: `${size}px`,
+            left: `${xPos}%`,
+            top: `${yPos}%`,
+            animationDuration: `${duration}s`,
+            animationDelay: `${delay}s`,
+            '--x-start': `${xPos}vw`,
+            '--y-start': `${yPos}vh`,
+            '--x-end': `${xEnd}vw`,
+            '--y-end': `${yEnd}vh`,
+          } as React.CSSProperties
+        });
+      }
     }
     setParticles(newParticles);
   }, []);
@@ -43,7 +59,7 @@ export function Particle() {
       {particles.map(p => (
         <div
           key={p.id}
-          className="particle"
+          className={p.isStatic ? 'particle-static' : 'particle'}
           style={p.style}
         />
       ))}

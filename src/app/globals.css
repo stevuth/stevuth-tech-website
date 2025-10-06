@@ -192,6 +192,13 @@
       animation: move-particle 25s linear infinite;
       box-shadow: 0 0 5px hsl(var(--accent) / 0.7), 0 0 10px hsl(var(--accent) / 0.5);
   }
+  .particle-static {
+    position: absolute;
+    border-radius: 50%;
+    background: hsl(var(--accent) / 0.5);
+    box-shadow: 0 0 5px hsl(var(--accent) / 0.7), 0 0 10px hsl(var(--accent) / 0.5);
+    opacity: 0.8;
+  }
 
   @keyframes move-particle {
     0% {
