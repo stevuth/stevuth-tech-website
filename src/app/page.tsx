@@ -178,17 +178,17 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative h-[calc(100vh)] w-full flex flex-col items-start justify-center text-left text-white overflow-hidden pt-16 bg-background">
+      <section className="relative h-[calc(100vh)] w-full flex flex-col items-center justify-center text-center text-white overflow-hidden pt-16 bg-background">
         <div className="absolute inset-0 z-0">
           <Particle />
         </div>
-        <div className="relative z-20 flex flex-col items-start justify-center container">
+        <div className="relative z-20 flex flex-col items-center justify-center container">
             <StevuthHeroAnimation />
             <AnimatedWrapper animation="fade-in-up" delay={4000}>
               <h1 className="text-3xl md:text-4xl font-headline font-bold tracking-tighter mt-8 mb-4 text-white">
                 Your Next Customer Is Online, <br /> Let’s Get Their Attention
               </h1>
-              <p className="max-w-xl text-md md:text-lg text-slate-200 mb-8">
+              <p className="max-w-xl text-md md:text-lg text-slate-200 mb-8 mx-auto">
                 We build modern mobile-friendly websites that attract engage and convert visitors into paying customers. No monthly fees, no hidden charges, just powerful websites designed to grow your business.
               </p>
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-auto">
