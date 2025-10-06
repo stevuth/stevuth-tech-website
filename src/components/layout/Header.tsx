@@ -129,9 +129,6 @@ export function Header() {
     <header className={cn(headerClasses, 'group/header')}>
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
-             <Link href="/">
-                <Logo isDark={true} />
-            </Link>
         </div>
         
         <nav className={cn("hidden items-center space-x-6 md:flex")}>
@@ -173,11 +170,6 @@ export function Header() {
             <SheetContent side="left" className="w-full max-w-sm bg-card p-0 text-white flex flex-col data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-left-48 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-left-48">
                <SheetTitle className="sr-only">Menu</SheetTitle>
                <div className="flex h-16 items-center justify-between px-6 border-b border-white/20">
-                    <SheetClose asChild>
-                      <Link href="/">
-                        <Logo isDark={true} />
-                      </Link>
-                    </SheetClose>
                 </div>
 
                 <nav className="flex flex-col pt-6 mt-4">
