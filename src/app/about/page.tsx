@@ -114,11 +114,11 @@ export default function AboutPage() {
               Our success is built on a foundation of trust, earned through dedication and excellence in every project.
             </p>
           </AnimatedWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {trustFactors.map((factor, index) => (
               <AnimatedWrapper key={factor.title} animation="fade-in-up" delay={index * 150}>
                 <div className="p-4 text-left">
-                   <div className="flex items-center justify-start h-16 w-16 rounded-full bg-accent/10 mb-4">
+                   <div className="flex items-center justify-start h-12 w-12 rounded-full bg-accent/10 mb-3">
                     {factor.icon}
                   </div>
                   <h3 className="text-xl font-headline font-bold mb-2">{factor.title}</h3>
@@ -163,7 +163,7 @@ export default function AboutPage() {
             <p className="max-w-2xl mx-auto mb-6">
               Let's create something amazing together. Reach out to discuss how we can bring your ideas to life.
             </p>
-            <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button asChild size="lg" variant="cta" className="bg-accent hover:bg-accent/90 text-accent-foreground border border-black">
               <Link href="/contact">Talk to Us Today</Link>
             </Button>
           </AnimatedWrapper>
