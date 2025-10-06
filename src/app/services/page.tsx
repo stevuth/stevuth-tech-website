@@ -53,7 +53,7 @@ const serviceCategories = [
       {
         id: "landing-page-design",
         title: "Landing Page Design",
-        description: "We design focused, high-converting landing pages built for campaigns, product launches, and lead generation — turning visitors into customers.",
+        description: "We design focused, high-converting landing pages built for campaigns, product launches, and lead generation, turning visitors into customers.",
         imageUrl: "/landing.jpg",
         aiHint: "website landing page",
       },
@@ -73,14 +73,14 @@ const serviceCategories = [
       {
         id: "ui-ux-design",
         title: "UI/UX Design",
-        description: "We craft intuitive, user-centered interfaces that make every interaction smooth and engaging — balancing beauty with usability.",
+        description: "We craft intuitive, user-centered interfaces that make every interaction smooth and engaging, balancing beauty with usability.",
         imageUrl: "/ux.jpg",
         aiHint: "ui design mockup",
       },
       {
         id: "brand-identity-design",
         title: "Brand Identity Design",
-        description: "Our creative team shapes visual identities that express your brand’s personality — from logos and color palettes to full brand systems.",
+        description: "Our creative team shapes visual identities that express your brand’s personality, from logos and color palettes to full brand systems.",
         imageUrl: "/brand iden.jpg",
         aiHint: "brand logo design",
       },
@@ -93,7 +93,7 @@ const serviceCategories = [
        {
         id: "website-maintenance",
         title: "Website Maintenance & Support",
-        description: "We provide ongoing care for your website — including updates, bug fixes, backups, and security monitoring — to keep it running smoothly.",
+        description: "We provide ongoing care for your website, including updates, bug fixes, backups, and security monitoring, to keep it running smoothly.",
         imageUrl: "/web support.jpg",
         aiHint: "man fixing gears",
       },
@@ -134,7 +134,7 @@ const serviceCategories = [
       {
         id: "api-development",
         title: "API Development & Integration",
-        description: "We connect your systems through custom APIs — integrating payment gateways, CRMs, and third-party tools for smoother operations.",
+        description: "We connect your systems through custom APIs, integrating payment gateways, CRMs, and third-party tools for smoother operations.",
         imageUrl: "/api.jpg",
         aiHint: "api code integration",
       },
