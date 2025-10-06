@@ -115,7 +115,7 @@ const serviceCategories = [
         id: "mobile-optimization",
         title: "Mobile Optimization",
         description: "We ensure your website looks and performs flawlessly on all screen sizes, from smartphones to tablets and desktops.",
-        imageUrl: "/mobile.jpg",
+        imageUrl: "/mobile.jpg?v=2",
         aiHint: "mobile phone responsive",
       },
     ]
