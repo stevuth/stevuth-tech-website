@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react';
 
-const NUM_PARTICLES = 50;
+const NUM_PARTICLES = 150;
 
 export function Particle() {
   const [particles, setParticles] = useState<any[]>([]);
