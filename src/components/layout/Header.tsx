@@ -90,7 +90,7 @@ export function Header() {
   const MobileNavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void; }) => {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
     const commonClasses = cn(
-        "relative text-2xl font-bold text-white transition-all duration-300 hover:text-accent py-3 w-full text-left px-6 active:text-accent",
+        "relative text-2xl font-bold text-white transition-all duration-300 hover:text-accent py-3 w-full text-left px-6",
         isActive ? "text-accent" : ""
     );
   
@@ -176,8 +176,8 @@ export function Header() {
                     <span>Stevuth Tech</span>
                  </Link>
                   <SheetClose asChild>
-                    <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full">
-                      <X className="h-6 w-6" />
+                    <Button variant="ghost" size="icon" className="h-12 w-12 rounded-full">
+                      <X className="h-8 w-8" />
                     </Button>
                   </SheetClose>
                 </div>
