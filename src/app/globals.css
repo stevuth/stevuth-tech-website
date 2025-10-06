@@ -279,7 +279,7 @@
 
 .hero-text-animation .text-stevuth {
   stroke-width: 0.5;
-  stroke: white;
+  stroke: hsl(var(--accent));
   fill: transparent;
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
@@ -288,7 +288,7 @@
 
 .hero-text-animation .text-tech {
   stroke-width: 1;
-  stroke: hsl(var(--accent));
+  stroke: white;
   fill: transparent;
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
@@ -311,5 +311,7 @@
     opacity: 1;
   }
 }
+
+    
 
     
