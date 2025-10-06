@@ -1,5 +1,4 @@
 
-
 import { Check, ArrowRight } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -132,7 +131,7 @@ export default function PricingPage() {
         <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold mt-4">Website Development Pricing</h1>
-            <p className="mt-4 text-base md:text-lg max-w-3xl text-muted-foreground">
+            <p className="mt-4 text-base md:text-lg max-w-3xl text-accent">
               Affordable, transparent pricing from the best web development agency in Nigeria. Let's build something amazing.
             </p>
           </AnimatedWrapper>
