@@ -143,7 +143,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value, index) => (
                   <AnimatedWrapper key={value.title} animation="fade-in-up" delay={index * 150}>
-                       <div className="text-center p-6 bg-background rounded-lg shadow-md h-full animated-border">
+                       <div className="text-center p-6 bg-background rounded-lg shadow-md h-full animated-border border-2 border-transparent">
                             <div className="flex items-center justify-center h-16 w-16 rounded-full bg-accent/10 mb-6 mx-auto">
                                 {value.icon}
                             </div>
