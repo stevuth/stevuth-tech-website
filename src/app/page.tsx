@@ -13,6 +13,8 @@ import type { Metadata } from 'next';
 import imageData from '@/lib/placeholder-images.json';
 import { CardDescription } from '@/components/ui/card';
 import { Particle } from '@/components/layout/Particle';
+import { StevuthHeroAnimation } from '@/components/layout/StevuthHeroAnimation';
+
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -176,27 +178,22 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      <section className="relative h-[calc(100vh)] w-full flex items-center justify-start text-left text-white overflow-hidden pt-16">
-        <video
-          src="/desktop-hero-video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute z-0 w-full h-full object-cover top-0 left-0"
-        />
-        <div className="absolute inset-0 bg-black/60 z-10" />
-        <div className="relative z-20 container px-4 md:px-6">
-          <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl font-headline font-bold tracking-tighter mb-4 text-white">
-             Your Next Customer Is Online, <br /> Let’s Get Their Attention
-            </h1>
-            <p className="max-w-xl text-md md:text-lg text-slate-200 mb-8">
-              We build modern mobile-friendly websites that attract engage and convert visitors into paying customers. No monthly fees, no hidden charges, just powerful websites designed to grow your business.
-            </p>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-auto !mx-0">
-              <Link href="/contact">Start My Project</Link>
-            </Button>
+      <section className="relative h-[calc(100vh)] w-full flex flex-col items-center justify-center text-center text-white overflow-hidden pt-16 bg-background">
+        <div className="absolute inset-0 z-0">
+          <Particle />
+        </div>
+        <div className="relative z-20 flex flex-col items-center justify-center">
+            <StevuthHeroAnimation />
+            <AnimatedWrapper animation="fade-in-up" delay={4000}>
+              <h1 className="text-3xl md:text-4xl font-headline font-bold tracking-tighter mt-8 mb-4 text-white">
+                Your Next Customer Is Online, <br /> Let’s Get Their Attention
+              </h1>
+              <p className="max-w-xl text-md md:text-lg text-slate-200 mb-8">
+                We build modern mobile-friendly websites that attract engage and convert visitors into paying customers. No monthly fees, no hidden charges, just powerful websites designed to grow your business.
+              </p>
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-auto !mx-auto">
+                <Link href="/contact">Start My Project</Link>
+              </Button>
           </AnimatedWrapper>
         </div>
       </section>
@@ -464,4 +461,3 @@ export default async function Home() {
     </div>
   );
 }
-
