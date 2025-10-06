@@ -185,7 +185,7 @@ export default async function Home() {
             alt="Hero background image"
             fill
             priority
-            className="object-cover"
+            className="object-cover scale-125 md:scale-100"
           />
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
           <Particle />
