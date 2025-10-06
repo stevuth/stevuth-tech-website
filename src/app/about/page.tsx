@@ -107,18 +107,18 @@ export default function AboutPage() {
       </section>
 
       <section className="py-10 md:py-12">
-        <div className="container px-4 md:px-6 text-center">
+        <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
             <h2 className="text-3xl md:text-4xl font-headline font-bold mb-4">Why Trust Us?</h2>
-            <p className="max-w-3xl mx-auto text-muted-foreground mb-8">
+            <p className="max-w-3xl text-muted-foreground mb-8">
               Our success is built on a foundation of trust, earned through dedication and excellence in every project.
             </p>
           </AnimatedWrapper>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {trustFactors.map((factor, index) => (
               <AnimatedWrapper key={factor.title} animation="fade-in-up" delay={index * 150}>
-                <div className="p-6">
-                   <div className="flex items-center justify-center h-20 w-20 rounded-full bg-accent/10 mb-6 mx-auto">
+                <div className="p-6 text-left">
+                   <div className="flex items-center justify-start h-20 w-20 rounded-full bg-accent/10 mb-6">
                     {factor.icon}
                   </div>
                   <h3 className="text-xl font-headline font-bold mb-2">{factor.title}</h3>
