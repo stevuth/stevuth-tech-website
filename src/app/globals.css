@@ -279,7 +279,7 @@
 
 .hero-text-animation .text-stevuth {
   stroke-width: 0.5;
-  stroke: hsl(var(--accent));
+  stroke: white;
   fill: transparent;
   stroke-dasharray: 600;
   stroke-dashoffset: 600;
@@ -288,18 +288,25 @@
 
 .hero-text-animation .text-tech {
   stroke-width: 1;
-  stroke: white;
+  stroke: hsl(var(--accent));
   fill: transparent;
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
   animation: draw-lines 2s ease-out 1s forwards;
-  filter: drop-shadow(0 0 3px hsl(var(--accent)));
 }
 
 .hero-text-animation .text-fill {
   fill: white;
   opacity: 0;
   animation: fill-text 1s ease-in 3.5s forwards;
+  filter: drop-shadow(2px 2px 4px hsla(0, 0%, 0%, 0.5));
+}
+
+.hero-text-animation .text-tech-fill {
+  fill: hsl(var(--accent));
+  opacity: 0;
+  animation: fill-text 1s ease-in 3s forwards;
+  filter: drop-shadow(2px 2px 4px hsla(217, 98%, 52%, 0.4));
 }
 
 .hero-text-animation .text-pulse {
@@ -311,7 +318,3 @@
     opacity: 1;
   }
 }
-
-    
-
-    

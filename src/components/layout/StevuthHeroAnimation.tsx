@@ -14,10 +14,8 @@ export function StevuthHeroAnimation() {
         
         {/* Tech */}
         <text className="text-tech" x="50%" y="105" dominantBaseline="middle" textAnchor="middle">TECH</text>
-        <text className="text-fill text-pulse text-tech" x="50%" y="105" dominantBaseline="middle" textAnchor="middle" style={{ fill: 'hsl(var(--accent))', animationDelay: '4s' }}>TECH</text>
+        <text className="text-tech-fill text-pulse" x="50%" y="105" dominantBaseline="middle" textAnchor="middle">TECH</text>
       </svg>
     </AnimatedWrapper>
   );
 }
-
-    
