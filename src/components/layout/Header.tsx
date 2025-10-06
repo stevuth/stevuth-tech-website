@@ -171,8 +171,9 @@ export function Header() {
             <SheetContent side="left" className="w-full max-w-sm bg-card p-0 text-white flex flex-col data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-left-48 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-left-48">
                <SheetTitle className="sr-only">Menu</SheetTitle>
                <div className="flex h-16 items-center justify-between px-6 border-b border-white/20">
-                 <Link href="/" onClick={() => setIsOpen(false)}>
+                 <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-lg font-bold">
                     <Logo />
+                    <span>Stevuth Tech</span>
                  </Link>
                   <SheetClose asChild>
                     <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full">
