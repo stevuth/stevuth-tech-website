@@ -6,7 +6,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedWrapper } from '@/components/layout/AnimatedWrapper';
-import { ArrowRight, Code, Brush, Rocket, Zap, Smartphone, Target, Globe, ShieldCheck, Check } from 'lucide-react';
+import { ArrowRight, Code, Brush, Rocket, Zap, Smartphone, Target, Globe, ShieldCheck, Check, Search, Building } from 'lucide-react';
 import { getPosts } from '@/lib/blog-data';
 import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
@@ -92,6 +92,16 @@ const benefits = [
     icon: <ShieldCheck className="h-10 w-10 text-accent" />,
     title: "Ongoing Support",
     description: "We don’t just build, we stay to support you.",
+  },
+  {
+    icon: <Search className="h-10 w-10 text-accent" />,
+    title: "SEO Optimization",
+    description: "Our websites rank high on Google.",
+  },
+  {
+    icon: <Building className="h-10 w-10 text-accent" />,
+    title: "Google Business Profile",
+    description: "We register your business on Google so customers can easily find you.",
   },
 ];
 
@@ -336,16 +346,16 @@ export default async function Home() {
               We're more than just developers. We're partners in your success, committed to delivering excellence at every step.
             </p>
           </AnimatedWrapper>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
                <AnimatedWrapper 
                 key={benefit.title} 
                 animation='zoom-in'
                 delay={index * 150}
               >
-                <Card className="text-center bg-background hover:shadow-xl transition-all duration-300 hover:scale-105 animated-border">
+                <Card className="text-center bg-background hover:shadow-xl transition-all duration-300 hover:scale-105 animated-border h-full">
                   <CardHeader className="p-4">
-                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 mb-3">
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 mb-3">
                       {React.cloneElement(benefit.icon, { className: 'h-8 w-8 text-accent' })}
                     </div>
                     <CardTitle className="text-lg font-bold text-foreground">{benefit.title}</CardTitle>
@@ -454,3 +464,4 @@ export default async function Home() {
     </div>
   );
 }
+
