@@ -277,8 +277,8 @@
   stroke-width: 1;
   stroke: white;
   fill: transparent;
-  stroke-dasharray: 300;
-  stroke-dashoffset: 300;
+  stroke-dasharray: 350;
+  stroke-dashoffset: 350;
   animation: draw-lines 2s ease-out 1s forwards;
 }
 
