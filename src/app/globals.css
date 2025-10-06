@@ -114,21 +114,6 @@
     );
     animation: AnimateBG 15s ease infinite;
   }
-
-  .animated-gradient::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background-image: 
-      linear-gradient(to right, hsla(0,0%,100%,0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, hsla(0,0%,100%,0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: AnimateLines 4s linear infinite;
-  }
   
   .animated-gradient > * {
     position: relative;
@@ -139,11 +124,6 @@
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-  }
-
-  @keyframes AnimateLines {
-    0% { background-position: 0 0; }
-    100% { background-position: 50px 50px; }
   }
   
   @keyframes pulse-glow {
@@ -318,5 +298,3 @@
     opacity: 1;
   }
 }
-
-    

@@ -179,7 +179,8 @@ export default async function Home() {
   return (
     <div className="flex flex-col">
       <section className="relative h-[calc(100vh)] w-full flex flex-col items-center justify-center text-center overflow-hidden pt-16 bg-background">
-        <div className="absolute inset-0 z-0 animated-gradient">
+        <div className="absolute inset-0 z-0">
+          <div className="animated-gradient absolute inset-0"></div>
           <Particle />
         </div>
         <div className="relative z-20 flex flex-col items-center justify-center container text-center">
@@ -461,9 +462,3 @@ export default async function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-    
