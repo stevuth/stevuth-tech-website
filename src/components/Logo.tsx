@@ -11,12 +11,6 @@ export function Logo({ isDark = false, className }: { isDark?: boolean; classNam
         height={32}
         className="rounded-full"
       />
-      <span className={cn(
-        "font-headline font-bold text-xl tracking-tight",
-        isDark ? "text-white" : "text-white"
-      )}>
-        Stevuth Tech
-      </span>
     </div>
   );
 }
