@@ -182,7 +182,7 @@ export default async function Home() {
         <div className="absolute inset-0 z-0">
           <Particle />
         </div>
-        <div className="relative z-20 flex flex-col items-start md:items-center justify-center container text-left md:text-center">
+        <div className="relative z-20 flex flex-col items-center justify-center container text-center">
             <StevuthHeroAnimation />
             <AnimatedWrapper animation="fade-in-up" delay={4000}>
               <h1 className="text-3xl md:text-4xl font-headline font-bold tracking-tighter mt-8 mb-4 text-white">
