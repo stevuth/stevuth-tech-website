@@ -20,7 +20,10 @@ export function Footer() {
         <AnimatedWrapper>
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                  <div className="flex-shrink-0">
-                    <Logo isDark={true} />
+                    <Link href="/" className="flex items-center gap-2 text-lg font-bold text-white hover:text-accent transition-colors">
+                        <Logo isDark={true} />
+                        <span>Stevuth Tech</span>
+                    </Link>
                 </div>
                 
                 <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-center md:text-left">
