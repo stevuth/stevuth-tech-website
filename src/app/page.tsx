@@ -86,16 +86,6 @@ const benefits = [
     description: "Designed to turn visitors into paying customers.",
   },
   {
-    icon: <Globe className="h-10 w-10 text-accent" />,
-    title: "Trusted by Businesses",
-    description: "From startups to growing brands worldwide.",
-  },
-  {
-    icon: <ShieldCheck className="h-10 w-10 text-accent" />,
-    title: "Ongoing Support",
-    description: "We don’t just build, we stay to support you.",
-  },
-  {
     icon: <Search className="h-10 w-10 text-accent" />,
     title: "SEO Optimization",
     description: "Our websites rank high on Google.",
@@ -104,6 +94,16 @@ const benefits = [
     icon: <Building className="h-10 w-10 text-accent" />,
     title: "Google Business Profile",
     description: "We register your business on Google so customers can easily find you.",
+  },
+    {
+    icon: <Globe className="h-10 w-10 text-accent" />,
+    title: "Trusted by Businesses",
+    description: "From startups to growing brands worldwide.",
+  },
+  {
+    icon: <ShieldCheck className="h-10 w-10 text-accent" />,
+    title: "Ongoing Support",
+    description: "We don’t just build, we stay to support you.",
   },
 ];
 
