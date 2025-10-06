@@ -344,14 +344,14 @@ export default async function Home() {
                 delay={index * 150}
               >
                 <Card className="text-center bg-background hover:shadow-xl transition-all duration-300 hover:scale-105 animated-border">
-                  <CardHeader>
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 mb-4">
-                      {React.cloneElement(benefit.icon, { className: 'h-10 w-10 text-accent' })}
+                  <CardHeader className="p-4">
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 mb-3">
+                      {React.cloneElement(benefit.icon, { className: 'h-8 w-8 text-accent' })}
                     </div>
-                    <CardTitle className="text-xl font-bold text-foreground">{benefit.title}</CardTitle>
+                    <CardTitle className="text-lg font-bold text-foreground">{benefit.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{benefit.description}</p>
+                  <CardContent className="p-4 pt-0">
+                    <p className="text-muted-foreground text-sm">{benefit.description}</p>
                   </CardContent>
                 </Card>
               </AnimatedWrapper>
