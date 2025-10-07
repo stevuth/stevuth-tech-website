@@ -83,67 +83,64 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
         <HamburgerIcon />
       </Button>
 
-      <div
-        className={cn(
-          "fixed inset-0 z-50 transition-opacity duration-300",
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        )}
-      >
-        {/* Backdrop */}
-        <div
-          className="absolute inset-0 bg-background"
-          onClick={() => setIsOpen(false)}
-        />
-        
-        {/* Menu Panel */}
-        <div
-          className={cn(
-            "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-300 ease-in-out",
-            isOpen ? "translate-x-0" : "translate-x-full"
-          )}
-        >
-          <div className="h-full flex flex-col bg-background p-6 shadow-2xl">
-            <div className="flex items-center justify-between mb-12">
-              <Link href="/" className="flex items-center gap-2 text-lg font-bold">
-                <Logo />
-                <span className="text-foreground">Stevuth Tech</span>
-              </Link>
-              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-10 w-10 rounded-full text-foreground hover:bg-foreground/10">
-                <X className="h-6 w-6" />
-                <span className="sr-only">Close menu</span>
-              </Button>
-            </div>
-
-            <nav className="flex flex-col flex-grow">
-              {navLinks.map((link, index) => (
-                <MobileNavLink href={link.href} key={link.href} delay={200 + index * 40}>
-                  {link.label}
-                </MobileNavLink>
-              ))}
-            </nav>
-
-            <div className="mt-auto pt-6">
-              <Button asChild size="lg" className="w-full bg-accent text-accent-foreground rounded-full glowing-cta">
-                  <Link href="/contact">Contact Us</Link>
-              </Button>
-               {!loading && user && (
-                <Button
-                  variant="ghost"
-                  onClick={() => {
-                    handleLogout();
-                    setIsOpen(false);
-                  }}
-                  className={cn(
-                    "w-full justify-center text-md font-bold p-0 h-auto mt-4 text-muted-foreground hover:text-destructive transition-all duration-300",
-                  )}
-                >
-                  <LogOut className="mr-2 h-5 w-5" /> Logout
+      {isOpen && (
+        <div className="fixed inset-0 z-50 h-full w-full">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-background transition-opacity duration-300"
+            onClick={() => setIsOpen(false)}
+          />
+          
+          {/* Menu Panel */}
+          <div
+            className={cn(
+              "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-300 ease-in-out",
+              isOpen ? "translate-x-0" : "translate-x-full"
+            )}
+          >
+            <div className="h-full flex flex-col bg-background p-6 shadow-2xl">
+              <div className="flex items-center justify-between mb-12">
+                <Link href="/" className="flex items-center gap-2 text-lg font-bold">
+                  <Logo />
+                  <span className="text-foreground">Stevuth Tech</span>
+                </Link>
+                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-10 w-10 rounded-full text-foreground hover:bg-foreground/10">
+                  <X className="h-6 w-6" />
+                  <span className="sr-only">Close menu</span>
                 </Button>
-              )}
+              </div>
+
+              <nav className="flex flex-col flex-grow">
+                {navLinks.map((link, index) => (
+                  <MobileNavLink href={link.href} key={link.href} delay={200 + index * 40}>
+                    {link.label}
+                  </MobileNavLink>
+                ))}
+              </nav>
+
+              <div className="mt-auto pt-6">
+                <Button asChild size="lg" className="w-full bg-accent text-accent-foreground rounded-full glowing-cta">
+                    <Link href="/contact">Contact Us</Link>
+                </Button>
+                {!loading && user && (
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      handleLogout();
+                      setIsOpen(false);
+                    }}
+                    className={cn(
+                      "w-full justify-center text-md font-bold p-0 h-auto mt-4 text-muted-foreground hover:text-destructive transition-all duration-300",
+                    )}
+                  >
+                    <LogOut className="mr-2 h-5 w-5" /> Logout
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
