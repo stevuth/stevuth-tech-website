@@ -85,18 +85,20 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
 
       <div
         className={cn(
-          "fixed inset-0 z-40 transition-opacity duration-300",
+          "fixed inset-0 z-50 transition-opacity duration-300",
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
       >
+        {/* Backdrop */}
         <div
           className="absolute inset-0 bg-background"
           onClick={() => setIsOpen(false)}
         />
         
+        {/* Menu Panel */}
         <div
           className={cn(
-            "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-300 ease-in-out z-50",
+            "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-300 ease-in-out",
             isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
