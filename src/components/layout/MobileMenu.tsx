@@ -91,7 +91,7 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
         
