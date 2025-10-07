@@ -7,14 +7,14 @@ import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/Logo';
 import { cn } from '@/lib/utils';
-import { X, LogOut } from 'lucide-react';
+import { X, LogOut, Home, Users, Briefcase, Tag, FileText, Mail, HelpCircle } from 'lucide-react';
 import type { User } from 'firebase/auth';
 
 const HamburgerIcon = () => (
   <div className="flex flex-col justify-around w-6 h-6">
-    <div className="h-0.5 w-full bg-current rounded-full" />
-    <div className="h-0.5 w-full bg-current rounded-full" />
-    <div className="h-0.5 w-full bg-current rounded-full" />
+    <div className="h-0.5 w-full bg-current rounded-full transition-transform duration-300" />
+    <div className="h-0.5 w-full bg-current rounded-full transition-opacity duration-300" />
+    <div className="h-0.5 w-full bg-current rounded-full transition-transform duration-300" />
   </div>
 );
 
@@ -24,6 +24,16 @@ interface MobileMenuProps {
   loading: boolean;
   handleLogout: () => void;
 }
+
+const navIcons: { [key: string]: React.ReactElement } = {
+  '/': <Home className="h-5 w-5" />,
+  '/about': <Users className="h-5 w-5" />,
+  '/services': <Briefcase className="h-5 w-5" />,
+  '/pricing': <Tag className="h-5 w-5" />,
+  '/blog': <FileText className="h-5 w-5" />,
+  '/contact': <Mail className="h-5 w-5" />,
+  '/faq': <HelpCircle className="h-5 w-5" />,
+};
 
 export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,13 +60,19 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
       <Link
         href={href}
         className={cn(
-          "text-2xl font-bold text-white transition-all duration-300 hover:text-accent py-3 w-full text-left transform-gpu",
-          isActive ? "text-accent" : "",
-          isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+          "group flex items-center gap-4 text-xl font-bold tracking-wider text-foreground transition-all duration-300 py-3 w-full text-left transform-gpu",
+          isActive ? "text-accent" : "hover:text-accent",
+          isOpen ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
         )}
         style={{ transitionDelay: `${isOpen ? delay : 0}ms` }}
       >
-        {children}
+        {navIcons[href] || <div className="w-5 h-5" />}
+        <span className={cn(
+            "relative after:absolute after:bottom-[-2px] after:left-0 after:h-[2px] after:w-full after:bg-accent after:origin-center after:scale-x-0 after:transition-transform group-hover:after:scale-x-100",
+            isActive ? "after:scale-x-100": ""
+        )}>
+            {children}
+        </span>
       </Link>
     );
   };
@@ -69,30 +85,30 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
 
       <div
         className={cn(
-          "fixed inset-0 z-50 transition-opacity duration-300",
+          "fixed inset-0 z-50 transition-opacity duration-500",
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/30 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
         
         {/* Menu Panel */}
         <div
           className={cn(
-            "fixed inset-y-0 left-0 w-full max-w-sm transform-gpu transition-transform duration-500 ease-in-out",
-            isOpen ? "translate-x-0" : "-translate-x-full"
+            "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-500 ease-in-out",
+            isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="h-full flex flex-col animated-gradient p-6">
-            <div className="flex items-center justify-between mb-8">
-              <Link href="/" className="flex items-center gap-2 text-lg font-bold text-white">
+          <div className="h-full flex flex-col bg-slate-100/80 dark:bg-black/80 backdrop-blur-xl p-6 shadow-2xl">
+            <div className="flex items-center justify-between mb-12">
+              <Link href="/" className="flex items-center gap-2 text-lg font-bold">
                 <Logo />
-                <span>Stevuth Tech</span>
+                <span className="text-foreground">Stevuth Tech</span>
               </Link>
-              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-10 w-10 rounded-full text-white">
+              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-10 w-10 rounded-full text-foreground hover:bg-foreground/10">
                 <X className="h-6 w-6" />
                 <span className="sr-only">Close menu</span>
               </Button>
@@ -100,14 +116,17 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
 
             <nav className="flex flex-col flex-grow">
               {navLinks.map((link, index) => (
-                <MobileNavLink href={link.href} key={link.href} delay={100 + index * 50}>
+                <MobileNavLink href={link.href} key={link.href} delay={200 + index * 40}>
                   {link.label}
                 </MobileNavLink>
               ))}
             </nav>
 
-            <div className="mt-auto border-t border-white/10 pt-6">
-              {!loading && user && (
+            <div className="mt-auto pt-6">
+              <Button asChild size="lg" className="w-full bg-accent text-accent-foreground rounded-full glowing-cta">
+                  <Link href="/contact">Contact Us</Link>
+              </Button>
+               {!loading && user && (
                 <Button
                   variant="ghost"
                   onClick={() => {
@@ -115,12 +134,10 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
                     setIsOpen(false);
                   }}
                   className={cn(
-                    "w-full justify-start text-xl font-bold p-0 h-auto text-white hover:text-destructive transition-all duration-300",
-                    isOpen ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+                    "w-full justify-center text-md font-bold p-0 h-auto mt-4 text-muted-foreground hover:text-destructive transition-all duration-300",
                   )}
-                   style={{ transitionDelay: `${isOpen ? 100 + navLinks.length * 50 : 0}ms` }}
                 >
-                  <LogOut className="mr-4 h-6 w-6" /> Logout
+                  <LogOut className="mr-2 h-5 w-5" /> Logout
                 </Button>
               )}
             </div>
