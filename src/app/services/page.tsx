@@ -54,7 +54,7 @@ const serviceCategories = [
         id: "landing-page-design",
         title: "Landing Page Design",
         description: "We design focused, high-converting landing pages built for campaigns, product launches, and lead generation, turning visitors into customers.",
-        imageUrl: "/landing.jpg",
+        imageUrl: "/landing.jpg?v=2",
         aiHint: "website landing page",
       },
       {

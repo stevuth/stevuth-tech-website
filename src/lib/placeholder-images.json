@@ -42,7 +42,7 @@
       "hint": "corporate building"
     },
     "landingPage": {
-      "src": "/landing.jpg",
+      "src": "/landing.jpg?v=2",
       "hint": "website landing page"
     },
     "webApplication": {
