@@ -45,12 +45,14 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
     } else {
       document.body.classList.remove('noscroll');
     }
+    // Cleanup function to ensure the class is removed on component unmount
     return () => {
       document.body.classList.remove('noscroll');
     };
   }, [isOpen]);
 
   useEffect(() => {
+    // Close menu on route change
     setIsOpen(false);
   }, [pathname]);
 
@@ -82,7 +84,10 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
       </Button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 h-full w-full bg-background" aria-modal="true">
+        <div 
+          className="fixed inset-0 z-50 h-full w-full bg-background" 
+          aria-modal="true"
+        >
           <div className="flex h-full flex-col p-6 shadow-2xl">
             <div className="flex items-center justify-between mb-12">
               <Link href="/" className="flex items-center gap-2 text-lg font-bold">
