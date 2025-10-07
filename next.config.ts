@@ -61,6 +61,21 @@ const nextConfig: NextConfig = {
       serverActionsBodySizeLimit: '2mb',
     },
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'stevuthtech.com',
+          },
+        ],
+        destination: 'https://www.stevuthtech.com/:path*',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
