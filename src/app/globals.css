@@ -87,6 +87,9 @@
   .dark p, .dark div, .dark span, .dark li, .dark a {
       color: hsl(var(--muted-foreground));
   }
+  body.noscroll {
+    overflow: hidden !important;
+  }
 }
 
 @layer utilities {
@@ -309,3 +312,5 @@
     opacity: 1;
   }
 }
+
+    

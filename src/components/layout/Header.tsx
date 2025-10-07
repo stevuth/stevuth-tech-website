@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LogOut } from 'lucide-react';
+import { LogOut, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/Logo';
 import { cn } from '@/lib/utils';
@@ -22,6 +22,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { MobileMenu } from './MobileMenu';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -35,6 +36,7 @@ const navLinks = [
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === '/';
   const { user, loading } = useAuth();
@@ -59,6 +61,13 @@ export function Header() {
       }
     };
   }, [isHomePage]);
+  
+  useEffect(() => {
+    // Close mobile menu on route change
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
+  }, [pathname]);
 
 
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
@@ -76,7 +85,7 @@ export function Header() {
   };
   
   const headerClasses = cn(
-    'fixed top-0 z-50 w-full transition-all duration-300',
+    'fixed top-0 z-40 w-full transition-all duration-300', // z-40 to be under menu
     isHomePage && !isScrolled
       ? 'bg-transparent'
       : 'bg-background/80 shadow-md backdrop-blur-sm'
@@ -87,45 +96,62 @@ export function Header() {
   };
 
   return (
-    <header className={cn(headerClasses, 'group/header')}>
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2">
-            <Logo />
-        </Link>
-        
-        <nav className={cn("hidden items-center space-x-6 md:flex")}>
-          {navLinks.map((link) => (
-            <NavLink key={link.href} href={link.href}>
-              {link.label}
-            </NavLink>
-          ))}
-           {!loading && user && isAdminRoute && (
-             <AlertDialog>
-                <AlertDialogTrigger asChild>
-                  <Button variant="ghost" size="icon" className="text-white hover:text-destructive hover:bg-destructive/10">
-                    <LogOut />
-                  </Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>Are you sure you want to log out?</AlertDialogTitle>
-                    <AlertDialogDescription>
-                      You will be returned to the login page.
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={handleLogout} className="bg-destructive hover:bg-destructive/90">Log Out</AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-           )}
-        </nav>
+    <>
+      <header className={cn(headerClasses, 'group/header')}>
+        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+          <Link href="/" className="flex items-center gap-2">
+              <Logo />
+          </Link>
+          
+          <nav className={cn("hidden items-center space-x-6 md:flex")}>
+            {navLinks.map((link) => (
+              <NavLink key={link.href} href={link.href}>
+                {link.label}
+              </NavLink>
+            ))}
+            {!loading && user && isAdminRoute && (
+              <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button variant="ghost" size="icon" className="text-white hover:text-destructive hover:bg-destructive/10">
+                      <LogOut />
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>Are you sure you want to log out?</AlertDialogTitle>
+                      <AlertDialogDescription>
+                        You will be returned to the login page.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction onClick={handleLogout} className="bg-destructive hover:bg-destructive/90">Log Out</AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
+            )}
+          </nav>
 
-        <div className="md:hidden">
-            {/* MobileMenu has been removed */}
+          <div className="md:hidden">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-white"
+                aria-label="Open menu"
+              >
+                <Menu className="h-6 w-6" />
+              </Button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      <MobileMenu 
+        isOpen={isMenuOpen} 
+        setIsOpen={setIsMenuOpen} 
+        navLinks={navLinks} 
+      />
+    </>
   );
 }
+
+    
