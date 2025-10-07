@@ -12,9 +12,9 @@ import type { User } from 'firebase/auth';
 
 const HamburgerIcon = () => (
   <div className="flex flex-col justify-around w-6 h-6">
-    <div className="h-0.5 w-full bg-current rounded-full transition-transform duration-300" />
-    <div className="h-0.5 w-full bg-current rounded-full transition-opacity duration-300" />
-    <div className="h-0.5 w-full bg-current rounded-full transition-transform duration-300" />
+    <div className="h-0.5 w-full bg-current rounded-full" />
+    <div className="h-0.5 w-full bg-current rounded-full" />
+    <div className="h-0.5 w-full bg-current rounded-full" />
   </div>
 );
 
@@ -85,24 +85,24 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
 
       <div
         className={cn(
-          "fixed inset-0 z-50 transition-opacity duration-500",
+          "fixed inset-0 z-40 transition-opacity duration-300",
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-black/95 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
         
         {/* Menu Panel */}
         <div
           className={cn(
-            "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-500 ease-in-out",
+            "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-300 ease-in-out z-50",
             isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="h-full flex flex-col bg-slate-100/80 dark:bg-black/80 backdrop-blur-xl p-6 shadow-2xl">
+          <div className="h-full flex flex-col bg-background/90 backdrop-blur-xl p-6 shadow-2xl">
             <div className="flex items-center justify-between mb-12">
               <Link href="/" className="flex items-center gap-2 text-lg font-bold">
                 <Logo />
