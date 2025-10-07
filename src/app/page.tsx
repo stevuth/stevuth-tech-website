@@ -110,7 +110,7 @@ const benefits = [
 const homePackages = [
   {
     title: "Starter Package",
-    price: "₦100,000",
+    price: "₦110,000",
     priceUsd: "$70",
     description: "For individuals & very small businesses.",
     features: [
@@ -127,7 +127,7 @@ const homePackages = [
   },
   {
     title: "Standard Package",
-    price: "₦200,000",
+    price: "₦210,000",
     priceUsd: "$135",
     description: "Best for growing businesses.",
     features: [
@@ -146,7 +146,7 @@ const homePackages = [
   },
   {
     title: "Premium Package",
-    price: "₦350,000",
+    price: "₦360,000",
     priceUsd: "$240",
     description: "Perfect for e-commerce businesses.",
     features: [

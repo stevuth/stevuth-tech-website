@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const packages = [
   {
     title: "Starter Package",
-    price: "₦100,000",
+    price: "₦110,000",
     priceUsd: "$70",
     description: "For individuals & very small businesses.",
     features: [
@@ -38,7 +38,7 @@ const packages = [
   },
   {
     title: "Standard Package",
-    price: "₦200,000",
+    price: "₦210,000",
     priceUsd: "$135",
     description: "Best for growing businesses.",
     features: [
@@ -58,7 +58,7 @@ const packages = [
   },
   {
     title: "Premium Package",
-    price: "₦350,000",
+    price: "₦360,000",
     priceUsd: "$240",
     description: "Perfect for e-commerce businesses.",
     features: [
@@ -79,7 +79,7 @@ const packages = [
   },
   {
     title: "Pro Package",
-    price: "₦800,000",
+    price: "₦950,000",
     priceUsd: "$550",
     description: "For startups & enterprises needing advanced solutions.",
     features: [
@@ -131,7 +131,7 @@ export default function PricingPage() {
         <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold mt-4">Website Development Pricing</h1>
-            <p className="mt-4 text-base md:text-lg max-w-3xl text-muted-foreground">
+            <p className="mt-4 text-base md:text-lg max-w-3xl text-accent">
               Affordable, transparent pricing from the best web development agency in Nigeria. Let's build something amazing.
             </p>
           </AnimatedWrapper>
