@@ -53,7 +53,7 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
-  
+
   const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode; }) => {
     const isActive = pathname === href;
     return (
