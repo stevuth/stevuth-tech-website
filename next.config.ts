@@ -68,10 +68,10 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: 'host',
-            value: 'stevuthtech.com',
+            value: 'www.stevuthtech.com',
           },
         ],
-        destination: 'https://www.stevuthtech.com/:path*',
+        destination: 'https://stevuthtech.com/:path*',
         permanent: true,
       },
     ]

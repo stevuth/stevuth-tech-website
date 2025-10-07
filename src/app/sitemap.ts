@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getPosts } from '@/lib/blog-data';
  
-const siteUrl = "https://www.stevuthtech.com";
+const siteUrl = "https://stevuthtech.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [

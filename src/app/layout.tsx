@@ -21,7 +21,7 @@ const fontInter = Inter({
   variable: '--font-inter',
 });
 
-const siteUrl = "https://www.stevuthtech.com";
+const siteUrl = "https://stevuthtech.com";
 const gaMeasurementId = "G-N8EY0EF9QL";
 
 const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => mod.Footer));
