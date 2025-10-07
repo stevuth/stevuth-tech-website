@@ -126,12 +126,12 @@ const createWhatsAppLink = (packageName: string) => {
 export default function PricingPage() {
   return (
     <div className="pt-16">
-      <section className="py-10 md:py-12 relative">
+      <section className="bg-primary text-primary-foreground py-10 md:py-12 relative">
         <BackButton />
         <div className="container px-4 md:px-6 text-left">
           <AnimatedWrapper>
-            <h1 className="text-3xl md:text-4xl font-headline font-bold mt-4">Website Development Pricing</h1>
-            <p className="mt-4 text-base md:text-lg max-w-3xl text-accent">
+            <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Website Development Pricing</h1>
+            <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
               Affordable, transparent pricing from the best web development agency in Nigeria. Let's build something amazing.
             </p>
           </AnimatedWrapper>
