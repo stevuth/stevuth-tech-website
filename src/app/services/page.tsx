@@ -61,7 +61,7 @@ const serviceCategories = [
         id: "web-application-development",
         title: "Web Application Development",
         description: "From dashboards to SaaS platforms, we develop dynamic web applications that offer seamless user experiences and advanced functionality.",
-        imageUrl: "/web app.jpg",
+        imageUrl: "/web app.jpg?v=2",
         aiHint: "dashboard analytics",
       },
     ]

@@ -46,7 +46,7 @@
       "hint": "website landing page"
     },
     "webApplication": {
-      "src": "/web app.jpg",
+      "src": "/web app.jpg?v=2",
       "hint": "dashboard analytics"
     },
     "uiUx": {
