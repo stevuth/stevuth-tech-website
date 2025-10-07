@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -44,13 +45,11 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
     } else {
       document.body.classList.remove('noscroll');
     }
-    // Cleanup function to remove the class if the component unmounts
     return () => {
       document.body.classList.remove('noscroll');
     };
   }, [isOpen]);
 
-  // Close menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
@@ -145,3 +144,5 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
     </>
   );
 }
+
+    
