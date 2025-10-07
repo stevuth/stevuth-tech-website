@@ -171,7 +171,7 @@ export function Header() {
                 <HamburgerIcon />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-full max-w-sm text-white flex flex-col animated-gradient p-0">
+            <SheetContent side="left" className="w-full max-w-sm text-white flex flex-col animated-gradient">
                <SheetTitle className="sr-only">Menu</SheetTitle>
                <div className="flex h-16 items-center justify-between px-4 border-b border-white/10">
                  <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-lg font-bold">
