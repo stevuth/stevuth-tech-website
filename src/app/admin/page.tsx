@@ -4,7 +4,7 @@
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, FileText, Edit, Trash2, Share2, Facebook, Twitter, Linkedin, MessageSquare } from "lucide-react";
+import { PlusCircle, FileText, Edit, Trash2, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import { getPosts, Post } from "@/lib/blog-data";
 import Link from "next/link";
 import { withAuth } from "@/lib/auth";
@@ -29,6 +29,23 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/hooks/use-toast";
 import { BackButton } from "@/components/layout/BackButton";
+
+const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    </svg>
+);
 
 
 function AdminPage() {
@@ -149,7 +166,7 @@ function AdminPage() {
                                   </DropdownMenuItem>
                                    <DropdownMenuItem asChild>
                                     <a href={`https://wa.me/?text=${shareText}%20${encodeURIComponent(postUrl)}`} data-action="share/whatsapp/share" target="_blank" rel="noopener noreferrer">
-                                      <MessageSquare className="mr-2 h-4 w-4" /> WhatsApp
+                                      <WhatsAppIcon className="mr-2 h-4 w-4" /> WhatsApp
                                     </a>
                                   </DropdownMenuItem>
                                 </DropdownMenuContent>
