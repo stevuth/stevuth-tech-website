@@ -74,7 +74,7 @@
       "hint": "mobile phone responsive"
     },
     "saas": {
-      "src": "/web saas.jpg",
+      "src": "/web saas.jpg?v=2",
       "hint": "saas platform interface"
     },
     "api": {

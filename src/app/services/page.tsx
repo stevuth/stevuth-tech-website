@@ -128,7 +128,7 @@ const serviceCategories = [
         id: "saas-development",
         title: "SaaS Development",
         description: "We build secure, scalable software-as-a-service platforms that empower businesses to deliver cloud-based products and services.",
-        imageUrl: "/web saas.jpg",
+        imageUrl: "/web saas.jpg?v=2",
         aiHint: "saas platform interface",
       },
       {
