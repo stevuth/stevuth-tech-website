@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { X, LogIn, LogOut } from 'lucide-react';
+import { X, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from '@/components/ui/sheet';
 import { Logo } from '@/components/Logo';
@@ -12,7 +12,6 @@ import { cn } from '@/lib/utils';
 import { useAuth } from '@/lib/auth';
 import { getAuth } from 'firebase/auth';
 import { app } from '@/lib/firebase';
-import { Separator } from '@/components/ui/separator';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -90,9 +89,9 @@ export function Header() {
   const MobileNavLink = ({ href, children, onClick, delay }: { href: string; children: React.ReactNode; onClick?: () => void; delay: number }) => {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
     const commonClasses = cn(
-        "relative text-2xl font-bold text-white transition-all duration-300 hover:text-accent py-3 w-full text-left px-6 transform-gpu",
+        "relative text-2xl font-bold text-white transition-all duration-300 hover:text-accent py-4 w-full text-left px-6 transform-gpu",
         "data-[state=open]:translate-x-0 data-[state=open]:opacity-100",
-        "data-[state=closed]:-translate-x-8 data-[state=closed]:opacity-0",
+        "data-[state=closed]:-translate-x-10 data-[state=closed]:opacity-0",
         isActive ? "text-accent" : ""
     );
   
@@ -172,37 +171,34 @@ export function Header() {
                 <HamburgerIcon />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-full max-w-sm bg-card p-0 text-white flex flex-col data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-left-48 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-left-48">
+            <SheetContent side="left" className="w-full max-w-sm p-0 text-white flex flex-col animated-gradient data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:slide-in-from-left-full data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:slide-out-to-left-full">
                <SheetTitle className="sr-only">Menu</SheetTitle>
-               <div className="flex h-16 items-center justify-between px-6 border-b border-white/20">
+               <div className="flex h-16 items-center justify-between px-4 border-b border-white/10">
                  <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-lg font-bold">
                     <Logo />
                     <span>Stevuth Tech</span>
                  </Link>
                   <SheetClose asChild>
-                    <Button variant="ghost" size="icon" className="h-12 w-12 rounded-full">
-                      <X className="h-8 w-8" />
+                    <Button variant="ghost" size="icon" className="h-10 w-10 rounded-full">
+                      <X className="h-6 w-6" />
                     </Button>
                   </SheetClose>
                 </div>
 
                 <nav className="flex flex-col pt-6" data-state={isOpen ? 'open' : 'closed'}>
                   {navLinks.map((link, index) => (
-                     <div key={link.href} className="flex flex-col">
-                      <MobileNavLink href={link.href} delay={150 + index * 50}>
-                        {link.label}
-                      </MobileNavLink>
-                      {index < navLinks.length - 1 && <Separator className="bg-white/20" />}
-                    </div>
+                    <MobileNavLink href={link.href} key={link.href} delay={200 + index * 50}>
+                      {link.label}
+                    </MobileNavLink>
                   ))}
                 </nav>
 
-                <div className="mt-auto p-6 border-t border-white/20" data-state={isOpen ? 'open' : 'closed'}>
+                <div className="mt-auto p-6 border-t border-white/10" data-state={isOpen ? 'open' : 'closed'}>
                    {!loading && user && (
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
-                          <Button variant="ghost" className="w-full justify-start text-2xl font-bold p-0 h-auto text-white hover:text-destructive transform-gpu data-[state=open]:translate-x-0 data-[state=open]:opacity-100 data-[state=closed]:-translate-x-8 data-[state=closed]:opacity-0" style={{ transitionDelay: `${150 + navLinks.length * 50}ms`}}>
-                            <LogOut className="mr-4"/> Logout
+                          <Button variant="ghost" className="w-full justify-start text-xl font-bold p-0 h-auto text-white hover:text-destructive transform-gpu data-[state=open]:translate-x-0 data-[state=open]:opacity-100 data-[state=closed]:-translate-x-10 data-[state=closed]:opacity-0" style={{ transitionDelay: `${200 + navLinks.length * 50}ms`}}>
+                            <LogOut className="mr-4 h-6 w-6"/> Logout
                           </Button>
                       </AlertDialogTrigger>
                       <AlertDialogContent>
