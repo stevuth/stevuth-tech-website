@@ -40,6 +40,7 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
   const pathname = usePathname();
 
   useEffect(() => {
+    // This effect handles locking the body scroll
     if (isOpen) {
       document.body.classList.add('noscroll');
     } else {
@@ -56,13 +57,13 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
     setIsOpen(false);
   }, [pathname]);
 
-  const MobileNavLink = ({ href, children, delay }: { href: string; children: React.ReactNode; delay: number }) => {
+  const MobileNavLink = ({ href, children }: { href: string; children: React.ReactNode; }) => {
     const isActive = pathname === href;
     return (
       <Link
         href={href}
         className={cn(
-          "group flex items-center gap-4 text-xl font-bold tracking-wider text-foreground transition-all duration-300 py-3 w-full text-left",
+          "group flex items-center gap-4 text-xl font-bold tracking-wider text-foreground transition-colors duration-300 py-3 w-full text-left",
           isActive ? "text-accent" : "hover:text-accent"
         )}
       >
@@ -85,62 +86,47 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
 
       {isOpen && (
         <div 
-          className="fixed inset-0 z-50 h-full w-full"
+          className="fixed inset-0 z-50 h-full w-full bg-background"
           aria-modal="true"
         >
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-background/95 backdrop-blur-sm transition-opacity duration-300"
-            onClick={() => setIsOpen(false)}
-          />
-          
-          {/* Menu Panel */}
-          <div
-            className={cn(
-              "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-300 ease-in-out bg-background",
-              isOpen ? "translate-x-0" : "translate-x-full"
-            )}
-            role="dialog"
-          >
-            <div className="h-full flex flex-col p-6 shadow-2xl">
-              <div className="flex items-center justify-between mb-12">
-                <Link href="/" className="flex items-center gap-2 text-lg font-bold">
-                  <Logo />
-                  <span className="text-foreground">Stevuth Tech</span>
-                </Link>
-                <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-10 w-10 rounded-full text-foreground hover:bg-foreground/10">
-                  <X className="h-6 w-6" />
-                  <span className="sr-only">Close menu</span>
-                </Button>
-              </div>
+          <div className="h-full flex flex-col p-6 shadow-2xl">
+            <div className="flex items-center justify-between mb-12">
+              <Link href="/" className="flex items-center gap-2 text-lg font-bold">
+                <Logo />
+                <span className="text-foreground">Stevuth Tech</span>
+              </Link>
+              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-10 w-10 rounded-full text-foreground hover:bg-foreground/10">
+                <X className="h-6 w-6" />
+                <span className="sr-only">Close menu</span>
+              </Button>
+            </div>
 
-              <nav className="flex flex-col flex-grow">
-                {navLinks.map((link, index) => (
-                  <MobileNavLink href={link.href} key={link.href} delay={200 + index * 40}>
-                    {link.label}
-                  </MobileNavLink>
-                ))}
-              </nav>
+            <nav className="flex flex-col flex-grow">
+              {navLinks.map((link) => (
+                <MobileNavLink href={link.href} key={link.href}>
+                  {link.label}
+                </MobileNavLink>
+              ))}
+            </nav>
 
-              <div className="mt-auto pt-6">
-                <Button asChild size="lg" className="w-full bg-accent text-accent-foreground rounded-full glowing-cta">
-                    <Link href="/contact">Contact Us</Link>
+            <div className="mt-auto pt-6">
+              <Button asChild size="lg" className="w-full bg-accent text-accent-foreground rounded-full glowing-cta">
+                  <Link href="/contact">Contact Us</Link>
+              </Button>
+              {!loading && user && (
+                <Button
+                  variant="ghost"
+                  onClick={() => {
+                    handleLogout();
+                    setIsOpen(false);
+                  }}
+                  className={cn(
+                    "w-full justify-center text-md font-bold p-0 h-auto mt-4 text-muted-foreground hover:text-destructive transition-all duration-300",
+                  )}
+                >
+                  <LogOut className="mr-2 h-5 w-5" /> Logout
                 </Button>
-                {!loading && user && (
-                  <Button
-                    variant="ghost"
-                    onClick={() => {
-                      handleLogout();
-                      setIsOpen(false);
-                    }}
-                    className={cn(
-                      "w-full justify-center text-md font-bold p-0 h-auto mt-4 text-muted-foreground hover:text-destructive transition-all duration-300",
-                    )}
-                  >
-                    <LogOut className="mr-2 h-5 w-5" /> Logout
-                  </Button>
-                )}
-              </div>
+              )}
             </div>
           </div>
         </div>
