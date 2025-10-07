@@ -34,7 +34,7 @@ export function ShareButtons({ post, className }: ShareButtonsProps) {
     {
       platform: 'Facebook',
       icon: <Facebook className="h-5 w-5" />,
-      url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`,
+      url: `https://www.facebook.com/sharer/sharer.php?href=${encodeURIComponent(postUrl)}`,
     },
     {
       platform: 'Twitter / X',

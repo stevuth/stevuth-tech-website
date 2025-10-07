@@ -138,7 +138,7 @@ function AdminPage() {
                                   </Button>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent>
-                                  <DropdownMenuItem onClick={createShareLink(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`)}>
+                                  <DropdownMenuItem onClick={createShareLink(`https://www.facebook.com/sharer/sharer.php?href=${encodeURIComponent(postUrl)}`)}>
                                     <Facebook className="mr-2 h-4 w-4" /> Facebook
                                   </DropdownMenuItem>
                                   <DropdownMenuItem onClick={createShareLink(`https://twitter.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${shareText}`)}>
