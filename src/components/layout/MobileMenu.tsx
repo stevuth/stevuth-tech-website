@@ -45,12 +45,14 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
     } else {
       document.body.classList.remove('noscroll');
     }
+    // Cleanup function to ensure the class is removed when the component unmounts
     return () => {
       document.body.classList.remove('noscroll');
     };
   }, [isOpen]);
 
   useEffect(() => {
+    // Close menu on route change
     setIsOpen(false);
   }, [pathname]);
 
@@ -60,11 +62,9 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
       <Link
         href={href}
         className={cn(
-          "group flex items-center gap-4 text-xl font-bold tracking-wider text-foreground transition-all duration-300 py-3 w-full text-left transform-gpu",
-          isActive ? "text-accent" : "hover:text-accent",
-          isOpen ? 'translate-x-0 opacity-100' : '-translate-x-8 opacity-0'
+          "group flex items-center gap-4 text-xl font-bold tracking-wider text-foreground transition-all duration-300 py-3 w-full text-left",
+          isActive ? "text-accent" : "hover:text-accent"
         )}
-        style={{ transitionDelay: `${isOpen ? delay : 0}ms` }}
       >
         {navIcons[href] || <div className="w-5 h-5" />}
         <span className={cn(
@@ -84,7 +84,10 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
       </Button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 h-full w-full">
+        <div 
+          className="fixed inset-0 z-50 h-full w-full"
+          aria-modal="true"
+        >
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-background/95 backdrop-blur-sm transition-opacity duration-300"
@@ -97,6 +100,7 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
               "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-300 ease-in-out bg-background",
               isOpen ? "translate-x-0" : "translate-x-full"
             )}
+            role="dialog"
           >
             <div className="h-full flex flex-col p-6 shadow-2xl">
               <div className="flex items-center justify-between mb-12">
@@ -144,5 +148,3 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
     </>
   );
 }
-
-    
