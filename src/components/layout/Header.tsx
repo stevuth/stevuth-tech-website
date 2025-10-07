@@ -87,17 +87,21 @@ export function Header() {
     );
   };
 
-  const MobileNavLink = ({ href, children, onClick }: { href: string; children: React.ReactNode; onClick?: () => void; }) => {
+  const MobileNavLink = ({ href, children, onClick, delay }: { href: string; children: React.ReactNode; onClick?: () => void; delay: number }) => {
     const isActive = pathname.startsWith(href) && (href !== '/' || pathname === '/');
     const commonClasses = cn(
-        "relative text-2xl font-bold text-white transition-all duration-300 hover:text-accent py-3 w-full text-left px-6",
+        "relative text-2xl font-bold text-white transition-all duration-300 hover:text-accent py-3 w-full text-left px-6 transform-gpu",
+        "data-[state=open]:translate-x-0 data-[state=open]:opacity-100",
+        "data-[state=closed]:-translate-x-8 data-[state=closed]:opacity-0",
         isActive ? "text-accent" : ""
     );
   
+    const style = { transitionDelay: `${delay}ms` };
+    
     if (onClick) {
       return (
          <SheetClose asChild>
-          <button onClick={onClick} className={commonClasses}>
+          <button onClick={onClick} className={commonClasses} style={style}>
               {children}
           </button>
         </SheetClose>
@@ -106,7 +110,7 @@ export function Header() {
 
     return (
         <SheetClose asChild>
-            <Link href={href} className={commonClasses}>
+            <Link href={href} className={commonClasses} style={style}>
                 {children}
             </Link>
         </SheetClose>
@@ -182,10 +186,10 @@ export function Header() {
                   </SheetClose>
                 </div>
 
-                <nav className="flex flex-col pt-6">
+                <nav className="flex flex-col pt-6" data-state={isOpen ? 'open' : 'closed'}>
                   {navLinks.map((link, index) => (
                      <div key={link.href} className="flex flex-col">
-                      <MobileNavLink href={link.href}>
+                      <MobileNavLink href={link.href} delay={150 + index * 50}>
                         {link.label}
                       </MobileNavLink>
                       {index < navLinks.length - 1 && <Separator className="bg-white/20" />}
@@ -193,11 +197,11 @@ export function Header() {
                   ))}
                 </nav>
 
-                <div className="mt-auto p-6 border-t border-white/20">
+                <div className="mt-auto p-6 border-t border-white/20" data-state={isOpen ? 'open' : 'closed'}>
                    {!loading && user && (
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
-                          <Button variant="ghost" className="w-full justify-start text-2xl font-bold p-0 h-auto text-white hover:text-destructive">
+                          <Button variant="ghost" className="w-full justify-start text-2xl font-bold p-0 h-auto text-white hover:text-destructive transform-gpu data-[state=open]:translate-x-0 data-[state=open]:opacity-100 data-[state=closed]:-translate-x-8 data-[state=closed]:opacity-0" style={{ transitionDelay: `${150 + navLinks.length * 50}ms`}}>
                             <LogOut className="mr-4"/> Logout
                           </Button>
                       </AlertDialogTrigger>
