@@ -41,16 +41,18 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('noscroll');
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.classList.remove('noscroll');
     }
+    // Cleanup function to remove the class if the component unmounts
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.classList.remove('noscroll');
     };
   }, [isOpen]);
 
   useEffect(() => {
+    // Close menu on route change
     setIsOpen(false);
   }, [pathname]);
 
@@ -91,7 +93,7 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+          className="absolute inset-0 bg-background"
           onClick={() => setIsOpen(false)}
         />
         
