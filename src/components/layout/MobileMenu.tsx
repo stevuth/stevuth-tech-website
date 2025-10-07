@@ -45,14 +45,12 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
     } else {
       document.body.classList.remove('noscroll');
     }
-    // Cleanup function to remove the class if the component unmounts
     return () => {
       document.body.classList.remove('noscroll');
     };
   }, [isOpen]);
 
   useEffect(() => {
-    // Close menu on route change
     setIsOpen(false);
   }, [pathname]);
 
@@ -91,20 +89,18 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
       >
-        {/* Backdrop */}
         <div
           className="absolute inset-0 bg-background"
           onClick={() => setIsOpen(false)}
         />
         
-        {/* Menu Panel */}
         <div
           className={cn(
             "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-300 ease-in-out z-50",
             isOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
-          <div className="h-full flex flex-col bg-background/90 backdrop-blur-xl p-6 shadow-2xl">
+          <div className="h-full flex flex-col bg-background p-6 shadow-2xl">
             <div className="flex items-center justify-between mb-12">
               <Link href="/" className="flex items-center gap-2 text-lg font-bold">
                 <Logo />
