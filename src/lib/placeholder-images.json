@@ -82,7 +82,7 @@
       "hint": "api code integration"
     },
     "booking": {
-      "src": "/booking.jpg",
+      "src": "/booking.jpg?v=2",
       "hint": "online booking calendar"
     },
     "marketplace": {

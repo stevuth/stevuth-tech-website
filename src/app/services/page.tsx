@@ -142,7 +142,7 @@ const serviceCategories = [
         id: "booking-systems",
         title: "Booking & Reservation Systems",
         description: "We create reliable booking platforms for hotels, events, and service-based businesses with real-time scheduling and payment features.",
-        imageUrl: "/booking.jpg",
+        imageUrl: "/booking.jpg?v=2",
         aiHint: "online booking calendar",
       },
       {
