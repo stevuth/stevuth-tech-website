@@ -111,7 +111,7 @@ const homePackages = [
   {
     title: "Starter Package",
     price: "₦110,000",
-    priceUsd: "$70",
+    priceUsd: "$75",
     description: "For individuals & very small businesses.",
     features: [
       "1–3 pages (Home, About, Contact)",
@@ -128,7 +128,7 @@ const homePackages = [
   {
     title: "Standard Package",
     price: "₦210,000",
-    priceUsd: "$135",
+    priceUsd: "$143",
     description: "Best for growing businesses.",
     features: [
       "Up to 7 pages (Home, About, Services, Contact, etc.)",
@@ -147,7 +147,7 @@ const homePackages = [
   {
     title: "Premium Package",
     price: "₦360,000",
-    priceUsd: "$240",
+    priceUsd: "$245",
     description: "Perfect for e-commerce businesses.",
     features: [
       "Online store setup (unlimited products)",
