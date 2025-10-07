@@ -22,7 +22,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { MobileMenu } from './MobileMenu';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -124,7 +123,7 @@ export function Header() {
         </nav>
 
         <div className="md:hidden">
-            <MobileMenu navLinks={navLinks} user={user} loading={loading} handleLogout={handleLogout} />
+            {/* MobileMenu has been removed */}
         </div>
       </div>
     </header>
