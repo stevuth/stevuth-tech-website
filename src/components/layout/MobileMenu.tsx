@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -45,11 +44,13 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
     } else {
       document.body.classList.remove('noscroll');
     }
+    // Cleanup function to remove the class if the component unmounts
     return () => {
       document.body.classList.remove('noscroll');
     };
   }, [isOpen]);
 
+  // Close menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
@@ -87,18 +88,18 @@ export function MobileMenu({ navLinks, user, loading, handleLogout }: MobileMenu
         <div className="fixed inset-0 z-50 h-full w-full">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-background transition-opacity duration-300"
+            className="absolute inset-0 bg-background/95 backdrop-blur-sm transition-opacity duration-300"
             onClick={() => setIsOpen(false)}
           />
           
           {/* Menu Panel */}
           <div
             className={cn(
-              "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-300 ease-in-out",
+              "fixed inset-y-0 right-0 w-full max-w-sm transform-gpu transition-transform duration-300 ease-in-out bg-background",
               isOpen ? "translate-x-0" : "translate-x-full"
             )}
           >
-            <div className="h-full flex flex-col bg-background p-6 shadow-2xl">
+            <div className="h-full flex flex-col p-6 shadow-2xl">
               <div className="flex items-center justify-between mb-12">
                 <Link href="/" className="flex items-center gap-2 text-lg font-bold">
                   <Logo />
