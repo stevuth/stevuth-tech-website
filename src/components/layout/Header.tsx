@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LogOut, Menu, X } from 'lucide-react';
+import { LogOut, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/Logo';
 import { cn } from '@/lib/utils';
@@ -27,7 +27,27 @@ import { MobileMenu } from './MobileMenu';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'Who We Are' },
-  { href: '/services', label: 'What We Do' },
+  { 
+    href: '/services', 
+    label: 'What We Do',
+    subLinks: [
+      { href: '/services#custom-website-development', label: 'Custom Website Development' },
+      { href: '/services#ecommerce-development', label: 'E-Commerce Development' },
+      { href: '/services#business-website-design', label: 'Business Website Design' },
+      { href: '/services#landing-page-design', label: 'Landing Page Design' },
+      { href: '/services#web-application-development', label: 'Web Application Development' },
+      { href: '/services#ui-ux-design', label: 'UI/UX Design' },
+      { href: '/services#brand-identity-design', label: 'Brand Identity Design' },
+      { href: '/services#website-maintenance', label: 'Website Maintenance & Support' },
+      { href: '/services#speed-optimization', label: 'Website Speed Optimization' },
+      { href: '/services#seo-services', label: 'SEO Services' },
+      { href: '/services#mobile-optimization', label: 'Mobile Optimization' },
+      { href: '/services#saas-development', label: 'SaaS Development' },
+      { href: '/services#api-development', label: 'API Development & Integration' },
+      { href: '/services#booking-systems', label: 'Booking & Reservation Systems' },
+      { href: '/services#marketplace-development', label: 'Marketplace Development' },
+    ]
+  },
   { href: '/pricing', label: 'Pricing' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact Us' },
@@ -153,5 +173,3 @@ export function Header() {
     </>
   );
 }
-
-    

@@ -1,61 +1,80 @@
 
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '../Logo';
 import { cn } from '@/lib/utils';
 
+interface NavLink {
+  href: string;
+  label: string;
+  subLinks?: NavLink[];
+}
+
 interface MobileMenuProps {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
-  navLinks: { href: string; label: string }[];
+  navLinks: NavLink[];
 }
 
 const menuVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.3,
-      ease: 'easeInOut',
-    },
-  },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.3, ease: 'easeInOut' } },
 };
 
 const navContainerVariants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.2,
-    },
-  },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.2 } },
 };
 
 const navItemVariants = {
-  hidden: {
-    y: 20,
-    opacity: 0,
-  },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 260,
-      damping: 20,
-    },
-  },
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { type: 'spring', stiffness: 260, damping: 20 } },
 };
+
+const SubMenu = ({ item, setIsOpen }: { item: NavLink; setIsOpen: (isOpen: boolean) => void }) => {
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+
+  return (
+    <div className="flex flex-col items-center">
+      <div
+        className="flex items-center gap-2 cursor-pointer group relative text-2xl font-bold tracking-wide text-foreground transition-colors hover:text-accent"
+        onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
+      >
+        <span>{item.label}</span>
+        <motion.div animate={{ rotate: isSubMenuOpen ? 180 : 0 }}>
+          <ChevronDown className="h-6 w-6" />
+        </motion.div>
+      </div>
+      <AnimatePresence>
+        {isSubMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            className="flex flex-col items-center gap-4 mt-4 overflow-hidden"
+          >
+            {item.subLinks?.map((subLink) => (
+              <Link
+                key={subLink.href}
+                href={subLink.href}
+                onClick={() => setIsOpen(false)}
+                className="text-lg font-medium text-muted-foreground hover:text-accent"
+              >
+                {subLink.label}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
 
 export function MobileMenu({ isOpen, setIsOpen, navLinks }: MobileMenuProps) {
   useEffect(() => {
@@ -103,14 +122,18 @@ export function MobileMenu({ isOpen, setIsOpen, navLinks }: MobileMenuProps) {
             >
               {navLinks.map((link) => (
                 <motion.div key={link.href} variants={navItemVariants}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="group relative text-2xl font-bold tracking-wide text-foreground transition-colors hover:text-accent"
-                  >
-                    {link.label}
-                    <span className="absolute -bottom-1 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-accent transition-all duration-300 group-hover:w-full"></span>
-                  </Link>
+                  {link.subLinks ? (
+                     <SubMenu item={link} setIsOpen={setIsOpen} />
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="group relative text-2xl font-bold tracking-wide text-foreground transition-colors hover:text-accent"
+                    >
+                      {link.label}
+                      <span className="absolute -bottom-1 left-1/2 h-0.5 w-0 -translate-x-1/2 bg-accent transition-all duration-300 group-hover:w-full"></span>
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </motion.nav>
@@ -136,5 +159,3 @@ export function MobileMenu({ isOpen, setIsOpen, navLinks }: MobileMenuProps) {
     </AnimatePresence>
   );
 }
-
-    
