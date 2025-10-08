@@ -241,6 +241,7 @@
 
   .animated-border {
     --angle: 0deg;
+    border: 2px solid;
     border-image: conic-gradient(from var(--angle), hsl(var(--background)), hsl(var(--accent)) 0.1turn, hsl(var(--accent)) 0.15turn, hsl(var(--background)) 0.25turn) 30;
     animation: 5s rotate linear infinite;
   }
