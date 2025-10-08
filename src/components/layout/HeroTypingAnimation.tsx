@@ -24,9 +24,7 @@ export const HeroTypingAnimation = memo(() => {
          <TypeAnimation
           sequence={[
             5000,
-            "We build modern mobile-friendly websites that attract, engage, and convert visitors into paying customers.",
-            1000,
-            "No monthly fees, no hidden charges, just powerful websites designed to grow your business.",
+            "We build modern mobile-friendly websites that attract, engage, and convert visitors into paying customers. No monthly fees, no hidden charges, just powerful websites designed to grow your business.",
             1000,
           ]}
           wrapper="span"
