@@ -398,35 +398,35 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
             {featuredPosts.map((post, index) => (
               <AnimatedWrapper key={post.id} animation="fade-in-up" delay={index * 150}>
-                <Card className="overflow-hidden transition-shadow hover:shadow-xl text-left bg-card md:grid md:grid-cols-2">
-                  <div className="relative aspect-video md:aspect-auto">
+                <Card className="overflow-hidden transition-shadow hover:shadow-xl text-left bg-card grid grid-cols-3">
+                  <div className="relative aspect-video col-span-1">
                     <Link href={`/blog/${post.slug}`} className="block h-full">
                       <Image
                         src={post.imageUrl}
                         alt={post.title}
                         fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes="(max-width: 768px) 33vw, 50vw"
                         className="object-cover"
                         data-ai-hint={post.aiHint}
                       />
                     </Link>
                   </div>
-                  <div className="flex flex-col">
-                    <CardHeader className="p-6">
+                  <div className="flex flex-col col-span-2">
+                    <CardHeader className="p-4 md:p-6">
                       <Badge variant="secondary" className="mb-2 text-sm w-fit">{post.category}</Badge>
-                      <CardTitle className="text-xl leading-snug mb-2 font-bold">
+                      <CardTitle className="text-lg md:text-xl leading-snug font-bold">
                         <Link href={`/blog/${post.slug}`} className="text-primary-foreground hover:text-accent transition-colors">
                           {post.title}
                         </Link>
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="p-6 pt-0 flex-grow">
-                      <p className="text-muted-foreground text-sm line-clamp-3">{post.excerpt}</p>
+                    <CardContent className="p-4 md:p-6 pt-0 flex-grow">
+                      <p className="text-muted-foreground text-sm line-clamp-2 md:line-clamp-3">{post.excerpt}</p>
                     </CardContent>
-                    <CardFooter className="p-6 pt-0">
-                      <Button asChild variant="link" className="p-0 h-auto text-accent hover:text-accent/90">
+                    <CardFooter className="p-4 md:p-6 pt-0">
+                      <Button asChild variant="link" className="p-0 h-auto text-accent hover:text-accent/90 text-sm">
                         <Link href={`/blog/${post.slug}`}>
-                          Read Full Article <ArrowRight className="h-4 w-4 ml-2" />
+                          Read Full Article <ArrowRight className="h-4 w-4 ml-1" />
                         </Link>
                       </Button>
                     </CardFooter>
