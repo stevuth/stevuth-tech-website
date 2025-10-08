@@ -40,6 +40,9 @@ export function Footer() {
             <AnimatedWrapper delay={200}>
                 <p className="text-xs text-white/60">&copy; {new Date().getFullYear()} Stevuth Tech. All Rights Reserved.</p>
                 <p className="text-xs text-white/60 mt-1">We build. You shine.</p>
+                 <p className="text-xs text-white/60 mt-2">
+                    Developed by <a href="mailto:info@stevuthtech.com" className="font-semibold text-accent hover:underline">Stevuth Tech</a>
+                </p>
             </AnimatedWrapper>
         </div>
       </div>
