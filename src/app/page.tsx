@@ -396,12 +396,12 @@ export default async function Home() {
               Stay updated with our latest insights on technology, design, and business growth.
             </p>
           </AnimatedWrapper>
-          <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredPosts.map((post, index) => (
               <AnimatedWrapper key={post.id} animation="fade-in-up" delay={index * 150}>
-                <Card className="overflow-hidden transition-shadow hover:shadow-xl text-left bg-card md:grid md:grid-cols-3">
-                  <div className="relative aspect-video md:aspect-auto md:col-span-1">
-                    <Link href={`/blog/${post.slug}`} className="block h-full">
+                <Card className="h-full flex flex-col overflow-hidden transition-shadow hover:shadow-xl text-left bg-card">
+                  <CardHeader className="p-0">
+                    <Link href={`/blog/${post.slug}`} className="block relative aspect-video w-full">
                       <Image
                         src={post.imageUrl}
                         alt={post.title}
@@ -411,27 +411,23 @@ export default async function Home() {
                         data-ai-hint={post.aiHint}
                       />
                     </Link>
-                  </div>
-                  <div className="flex flex-col md:col-span-2">
-                    <CardHeader className="p-4 md:p-6">
-                      <Badge variant="secondary" className="mb-2 text-sm w-fit">{post.category}</Badge>
-                      <CardTitle className="text-lg md:text-xl leading-snug font-bold">
-                        <Link href={`/blog/${post.slug}`} className="text-primary-foreground hover:text-accent transition-colors">
-                          {post.title}
-                        </Link>
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="p-4 md:p-6 pt-0 flex-grow">
-                      <p className="text-muted-foreground text-sm line-clamp-2 md:line-clamp-3">{post.excerpt}</p>
-                    </CardContent>
-                    <CardFooter className="p-4 md:p-6 pt-0">
-                      <Button asChild variant="link" className="p-0 h-auto text-accent hover:text-accent/90 text-sm">
-                        <Link href={`/blog/${post.slug}`}>
-                          Read Full Article <ArrowRight className="h-4 w-4 ml-1" />
-                        </Link>
-                      </Button>
-                    </CardFooter>
-                  </div>
+                  </CardHeader>
+                  <CardContent className="flex-grow p-6">
+                    <Badge variant="secondary" className="mb-2">{post.category}</Badge>
+                    <CardTitle className="text-xl leading-snug mb-2 font-bold">
+                      <Link href={`/blog/${post.slug}`} className="text-primary-foreground hover:text-accent transition-colors">
+                        {post.title}
+                      </Link>
+                    </CardTitle>
+                    <p className="text-muted-foreground text-sm line-clamp-3">{post.excerpt}</p>
+                  </CardContent>
+                  <CardFooter className="p-6 pt-0">
+                    <Button asChild variant="link" className="p-0 h-auto text-accent hover:text-accent/90 text-sm">
+                      <Link href={`/blog/${post.slug}`}>
+                        Read Full Article <ArrowRight className="h-4 w-4 ml-1" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
                 </Card>
               </AnimatedWrapper>
             ))}
