@@ -398,20 +398,20 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 max-w-4xl mx-auto">
             {featuredPosts.map((post, index) => (
               <AnimatedWrapper key={post.id} animation="fade-in-up" delay={index * 150}>
-                <Card className="overflow-hidden transition-shadow hover:shadow-xl text-left bg-card grid grid-cols-3">
-                  <div className="relative aspect-video col-span-1">
+                <Card className="overflow-hidden transition-shadow hover:shadow-xl text-left bg-card md:grid md:grid-cols-3">
+                  <div className="relative aspect-video md:aspect-auto md:col-span-1">
                     <Link href={`/blog/${post.slug}`} className="block h-full">
                       <Image
                         src={post.imageUrl}
                         alt={post.title}
                         fill
-                        sizes="(max-width: 768px) 33vw, 50vw"
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover"
                         data-ai-hint={post.aiHint}
                       />
                     </Link>
                   </div>
-                  <div className="flex flex-col col-span-2">
+                  <div className="flex flex-col md:col-span-2">
                     <CardHeader className="p-4 md:p-6">
                       <Badge variant="secondary" className="mb-2 text-sm w-fit">{post.category}</Badge>
                       <CardTitle className="text-lg md:text-xl leading-snug font-bold">
