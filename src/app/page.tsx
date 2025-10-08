@@ -14,6 +14,7 @@ import imageData from '@/lib/placeholder-images.json';
 import { CardDescription } from '@/components/ui/card';
 import { Particle } from '@/components/layout/Particle';
 import { StevuthHeroAnimation } from '@/components/layout/StevuthHeroAnimation';
+import { HeroTypingAnimation } from '@/components/layout/HeroTypingAnimation';
 
 
 export const revalidate = 3600; // Revalidate every hour
@@ -185,17 +186,12 @@ export default async function Home() {
         </div>
         <div className="relative z-20 flex flex-col items-center justify-center container text-center">
             <StevuthHeroAnimation />
-            <AnimatedWrapper animation="fade-in-up" delay={4000}>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold tracking-tighter mt-8 mb-4 max-w-3xl mx-auto text-white">
-                Your Next Customer Is Online, Let’s Get Their Attention
-              </h1>
-              <p className="max-w-2xl text-md md:text-lg text-slate-200 mb-8 mx-auto">
-                We build modern mobile-friendly websites that attract engage and convert visitors into paying customers. No monthly fees, no hidden charges, just powerful websites designed to grow your business.
-              </p>
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-auto mx-auto">
+            <HeroTypingAnimation />
+            <AnimatedWrapper animation="fade-in-up" delay={18000}>
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground w-auto mx-auto mt-8">
                 <Link href="/contact">Start My Project</Link>
               </Button>
-          </AnimatedWrapper>
+            </AnimatedWrapper>
         </div>
       </section>
       
