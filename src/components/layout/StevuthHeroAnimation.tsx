@@ -13,8 +13,8 @@ export function StevuthHeroAnimation() {
         <text className="text-fill text-pulse" x="50%" y="40" dominantBaseline="middle" textAnchor="middle">STEVUTH</text>
         
         {/* Tech */}
-        <text className="text-tech" x="50%" y="105" dominantBaseline="middle" textAnchor="middle">TECH</text>
-        <text className="text-tech-fill text-pulse" x="50%" y="105" dominantBaseline="middle" textAnchor="middle">TECH</text>
+        <text className="text-tech" x="50%" y="115" dominantBaseline="middle" textAnchor="middle">TECH</text>
+        <text className="text-tech-fill text-pulse" x="50%" y="115" dominantBaseline="middle" textAnchor="middle">TECH</text>
       </svg>
     </AnimatedWrapper>
   );
