@@ -167,7 +167,7 @@ const homePackages = [
   },
 ];
 
-const whatsAppNumber = "2349016772065";
+const whatsAppNumber = "442079460123";
 
 const createWhatsAppLink = (packageName: string) => {
   const message = `Hello, I'm interested in the ${packageName}. Please provide more details.`;

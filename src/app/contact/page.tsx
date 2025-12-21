@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const phoneNumbers = [
-  { number: "+2349016772065" },
+  { number: "+442079460123" },
 ];
 
 export default function ContactPage() {
@@ -71,7 +71,7 @@ export default function ContactPage() {
                       <MessageCircle className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold">WhatsApp</h4>
-                        <Link href="https://wa.me/2349016772065" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
+                        <Link href="https://wa.me/442079460123" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
                             Chat with us
                         </Link>
                       </div>
