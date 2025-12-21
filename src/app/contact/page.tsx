@@ -7,9 +7,9 @@ import type { Metadata } from 'next';
 import { BackButton } from "@/components/layout/BackButton";
 
 export const metadata: Metadata = {
-  title: 'Contact The Best Web Development Agency in Nigeria',
-  description: 'Get in touch with Stevuth Tech, the best web development agency in Nigeria. Whether you are in Lagos or anywhere else, our team is ready to discuss your project.',
-  keywords: ["contact best web development agency Nigeria", "Stevuth Tech contact", "Lagos web developer contact", "website design inquiry Nigeria"],
+  title: 'Contact The Best Web Development Agency in the UK',
+  description: 'Get in touch with Stevuth Tech, the best web development agency in the UK. Whether you are in London or anywhere else, our team is ready to discuss your project.',
+  keywords: ["contact best web development agency UK", "Stevuth Tech contact", "London web developer contact", "website design inquiry UK"],
   alternates: {
     canonical: '/contact',
   },
@@ -28,7 +28,7 @@ export default function ContactPage() {
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Contact Us</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
-              We're here to help. Reach out to us with your questions or to start your project with the best tech company in Nigeria.
+              We're here to help. Reach out to us with your questions or to start your project with the best tech company in the UK.
             </p>
           </AnimatedWrapper>
         </div>

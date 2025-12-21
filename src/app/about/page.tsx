@@ -9,9 +9,9 @@ import imageData from '@/lib/placeholder-images.json';
 import { BackButton } from "@/components/layout/BackButton";
 
 export const metadata: Metadata = {
-  title: 'About The Best Web Development Agency in Nigeria | Stevuth Tech',
-  description: 'Discover the mission and values of Stevuth Tech, the best website development agency in Nigeria. Learn why top businesses in Lagos and beyond trust us for web solutions.',
-  keywords: ["about Stevuth Tech", "best web development agency Nigeria", "top tech company in Lagos", "our mission", "web design company profile"],
+  title: 'About The Best Web Development Agency in the UK | Stevuth Tech',
+  description: 'Discover the mission and values of Stevuth Tech, the best website development agency in the UK. Learn why top businesses in London and beyond trust us for web solutions.',
+  keywords: ["about Stevuth Tech", "best web development agency UK", "top tech company in London", "our mission", "web design company profile"],
   alternates: {
     canonical: '/about',
   },
@@ -71,7 +71,7 @@ export default function AboutPage() {
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">About Stevuth Tech</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
-              Learn about our journey, our purpose, and the values that drive us to be the best website development agency in Nigeria.
+              Learn about our journey, our purpose, and the values that drive us to be the best website development agency in the UK.
             </p>
           </AnimatedWrapper>
         </div>
@@ -84,7 +84,7 @@ export default function AboutPage() {
               <div className="relative aspect-video rounded-lg overflow-hidden shadow-2xl">
                 <Image
                   src={imageData.about.story.src}
-                  alt="Office of Stevuth Tech, the best website development agency in Nigeria"
+                  alt="Office of Stevuth Tech, the best website development agency in the UK"
                   fill
                   sizes="100vw"
                   priority

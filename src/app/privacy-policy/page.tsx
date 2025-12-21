@@ -4,8 +4,8 @@ import { BackButton } from "@/components/layout/BackButton";
 
 export const metadata: Metadata = {
   title: 'Privacy Policy - Stevuth Tech',
-  description: 'Read the privacy policy for Stevuth Tech. We are committed to protecting your personal data and respecting your privacy when you use our website and services in Nigeria.',
-  keywords: ["privacy policy", "data protection Nigeria", "user data", "Stevuth Tech privacy"],
+  description: 'Read the privacy policy for Stevuth Tech. We are committed to protecting your personal data and respecting your privacy when you use our website and services in the UK.',
+  keywords: ["privacy policy", "data protection UK", "user data", "Stevuth Tech privacy"],
   alternates: {
     canonical: '/privacy-policy',
   },

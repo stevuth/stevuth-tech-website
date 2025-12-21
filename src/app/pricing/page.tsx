@@ -10,9 +10,9 @@ import { Badge } from "@/components/ui/badge";
 import { BackButton } from "@/components/layout/BackButton";
 
 export const metadata: Metadata = {
-  title: 'Affordable Website Pricing in Nigeria | Stevuth Tech',
-  description: 'Explore website development pricing from the best agency in Nigeria. We offer transparent pricing for starter sites, e-commerce stores, and custom solutions in Lagos and beyond.',
-  keywords: ["website pricing Nigeria", "web design pricing Lagos", "e-commerce website cost Nigeria", "affordable websites Nigeria", "best web developer pricing"],
+  title: 'Affordable Website Pricing in the UK | Stevuth Tech',
+  description: 'Explore website development pricing from the best agency in the UK. We offer transparent pricing for starter sites, e-commerce stores, and custom solutions in London and beyond.',
+  keywords: ["website pricing UK", "web design pricing London", "e-commerce website cost UK", "affordable websites UK", "best web developer pricing"],
   alternates: {
     canonical: '/pricing',
   },
@@ -133,7 +133,7 @@ export default function PricingPage() {
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Website Development Pricing</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
-              Affordable, transparent pricing from the best web development agency in Nigeria. Let's build something amazing.
+              Affordable, transparent pricing from the best web development agency in the UK. Let's build something amazing.
             </p>
           </AnimatedWrapper>
         </div>

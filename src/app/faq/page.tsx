@@ -10,9 +10,9 @@ import type { Metadata } from 'next';
 import { BackButton } from "@/components/layout/BackButton";
 
 export const metadata: Metadata = {
-  title: 'FAQ - Best Web Development Agency in Nigeria',
-  description: 'Find answers to questions about services from the best web development agency in Nigeria. Learn about our process for custom design, e-commerce, and SEO for clients in Lagos and beyond.',
-  keywords: ["web development FAQ Nigeria", "e-commerce questions", "SEO services FAQ", "best website agency questions", "Stevuth Tech FAQ"],
+  title: 'FAQ - Best Web Development Agency in the UK',
+  description: 'Find answers to questions about services from the best web development agency in the UK. Learn about our process for custom design, e-commerce, and SEO for clients in London and beyond.',
+  keywords: ["web development FAQ UK", "e-commerce questions", "SEO services FAQ", "best website agency questions", "Stevuth Tech FAQ"],
   alternates: {
     canonical: '/faq',
   },

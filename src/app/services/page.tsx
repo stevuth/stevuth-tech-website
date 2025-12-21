@@ -9,15 +9,15 @@ import imageData from '@/lib/placeholder-images.json';
 import { BackButton } from "@/components/layout/BackButton";
 
 export const metadata: Metadata = {
-  title: 'Web Development Services in Nigeria by Stevuth Tech',
-  description: 'Explore expert web development services in Nigeria from Stevuth Tech. We offer custom websites, e-commerce, UI/UX design, and SEO to make you the best in your industry.',
+  title: 'Web Development Services in the UK by Stevuth Tech',
+  description: 'Explore expert web development services in the UK from Stevuth Tech. We offer custom websites, e-commerce, UI/UX design, and SEO to make you the best in your industry.',
   keywords: [
-    "web development services Nigeria",
+    "web development services UK",
     "custom website development",
-    "e-commerce development Nigeria",
-    "UI/UX design Lagos",
-    "SEO services Nigeria",
-    "best tech company in Nigeria for web services"
+    "e-commerce development UK",
+    "UI/UX design London",
+    "SEO services UK",
+    "best tech company in UK for web services"
   ],
   alternates: {
     canonical: '/services',
@@ -169,7 +169,7 @@ const ServiceSection = ({ service, index }: { service: (typeof serviceCategories
     },
     "areaServed": {
       "@type": "Country",
-      "name": "Nigeria"
+      "name": "United Kingdom"
     },
     "name": service.title,
     "description": service.description,
@@ -217,7 +217,7 @@ export default function ServicesPage() {
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Our Services</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
-              Expert solutions from Nigeria's best web development agency to build, brand, and boost your online presence.
+              Expert solutions from the UK's best web development agency to build, brand, and boost your online presence.
             </p>
           </AnimatedWrapper>
         </div>

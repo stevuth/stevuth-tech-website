@@ -20,17 +20,17 @@ import { HeroTypingAnimation } from '@/components/layout/HeroTypingAnimation';
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: 'Best Website Development Agency in Nigeria - Stevuth Tech',
-  description: 'As the best website development agency in Nigeria, Stevuth Tech offers custom web design, e-commerce solutions, and SEO services to help your business grow. Contact the top tech company in Lagos today.',
+  title: 'Best Website Development Agency in the UK - Stevuth Tech',
+  description: 'As the best website development agency in the UK, Stevuth Tech offers custom web design, e-commerce solutions, and SEO services to help your business grow. Contact the top tech company in London today.',
   keywords: [
-    "best website development agency in Nigeria",
-    "top tech company in Nigeria",
-    "web design Lagos",
-    "custom website development Nigeria",
-    "e-commerce developers in Nigeria",
-    "SEO services Lagos",
+    "best website development agency in UK",
+    "top tech company in UK",
+    "web design London",
+    "custom website development UK",
+    "e-commerce developers in UK",
+    "SEO services London",
     "Stevuth Tech",
-    "get a website in Nigeria",
+    "get a website in UK",
     "professional web designers"
   ],
   alternates: {
@@ -202,7 +202,7 @@ export default async function Home() {
               <div className="relative h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
                  <Image
                   src={imageData.home.meetStevuth.src}
-                  alt="Team collaboration at the best website development agency in Nigeria"
+                  alt="Team collaboration at the best website development agency in the UK"
                   fill
                   sizes="100vw"
                   priority

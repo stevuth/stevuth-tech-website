@@ -30,27 +30,27 @@ const Footer = dynamic(() => import('@/components/layout/Footer').then(mod => mo
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Best Website Development Agency in Nigeria - Stevuth Tech',
+    default: 'Best Website Development Agency in the UK - Stevuth Tech',
     template: '%s | Stevuth Tech',
   },
   verification: {
     google: 'google7cb1f9bd52be07f5.html',
   },
-  description: 'Stevuth Tech is the best website development agency in Nigeria, specializing in custom web design, e-commerce, and SEO. Partner with the top tech company in Lagos for growth.',
+  description: 'Stevuth Tech is the best website development agency in the UK, specializing in custom web design, e-commerce, and SEO. Partner with the top tech company in London for growth.',
   keywords: [
-    "best website development agency in Nigeria",
-    "best tech company in Nigeria",
-    "web design Nigeria",
-    "website developer in Lagos",
-    "e-commerce development Nigeria",
+    "best website development agency in UK",
+    "best tech company in UK",
+    "web design UK",
+    "website developer in London",
+    "e-commerce development UK",
     "Stevuth Tech",
-    "top web development companies in Nigeria",
-    "affordable web design Lagos",
-    "SEO services Nigeria"
+    "top web development companies in UK",
+    "affordable web design London",
+    "SEO services UK"
   ],
   openGraph: {
-    title: 'Best Website Development Agency in Nigeria - Stevuth Tech',
-    description: 'Looking for the best web development in Nigeria? Stevuth Tech, a top tech company in Lagos, builds high-performance websites that drive business growth.',
+    title: 'Best Website Development Agency in the UK - Stevuth Tech',
+    description: 'Looking for the best web development in the UK? Stevuth Tech, a top tech company in London, builds high-performance websites that drive business growth.',
     url: siteUrl,
     siteName: 'Stevuth Tech',
     images: [
@@ -58,16 +58,16 @@ export const metadata: Metadata = {
         url: 'https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg',
         width: 1200,
         height: 630,
-        alt: 'Stevuth Tech - Best Website Development Agency in Nigeria',
+        alt: 'Stevuth Tech - Best Website Development Agency in the UK',
       },
     ],
-    locale: 'en_NG',
+    locale: 'en_GB',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Website Development Agency in Nigeria - Stevuth Tech',
-    description: 'Looking for the best web development in Nigeria? Stevuth Tech, a top tech company in Lagos, builds high-performance websites that drive business growth.',
+    title: 'Best Website Development Agency in the UK - Stevuth Tech',
+    description: 'Looking for the best web development in the UK? Stevuth Tech, a top tech company in London, builds high-performance websites that drive business growth.',
     images: ['https://i.postimg.cc/pT2xGg4R/Whisk-beca591b52.jpg'],
   },
   robots: {

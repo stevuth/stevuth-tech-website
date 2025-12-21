@@ -12,9 +12,9 @@ import { BackButton } from "@/components/layout/BackButton";
 export const revalidate = 3600; // Revalidate every hour
 
 export const metadata: Metadata = {
-  title: 'Blog - Insights from The Best Tech Company in Nigeria',
-  description: 'Read articles from Stevuth Tech, the best tech company in Nigeria. Get insights on web development, SEO, and technology trends for businesses in Lagos and beyond.',
-  keywords: ["tech blog Nigeria", "web development Nigeria blog", "Stevuth Tech blog", "SEO tips", "Lagos tech scene"],
+  title: 'Blog - Insights from The Best Tech Company in the UK',
+  description: 'Read articles from Stevuth Tech, the best tech company in the UK. Get insights on web development, SEO, and technology trends for businesses in London and beyond.',
+  keywords: ["tech blog UK", "web development UK blog", "Stevuth Tech blog", "SEO tips", "London tech scene"],
   alternates: {
     canonical: '/blog',
   },
@@ -65,7 +65,7 @@ export default async function BlogPage() {
           <AnimatedWrapper>
             <h1 className="text-3xl md:text-4xl font-headline font-bold text-white mt-4">Our Blog</h1>
             <p className="mt-4 text-base md:text-lg max-w-3xl text-primary-foreground/80">
-              Insights, tutorials, and news from the forefront of technology and design in Nigeria.
+              Insights, tutorials, and news from the forefront of technology and design in the UK.
             </p>
           </AnimatedWrapper>
         </div>
