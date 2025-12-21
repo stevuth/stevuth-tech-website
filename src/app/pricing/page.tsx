@@ -22,7 +22,6 @@ const packages = [
   {
     title: "Starter Package",
     price: "Contact for Price",
-    priceUsd: "",
     description: "For individuals & very small businesses.",
     features: [
       "1–3 pages (Home, About, Contact)",
@@ -40,7 +39,6 @@ const packages = [
   {
     title: "Standard Package",
     price: "Contact for Price",
-    priceUsd: "",
     description: "Best for growing businesses.",
     features: [
       "Up to 7 pages (Home, About, Services, Contact, etc.)",
@@ -60,7 +58,6 @@ const packages = [
   {
     title: "Premium Package",
     price: "Contact for Price",
-    priceUsd: "",
     description: "Perfect for e-commerce businesses.",
     features: [
       "Online store setup (unlimited products)",
@@ -81,7 +78,6 @@ const packages = [
   {
     title: "Pro Package",
     price: "Contact for Price",
-    priceUsd: "",
     description: "For startups & enterprises needing advanced solutions.",
     features: [
       "Custom-built solution (Marketplace, SaaS, etc.)",
@@ -100,7 +96,6 @@ const packages = [
     {
     title: "Custom Package",
     price: "Price On Request",
-    priceUsd: "",
     description: "Tailored for unique solutions outside the listed packages.",
     features: [
       "Fully customized website or web app",
@@ -116,13 +111,6 @@ const packages = [
     isPopular: false,
   },
 ];
-
-const whatsAppNumber = "442079460123";
-
-const createWhatsAppLink = (packageName: string) => {
-  const message = `Hello, I'm interested in the ${packageName}. Please provide more details.`;
-  return `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`;
-};
 
 export default function PricingPage() {
   return (
@@ -143,11 +131,7 @@ export default function PricingPage() {
         <div className="container px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
             {packages.map((pkg, index) => {
-              const ctaLink = pkg.title === 'Custom Package' 
-                ? "/contact"
-                : createWhatsAppLink(pkg.title);
-              
-              const ctaText = "Order Now";
+              const ctaText = pkg.cta || "Order Now";
 
               return (
                 <AnimatedWrapper 
@@ -166,7 +150,6 @@ export default function PricingPage() {
                       <CardTitle className="text-2xl font-bold">{pkg.title}</CardTitle>
                       <div className="flex items-baseline gap-2">
                           <span className="text-3xl font-extrabold text-foreground">{pkg.price}</span>
-                          {pkg.priceUsd && <span className="text-muted-foreground">{pkg.priceUsd}</span>}
                       </div>
                       <CardDescription>{pkg.description}</CardDescription>
                     </CardHeader>
@@ -182,7 +165,7 @@ export default function PricingPage() {
                     </CardContent>
                     <CardFooter className="flex-col items-stretch gap-4 pt-4">
                       <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                        <Link href={ctaLink} target={pkg.title !== 'Custom Package' ? '_blank' : '_self'}>
+                        <Link href="/contact">
                           {ctaText} <ArrowRight className="h-4 w-4 ml-2" />
                         </Link>
                       </Button>
@@ -198,5 +181,3 @@ export default function PricingPage() {
     </div>
   );
 }
-
-    

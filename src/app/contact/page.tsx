@@ -1,8 +1,7 @@
 
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { ContactForm } from "./ContactForm";
-import { Phone, Mail, MessageCircle } from "lucide-react";
-import Link from 'next/link';
+import { Mail } from "lucide-react";
 import type { Metadata } from 'next';
 import { BackButton } from "@/components/layout/BackButton";
 
@@ -14,10 +13,6 @@ export const metadata: Metadata = {
     canonical: '/contact',
   },
 };
-
-const phoneNumbers = [
-  { number: "+442079460123" },
-];
 
 export default function ContactPage() {
   return (
@@ -50,30 +45,10 @@ export default function ContactPage() {
                   <h3 className="text-2xl font-headline font-bold mb-6">Contact Information</h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
-                      <Phone className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold">Phone</h4>
-                        <div className="flex flex-col space-y-1">
-                          {phoneNumbers.map((phone) => (
-                             <a key={phone.number} href={`tel:${phone.number}`} className="text-muted-foreground hover:text-accent transition-colors break-all">{phone.number}</a>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-4">
                       <Mail className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="font-semibold">Email</h4>
                         <a href="mailto:info@stevuthtech.com" className="text-muted-foreground hover:text-accent transition-colors break-all">info@stevuthtech.com</a>
-                      </div>
-                    </div>
-                     <div className="flex items-start gap-4">
-                      <MessageCircle className="h-6 w-6 text-accent mt-1 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-semibold">WhatsApp</h4>
-                        <Link href="https://wa.me/442079460123" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-colors">
-                            Chat with us
-                        </Link>
                       </div>
                     </div>
                   </div>

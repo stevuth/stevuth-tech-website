@@ -112,7 +112,6 @@ const homePackages = [
   {
     title: "Starter Package",
     price: "Contact for Price",
-    priceUsd: "",
     description: "For individuals & very small businesses.",
     features: [
       "1–3 pages (Home, About, Contact)",
@@ -129,7 +128,6 @@ const homePackages = [
   {
     title: "Standard Package",
     price: "Contact for Price",
-    priceUsd: "",
     description: "Best for growing businesses.",
     features: [
       "Up to 7 pages (Home, About, Services, Contact, etc.)",
@@ -148,7 +146,6 @@ const homePackages = [
   {
     title: "Premium Package",
     price: "Contact for Price",
-    priceUsd: "",
     description: "Perfect for e-commerce businesses.",
     features: [
       "Online store setup (unlimited products)",
@@ -166,13 +163,6 @@ const homePackages = [
     isPopular: false,
   },
 ];
-
-const whatsAppNumber = "442079460123";
-
-const createWhatsAppLink = (packageName: string) => {
-  const message = `Hello, I'm interested in the ${packageName}. Please provide more details.`;
-  return `https://wa.me/${whatsAppNumber}?text=${encodeURIComponent(message)}`;
-};
 
 export default async function Home() {
   const featuredPosts = await getPosts({ limit: 3 });
@@ -296,7 +286,6 @@ export default async function Home() {
                     <CardTitle className="text-2xl font-bold">{pkg.title}</CardTitle>
                      <div className="flex items-baseline gap-2">
                         <span className="text-3xl font-extrabold text-foreground">{pkg.price}</span>
-                        {pkg.priceUsd && <span className="text-muted-foreground">{pkg.priceUsd}</span>}
                     </div>
                     <CardDescription>{pkg.description}</CardDescription>
                   </CardHeader>
@@ -312,7 +301,7 @@ export default async function Home() {
                   </CardContent>
                   <CardFooter className="flex-col items-stretch gap-4 pt-4">
                     <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                      <Link href={createWhatsAppLink(pkg.title)} target="_blank">
+                      <Link href="/contact">
                         {pkg.cta} <ArrowRight className="h-4 w-4 ml-2" />
                       </Link>
                     </Button>
