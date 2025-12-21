@@ -1,4 +1,5 @@
 
+
 import { Check, ArrowRight } from "lucide-react";
 import { AnimatedWrapper } from "@/components/layout/AnimatedWrapper";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -20,8 +21,8 @@ export const metadata: Metadata = {
 const packages = [
   {
     title: "Starter Package",
-    price: "₦110,000",
-    priceUsd: "$75",
+    price: "Contact for Price",
+    priceUsd: "",
     description: "For individuals & very small businesses.",
     features: [
       "1–3 pages (Home, About, Contact)",
@@ -38,8 +39,8 @@ const packages = [
   },
   {
     title: "Standard Package",
-    price: "₦210,000",
-    priceUsd: "$143",
+    price: "Contact for Price",
+    priceUsd: "",
     description: "Best for growing businesses.",
     features: [
       "Up to 7 pages (Home, About, Services, Contact, etc.)",
@@ -58,8 +59,8 @@ const packages = [
   },
   {
     title: "Premium Package",
-    price: "₦360,000",
-    priceUsd: "$245",
+    price: "Contact for Price",
+    priceUsd: "",
     description: "Perfect for e-commerce businesses.",
     features: [
       "Online store setup (unlimited products)",
@@ -79,8 +80,8 @@ const packages = [
   },
   {
     title: "Pro Package",
-    price: "₦950,000",
-    priceUsd: "$647",
+    price: "Contact for Price",
+    priceUsd: "",
     description: "For startups & enterprises needing advanced solutions.",
     features: [
       "Custom-built solution (Marketplace, SaaS, etc.)",
@@ -197,3 +198,5 @@ export default function PricingPage() {
     </div>
   );
 }
+
+    

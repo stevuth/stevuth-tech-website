@@ -111,8 +111,8 @@ const benefits = [
 const homePackages = [
   {
     title: "Starter Package",
-    price: "₦110,000",
-    priceUsd: "$75",
+    price: "Contact for Price",
+    priceUsd: "",
     description: "For individuals & very small businesses.",
     features: [
       "1–3 pages (Home, About, Contact)",
@@ -128,8 +128,8 @@ const homePackages = [
   },
   {
     title: "Standard Package",
-    price: "₦210,000",
-    priceUsd: "$143",
+    price: "Contact for Price",
+    priceUsd: "",
     description: "Best for growing businesses.",
     features: [
       "Up to 7 pages (Home, About, Services, Contact, etc.)",
@@ -147,8 +147,8 @@ const homePackages = [
   },
   {
     title: "Premium Package",
-    price: "₦360,000",
-    priceUsd: "$245",
+    price: "Contact for Price",
+    priceUsd: "",
     description: "Perfect for e-commerce businesses.",
     features: [
       "Online store setup (unlimited products)",
@@ -456,5 +456,7 @@ export default async function Home() {
     </div>
   );
 }
+
+    
 
     
